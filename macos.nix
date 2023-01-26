@@ -1,4 +1,10 @@
 {
+  NSGlobalDomain = {
+    NSAutomaticPeriodSubstitutionEnabled = false;
+    NSAutomaticQuoteSubstitutionEnabled = false;
+    NSAutomaticSpellingCorrectionEnabled = false;
+  };
+
   "com.apple.dashboard" = { mcx-disabled = true; };
 
   "com.apple.dock" = {
