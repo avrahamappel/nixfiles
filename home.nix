@@ -26,6 +26,10 @@
     nodePackages.yaml-language-server
     rnix-lsp
     sumneko-lua-language-server
+
+    # Fonts
+    jetbrains-mono
+    ubuntu_font_family
   ];
 
   # This value determines the Home Manager release that your
@@ -37,6 +41,9 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.11";
+
+  # Enable font discovery
+  fonts.fontconfig.enable = true;
 
   programs = {
     # Let Home Manager install and manage itself.
