@@ -11,9 +11,9 @@
   # $ nix-env -qaP | grep wget
   home.packages = with pkgs; [
     # Utilities
+    du-dust
     jless
     ripgrep
-    tldr
 
     # Other
     diffr # Used by my git config for interactive diffs
@@ -49,8 +49,6 @@
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-    jq.enable = true;
-
     # Use nix-direnv to automatically load nix shells
     direnv = {
       enable = true;
@@ -75,6 +73,18 @@
     browserpass = {
       enable = true;
       browsers = [ "chrome" ];
+    };
+
+    # Other stuff
+    jq.enable = true;
+
+    tealdeer = {
+      enable = true;
+      settings = {
+        updates = {
+          auto_update = true;
+        };
+      };
     };
   };
 
