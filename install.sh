@@ -2,7 +2,7 @@
 #
 # Set stuff up
 
-NIXFILES_PATH=$(realpath "$0")
+NIXFILES_PATH=$(dirname "$(realpath "$0")")
 
 if ! which nix &> /dev/null
 then
@@ -21,9 +21,9 @@ fi
 echo "Linking files..."
 
 mkdir -p "$HOME/.config/nix"
-mkdir -p "$HOME/.nixpkgs"
+mkdir -p "$HOME/.config/nixpkgs"
 ln -s -f "$NIXFILES_PATH/nix.conf" "$HOME/.config/nix/nix.conf"
-ln -s -f "$NIXFILES_PATH/home.nix" "$HOME/.nixpkgs/home.nix"
+ln -s -f "$NIXFILES_PATH/home.nix" "$HOME/.config/nixpkgs/home.nix"
 
 echo "Complete!"
 echo "Run 'home-manager switch' to start using your beloved environment!"
