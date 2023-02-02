@@ -37,7 +37,7 @@ local servers = {
     'html',
     'intelephense',
     'jsonls',
-    'rnix',
+    'nil_ls',
     'rust_analyzer',
     'solargraph',
     'sumneko_lua',
@@ -75,6 +75,12 @@ local settings = {
         workspace = {
             -- Make the server aware of Neovim runtime files
             library = vim.api.nvim_get_runtime_file("", true),
+        },
+    },
+
+    ['nil'] = {
+        formatting = {
+            command = { "nixpkgs-fmt" },
         },
     },
 
