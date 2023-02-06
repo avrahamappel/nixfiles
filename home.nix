@@ -10,6 +10,18 @@
   # To search by name, run:
   # $ nix-env -qaP | grep wget
   home.packages = with pkgs; [
+    # LSPs
+    nil
+    nodePackages.bash-language-server
+    nodePackages.vim-language-server
+    nodePackages.vscode-langservers-extracted
+    nodePackages.yaml-language-server
+    sumneko-lua-language-server
+
+    # Fonts
+    jetbrains-mono
+    ubuntu_font_family
+
     # Utilities
     du-dust
     jless
@@ -17,20 +29,8 @@
 
     # Other
     diffr # Used by my git config for interactive diffs
+    nixpkgs-fmt # Used by nil for formatting
     shellcheck # Used by the bash LSP
-
-    # LSPs
-    nodePackages.bash-language-server
-    nodePackages.vim-language-server
-    nodePackages.vscode-langservers-extracted
-    nodePackages.yaml-language-server
-    nil
-    nixpkgs-fmt
-    sumneko-lua-language-server
-
-    # Fonts
-    jetbrains-mono
-    ubuntu_font_family
   ];
 
   # This value determines the Home Manager release that your
