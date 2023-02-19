@@ -9,6 +9,7 @@
     "*.swp"
     ".idea"
     "_ide_helper.php"
+    ".luarc.json"
     ".phpstorm.meta.php"
     "*.sublime-*"
     ".vagrant"
