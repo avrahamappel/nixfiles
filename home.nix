@@ -16,7 +16,7 @@
     nodePackages.vim-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
-    rnix
+    rnix-lsp
     sumneko-lua-language-server
 
     # Fonts
