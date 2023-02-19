@@ -38,7 +38,10 @@ local servers = {
     'intelephense',
     'jsonls',
     'nil_ls',
+    'phpactor',
+    'psalm',
     'rust_analyzer',
+    'rnix',
     'solargraph',
     'sumneko_lua',
     'tsserver',
@@ -52,15 +55,8 @@ local settings = {
     ['rust-analyzer'] = {
         checkOnSave = {
             command = 'clippy',
+            extraArgs = { '--', '-Wclippy::pedantic' },
         },
-    },
-
-    eslint = {
-        single_file_support = true,
-    },
-
-    tsserver = {
-        single_file_support = true,
     },
 
     Lua = {
@@ -83,6 +79,13 @@ local settings = {
             command = { "nixpkgs-fmt" },
         },
     },
+
+    -- phpactor = {
+    --     language_server_psalm = {
+    --         enabled = true,
+    --         bin = 'psalm',
+    --     },
+    -- },
 
     vetur = {
         ignoreProjectWarning = true

@@ -16,10 +16,10 @@
     nodePackages.vim-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
+    rnix
     sumneko-lua-language-server
 
     # Fonts
-    jetbrains-mono
     ubuntu_font_family
 
     # Utilities
