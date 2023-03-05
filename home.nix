@@ -31,13 +31,9 @@
     ubuntu_font_family
 
     # Utilities
-    du-dust
-    jless
-    ripgrep
-
-    # Other
     codespell # Used by null-ls to provide smarter spell checking
     diffr # Used by my git config for interactive diffs
+    ripgrep # Awesome searching tool, and also used by fzf.vim
     nixpkgs-fmt # Used by nil for formatting
     shellcheck # Used by the bash LSP
   ];
