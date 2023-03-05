@@ -87,9 +87,6 @@ let g:rustfmt_autosave = 1
 " Autocmds
 """""""""""""""""""""""""""""""""""""
 
-" Turn on spellcheck in text files
-autocmd BufNewFile,BufRead *.md,COMMIT_EDITMSG setlocal spell
-
 " Source .vimrc whenever it's written
 augroup source_vimrc
     autocmd!

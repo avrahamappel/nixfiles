@@ -63,6 +63,8 @@
     # Not sure if I want this right now
     # lsp_signature-nvim
     vim-vsnip
+    pkgs.vimExtraPlugins.null-ls-nvim
+    plenary-nvim # Required by null-ls
   ];
 
   # Custom vimrc lines.

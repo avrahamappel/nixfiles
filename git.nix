@@ -10,6 +10,7 @@
     ".idea"
     "_ide_helper.php"
     ".luarc.json"
+    ".null-ls_*"
     ".phpstorm.meta.php"
     "*.sublime-*"
     ".vagrant"

@@ -6,6 +6,13 @@
   home.username = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
 
+  # Overlays for nixpkgs
+  nixpkgs.overlays = [
+    # Adds pkgs.vimExtraPlugins
+    # @TODO there is an open PR in m15a/nixpkgs-vim-extra-plugins from this repo
+    (builtins.getFlake "github:dearrrfish/nixpkgs-vim-extra-plugins").overlays.default
+  ];
+
   # Packages that should be installed to the user profile.
   # To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -28,6 +35,7 @@
     ripgrep
 
     # Other
+    codespell # Used by null-ls to provide smarter spell checking
     diffr # Used by my git config for interactive diffs
     nixpkgs-fmt # Used by nil for formatting
     shellcheck # Used by the bash LSP

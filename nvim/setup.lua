@@ -129,6 +129,17 @@ end
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
 
+-- Null LS
+local null_ls = require 'null-ls'
+null_ls.setup {
+    sources = {
+        null_ls.builtins.diagnostics.codespell,
+        null_ls.builtins.formatting.codespell,
+        null_ls.builtins.diagnostics.rubocop,
+        null_ls.builtins.formatting.rubocop,
+    }
+}
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup({
