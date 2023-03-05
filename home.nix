@@ -86,6 +86,8 @@
     };
 
     # Other stuff
+    tmux.enable = true;
+
     jq.enable = true;
 
     tealdeer = {
