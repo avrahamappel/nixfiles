@@ -25,6 +25,7 @@
     nodePackages.yaml-language-server
     rnix-lsp
     sumneko-lua-language-server
+    taplo
 
     # Fonts
     ubuntu_font_family

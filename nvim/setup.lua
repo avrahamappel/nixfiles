@@ -44,6 +44,7 @@ local servers = {
     'rnix',
     'solargraph',
     'sumneko_lua',
+    'taplo',
     'tsserver',
     'vimls',
     'vuels',
@@ -52,11 +53,9 @@ local servers = {
 
 -- Server-specific settings
 local settings = {
-    ['rust-analyzer'] = {
-        checkOnSave = {
-            command = 'clippy',
-            extraArgs = { '--', '-Wclippy::pedantic' },
-        },
+    json = {
+        schemas = require('schemastore').json.schemas(),
+        validate = { enable = true },
     },
 
     Lua = {
@@ -87,9 +86,20 @@ local settings = {
     --     },
     -- },
 
+    ['rust-analyzer'] = {
+        checkOnSave = {
+            command = 'clippy',
+            extraArgs = { '--', '-Wclippy::pedantic' },
+        },
+    },
+
     vetur = {
         ignoreProjectWarning = true
-    }
+    },
+
+    yaml = {
+        schemaStore = { enable = true },
+    },
 }
 
 -- Mappings
