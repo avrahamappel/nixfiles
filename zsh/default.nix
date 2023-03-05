@@ -27,7 +27,7 @@
     # Git
     ga = "git add";
     gb = "git branch";
-    gc = "git commit";
+    gc = "git commit -v";
     gco = "git checkout";
     gd = "git diff --color";
     gdn = "git diff --name-only";
