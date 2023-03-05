@@ -87,12 +87,6 @@ let g:rustfmt_autosave = 1
 " Autocmds
 """""""""""""""""""""""""""""""""""""
 
-" Source .vimrc whenever it's written
-augroup source_vimrc
-    autocmd!
-    autocmd BufWritePost init.vim source %
-augroup END
-
 " Go to insert mode when entering terminal buffer
 augroup neovim_terminal
     autocmd!
