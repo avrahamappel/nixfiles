@@ -54,7 +54,6 @@ local servers = {
     'jsonls',
     'nil_ls',
     'phpactor',
-    'psalm',
     'rust_analyzer',
     'rnix',
     'solargraph',
@@ -94,12 +93,15 @@ local settings = {
         },
     },
 
-    -- phpactor = {
-    --     language_server_psalm = {
-    --         enabled = true,
-    --         bin = 'psalm',
-    --     },
-    -- },
+    phpactor = {
+        language_server_psalm = {
+            enabled = true,
+            bin = 'psalm',
+        },
+        phpunit = {
+            enabled = true,
+        },
+    },
 
     ['rust-analyzer'] = {
         checkOnSave = {
