@@ -33,7 +33,7 @@ jobs_count() {
 }
 
 cur_time () {
-  echo "%B%F%D{%b %d}, %D{%I:%M%p}%f%b"
+  echo "%B%F%D{%a, %b %d, %I:%M%p}%f%b"
 }
 
 set_prompt() {
