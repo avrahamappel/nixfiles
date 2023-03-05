@@ -8,15 +8,28 @@ vim.g.maplocalleader = ' '
 ------------------------------
 -- Treesitter configuration --
 ------------------------------
-require 'nvim-treesitter.configs'.setup {
-    highlight = { enable = true },
+require('nvim-treesitter.configs').setup {
+    highlight = {
+        enable = true,
+        -- A list of parsers that add highlight groups unsupported by Molokai
+        disable = { "html", "diff" },
+    },
     refactor = {
         smart_rename = {
             enable = true,
             keymaps = {
                 smart_rename = "gs",
             }
-        }
+        },
+        navigation = {
+            enable = true,
+            keymaps = {
+                goto_definition_lsp_fallback = "gtd",
+                list_definitions_toc = "gta",
+                goto_next_usage = "]t",
+                goto_previous_usage = "[t",
+            },
+        },
     }
 }
 

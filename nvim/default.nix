@@ -38,24 +38,7 @@
     molokai
 
     # LSP / TreeSitter / Completion plugins
-    (nvim-treesitter.withPlugins
-      (plugins: with plugins; [
-        tree-sitter-bash
-        tree-sitter-elm
-        tree-sitter-comment
-        tree-sitter-javascript
-        tree-sitter-json
-        tree-sitter-lua
-        tree-sitter-nix
-        tree-sitter-ruby
-        tree-sitter-rust
-        tree-sitter-php
-        tree-sitter-typescript
-        tree-sitter-toml
-        tree-sitter-vim
-        tree-sitter-vue
-        tree-sitter-yaml
-      ]))
+    nvim-treesitter.withAllGrammars
 
     cmp-nvim-lsp
     cmp-treesitter
