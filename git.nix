@@ -17,6 +17,7 @@
     "tags*"
     ".direnv"
     ".envrc"
+    ".vimrc.lua"
   ];
 
   includes = [

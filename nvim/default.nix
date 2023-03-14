@@ -52,6 +52,9 @@
     vim-vsnip
     pkgs.vimExtraPlugins.null-ls-nvim
     plenary-nvim # Required by null-ls
+
+    # Load per-project config
+    nvim-config-local
   ];
 
   # Custom vimrc lines.
