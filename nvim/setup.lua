@@ -175,14 +175,16 @@ end
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
 
--- Null LS
+---------------------------
+-- Null LS Configuration --
+---------------------------
 local null_ls = require 'null-ls'
+
 null_ls.setup {
     sources = {
-        null_ls.builtins.diagnostics.codespell,
-        null_ls.builtins.formatting.codespell,
-        null_ls.builtins.diagnostics.rubocop,
-        null_ls.builtins.formatting.rubocop,
+        null_ls.builtins.diagnostics.codespell.with({
+            with_args = { "--ignore-words", vim.fn.expand("~/.words") }
+        }),
     }
 }
 
