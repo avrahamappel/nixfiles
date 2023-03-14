@@ -15,6 +15,8 @@
     "*.sublime-*"
     ".vagrant"
     "tags*"
+    ".direnv"
+    ".envrc"
   ];
 
   includes = [
