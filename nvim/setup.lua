@@ -38,7 +38,7 @@ require('nvim-treesitter.configs').setup {
 -----------------------
 
 -- Register an LSP
-function register_lsp(lsp, settings, cmd)
+function RegisterLsp(lsp, settings, cmd)
     local lspconfig = require 'lspconfig'
 
     -- Add additional capabilities supported by nvim-cmp
@@ -92,13 +92,11 @@ local servers = {
     'elmls',
     'eslint',
     'html',
-    'intelephense',
     'jsonls',
     'nil_ls',
     'phpactor',
     'rust_analyzer',
     'rnix',
-    'solargraph',
     'sumneko_lua',
     'taplo',
     'tsserver',
@@ -166,9 +164,9 @@ local commands = {}
 
 for _, lsp in ipairs(servers) do
     if commands[lsp] then
-        register_lsp(lsp, settings, commands[lsp])
+        RegisterLsp(lsp, settings, commands[lsp])
     else
-        register_lsp(lsp, settings)
+        RegisterLsp(lsp, settings)
     end
 end
 
@@ -241,3 +239,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
         vim.diagnostic.disable(args.buf)
     end
 })
+
+-- Load local config
+require('config-local').setup {}
