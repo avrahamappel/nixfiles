@@ -3,8 +3,6 @@
 {
   enable = true;
 
-  defaultEditor = true;
-
   # Don't use any providers for now.
   withNodeJs = false;
   withPython3 = false;

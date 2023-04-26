@@ -48,4 +48,8 @@
   initExtra = ''
     source ${builtins.toString ./local.zsh}
   '';
+
+  localVariables = {
+    EDITOR = "nvim";
+  };
 }
