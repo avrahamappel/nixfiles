@@ -3,6 +3,8 @@
 {
   enable = true;
 
+  defaultEditor = true;
+
   # List of vim plugins to install optionally associated with configuration to be placed in init.vim.
   plugins = with pkgs.vimPlugins; [
     # Nothing wrong with some extra speed
