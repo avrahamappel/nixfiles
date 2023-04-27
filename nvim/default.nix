@@ -37,6 +37,7 @@
     vim-speeddating
 
     # Language specific plugins
+    markdown-preview-nvim 
     rust-vim
 
     # Theme plugins
