@@ -86,22 +86,16 @@ end
 
 -- Globally enabled servers
 local servers = {
-    'angularls',
     'bashls',
     'cssls',
-    'elmls',
-    'eslint',
     'html',
     'jsonls',
     'nil_ls',
-    'phpactor',
     'rust_analyzer',
     'rnix',
     'sumneko_lua',
     'taplo',
-    'tsserver',
     'vimls',
-    'vuels',
     'yamlls'
 }
 
@@ -114,12 +108,13 @@ local settings = {
 
     Lua = {
         runtime = {
-            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+            -- Tell the language server which version of Lua you're using
+            -- (most likely LuaJIT in the case of Neovim)
             version = 'LuaJIT',
         },
         diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = { 'vim' },
+            globals = { 'vim', 'RegisterLsp' },
         },
         workspace = {
             -- Make the server aware of Neovim runtime files
@@ -133,25 +128,11 @@ local settings = {
         },
     },
 
-    phpactor = {
-        language_server_psalm = {
-            enabled = true,
-            bin = 'psalm',
-        },
-        phpunit = {
-            enabled = true,
-        },
-    },
-
     ['rust-analyzer'] = {
         checkOnSave = {
             command = 'clippy',
             extraArgs = { '--', '-Wclippy::pedantic' },
         },
-    },
-
-    vetur = {
-        ignoreProjectWarning = true
     },
 
     yaml = {
