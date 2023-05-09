@@ -82,7 +82,11 @@
     };
 
     # Other stuff
-    tmux.enable = true;
+    tmux = {
+        enable = true;
+        aggressiveResize = true;
+        terminal = "xterm-256color";
+    };
 
     jq.enable = true;
 
