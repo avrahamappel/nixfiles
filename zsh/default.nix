@@ -26,6 +26,8 @@
 
     # Git
     ga = "git add";
+    gap = "git add -p";
+    gan = "git -N .";
     gb = "git branch";
     gc = "git commit -v";
     gco = "git checkout";
