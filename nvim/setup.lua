@@ -38,7 +38,7 @@ require('nvim-treesitter.configs').setup {
 -----------------------
 
 -- Register an LSP
-function RegisterLsp(lsp, settings, cmd)
+function RegisterLsp(lsp, settings, cmd, root_dir)
     local lspconfig = require 'lspconfig'
 
     -- Add additional capabilities supported by nvim-cmp
@@ -79,6 +79,10 @@ function RegisterLsp(lsp, settings, cmd)
 
     if cmd then
         setup_opts["cmd"] = cmd
+    end
+
+    if root_dir then
+        setup_opts["root_dir"] = root_dir
     end
 
     lspconfig[lsp].setup(setup_opts)
