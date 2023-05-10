@@ -41,6 +41,10 @@
     gp = "git push origin HEAD";
     gs = "git status -sb";
     gst = "git stash";
+
+    # Tmux
+    tx = "tmux";
+    txa = "tmux attach";
   };
 
   initExtraFirst = ''
