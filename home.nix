@@ -83,9 +83,14 @@
 
     # Other stuff
     tmux = {
-        enable = true;
-        aggressiveResize = true;
-        terminal = "xterm-256color";
+      enable = true;
+      terminal = "xterm-256color";
+      shortcut = "t";
+      extraConfig = ''
+        set-option -g status off
+        set-option -g set-titles on
+        set-option -g set-titles-string '#{session_name} (tmux)'
+      '';
     };
 
     jq.enable = true;
