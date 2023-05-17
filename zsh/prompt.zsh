@@ -28,8 +28,20 @@ stash_count() {
   fi
 }
 
+tmux_count() {
+  # xargs is a quick and dirty way to trim strings in shell scripts
+  count=$(tmux ls 2> /dev/null | wc -l | xargs)
+
+  if ! test $count = 0
+  then
+    echo "%B%F{green}($count%)%f%b "
+  else
+    echo ''
+  fi
+}
+
 jobs_count() {
-  echo "%(1j.%B%F{green}(%j%)%f%b .)"
+  echo "%(1j.%B%F{magenta}(%j%)%f%b .)"
 }
 
 cur_time () {
@@ -39,7 +51,7 @@ cur_time () {
 set_prompt() {
   setopt PROMPT_SUBST
   export PROMPT=$'\n$(user_name) $(directory_name)\n$(last_error)\n$(prompt_arrow) '
-  export RPROMPT=$'$(stash_count)$(jobs_count)$(cur_time)'
+  export RPROMPT=$'$(stash_count)$(tmux_count)$(jobs_count)$(cur_time)'
 }
 
 precmd() {
