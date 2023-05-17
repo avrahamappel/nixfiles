@@ -85,7 +85,7 @@
     tmux = {
       enable = true;
       terminal = "xterm-256color";
-      shortcut = "t";
+      shortcut = "z";
       extraConfig = ''
         set-option -g status off
         set-option -g set-titles on
