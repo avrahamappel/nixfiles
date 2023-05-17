@@ -22,14 +22,14 @@ stash_count() {
 
   if ! test $count = 0
   then
-    echo "%F%F{blue}($count%)%f%b"
+    echo "%B%F{blue}($count%)%f%b "
   else
     echo ''
   fi
 }
 
 jobs_count() {
-  echo "%(1j.%B%F{green}(%j%)%f%b.)"
+  echo "%(1j.%B%F{green}(%j%)%f%b .)"
 }
 
 cur_time () {
@@ -39,7 +39,7 @@ cur_time () {
 set_prompt() {
   setopt PROMPT_SUBST
   export PROMPT=$'\n$(user_name) $(directory_name)\n$(last_error)\n$(prompt_arrow) '
-  export RPROMPT=$'$(stash_count) $(jobs_count) $(cur_time)'
+  export RPROMPT=$'$(stash_count)$(jobs_count)$(cur_time)'
 }
 
 precmd() {
