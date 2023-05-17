@@ -34,18 +34,18 @@ tmux_count() {
 
   if ! test $count = 0
   then
-    echo "%B%F{green}($count%)%f%b "
+    echo "%B%F{white}($count%)%f%b "
   else
     echo ''
   fi
 }
 
 jobs_count() {
-  echo "%(1j.%B%F{magenta}(%j%)%f%b .)"
+  echo "%(1j.%B%F{green}(%j%)%f%b .)"
 }
 
 cur_time () {
-  echo "%B%F%D{%a, %b %d, %I:%M%p}%f%b"
+  echo "%B%F%D{%a %b %d, %I:%M%p}%f%b"
 }
 
 set_prompt() {
