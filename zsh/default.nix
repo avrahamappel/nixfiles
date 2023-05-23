@@ -25,9 +25,8 @@
     hme = "cd ${builtins.toString ../.}; home-manager edit";
 
     # Git
-    ga = "git add";
-    gap = "git add -p";
-    gan = "git -N .";
+    ga = "git add -p";
+    gn = "git add -N .";
     gb = "git branch";
     gc = "git commit -v";
     gco = "git checkout";
