@@ -18,7 +18,7 @@
 
     # Nix
     ns = "nix-shell -p $@";
-    nr = "nix repl '<nixpkgs>'";
+    nr = "nix repl";
 
     # Home Manager
     hm = "home-manager";
