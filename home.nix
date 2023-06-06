@@ -18,13 +18,13 @@
   # $ nix-env -qaP | grep wget
   home.packages = with pkgs; [
     # LSPs
+    lua-language-server
     nil
     nodePackages.bash-language-server
     nodePackages.vim-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
     rnix-lsp
-    sumneko-lua-language-server
     taplo
 
     # Fonts

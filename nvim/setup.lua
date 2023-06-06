@@ -94,10 +94,10 @@ local servers = {
     'cssls',
     'html',
     'jsonls',
+    'lua_ls',
     'nil_ls',
     'rust_analyzer',
     'rnix',
-    'sumneko_lua',
     'taplo',
     'vimls',
     'yamlls'
