@@ -12,7 +12,7 @@ require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true,
         -- A list of parsers that add highlight groups unsupported by Molokai
-        disable = { "html", "gitcommit" },
+        disable = { "diff", "html", "gitcommit" },
     },
     refactor = {
         smart_rename = {
