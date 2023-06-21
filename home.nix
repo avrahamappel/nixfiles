@@ -86,6 +86,8 @@
       enable = true;
       terminal = "xterm-256color";
       shortcut = "z";
+      keyMode = "vi";
+      mouse = true;
       extraConfig = ''
         set-option -g status off
         set-option -g set-titles on
