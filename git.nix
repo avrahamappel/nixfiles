@@ -24,6 +24,10 @@
     { path = "~/.gitconfig.local"; }
   ];
 
+  aliases = {
+    delete-local-merged = "! git branch -d $(git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\\n') 2> /dev/null";
+  };
+
   extraConfig = {
     push = {
       # See `git help config` (search for push.default)

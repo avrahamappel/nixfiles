@@ -33,7 +33,6 @@
     gd = "git diff --color";
     gdn = "git diff --name-only";
     gds = "git diff --staged --color";
-    git-delete-local-merged = "git branch -d $(git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\\n') 2> /dev/null";
     gl = "git pull --prune && git-delete-local-merged";
     glog = "git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cd)%Creset' --date=relative";
     gla = "glog --all";
