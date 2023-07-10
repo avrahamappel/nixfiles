@@ -30,6 +30,9 @@ require('nvim-treesitter.configs').setup {
                 goto_previous_usage = "[t",
             },
         },
+        incremental_selection = {
+            enable = true;
+        },
     }
 }
 
