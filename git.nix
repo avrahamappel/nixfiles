@@ -35,6 +35,8 @@
       #
       # Setting to git 2.0 default to suppress warning message
       default = "simple";
+
+      autoSetupRemote = true;
     };
 
     init = {
