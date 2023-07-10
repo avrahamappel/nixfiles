@@ -15,7 +15,7 @@
 
   shellAliases = {
     # Shell
-    e = "f() { $EDITOR \${1:-.} };f";
+    e = "f() { txn $(basename $PWD) nvim \${1:-.} +\"vert Git\" };f";
     j = "jobs";
 
     # Nix
@@ -44,6 +44,7 @@
 
     # Tmux
     tx = "tmux";
+    txn = "tmux new -A -s $*";
     txa = "tmux attach";
   };
 
