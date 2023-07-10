@@ -9,6 +9,8 @@
 
   autocd = true;
 
+  history.extended = true;
+
   historySubstringSearch.enable = true;
 
   shellAliases = {
@@ -46,10 +48,17 @@
   };
 
   initExtraFirst = ''
+    # Prompt customization
     source ${builtins.toString ./prompt.zsh}
   '';
 
   initExtra = ''
+    # Extra options
+    setopt HIST_IGNORE_ALL_DUPS
+    setopt HIST_REDUCE_BLANKS
+    unsetopt BEEP
+
+    # Local customization
     source ${builtins.toString ./local.zsh}
   '';
 
