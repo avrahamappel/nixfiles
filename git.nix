@@ -39,6 +39,9 @@
       autoSetupRemote = true;
     };
 
+    # Always show a full diff in the commit message screen
+    commit.verbose = true;
+
     init = {
       defaultBranch = "master";
     };
