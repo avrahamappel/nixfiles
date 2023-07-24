@@ -169,7 +169,7 @@ local null_ls = require 'null-ls'
 null_ls.setup {
     sources = {
         null_ls.builtins.diagnostics.codespell.with({
-            with_args = { "--ignore-words", vim.fn.expand("~/.words") }
+            with_args = { "--ignore-words", vim.fn.expand("~/.config/codespell/ignore-words") }
         }),
     }
 }

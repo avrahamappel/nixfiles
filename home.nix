@@ -1,10 +1,21 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = builtins.getEnv "USER";
-  home.homeDirectory = builtins.getEnv "HOME";
+  home = {
+    # Home Manager needs a bit of information about you and the
+    # paths it should manage.
+    username = builtins.getEnv "USER";
+    homeDirectory = builtins.getEnv "HOME";
+
+    # Static files to link into home dir
+    file = {
+      ".config/codespell/ignore-words".text = ''
+        responsable
+        crate
+        hastable
+      '';
+    };
+  };
 
   # Overlays for nixpkgs
   nixpkgs.overlays = [
