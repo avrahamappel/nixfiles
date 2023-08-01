@@ -24,7 +24,7 @@
 
     # Home Manager
     hm = "home-manager";
-    hme = "cd ${builtins.toString ../.}; home-manager edit";
+    hme = "cd ${builtins.toString ../.}; e home.nix";
 
     # Git
     ga = "git add -p";
