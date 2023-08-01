@@ -31,7 +31,7 @@ require('nvim-treesitter.configs').setup {
             },
         },
         incremental_selection = {
-            enable = true;
+            enable = true,
         },
     }
 }
@@ -209,7 +209,8 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'treesitter' }
-    }, {
+    },
+    {
         { name = 'buffer' },
     },
 })
