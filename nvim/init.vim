@@ -76,6 +76,8 @@ map <leader>v :let @*=@"<CR>
 map <leader>k :let @*=@%<CR>
 " Copy contents of current file to system clipboard
 map <leader>y :%y*<CR>
+" Shortcut to open fugitive window. 'n' is close to the spacebar
+map <leader>n :Git<CR>
 
 """""""""""""""""""""""""""""""""""""
 " Plugins settings
