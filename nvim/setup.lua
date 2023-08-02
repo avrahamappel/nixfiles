@@ -230,15 +230,16 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- Wrapper around :terminal to run shell aliases without having to jump into an interactive shell
-vim.api.nvim_create_user_command('A', function(args)
-    vim.cmd.terminal(string.format("zsh -i -c %s", table.concat(args.fargs, ' ')));
+-- 'X' is for 'eXecute'
+vim.api.nvim_create_user_command('X', function(args)
+    vim.cmd.terminal(string.format("zsh -i -c '%s'", table.concat(args.fargs, ' ')));
 end, {
     desc = "a wrapper around :terminal to run shell aliases without having to jump into an interactive shell",
     force = false,
     nargs = '+',
 });
--- Map for the above. Why X? I don't know, maybe you should ask Elon Musk
-vim.api.nvim_set_keymap('', "<leader>x", ":A ", {});
+-- Map for the above.
+vim.api.nvim_set_keymap('', "<leader>x", ":X ", {});
 
 -- Load local config
 require('config-local').setup {}
