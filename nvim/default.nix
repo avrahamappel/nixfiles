@@ -16,6 +16,7 @@
     # Navigation plugins
     fzf-vim
     vim-vinegar
+    camelcasemotion
 
     # Editor appearance
     vim-gitgutter
