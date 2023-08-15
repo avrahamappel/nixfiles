@@ -95,6 +95,7 @@ end
 local servers = {
     'bashls',
     'cssls',
+    'elmls',
     'html',
     'jsonls',
     'lua_ls',
