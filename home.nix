@@ -73,6 +73,26 @@
       nix-direnv.enable = true;
     };
 
+    # Terminal configuration
+    kitty = {
+      enable = true;
+      environment = {
+        TERM = "xterm-256color";
+      };
+      font = {
+        package = pkgs.ubuntu_font_family;
+        name = "Ubuntu Mono";
+        size = 16;
+      };
+      shellIntegration.mode = "no-cursor";
+      settings = {
+        adjust_line_height = 1;
+        background_opacity = "0.75";
+        cursor_blink_interval = 0;
+        enable_audio_bell = false;
+      };
+    };
+
     # Shell configuration
     zsh = import ./zsh { };
 
