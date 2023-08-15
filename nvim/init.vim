@@ -82,7 +82,7 @@ map <leader>n :Git<CR>
 """""""""""""""""""""""""""""""""""""
 " Plugins settings
 """""""""""""""""""""""""""""""""""""
-call camelcasemotion#CreateMotionMappings('<leader>')
+call camelcasemotion#CreateMotionMappings('c')
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
