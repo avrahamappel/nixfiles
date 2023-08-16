@@ -76,9 +76,6 @@
     # Terminal configuration
     kitty = {
       enable = true;
-      environment = {
-        TERM = "xterm-256color";
-      };
       font = {
         package = pkgs.ubuntu_font_family;
         name = "Ubuntu Mono";
