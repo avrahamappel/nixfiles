@@ -19,9 +19,6 @@
 
   # Overlays for nixpkgs
   nixpkgs.overlays = [
-    # Adds pkgs.vimExtraPlugins
-    # @TODO there is an open PR in m15a/nixpkgs-vim-extra-plugins from this repo
-    (builtins.getFlake "github:dearrrfish/nixpkgs-vim-extra-plugins").overlays.default
   ];
 
   # Packages that should be installed to the user profile.

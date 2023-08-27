@@ -57,7 +57,7 @@
     # lsp_signature-nvim
     SchemaStore-nvim # Adds schemas to json ls
     vim-vsnip
-    pkgs.vimExtraPlugins.null-ls-nvim
+    null-ls-nvim
     plenary-nvim # Required by null-ls
 
     # Load per-project config
