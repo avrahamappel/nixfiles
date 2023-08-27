@@ -134,12 +134,6 @@
 
   targets = {
     # MacOS
-    darwin.defaults =
-      if pkgs.stdenv.isDarwin
-      then import ./macos.nix
-      else { };
-
-    # Hope this helps until I'm off Lubuntu
-    genericLinux.enable = pkgs.stdenv.isLinux;
+    darwin.defaults = import ./macos.nix;
   };
 }
