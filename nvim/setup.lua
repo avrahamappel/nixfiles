@@ -187,6 +187,15 @@ rt.setup({
     },
 })
 
+---------------------------
+-- typescript.nvim setup --
+---------------------------
+require("typescript").setup({
+    server = {
+        on_attach = on_attach,
+    }
+})
+
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup({
