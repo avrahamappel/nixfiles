@@ -39,6 +39,7 @@
 
     # Language specific plugins
     markdown-preview-nvim 
+    rust-tools-nvim
     rust-vim
 
     # Theme plugins
