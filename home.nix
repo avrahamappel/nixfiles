@@ -29,6 +29,7 @@
     lua-language-server
     nil
     nodePackages.bash-language-server
+    nodePackages.typescript-language-server
     nodePackages.vim-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
