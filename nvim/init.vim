@@ -35,7 +35,11 @@ set incsearch
 " Theme setup
 colorscheme molokai
 
+" Make comments italic
 hi Comment cterm=italic
+
+" Set grepprg to ripgrep
+set grepprg=rg\ --column\ --line-number\ --no-heading\ $*
 
 """""""""""""""""""""""""""""""""""""
 " Mappings configuration
