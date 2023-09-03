@@ -86,6 +86,7 @@ local servers = {
     'bashls',
     'cssls',
     'elmls',
+    'eslint',
     'html',
     'jsonls',
     'lua_ls',
@@ -111,7 +112,7 @@ local settings = {
         },
         diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = { 'vim', 'RegisterLsp' },
+            globals = { 'vim', 'registerLsps' },
         },
         workspace = {
             -- Make the server aware of Neovim runtime files
@@ -138,15 +139,33 @@ local settings = {
 }
 
 
-for _, lsp in ipairs(servers) do
+-- Global function to allow for project-level LSP config
+function registerLsps(args)
+    local lsps = args.lsps or {}
+    local lsp_settings = args.lsp_settings or {}
+    local commands = args.commands or {}
+    local root_dirs = args.root_dirs or {}
+
     local setup_opts = {
         on_attach = on_attach,
         capabilities = capabilities,
-        settings = settings,
+        settings = lsp_settings,
     }
 
-    lspconfig[lsp].setup(setup_opts)
+    for _, lsp in ipairs(lsps) do
+        if commands[lsp] then
+            setup_opts.cmd = commands[lsp]
+        end
+
+        if root_dirs[lsp] then
+            setup_opts.root_dir = root_dirs[lsp]
+        end
+
+        lspconfig[lsp].setup(setup_opts)
+    end
 end
+
+registerLsps { lsps = servers, settings = settings }
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
