@@ -43,6 +43,7 @@ require('nvim-treesitter.configs').setup {
 vim.diagnostic.config({
     -- Don't show diagnostic messages in a virtual line
     virtual_text = false,
+    severity_sort = true,
     float = {
         -- Show diagnostics sources
         source = "always",
