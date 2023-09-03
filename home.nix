@@ -104,7 +104,7 @@
     };
     browserpass = {
       enable = true;
-      browsers = [ "chrome" ];
+      browsers = [ "chrome" "firefox" ];
     };
 
     # Other stuff
