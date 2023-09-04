@@ -8,13 +8,7 @@
     homeDirectory = builtins.getEnv "HOME";
 
     # Static files to link into home dir
-    file = {
-      ".config/codespell/ignore-words".text = ''
-        responsable
-        crate
-        hastable
-      '';
-    };
+    file.".config/codespell/ignore-words".source = ./codespell/ignore-words;
   };
 
   # Overlays for nixpkgs
