@@ -92,10 +92,8 @@
 
     # Passwords
     gpg = { enable = true; };
-    password-store = {
-      enable = true;
-      package = pkgs.pass.withExtensions (exts: [ exts.pass-import ]);
-    };
+
+    password-store.enable = true;
     browserpass = {
       enable = true;
       browsers = [ "chrome" "firefox" ];
