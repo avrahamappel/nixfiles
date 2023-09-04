@@ -141,6 +141,7 @@ local settings = {
 
 
 -- Global function to allow for project-level LSP config
+-- luacheck: ignore lowercase-global
 function registerLsps(args)
     local lsps = args.lsps or {}
     local lsp_settings = args.lsp_settings or {}
