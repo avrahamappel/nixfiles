@@ -69,7 +69,7 @@
   # Custom vimrc lines.
   extraConfig = ''
     source ${builtins.toString ./init.vim}
-    luafile '${builtins.toString ./setup.lua}'
+    luafile ${builtins.toString ./setup.lua}
   '';
 
   # Symlink vim to nvim binary.
