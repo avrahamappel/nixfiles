@@ -18,6 +18,9 @@
     vim-vinegar
     camelcasemotion
 
+    # Open file:line:column links correctly
+    file-line
+
     # Editor appearance
     vim-gitgutter
 
