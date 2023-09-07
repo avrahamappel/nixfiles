@@ -19,7 +19,7 @@
     camelcasemotion
 
     # Open file:line:column links correctly
-    file-line
+    vim-fetch
 
     # Editor appearance
     vim-gitgutter
