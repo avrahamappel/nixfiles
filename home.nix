@@ -8,6 +8,7 @@
     homeDirectory = builtins.getEnv "HOME";
 
     # Static files to link into home dir
+    # TODO use xdg.config
     file.".config/codespell/ignore-words".source = ./codespell/ignore-words;
   };
 
@@ -20,6 +21,7 @@
   # $ nix-env -qaP | grep wget
   home.packages = with pkgs; [
     # LSPs
+    # TODO when this makes it to stable remove this import
     (import (builtins.getFlake "nixpkgs/nixos-unstable") { }).lemminx
     lua-language-server
     nil
