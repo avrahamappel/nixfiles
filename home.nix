@@ -20,6 +20,7 @@
   # $ nix-env -qaP | grep wget
   home.packages = with pkgs; [
     # LSPs
+    (import (builtins.getFlake "nixpkgs/nixos-unstable") { }).lemminx
     lua-language-server
     nil
     nodePackages.bash-language-server

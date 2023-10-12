@@ -90,6 +90,7 @@ local servers = {
     'eslint',
     'html',
     'jsonls',
+    'lemminx',
     'lua_ls',
     'nil_ls',
     'rnix',
