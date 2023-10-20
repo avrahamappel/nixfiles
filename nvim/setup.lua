@@ -32,6 +32,12 @@ require('nvim-treesitter.configs').setup {
         },
         incremental_selection = {
             enable = true,
+            keymaps = {
+                init_selection = "gnn",
+                node_incremental = "grn",
+                scope_incremental = "grc",
+                node_decremental = "grm",
+            },
         },
     }
 }
@@ -61,7 +67,7 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local opts = { noremap = true, silent = true }
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
@@ -69,7 +75,7 @@ local on_attach = function(_, bufnr)
     --  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     --  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     --  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>c', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
@@ -143,7 +149,6 @@ local settings = {
 
 
 -- Global function to allow for project-level LSP config
--- luacheck: ignore lowercase-global
 function registerLsps(args)
     local lsps = args.lsps or {}
     local lsp_settings = args.lsp_settings or {}
@@ -202,7 +207,7 @@ rt.setup({
             -- Hover actions
             vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
-            vim.keymap.set("n", "<Leader>c", rt.code_action_group.code_action_group, { buffer = bufnr })
+            vim.keymap.set("n", "<Leader>C", rt.code_action_group.code_action_group, { buffer = bufnr })
         end,
         settings = settings
     },
@@ -291,4 +296,6 @@ end, {
 vim.api.nvim_set_keymap('', "<leader>x", ":X ", {});
 
 -- Load local config
-require('config-local').setup {}
+require('config-local').setup {
+    config_files = { ".vimrc.lua" }
+}
