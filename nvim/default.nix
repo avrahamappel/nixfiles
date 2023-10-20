@@ -59,7 +59,7 @@
     nvim-lspconfig
     nvim-treesitter-refactor
     # Not sure if I want this right now
-    # lsp_signature-nvim
+    lsp_signature-nvim
     SchemaStore-nvim # Adds schemas to json ls
     vim-vsnip
     null-ls-nvim

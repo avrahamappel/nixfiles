@@ -269,9 +269,10 @@ cmp.setup({
     },
 })
 
--- require 'lsp_signature'.setup({
---     hint_prefix = "", -- no panda
--- })
+require 'lsp_signature'.setup({
+    hint_prefix = "", -- no panda
+    floating_window = false, -- don't need the whole honkin' window
+})
 
 -- Disable diagnostics in .env files
 local group = vim.api.nvim_create_augroup("__env", { clear = true })
