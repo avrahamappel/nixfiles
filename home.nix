@@ -10,6 +10,10 @@
     # Static files to link into home dir
     # TODO use xdg.config
     file.".config/codespell/ignore-words".source = ./codespell/ignore-words;
+
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
 
   # Overlays for nixpkgs
