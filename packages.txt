@@ -18,12 +18,14 @@ lua-language-server-3.6.19
 man-db-2.11.2
 man-pages
 neovim-0.9.1
+nerdfonts-3.0.1
 nil-2023-05-09
 nix-zsh-completions-unstable-2023-01-30
 nixpkgs-fmt-1.3.0
 pass
 ripgrep-13.0.0
 rnix-lsp-unstable-2022-11-27
+scientifica-2.3
 shellcheck-0.9.0-bin
 shellcheck-0.9.0-doc
 shellcheck-0.9.0-man
