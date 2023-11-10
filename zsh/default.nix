@@ -47,6 +47,7 @@
     txn = "tmux new -A -s $*";
     txa = "tmux attach";
     txe = "txn $(basename $PWD) nvim . +\"vert Git\"";
+    txb = "ttyd -p 0 -t fontFamily=Scientifica -t fontSize=18 -B tmux attach";
   };
 
   initExtraFirst = ''

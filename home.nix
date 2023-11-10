@@ -38,6 +38,7 @@
     taplo
 
     # Fonts
+    scientifica
     ubuntu_font_family
 
     # Utilities
@@ -47,6 +48,7 @@
     ripgrep # Awesome searching tool, and also used by fzf.vim
     nixpkgs-fmt # Used by nil for formatting
     shellcheck # Used by the bash LSP
+    ttyd # For opening a terminal in the browser while screensharing
   ];
 
   # This value determines the Home Manager release that your
