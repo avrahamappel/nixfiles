@@ -47,6 +47,7 @@
     rust-vim
 
     # Theme plugins
+    gruvbox
     molokai
 
     # LSP / TreeSitter / Completion plugins

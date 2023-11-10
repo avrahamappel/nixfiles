@@ -33,7 +33,7 @@ set hlsearch
 set incsearch
 
 " Theme setup
-colorscheme molokai
+colorscheme gruvbox
 
 " Make comments italic
 hi Comment cterm=italic
