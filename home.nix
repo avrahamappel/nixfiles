@@ -40,6 +40,7 @@
     # Fonts
     scientifica
     ubuntu_font_family
+    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
     # Utilities
     codespell # Used by null-ls to provide smarter spell checking
