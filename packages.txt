@@ -34,6 +34,8 @@ taplo-0.8.0
 tealdeer-1.6.1
 tmux-3.3a
 tmux-3.3a-man
+ttyd-1.7.3
+ttyd-1.7.3-man
 typescript-language-server-3.3.2
 ubuntu-font-family-0.83
 vim-language-server-2.3.0
