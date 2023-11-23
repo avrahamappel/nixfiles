@@ -1,3 +1,5 @@
+alacritty-0.12.0
+alacritty-0.12.0-terminfo
 bash-language-server-4.9.2
 codespell-2.2.4
 diffr-0.1.5
@@ -11,8 +13,6 @@ home-manager
 home-manager-path
 jq-1.6-bin
 jq-1.6-man
-kitty-0.28.1
-kitty-0.28.1-terminfo
 lemminx-0.27.0
 lua-language-server-3.6.19
 man-db-2.11.2
@@ -29,7 +29,6 @@ scientifica-2.3
 shellcheck-0.9.0-bin
 shellcheck-0.9.0-doc
 shellcheck-0.9.0-man
-source-code-pro-2.042
 taplo-0.8.0
 tealdeer-1.6.1
 tmux-3.3a

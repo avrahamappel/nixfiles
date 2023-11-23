@@ -76,18 +76,20 @@
     };
 
     # Terminal configuration
-    kitty = {
+    alacritty = {
       enable = true;
-      font = {
-        package = pkgs.source-code-pro;
-        name = "Source Code Pro";
-        size = 14;
-      };
-      shellIntegration.mode = "no-cursor";
       settings = {
-        background_opacity = "0.75";
-        cursor_blink_interval = 0;
-        enable_audio_bell = false;
+        window = {
+          decorations =
+            if pkgs.stdenv.isDarwin then "Buttonless" else "None";
+          opacity = 0.75;
+          startup_mode = "Maximized";
+        };
+        font = {
+          normal.family = "UbuntuMono Nerd Font";
+          size = 16;
+        };
+        cursor.vi_mode_style.blinking = "On";
       };
     };
 
