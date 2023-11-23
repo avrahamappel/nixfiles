@@ -287,7 +287,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Wrapper around :terminal to run shell aliases without having to jump into an interactive shell
 -- 'X' is for 'eXecute'
 vim.api.nvim_create_user_command('X', function(args)
-    vim.cmd.terminal(string.format("zsh -i -c '%s'", table.concat(args.fargs, ' ')));
+    vim.cmd.terminal(string.format("direnv exec . zsh -i -c '%s'", table.concat(args.fargs, ' ')));
 end, {
     desc = "a wrapper around :terminal to run shell aliases without having to jump into an interactive shell",
     force = false,
