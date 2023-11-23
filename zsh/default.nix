@@ -61,6 +61,9 @@
     setopt HIST_REDUCE_BLANKS
     unsetopt BEEP
 
+    # Case-insensitive completion
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
     # Local customization
     source ${builtins.toString ./local.zsh}
   '';
