@@ -16,6 +16,13 @@
     };
   };
 
+  # Home Manager documentation
+  manual = {
+    html.enable = true;
+    json.enable = true;
+    manpages.enable = true;
+  };
+
   # Overlays for nixpkgs
   nixpkgs.overlays = [
   ];
