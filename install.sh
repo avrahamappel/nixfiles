@@ -20,9 +20,7 @@ fi
 
 echo "Linking files..."
 
-mkdir -p "$HOME/.config/nix"
 mkdir -p "$HOME/.config/home-manager"
-ln -s -f "$NIXFILES_PATH/nix.conf" "$HOME/.config/nix/nix.conf"
 ln -s -f "$NIXFILES_PATH/home.nix" "$HOME/.config/home-manager/home.nix"
 
 echo "Complete!"

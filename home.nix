@@ -23,6 +23,18 @@
     manpages.enable = true;
   };
 
+  # Nix settings
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      # Docs: https://nixos.org/manual/nix/unstable/command-ref/conf-file.html
+      experimental-features = [ "nix-command" "flakes" ];
+      keep-derivations = true;
+      keep-outputs = true;
+      access-tokens = builtins.readFile ./access-tokens.txt;
+    };
+  };
+
   # Overlays for nixpkgs
   nixpkgs.overlays = [
   ];
