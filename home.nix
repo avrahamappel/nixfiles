@@ -53,6 +53,7 @@
     nodePackages.vim-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
+    python310Packages.python-lsp-server
     rnix-lsp
     taplo
 

@@ -99,6 +99,7 @@ local servers = {
     'lemminx',
     'lua_ls',
     'nil_ls',
+    'pylsp',
     'rnix',
     'taplo',
     'vimls',
