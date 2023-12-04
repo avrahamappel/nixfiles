@@ -10,7 +10,7 @@
     # You can update Home Manager without changing this value. See
     # the Home Manager release notes for a list of state version
     # changes in each release.
-    stateVersion = "23.05";
+    stateVersion = "23.11";
     enableNixpkgsReleaseCheck = true;
 
     # Home Manager needs a bit of information about you and the
@@ -31,8 +31,7 @@
     # $ nix-env -qaP | grep wget
     packages = with pkgs; [
       # LSPs
-      # TODO when this makes it to stable remove this import
-      (import (builtins.getFlake "nixpkgs/nixos-unstable") { }).lemminx
+      lemminx
       lua-language-server
       nil
       nodePackages.bash-language-server
@@ -53,7 +52,6 @@
       codespell # Used by null-ls to provide smarter spell checking
       diffr # Used by my git config for interactive diffs
       gron # When I have no patience for JQ
-      ripgrep # Awesome searching tool, and also used by fzf.vim
       nixpkgs-fmt # Used by nil for formatting
       shellcheck # Used by the bash LSP
       ttyd # For opening a terminal in the browser while screensharing
@@ -152,6 +150,7 @@
     };
 
     jq.enable = true;
+    ripgrep.enable = true;
 
     tealdeer = {
       enable = true;
