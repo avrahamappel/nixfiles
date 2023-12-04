@@ -100,7 +100,6 @@ local servers = {
     'lua_ls',
     'nil_ls',
     'pylsp',
-    'rnix',
     'taplo',
     'vimls',
     'yamlls'

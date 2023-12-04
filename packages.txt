@@ -28,7 +28,6 @@ options.json
 pass-env
 python3.10-python-lsp-server-1.9.0
 ripgrep-13.0.0
-rnix-lsp-unstable-2022-11-27
 scientifica-2.3
 shellcheck-0.9.0-bin
 shellcheck-0.9.0-doc
