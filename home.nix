@@ -52,6 +52,10 @@
       diffr # Used by my git config for interactive diffs
       gron # When I have no patience for JQ
       nixpkgs-fmt # Used by nil for formatting
+      (qrcp # Uses QR code to transfer files between devices
+      .overrideAttrs { meta.broken = false; }) # Works on my machine
+      qrcode # Create QR code and display on the command line
+      qrtool # Decode QR codes, even from image files
       shellcheck # Used by the bash LSP
       ttyd # For opening a terminal in the browser while screensharing
     ];
