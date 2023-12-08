@@ -98,16 +98,19 @@
     };
 
     # Terminal configuration
+    # TODO fix colors
     alacritty = {
       enable = true;
       settings = {
         window = {
           opacity = 0.75;
+          decorations = "None";
           startup_mode = "Maximized";
         };
         font = {
           normal.family = "UbuntuMono Nerd Font";
-          size = 16;
+          size = 16.5;
+          offset.x = 1;
         };
         cursor.vi_mode_style.blinking = "On";
       };
