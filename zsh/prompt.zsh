@@ -13,7 +13,7 @@ last_error() {
 }
 
 prompt_arrow() {
-  echo "%B%F%(!.#.\$)%f%b"
+  echo "%B%F{#808080}%(!.#.\$)%f%b"
 }
 
 stash_count() {
@@ -45,7 +45,7 @@ jobs_count() {
 }
 
 cur_time () {
-  echo "%B%F%D{%a %b %d, %I:%M%p}%f%b"
+  echo "%B%F{#808080}%D{%a %b %d, %I:%M%p}%f%b"
 }
 
 set_prompt() {
