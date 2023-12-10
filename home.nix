@@ -62,11 +62,8 @@
   };
 
   # Home Manager documentation
-  manual = {
-    html.enable = true;
-    json.enable = true;
-    manpages.enable = true;
-  };
+  manual.manpages.enable = true;
+  
 
   # Nix settings
   nix = {
