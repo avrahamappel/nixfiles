@@ -49,6 +49,7 @@
     # Theme plugins
     gruvbox
     molokai
+    nordic-nvim
 
     # LSP / TreeSitter / Completion plugins
     nvim-treesitter.withAllGrammars

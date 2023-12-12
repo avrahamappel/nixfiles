@@ -33,7 +33,9 @@ set hlsearch
 set incsearch
 
 " Theme setup
-colorscheme gruvbox
+let g:nord_italic = v:false
+let g:nord_italic_comments = v:true
+colorscheme nordic
 
 " Make comments italic
 hi Comment cterm=italic
