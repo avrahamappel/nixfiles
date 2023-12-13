@@ -33,9 +33,7 @@ set hlsearch
 set incsearch
 
 " Theme setup
-let g:nord_italic = v:false
-let g:nord_italic_comments = v:true
-colorscheme nordic
+colorscheme habamax
 
 " Make comments italic
 hi Comment cterm=italic
