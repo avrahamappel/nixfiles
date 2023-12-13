@@ -39,8 +39,11 @@
       autoSetupRemote = true;
     };
 
-    # Always show a full diff in the commit message screen
-    commit.verbose = true;
+    commit = {
+      # Always show a full diff in the commit message screen
+      verbose = true;
+      gpgSign = true;
+    };
 
     init = {
       defaultBranch = "master";
