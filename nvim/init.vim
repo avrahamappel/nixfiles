@@ -33,7 +33,7 @@ set hlsearch
 set incsearch
 
 " Theme setup
-colorscheme habamax
+colorscheme tokyonight-night
 
 " Make comments italic
 hi Comment cterm=italic
