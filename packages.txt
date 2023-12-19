@@ -9,6 +9,7 @@ git-2.42.0
 gnupg-2.4.1
 gron-0.7.1
 hm-session-vars.sh
+home-configuration-reference-manpage
 home-manager
 home-manager-path
 jq-1.7-bin
@@ -16,7 +17,6 @@ jq-1.7-man
 lemminx-0.27.0
 lua-language-server-3.7.3
 man-db-2.11.2
-man-pages
 neovim-0.9.4
 nerdfonts-3.0.2
 nil-2023-08-09
