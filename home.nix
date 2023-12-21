@@ -18,10 +18,6 @@
     username = builtins.getEnv "USER";
     homeDirectory = builtins.getEnv "HOME";
 
-    # Static files to link into home dir
-    # TODO use xdg.config
-    file.".config/codespell/ignore-words".source = ./codespell/ignore-words;
-
     sessionVariables = {
       EDITOR = "nvim";
     };
@@ -48,7 +44,6 @@
       (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
       # Utilities
-      codespell # Used by null-ls to provide smarter spell checking
       diffr # Used by my git config for interactive diffs
       gron # When I have no patience for JQ
       nixpkgs-fmt # Used by nil for formatting
@@ -63,8 +58,9 @@
       # > git difftool [-y|--no-prompt] -x sqldiff <revision> -- <sqlite file>
       sqldiff
 
-      # For opening a terminal in the browser while screensharing
-      ttyd
+      ttyd # For opening a terminal in the browser while screensharing
+
+      typos # Code spellchecking
     ];
   };
 

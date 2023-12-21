@@ -186,12 +186,7 @@ local null_ls = require 'null-ls'
 
 null_ls.setup {
     sources = {
-        -- TODO this 👇
-        -- If and when version 2023-06-28 of null-ls is merged into NixOS 23.05 (or I start using the unstable channel),
-        -- we can switch from codespell to typos, which is apparently better (and written in Rust!)
-        null_ls.builtins.diagnostics.codespell.with {
-            extra_args = { "--ignore-words", vim.fn.expand("~/.config/codespell/ignore-words") }
-        },
+        null_ls.builtins.diagnostics.typos,
     }
 }
 
