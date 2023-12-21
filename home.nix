@@ -57,7 +57,14 @@
       qrcode # Create QR code and display on the command line
       qrtool # Decode QR codes, even from image files
       shellcheck # Used by the bash LSP
-      ttyd # For opening a terminal in the browser while screensharing
+
+      # Diff two sqlite databases.
+      # Can use with git like this:
+      # > git difftool [-y|--no-prompt] -x sqldiff <revision> -- <sqlite file>
+      sqldiff
+
+      # For opening a terminal in the browser while screensharing
+      ttyd
     ];
   };
 
