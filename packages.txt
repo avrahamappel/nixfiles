@@ -1,10 +1,11 @@
 alacritty-0.12.3
 alacritty-0.12.3-terminfo
 bash-language-server-5.0.0
-codespell-2.2.6
+ddgr-2.1
 diffr-0.1.5
 difftastic-0.52.0
 direnv-2.32.3
+du-dust-0.8.6
 git-2.42.0
 gnupg-2.4.1
 gron-0.7.1
@@ -17,6 +18,7 @@ jq-1.7-man
 lemminx-0.27.0
 lua-language-server-3.7.3
 man-db-2.11.2
+mpv-with-scripts-0.36.0
 neovim-0.9.4
 nerdfonts-3.0.2
 nil-2023-08-09
@@ -32,6 +34,7 @@ scientifica-2.3
 shellcheck-0.9.0-bin
 shellcheck-0.9.0-doc
 shellcheck-0.9.0-man
+sqldiff-3.43.2
 taplo-0.8.1
 tealdeer-1.6.1
 tmux-3.3a
@@ -40,6 +43,7 @@ tmux-terminfo
 ttyd-1.7.4
 ttyd-1.7.4-man
 typescript-language-server-4.1.0
+typos-1.16.23
 ubuntu-font-family-0.83
 vim-language-server-2.3.1
 vscode-langservers-extracted-4.8.0

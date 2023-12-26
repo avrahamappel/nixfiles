@@ -47,6 +47,9 @@
 
       # Utilities
       diffr # Used by my git config for interactive diffs
+      ddgr # Query duckduckgo from command line
+      du-dust # Intuitive disk usage
+      # dblab DB TUI
       gron # When I have no patience for JQ
       nixpkgs-fmt # Used by nil for formatting
 
