@@ -30,7 +30,6 @@ qrcode-unstable-2023-12-02
 qrcp-0.10.1
 qrtool-0.8.4
 ripgrep-13.0.0
-scientifica-2.3
 shellcheck-0.9.0-bin
 shellcheck-0.9.0-doc
 shellcheck-0.9.0-man
