@@ -3,7 +3,7 @@ alacritty-0.12.3-terminfo
 bash-language-server-5.0.0
 ddgr-2.1
 diffr-0.1.5
-difftastic-0.52.0
+difftastic-0.53.0
 direnv-2.32.3
 du-dust-0.8.6
 git-2.42.0
