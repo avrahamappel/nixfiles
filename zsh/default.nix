@@ -48,7 +48,7 @@
     txn = "tmux new -A -s $*";
     txa = "tmux attach";
     txe = "txn $(basename $PWD) nvim . +\"vert Git\"";
-    txb = "ttyd -W -p 0 -t fontFamily='Ubuntu Mono' -t fontSize=20 -B tmux attach";
+    txb = "ttyd -W -p 0 -t fontFamily='UbuntuMono Nerd Font' -t fontSize=18 -B tmux attach";
   };
 
   initExtraFirst = ''
