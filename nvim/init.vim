@@ -124,3 +124,6 @@ augroup END
 
 " Enable pasting from registers in terminal mode
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+
+" Don't add folds in dbout buffers
+autocmd FileType dbout setlocal nofoldenable
