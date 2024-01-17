@@ -45,6 +45,12 @@
     rust-tools-nvim
     typescript-nvim
     rust-vim
+    vim-rails
+
+    # DB Support
+    vim-dadbod
+    vim-dadbod-ui
+    vim-dadbod-completion
 
     # Theme plugins
     gruvbox
