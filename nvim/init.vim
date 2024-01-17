@@ -82,6 +82,8 @@ map <leader>k :let @*=@%<CR>
 map <leader>y :%y*<CR>
 " Shortcut to open fugitive window. 'n' is close to the spacebar
 map <leader>n :Git<CR>
+" Shortcut to open db window.
+map <leader>d :DBUI<CR>
 
 """""""""""""""""""""""""""""""""""""
 " Plugins settings
@@ -94,6 +96,9 @@ let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_enabled = 0
 
 let g:rustfmt_autosave = 1
+
+let g:db_ui_debug = 1
+let g:db_ui_force_echo_notifications = 1
 
 """""""""""""""""""""""""""""""""""""
 " Autocmds
