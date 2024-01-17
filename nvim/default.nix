@@ -75,6 +75,9 @@
 
     # Load per-project config
     nvim-config-local
+
+    # Use direnv
+    direnv-vim
   ];
 
   # Custom vimrc lines.
