@@ -258,7 +258,8 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'treesitter' }
+        { name = 'treesitter' },
+        { name = 'vim-dadbod-completion' }
     },
     {
         { name = 'buffer' },
