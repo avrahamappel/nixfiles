@@ -177,6 +177,6 @@
 
   targets = {
     # MacOS
-    darwin.defaults = import ./macos.nix;
+    darwin.defaults = if pkgs.stdenv.isDarwin then import ./macos.nix else { };
   };
 }
