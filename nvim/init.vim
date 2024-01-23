@@ -106,6 +106,9 @@ let g:db_ui_table_helpers = {
 \ 'postgres': {
 \   'Count': 'select count(*) from {optional_schema}{table}'
 \ },
+\ 'sqlite': {
+\   'Count': 'select count(*) from {table}'
+\ }
 \}
 
 """""""""""""""""""""""""""""""""""""
