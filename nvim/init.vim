@@ -101,10 +101,10 @@ let g:db_ui_debug = 1
 let g:db_ui_force_echo_notifications = 1
 let g:db_ui_table_helpers = {
 \ 'mysql': {
-\   'Count': 'select count(*) from {table}'
+\   'Count': 'select count(*) from {optional_schema}`{table}`'
 \ },
 \ 'postgres': {
-\   'Count': 'select count(*) from {optional_schema}{table}'
+\   'Count': 'select count(*) from {optional_schema}"{table}"'
 \ },
 \ 'sqlite': {
 \   'Count': 'select count(*) from {table}'
