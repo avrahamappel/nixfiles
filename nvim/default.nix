@@ -53,8 +53,6 @@
     vim-dadbod-completion
 
     # Theme plugins
-    gruvbox
-    molokai
     tokyonight-nvim
 
     # LSP / TreeSitter / Completion plugins
