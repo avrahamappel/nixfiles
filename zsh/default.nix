@@ -19,7 +19,7 @@
     j = "jobs";
 
     # Nix
-    ns = "nix-shell -p $@";
+    ns = "nix-shell -p $@ --run zsh";
     nr = "nix repl";
 
     # Home Manager
