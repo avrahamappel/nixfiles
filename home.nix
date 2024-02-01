@@ -115,7 +115,7 @@
         };
         font = {
           normal.family = "UbuntuMono Nerd Font";
-          size = 16.5;
+          size = 14.5;
           offset.x = 1;
         };
         cursor.vi_mode_style.blinking = "On";
