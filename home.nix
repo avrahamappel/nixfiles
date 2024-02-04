@@ -127,6 +127,10 @@
       };
     };
 
+    # This helps getting apps to show up on some systems
+    # as it generates .profile
+    bash.enable = true;
+
     # Shell configuration
     zsh = import ./zsh { };
 
