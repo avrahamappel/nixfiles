@@ -119,6 +119,11 @@
           offset.x = 1;
         };
         cursor.vi_mode_style.blinking = "On";
+        key_bindings = (pkgs.lib.optional pkgs.stdenv.isLinux {
+          key = "N";
+          mods = "Shift|Control";
+          action = "CreateNewWindow";
+        });
       };
     };
 
