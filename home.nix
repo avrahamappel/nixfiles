@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{ config
+, pkgs
+, username ? builtins.getEnv "USER"
+, homeDirectory ? builtins.getEnv "HOME"
+, ...
+}:
 
 {
   home = {
@@ -15,8 +20,7 @@
 
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
-    username = builtins.getEnv "USER";
-    homeDirectory = builtins.getEnv "HOME";
+    inherit username homeDirectory;
 
     sessionVariables = {
       EDITOR = "nvim";
@@ -77,7 +81,6 @@
 
   # Nix settings
   nix = {
-    package = pkgs.nix;
     settings = {
       # Docs: https://nixos.org/manual/nix/unstable/command-ref/conf-file.html
       experimental-features = [ "nix-command" "flakes" ];
