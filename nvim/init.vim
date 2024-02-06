@@ -45,17 +45,6 @@ set grepprg=rg\ --column\ --line-number\ --no-heading\ $*
 " Mappings configuration
 """""""""""""""""""""""""""""""""""""
 
-" Make fzf delegate to ripgrep
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --no-ignore-vcs --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
 let g:mapleader = ' '
 let g:maplocalleader = ' '
 
@@ -64,8 +53,6 @@ map <leader>b :Buffers<CR>
 map <leader>z :History<CR>
 " FZF does the filtering
 map <leader>f :Rg<CR>
-" Delegates to ripgrep and searches in ignored directories
-map <leader>g :RG<CR>
 map [q :cprevious<CR>
 map ]q :cnext<CR>
 map [l :lprevious<CR>
