@@ -22,6 +22,10 @@
     ns = "nix-shell -p $@ --run zsh";
     nr = "nix repl";
 
+    # NixOS
+    sne = "sudo vi /etc/nixos/configuration.nix";
+    snu = "sudo nixos-rebuild switch --upgrade";
+
     # Home Manager
     hm = "home-manager";
     hme = "cd ${builtins.toString ../.}; e home.nix";
