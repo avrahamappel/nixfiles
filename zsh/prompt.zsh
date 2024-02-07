@@ -8,6 +8,12 @@ directory_name() {
   echo "%B%F{cyan}%~%f%b"
 }
 
+shell_level() {
+  # Using nix-shell --run zsh increments SHLVL by 2
+  lvl=$(( "$SHLVL" / 2 ))
+  echo "%(3L. %B%F{#808080}($lvl)%f%b.)"
+}
+
 last_error() {
   echo "%(?..%B%F{red}! %?%f%b)"
 }
@@ -50,7 +56,7 @@ cur_time () {
 
 set_prompt() {
   setopt PROMPT_SUBST
-  export PROMPT=$'\n$(user_name) $(directory_name)\n$(last_error)\n$(prompt_arrow) '
+  export PROMPT=$'\n$(user_name) $(directory_name)$(shell_level)\n$(last_error)\n$(prompt_arrow) '
   export RPROMPT=$'$(stash_count)$(tmux_count)$(jobs_count)$(cur_time)'
 }
 
