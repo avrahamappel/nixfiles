@@ -1,9 +1,4 @@
-{ config
-, pkgs
-, username ? builtins.getEnv "USER"
-, homeDirectory ? builtins.getEnv "HOME"
-, ...
-}:
+{ pkgs, ... }:
 
 {
   home = {
@@ -17,10 +12,6 @@
     # changes in each release.
     stateVersion = "23.11";
     enableNixpkgsReleaseCheck = true;
-
-    # Home Manager needs a bit of information about you and the
-    # paths it should manage.
-    inherit username homeDirectory;
 
     sessionVariables = {
       EDITOR = "nvim";
@@ -116,11 +107,7 @@
           decorations = "None";
           startup_mode = "Maximized";
         };
-        font = {
-          normal.family = "UbuntuMono Nerd Font";
-          size = 14.5;
-          offset.x = 1;
-        };
+        font.normal.family = "UbuntuMono Nerd Font";
         cursor.vi_mode_style.blinking = "On";
         key_bindings = (pkgs.lib.optional pkgs.stdenv.isLinux {
           key = "N";
@@ -185,10 +172,5 @@
         };
       };
     };
-  };
-
-  targets = {
-    # MacOS
-    darwin.defaults = if pkgs.stdenv.isDarwin then import ./macos.nix else { };
   };
 }

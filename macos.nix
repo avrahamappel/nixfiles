@@ -1,26 +1,41 @@
+{ pkgs, ... }:
+
 {
-  NSGlobalDomain = {
-    NSAutomaticPeriodSubstitutionEnabled = false;
-    NSAutomaticQuoteSubstitutionEnabled = false;
-    NSAutomaticSpellingCorrectionEnabled = false;
+  imports = [ ./home.nix ];
+
+  # Override font size on mac retina screen
+  programs.alacritty.settings.font = {
+    size = 15.5;
+    offset.x = 1;
   };
 
-  "com.apple.dashboard" = { mcx-disabled = true; };
+  # Standalone needs this 
+  nix.package = pkgs.nix;
 
-  "com.apple.dock" = {
-    autohide = true;
-    static-only = true;
-  };
+  targets.darwin.defaults = {
+    NSGlobalDomain = {
+      NSAutomaticPeriodSubstitutionEnabled = false;
+      NSAutomaticQuoteSubstitutionEnabled = false;
+      NSAutomaticSpellingCorrectionEnabled = false;
+    };
 
-  "com.apple.finder" = { AppleShowAllFiles = true; };
+    "com.apple.dashboard" = { mcx-disabled = true; };
 
-  "com.apple.LaunchServices" = { LSQuarantine = false; };
+    "com.apple.dock" = {
+      autohide = true;
+      static-only = true;
+    };
 
-  "com.apple.Safari" = { IncludeDevelopMenu = true; };
+    "com.apple.finder" = { AppleShowAllFiles = true; };
 
-  "com.apple.screencapture" = { location = "~/Downloads"; };
+    "com.apple.LaunchServices" = { LSQuarantine = false; };
 
-  NSUserKeyEquivalents = {
-    Zoom = "@~=";
+    "com.apple.Safari" = { IncludeDevelopMenu = true; };
+
+    "com.apple.screencapture" = { location = "~/Downloads"; };
+
+    NSUserKeyEquivalents = {
+      Zoom = "@~=";
+    };
   };
 }
