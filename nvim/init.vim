@@ -63,7 +63,7 @@ map <leader>q :copen<CR>:lopen<CR>
 map <leader>' :cclose<CR>:lclose<CR>
 map <leader>/ :nohlsearch<CR>
 " Copy whatever's in " to system clipboard
-map <leader>v :let @*=@"<CR>
+map <leader>v :let @+=@"<CR>
 " Copy current filename to system clipboard ('k' looks like %)
 " I might already have a plugin that does this, but I can't find anything
 map <leader>k :let @*=@%<CR>
