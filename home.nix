@@ -68,7 +68,6 @@
 
   # Home Manager documentation
   manual.manpages.enable = true;
-  
 
   # Nix settings
   nix = {
@@ -107,7 +106,10 @@
           decorations = "None";
           startup_mode = "Maximized";
         };
-        font.normal.family = "UbuntuMono Nerd Font";
+        font = {
+          normal.family = "UbuntuMono Nerd Font";
+          size = 12.5;
+        };
         cursor.vi_mode_style.blinking = "On";
         key_bindings = (pkgs.lib.optional pkgs.stdenv.isLinux {
           key = "N";
