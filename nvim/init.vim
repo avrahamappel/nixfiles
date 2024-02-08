@@ -66,9 +66,9 @@ map <leader>/ :nohlsearch<CR>
 map <leader>v :let @+=@"<CR>
 " Copy current filename to system clipboard ('k' looks like %)
 " I might already have a plugin that does this, but I can't find anything
-map <leader>k :let @*=@%<CR>
+map <leader>k :let @+=@%<CR>
 " Copy contents of current file to system clipboard
-map <leader>y :%y*<CR>
+map <leader>y :%y+<CR>
 " Shortcut to open fugitive window. 'n' is close to the spacebar
 map <leader>n :Git<CR>
 " Shortcut to open db window.
