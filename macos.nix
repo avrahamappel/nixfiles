@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [ ./home.nix ];
 
   # Override font size on mac retina screen
   programs.alacritty.settings.font = {
-    size = 15.5;
+    size = lib.mkForce 15.5;
     offset.x = 1;
   };
 
