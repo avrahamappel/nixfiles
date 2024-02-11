@@ -49,7 +49,7 @@ let g:mapleader = ' '
 let g:maplocalleader = ' '
 
 " Why reach for ctrl in normal mode?
-map w <C-w>
+map <leader>w <C-w>
 map <leader>p :Files<CR>
 map <leader>b :Buffers<CR>
 map <leader>z :History<CR>
