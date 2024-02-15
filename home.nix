@@ -40,7 +40,6 @@
       (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
       # Utilities
-      diffr # Used by my git config for interactive diffs
       ddgr # Query duckduckgo from command line
       du-dust # Intuitive disk usage
       # dblab DB TUI

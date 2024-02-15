@@ -60,12 +60,6 @@
     pull = {
       ff = "only";
     };
-
-    # Use diffr for interactive mode (e.g. git add -p)
-    # difftastic doesn't support this yet
-    interactive = {
-      diffFilter = "diffr";
-    };
   };
 
   difftastic = {
