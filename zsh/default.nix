@@ -70,6 +70,8 @@
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
     # Local customization
-    source ${builtins.toString ./local.zsh}
+    if [[ -f ~/.zshrc.local ]]; then
+      source ~/.zshrc.local
+    fi
   '';
 }

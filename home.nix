@@ -75,7 +75,9 @@
       experimental-features = [ "nix-command" "flakes" ];
       keep-derivations = true;
       keep-outputs = true;
-      access-tokens = builtins.readFile ./access-tokens.txt;
+      access-tokens =
+        if builtins.pathExists "./access-tokens.txt" then
+          builtins.readFile ./access-tokens.txt else "";
     };
   };
 
