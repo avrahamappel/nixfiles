@@ -77,7 +77,7 @@
       keep-derivations = true;
       keep-outputs = true;
       access-tokens =
-        if builtins.pathExists "./access-tokens.txt" then
+        if builtins.pathExists ./access-tokens.txt then
           builtins.readFile ./access-tokens.txt else "";
     };
   };
