@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, options, ... }:
 
 {
   imports = [ ./home.nix ];
@@ -10,7 +10,12 @@
   };
 
   # Standalone needs this 
-  nix.package = pkgs.nix;
+  nix = {
+    package = pkgs.nix;
+  } // lib.optionalAttrs (builtins.hasAttr "gc" options.nix) {
+    gc.automatic = true;
+    gc.options = "--delete-older-than 30d";
+  };
 
   targets.darwin.defaults = {
     NSGlobalDomain = {
