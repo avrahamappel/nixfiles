@@ -99,6 +99,7 @@ local servers = {
     'lua_ls',
     'nil_ls',
     'pylsp',
+    'solargraph',
     'taplo',
     'vimls',
     'yamlls'

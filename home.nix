@@ -33,6 +33,7 @@
       nodePackages.vscode-langservers-extracted
       nodePackages.yaml-language-server
       python310Packages.python-lsp-server
+      solargraph
       taplo
 
       # Fonts
