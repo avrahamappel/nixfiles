@@ -24,7 +24,7 @@
 
     # NixOS
     sne = "sudo vi /etc/nixos/configuration.nix";
-    snu = "sudo nixos-rebuild switch --upgrade";
+    snu = "sudo nixos-rebuild switch --upgrade-all";
 
     # Home Manager
     hm = "home-manager";
