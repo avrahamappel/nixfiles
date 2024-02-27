@@ -103,6 +103,7 @@ local servers = {
     'solargraph',
     'taplo',
     'vimls',
+    'vuels',
     'yamlls'
 }
 
@@ -140,6 +141,11 @@ local settings = {
             command = 'clippy',
             extraArgs = { '--', '-Wclippy::pedantic' },
         },
+    },
+
+    -- Vue LS
+    vetur = {
+        ignoreProjectWarning = true
     },
 
     yaml = {
