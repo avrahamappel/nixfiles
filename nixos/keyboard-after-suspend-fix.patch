@@ -1,0 +1,22 @@
+diff --git a/drivers/input/keyboard/atkbd.c b/drivers/input/keyboard/atkbd.c
+index c229bd6b3f7f2f..7f67f9f2946b48 100644
+--- a/drivers/input/keyboard/atkbd.c
++++ b/drivers/input/keyboard/atkbd.c
+@@ -826,7 +826,7 @@ static int atkbd_probe(struct atkbd *atkbd)
+ 
+ 	if (atkbd_skip_getid(atkbd)) {
+ 		atkbd->id = 0xab83;
+-		return 0;
++		goto deactivate_kbd;
+ 	}
+ 
+ /*
+@@ -863,6 +863,7 @@ static int atkbd_probe(struct atkbd *atkbd)
+ 		return -1;
+ 	}
+ 
++deactivate_kbd:
+ /*
+  * Make sure nothing is coming from the keyboard and disturbs our
+  * internal state.
+
