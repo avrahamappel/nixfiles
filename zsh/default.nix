@@ -11,7 +11,11 @@
 
   history.extended = true;
 
-  historySubstringSearch.enable = true;
+  historySubstringSearch = {
+    enable = true;
+    searchUpKey = "^[OA";
+    searchDownKey = "^[OB";
+  };
 
   shellAliases = {
     # Shell
@@ -65,6 +69,13 @@
     setopt HIST_IGNORE_ALL_DUPS
     setopt HIST_REDUCE_BLANKS
     unsetopt BEEP
+
+    # Force emacs mode
+    bindkey -e
+
+    # Make sure we can search history
+    bindkey "^[OA" up-line-or-search
+    bindkey "^[OB" down-line-or-search
 
     # Case-insensitive completion
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
