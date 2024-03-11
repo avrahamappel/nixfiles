@@ -71,6 +71,8 @@ map <leader>k :let @+=@%<CR>
 map <leader>y :%y+<CR>
 " Shortcut to open fugitive window. 'n' is close to the spacebar
 map <leader>n :Git<CR>
+" Start a fugitive command
+map <leader>g :G
 " Shortcut to open db window.
 map <leader>d :DBUI<CR>
 
