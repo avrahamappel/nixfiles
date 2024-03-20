@@ -25,6 +25,7 @@ set ruler
 set showcmd
 set splitright
 set splitbelow
+set list " Show things like tabs, trailing whitespace
 
 " Search options
 set ignorecase
