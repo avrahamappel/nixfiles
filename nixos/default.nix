@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-{ 
+{
   imports = [ <home-manager/nixos> ];
 
   # Driver for Canon PIXMA printer
@@ -57,5 +57,17 @@
     text = ''
       ln -s -f /bin/sh /bin/bash
     '';
+  };
+
+  # Guest user account
+  fileSystems."/home/guest" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "size=4G" "mode=777" ];
+  };
+  users.users.guest = {
+    isNormalUser = true;
+    description = "Guest";
+    hashedPassword = "";
   };
 }
