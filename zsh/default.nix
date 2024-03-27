@@ -79,10 +79,5 @@
 
     # Case-insensitive completion
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-    # Local customization
-    if [[ -f ~/.zshrc.local ]]; then
-      source ~/.zshrc.local
-    fi
   '';
 }
