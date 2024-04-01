@@ -26,6 +26,7 @@ set showcmd
 set splitright
 set splitbelow
 set list " Show things like tabs, trailing whitespace
+set listchars=tab:<->,multispace:.,lead:\\x20,trail:.,nbsp:+
 
 " Search options
 set ignorecase
