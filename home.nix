@@ -13,10 +13,6 @@
     stateVersion = "23.11";
     enableNixpkgsReleaseCheck = true;
 
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
-
     # TODO move aliases here
 
     # Packages that should be installed to the user profile.

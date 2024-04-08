@@ -92,4 +92,6 @@
 
   # Symlink vi to nvim binary.
   viAlias = true;
+
+  defaultEditor = true;
 }
