@@ -36,8 +36,14 @@
   # Garbage collection
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "monthly";
     options = "--delete-older-than 30d";
+  };
+
+  # Optimization
+  nix.optimise = {
+    automatic = true;
+    dates = "weekly";
   };
 
   environment.systemPackages = with pkgs; [
