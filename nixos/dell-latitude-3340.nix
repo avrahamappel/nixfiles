@@ -12,7 +12,7 @@
   boot.kernel.sysctl = {
     "vm.dirty_ratio" = 1;
     "vm.dirty_background_ratio" = 2;
-    "vm.swappiness" = 80;
+    "vm.swappiness" = 100;
   };
   # Make browsers faster
   services.psd.enable = true;
