@@ -43,7 +43,7 @@
   # Optimization
   nix.optimise = {
     automatic = true;
-    dates = "weekly";
+    dates = [ "weekly" ];
   };
 
   environment.systemPackages = with pkgs; [
