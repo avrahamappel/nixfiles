@@ -16,4 +16,7 @@
   };
   # Make browsers faster
   services.psd.enable = true;
+
+  # Power management
+  services.auto-cpufreq.enable = true;
 }
