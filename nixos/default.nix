@@ -48,8 +48,14 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
+
+    # Clipboard support
     wl-clipboard
     xclip
+
+    # VMs
+    quickemu
+    spice-gtk
   ];
   # Don't install Gnome web browser by default
   environment.gnome.excludePackages = with pkgs.gnome; [ epiphany ];
@@ -75,5 +81,14 @@
     isNormalUser = true;
     description = "Guest";
     hashedPassword = "";
+  };
+
+  # Enable forwarding USB devices to virtual machines via SPICE.
+  security.polkit.enable = true;
+  security.wrappers.spice-client-glib-usb-acl-helper = {
+    owner = "root";
+    group = "root";
+    setuid = true;
+    source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
   };
 }
