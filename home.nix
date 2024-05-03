@@ -22,7 +22,7 @@
       # LSPs
       lemminx
       lua-language-server
-      # nil
+      nil
       nixd
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
