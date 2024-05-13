@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [ ./. ];
 
@@ -19,4 +21,10 @@
 
   # Power management
   services.auto-cpufreq.enable = true;
+
+  # Graphics
+  hardware.opengl.extraPackages = with pkgs; [
+    intel-vaapi-driver
+    mesa.drivers
+  ];
 }
