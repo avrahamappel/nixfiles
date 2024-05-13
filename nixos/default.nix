@@ -48,6 +48,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
+    gnomeExtensions.vitals
 
     # Clipboard support
     wl-clipboard
