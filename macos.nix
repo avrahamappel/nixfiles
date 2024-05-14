@@ -17,6 +17,14 @@
     gc.options = "--delete-older-than 30d";
   };
 
+  # MacOS updates remove this from /etc/zshrc, so just adding it here
+  programs.zsh.initExtra = ''
+    # Start Nix daemon
+    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+      . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+    fi
+  '';
+
   targets.darwin.defaults = {
     NSGlobalDomain = {
       NSAutomaticPeriodSubstitutionEnabled = false;
