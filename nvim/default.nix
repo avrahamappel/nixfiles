@@ -46,6 +46,7 @@
     typescript-nvim
     rust-vim
     vim-rails
+    vim-ledger
 
     # DB Support
     vim-dadbod
