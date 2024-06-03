@@ -31,7 +31,7 @@
       nodePackages.vscode-langservers-extracted
       nodePackages.yaml-language-server
       phpactor
-      python310Packages.python-lsp-server
+      python3Packages.python-lsp-server
       solargraph
       taplo
 
