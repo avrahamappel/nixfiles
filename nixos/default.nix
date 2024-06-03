@@ -3,6 +3,9 @@
 {
   imports = [ <home-manager/nixos> ];
 
+  # Latest Linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Driver for Canon PIXMA printer
   services.printing.drivers = [ pkgs.cnijfilter2 ];
 
