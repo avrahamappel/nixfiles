@@ -112,7 +112,7 @@
           size = 12.5;
         };
         cursor.vi_mode_style.blinking = "On";
-        key_bindings = (pkgs.lib.optional pkgs.stdenv.isLinux {
+        keyboard.bindings = (pkgs.lib.optional pkgs.stdenv.isLinux {
           key = "N";
           mods = "Shift|Control";
           action = "CreateNewWindow";
