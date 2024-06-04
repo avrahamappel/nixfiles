@@ -1,7 +1,10 @@
 { pkgs, lib, ... }:
 
 {
-  imports = [ ./home.nix ];
+  imports = [
+    ../home.nix
+    ./skhd.nix
+  ];
 
   # Override font size on mac retina screen
   programs.alacritty.settings.font = {
