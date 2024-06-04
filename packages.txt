@@ -50,7 +50,7 @@ ruby3.1.4-rainbow-3.1.1
 ruby3.1.4-rbs-2.8.4
 ruby3.1.4-regexp_parser-2.8.2
 ruby3.1.4-reverse_markdown-2.1.1
-ruby3.1.4-rexml-3.2.6
+ruby3.1.4-rexml-3.2.8
 ruby3.1.4-rubocop-1.57.2
 ruby3.1.4-rubocop-ast-1.30.0
 ruby3.1.4-ruby-progressbar-1.13.0
