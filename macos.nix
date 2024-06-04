@@ -1,4 +1,4 @@
-{ pkgs, lib, options, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [ ./home.nix ];
@@ -12,7 +12,6 @@
   # Standalone needs this 
   nix = {
     package = pkgs.nix;
-  } // lib.optionalAttrs (builtins.hasAttr "gc" options.nix) {
     gc.automatic = true;
     gc.options = "--delete-older-than 30d";
   };
