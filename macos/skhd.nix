@@ -9,7 +9,14 @@
     text = ''
       # Open alacritty on cmd - return
       # if there's already an instance running, open new window
-      cmd - return : ${config.programs.alacritty.package}/bin/alacritty msg create-window
+      ctrl + cmd - return : ${config.programs.alacritty.package}/bin/alacritty msg create-window
+    '';
+
+    onChange = ''
+      # Nix version doesn't seem to pick up changes
+      if [[ -f "/tmp/skhd_$USER.pid" ]]; then
+        ${pkgs.skhd}/bin/skhd --reload
+      fi
     '';
   };
 
