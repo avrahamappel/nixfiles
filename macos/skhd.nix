@@ -8,8 +8,8 @@
   home.file.".config/skhd/skhdrc" = {
     text = ''
       # Open alacritty on cmd - return
-      # if there's already an instance running, open new window
-      ctrl + cmd - return : ${config.programs.alacritty.package}/bin/alacritty msg create-window
+      # if there's already an instance running, open new window, otherwise start a new instance
+      ctrl + cmd - return : ${config.programs.alacritty.package}/bin/alacritty msg create-window 2>&1 || /usr/bin/open -a ${config.programs.alacritty.package}/Applications/Alacritty.app
     '';
 
     onChange = ''
