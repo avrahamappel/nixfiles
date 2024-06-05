@@ -131,7 +131,7 @@
     git = import ./git.nix { };
 
     # Editor config
-    neovim = import ./nvim { inherit pkgs; };
+    neovim = import ./nvim { inherit pkgs; inherit (pkgs) lib; };
 
     # Passwords
     gpg = { enable = true; };

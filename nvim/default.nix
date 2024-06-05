@@ -1,7 +1,26 @@
-{ pkgs }:
+{ pkgs, lib }:
 
 {
   enable = true;
+
+  # Use neovim 0.10
+  package =
+    let
+      pkgs-nvim-0-10 = pkgs.fetchFromGitHub {
+        owner = "NixOS";
+        repo = "nixpkgs";
+        rev = "752d81e439573637074c069df35fda58d4ff73c9";
+        hash = "sha256-HXiP93DPRQG27UT+S67uxcoSwkkHt+WVE5YXNOeA+9Q=";
+      };
+    in
+    if (lib.strings.versionOlder pkgs.neovim.version "0.10")
+    then
+      pkgs.callPackage "${pkgs-nvim-0-10}/pkgs/by-name/ne/neovim-unwrapped/package.nix"
+        {
+          inherit (pkgs.darwin.apple_sdk.frameworks) CoreServices;
+          lua = pkgs.luajit;
+        }
+    else pkgs.neovim-unwrapped;
 
   # Don't use any providers for now.
   withNodeJs = false;
@@ -33,7 +52,6 @@
     # Plugins that add actions
     emmet-vim
     vim-repeat
-    vim-commentary
     vim-fugitive
     vim-rhubarb
     vim-surround
@@ -41,7 +59,7 @@
     vim-speeddating
 
     # Language specific plugins
-    markdown-preview-nvim 
+    markdown-preview-nvim
     rust-tools-nvim
     typescript-nvim
     rust-vim
