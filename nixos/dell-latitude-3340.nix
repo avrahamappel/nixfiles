@@ -20,4 +20,10 @@
     intel-vaapi-driver
     mesa.drivers
   ];
+  hardware.opengl.driSupport = true;
+  hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [
+    intel-vaapi-driver
+    mesa.drivers
+  ];
+  hardware.opengl.driSupport32Bit = true;
 }
