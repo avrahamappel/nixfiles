@@ -34,6 +34,7 @@
       python3Packages.python-lsp-server
       solargraph
       taplo
+      typos-lsp
 
       # Fonts
       ubuntu_font_family
@@ -52,8 +53,6 @@
       shellcheck # Used by the bash LSP
 
       ttyd # For opening a terminal in the browser while screensharing
-
-      typos # Code spellchecking
     ];
   };
 

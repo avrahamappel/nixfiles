@@ -103,6 +103,7 @@ local servers = {
     'phpactor',
     'solargraph',
     'taplo',
+    'typos_lsp',
     'vimls',
     'vuels',
     'yamlls'
@@ -186,17 +187,6 @@ registerLsps { lsps = servers, settings = settings }
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
-
----------------------------
--- Null LS Configuration --
----------------------------
-local null_ls = require 'null-ls'
-
-null_ls.setup {
-    sources = {
-        null_ls.builtins.diagnostics.typos,
-    }
-}
 
 ------------------------------
 -- Rust Tools Configuration --
