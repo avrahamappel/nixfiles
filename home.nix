@@ -42,22 +42,14 @@
       # Utilities
       ddgr # Query duckduckgo from command line
       du-dust # Intuitive disk usage
-      # dblab DB TUI
       gron # When I have no patience for JQ
       nixpkgs-fmt # Used by nil for formatting
 
       # QR utilities
-      (qrcp # Uses QR code to transfer files between devices
-      .overrideAttrs { meta.broken = false; }) # Works on my machine
-      qrcode # Create QR code and display on the command line
+      qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
 
       shellcheck # Used by the bash LSP
-
-      # Diff two sqlite databases.
-      # Can use with git like this:
-      # > git difftool [-y|--no-prompt] -x sqldiff <revision> -- <sqlite file>
-      sqldiff
 
       ttyd # For opening a terminal in the browser while screensharing
 
