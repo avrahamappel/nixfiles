@@ -13,14 +13,12 @@
         hash = "sha256-HXiP93DPRQG27UT+S67uxcoSwkkHt+WVE5YXNOeA+9Q=";
       };
     in
-    if (lib.strings.versionOlder pkgs.neovim.version "0.10")
-    then
-      pkgs.callPackage "${pkgs-nvim-0-10}/pkgs/by-name/ne/neovim-unwrapped/package.nix"
+    lib.mkIf (lib.strings.versionOlder pkgs.neovim.version "0.10")
+      (pkgs.callPackage "${pkgs-nvim-0-10}/pkgs/by-name/ne/neovim-unwrapped/package.nix"
         {
           inherit (pkgs.darwin.apple_sdk.frameworks) CoreServices;
           lua = pkgs.luajit;
-        }
-    else pkgs.neovim-unwrapped;
+        });
 
   # Don't use any providers for now.
   withNodeJs = false;
