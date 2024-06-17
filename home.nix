@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./zsh
+    ./nvim
+    ./git.nix
+  ];
+
   home = {
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
@@ -114,15 +120,6 @@
     # This helps getting apps to show up on some systems
     # as it generates .profile
     bash.enable = true;
-
-    # Shell configuration
-    zsh = import ./zsh { };
-
-    # Git
-    git = import ./git.nix { };
-
-    # Editor config
-    neovim = import ./nvim { inherit pkgs; inherit (pkgs) lib; };
 
     # Passwords
     gpg = { enable = true; };
