@@ -15,6 +15,9 @@
   # Power management
   services.auto-cpufreq.enable = true;
 
+  # Firmware
+  hardware.enableAllFirmware = true;
+
   # Graphics
   hardware.opengl.extraPackages = with pkgs; [
     intel-vaapi-driver
