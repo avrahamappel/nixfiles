@@ -102,6 +102,9 @@
         require('mini.ai').setup()
       '';
     }
+
+    # Highlight / clean trailing whitespace
+    vim-better-whitespace
   ];
 
   # Custom vimrc lines.
