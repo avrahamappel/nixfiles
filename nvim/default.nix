@@ -93,6 +93,15 @@
 
     # Use direnv
     direnv-vim
+
+    # Mini.nvim (collection of plugins)
+    {
+      plugin = mini-nvim;
+      type = "lua";
+      config = /* lua */ ''
+        require('mini.ai').setup()
+      '';
+    }
   ];
 
   # Custom vimrc lines.
