@@ -22,7 +22,8 @@
 
   home.activation.install-skhd = ''
     if [[ ! -f "$HOME/Library/LaunchAgents/com.koekeishiya.skhd.plist" ]]; then
-      ${pkgs.skhd}/bin/skhd --install-service
+      echo "Don't forget to install the skhd service!"
+      echo '`skhd --install-service`'
     fi
   '';
 }
