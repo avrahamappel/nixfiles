@@ -1,5 +1,7 @@
-alacritty-0.12.3
-alacritty-0.12.3-terminfo
+alacritty-0.13.2
+alacritty-0.13.2-terminfo
+bash-interactive-5.2p26
+bash-interactive-5.2p26-man
 bash-language-server-5.1.2
 ddgr-2.2
 difftastic-0.56.1
