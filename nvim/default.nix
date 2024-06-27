@@ -104,7 +104,16 @@
       }
 
       # Highlight / clean trailing whitespace
-      vim-better-whitespace
+      {
+        plugin = vim-better-whitespace;
+        type = "viml";
+        config = /* vim */ ''
+          let g:better_whitespace_filetypes_blacklist = ['help', 'markdown']
+          let g:better_whitespace_skip_empty_lines = 1
+          let g:current_line_whitespace_disabled_soft = 1
+        '';
+      }
+
     ];
 
     # Custom vimrc lines.
