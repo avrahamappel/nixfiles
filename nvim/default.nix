@@ -26,15 +26,30 @@
     withPython3 = false;
     withRuby = false;
 
-    # List of vim plugins to install optionally associated with configuration to be placed in init.vim.
     plugins = with pkgs.vimPlugins; [
       # Nothing wrong with some extra speed
       impatient-nvim
 
       # Navigation plugins
-      fzf-vim
+      {
+        plugin = fzf-vim;
+        type = "viml";
+        config = /* vim */ ''
+          map <leader>p :Files<CR>
+          map <leader>b :Buffers<CR>
+          map <leader>z :History<CR>
+          " FZF does the filtering
+          map <leader>f :Rg<CR>
+        '';
+      }
       vim-vinegar
-      camelcasemotion
+      {
+        plugin = camelcasemotion;
+        type = "viml";
+        config = /* vim */ ''
+          call camelcasemotion#CreateMotionMappings('c')
+        '';
+      }
 
       # Open file:line:column links correctly
       vim-fetch
@@ -44,14 +59,22 @@
 
       # Code style / syntax plugins
       editorconfig-vim
-      vim-prettier
       vim-polyglot
       vim-endwise
 
       # Plugins that add actions
       emmet-vim
       vim-repeat
-      vim-fugitive
+      {
+        plugin = vim-fugitive;
+        type = "viml";
+        config = /* vim */ ''
+          " Shortcut to open fugitive window. 'n' is close to the spacebar
+          map <leader>n :Git<CR>
+          " Start a fugitive command
+          map <leader>g :G
+        '';
+      }
       vim-rhubarb
       vim-surround
       vim-abolish
@@ -61,17 +84,53 @@
       markdown-preview-nvim
       rust-tools-nvim
       typescript-nvim
-      rust-vim
+      {
+        plugin = rust-vim;
+        type = "viml";
+        config = /* vim */ ''
+          let g:rustfmt_autosave = 1
+        '';
+      }
       vim-rails
       vim-ledger
 
       # DB Support
       vim-dadbod
-      vim-dadbod-ui
+      {
+        plugin = vim-dadbod-ui;
+        type = "viml";
+        config = /* vim */ ''
+          " Shortcut to open db window.
+          map <leader>d :DBUI<CR>
+
+          let g:db_ui_debug = 1
+          let g:db_ui_force_echo_notifications = 1
+          let g:db_ui_table_helpers = {
+          \ 'mysql': {
+          \   'Count': 'select count(*) from {optional_schema}`{table}`'
+          \ },
+          \ 'postgres': {
+          \   'Count': 'select count(*) from {optional_schema}"{table}"'
+          \ },
+          \ 'sqlite': {
+          \   'Count': 'select count(*) from {table}'
+          \ }
+          \}
+          let g:db_ui_auto_execute_table_helpers = 1
+
+          " Don't add folds in dbout buffers
+          autocmd FileType dbout setlocal nofoldenable
+        '';
+      }
       vim-dadbod-completion
 
       # Theme plugins
-      tokyonight-nvim
+      {
+        plugin = tokyonight-nvim;
+        config = /* vim */ ''
+          colorscheme tokyonight-night
+        '';
+      }
 
       # LSP / TreeSitter / Completion plugins
       nvim-treesitter.withAllGrammars
