@@ -27,13 +27,28 @@
     withRuby = false;
 
     plugins = with pkgs.vimPlugins; [
+      # Null plugin, just sets leader keys
+      # Must be on top so it's the first thing written to init.vim
+      {
+        plugin = pkgs.stdenv.mkDerivation {
+          name = "vim-plugin-set-leader-keys-to-space";
+          src = ./empty;
+          installPhase = ''
+            cp -r $src $out
+          '';
+        };
+        config = ''
+          let g:mapleader = ' '
+          let g:maplocalleader = ' '
+        '';
+      }
+
       # Nothing wrong with some extra speed
       impatient-nvim
 
       # Navigation plugins
       {
         plugin = fzf-vim;
-        type = "viml";
         config = /* vim */ ''
           map <leader>p :Files<CR>
           map <leader>b :Buffers<CR>
@@ -45,7 +60,6 @@
       vim-vinegar
       {
         plugin = camelcasemotion;
-        type = "viml";
         config = /* vim */ ''
           call camelcasemotion#CreateMotionMappings('c')
         '';
@@ -67,7 +81,6 @@
       vim-repeat
       {
         plugin = vim-fugitive;
-        type = "viml";
         config = /* vim */ ''
           " Shortcut to open fugitive window. 'n' is close to the spacebar
           map <leader>n :Git<CR>
@@ -86,7 +99,6 @@
       typescript-nvim
       {
         plugin = rust-vim;
-        type = "viml";
         config = /* vim */ ''
           let g:rustfmt_autosave = 1
         '';
@@ -98,7 +110,7 @@
       vim-dadbod
       {
         plugin = vim-dadbod-ui;
-        type = "viml";
+        # type = "viml";
         config = /* vim */ ''
           " Shortcut to open db window.
           map <leader>d :DBUI<CR>
@@ -165,7 +177,6 @@
       # Highlight / clean trailing whitespace
       {
         plugin = vim-better-whitespace;
-        type = "viml";
         config = /* vim */ ''
           let g:better_whitespace_filetypes_blacklist = ['help', 'markdown']
           let g:better_whitespace_skip_empty_lines = 1

@@ -43,9 +43,6 @@ set grepprg=rg\ --column\ --line-number\ --no-heading\ $*
 " Mappings configuration
 """""""""""""""""""""""""""""""""""""
 
-let g:mapleader = ' '
-let g:maplocalleader = ' '
-
 " Why reach for ctrl in normal mode?
 map <leader>w <C-w>
 
