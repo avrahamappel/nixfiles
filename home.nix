@@ -38,6 +38,7 @@
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
+      zbar # `zbarcam` decodes from webcam stream
     ];
   };
 
