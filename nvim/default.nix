@@ -203,4 +203,24 @@
 
     defaultEditor = true;
   };
+
+  home.packages = with pkgs; [
+    # LSPs
+    lemminx
+    lua-language-server
+    nil
+    nixd
+    nodePackages.bash-language-server
+    nodePackages.typescript-language-server
+    nodePackages.vim-language-server
+    nodePackages.vls
+    nodePackages.vscode-langservers-extracted
+    nodePackages.yaml-language-server
+    phpactor
+    python3Packages.python-lsp-server
+    shellcheck # Used by the bash LSP
+    solargraph
+    taplo
+    typos-lsp
+  ];
 }

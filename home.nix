@@ -25,23 +25,6 @@
     # To search by name, run:
     # $ nix-env -qaP | grep wget
     packages = with pkgs; [
-      # LSPs
-      lemminx
-      lua-language-server
-      nil
-      nixd
-      nodePackages.bash-language-server
-      nodePackages.typescript-language-server
-      nodePackages.vim-language-server
-      nodePackages.vls
-      nodePackages.vscode-langservers-extracted
-      nodePackages.yaml-language-server
-      phpactor
-      python3Packages.python-lsp-server
-      solargraph
-      taplo
-      typos-lsp
-
       # Fonts
       ubuntu_font_family
       (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
@@ -55,10 +38,6 @@
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
-
-      shellcheck # Used by the bash LSP
-
-      ttyd # For opening a terminal in the browser while screensharing
     ];
   };
 
