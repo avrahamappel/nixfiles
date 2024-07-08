@@ -69,8 +69,6 @@ tealdeer-1.6.1
 tmux-3.4
 tmux-3.4-man
 tmux-terminfo
-ttyd-1.7.7
-ttyd-1.7.7-man
 typescript-language-server-4.3.3
 typos-lsp-0.1.18
 ubuntu-font-family-0.83
@@ -78,5 +76,7 @@ vim-language-server-2.3.1
 vls-0.8.5
 vscode-langservers-extracted-4.10.0
 yaml-language-server-1.14.0
+zbar-0.23.92
+zbar-0.23.92-man
 zsh-5.9
 zsh-5.9-man
