@@ -36,6 +36,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # Must-have
+    vim
+
+    # Gnome extensions
     gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
     gnomeExtensions.vitals
 
