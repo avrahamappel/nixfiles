@@ -21,6 +21,7 @@
     shellAliases = {
       # Shell
       e = "$EDITOR $*";
+      se = "sudo nvim -u ~/.config/nvim/init.lua";
       j = "jobs";
 
       # Nix
@@ -28,7 +29,7 @@
       nr = "nix repl";
 
       # NixOS
-      sne = "sudo vi /etc/nixos/configuration.nix";
+      sne = "se /etc/nixos/configuration.nix";
       snu = "sudo nixos-rebuild switch --upgrade-all";
 
       # Home Manager
