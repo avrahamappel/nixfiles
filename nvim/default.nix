@@ -178,7 +178,7 @@
       {
         plugin = vim-better-whitespace;
         config = /* vim */ ''
-          let g:better_whitespace_filetypes_blacklist = ['help', 'markdown']
+          let g:better_whitespace_filetypes_blacklist = ['help', 'markdown', 'dbout']
           let g:better_whitespace_skip_empty_lines = 1
           let g:current_line_whitespace_disabled_soft = 1
         '';
