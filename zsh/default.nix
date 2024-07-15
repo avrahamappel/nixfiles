@@ -53,6 +53,9 @@
       gs = "git status -sb";
       gst = "git stash";
 
+      # Misc
+      ts = "toastify send";
+
       # Tmux
       tx = "tmux";
       txn = "tmux new -A -s $*";

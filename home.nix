@@ -33,6 +33,7 @@
       ddgr # Query duckduckgo from command line
       du-dust # Intuitive disk usage
       gron # When I have no patience for JQ
+      toastify # Send ad-hoc notifications 
 
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
