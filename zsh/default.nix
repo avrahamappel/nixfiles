@@ -35,7 +35,7 @@
       # Home Manager
       hm = "home-manager";
       hme = "cd ${builtins.toString ../.}; e home.nix";
-      hmu = "nix-channel --update; home-manager switch; home-manager packages | sort > ${builtins.toString ../.}/packages.txt";
+      hmu = "nix-channel --update; home-manager switch";
 
       # Git
       ga = "git add -p";
