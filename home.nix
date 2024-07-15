@@ -33,12 +33,11 @@
       ddgr # Query duckduckgo from command line
       du-dust # Intuitive disk usage
       gron # When I have no patience for JQ
-      nixpkgs-fmt # Used by nil for formatting
 
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
-      zbar # `zbarcam` decodes from webcam stream
+      zbar # `zbarcam` decodes from webcam stream (only on linux)
     ];
   };
 

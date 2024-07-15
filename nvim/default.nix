@@ -210,6 +210,7 @@
     lua-language-server
     nil
     nixd
+    nixpkgs-fmt # Used by nil for formatting
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     nodePackages.vim-language-server
