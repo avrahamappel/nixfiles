@@ -181,40 +181,6 @@ registerLsps { lsps = servers, settings = settings }
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
 
-------------------------------
--- Rust Tools Configuration --
-------------------------------
-local rt = require("rust-tools")
-
-rt.setup({
-    server = {
-        on_attach = function(_arg, bufnr)
-            -- Call normal on_attach function
-            on_attach(_arg, bufnr)
-            -- Hover actions
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code action groups
-            vim.keymap.set("n", "<Leader>C", rt.code_action_group.code_action_group, { buffer = bufnr })
-        end,
-        settings = settings
-    },
-    tools = {
-        inlay_hints = {
-            only_current_line = true,
-        },
-    },
-})
-
----------------------------
--- typescript.nvim setup --
----------------------------
-require("typescript").setup({
-    server = {
-        on_attach = on_attach,
-        settings = settings,
-    }
-})
-
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup({
