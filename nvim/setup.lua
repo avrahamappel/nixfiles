@@ -249,8 +249,3 @@ end, {
 });
 -- Map for the above.
 vim.api.nvim_set_keymap('', "<leader>x", ":X ", {});
-
--- Load local config
-require('config-local').setup {
-    config_files = { ".vimrc.lua" }
-}

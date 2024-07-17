@@ -206,7 +206,15 @@
       plenary-nvim # Required by null-ls
 
       # Load per-project config
-      nvim-config-local
+      {
+        plugin = nvim-config-local;
+        type = "lua";
+        config = /* lua */ ''
+          require('config-local').setup {
+            config_files = { ".vimrc.lua" }
+          }
+        '';
+      }
 
       # Use direnv
       direnv-vim
