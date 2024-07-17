@@ -52,7 +52,9 @@
         '';
       }
 
-      # Navigation plugins
+      ######################
+      # Navigation plugins #
+      ######################
       {
         plugin = fzf-vim;
         config = /* vim */ ''
@@ -152,11 +154,12 @@
       vim-rails
       vim-ledger
 
-      # DB Support
+      ##############
+      # DB Support #
+      ##############
       vim-dadbod
       {
         plugin = vim-dadbod-ui;
-        # type = "viml";
         config = /* vim */ ''
           " Shortcut to open db window.
           map <leader>d :DBUI<CR>
