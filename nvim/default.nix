@@ -43,8 +43,14 @@
         '';
       }
 
-      # Nothing wrong with some extra speed
-      impatient-nvim
+      {
+        # Nothing wrong with some extra speed
+        plugin = impatient-nvim;
+        type = "lua";
+        config = ''
+          require 'impatient'
+        '';
+      }
 
       # Navigation plugins
       {
