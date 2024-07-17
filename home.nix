@@ -7,6 +7,7 @@
     ./zsh
     ./git.nix
     ./nvim
+    ./passwords.nix
   ];
 
   home = {
@@ -80,22 +81,6 @@
     # This helps getting apps to show up on some systems
     # as it generates .profile
     bash.enable = true;
-
-    # Passwords
-    gpg = { enable = true; };
-
-    password-store = {
-      enable = true;
-      package = pkgs.pass.withExtensions (exts: [
-        exts.pass-audit
-        exts.pass-update
-      ]);
-    };
-
-    browserpass = {
-      enable = true;
-      browsers = [ "firefox" ];
-    };
 
     # Other stuff
     tmux = {
