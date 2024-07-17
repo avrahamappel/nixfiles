@@ -5,6 +5,7 @@
     ./zsh
     ./nvim
     ./git.nix
+    ./firefox.nix
   ];
 
   home = {
