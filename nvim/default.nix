@@ -243,11 +243,9 @@
 
     ];
 
-    # Custom vimrc lines.
-    extraConfig = ''
-      source ${builtins.toString ./init.vim}
-      luafile ${builtins.toString ./setup.lua}
-    '';
+    # Custom config
+    extraConfig = builtins.readFile ./init.vim;
+    extraLuaConfig = builtins.readFile ./setup.lua;
 
     # Symlink vim to nvim binary.
     vimAlias = true;
