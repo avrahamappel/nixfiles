@@ -12,10 +12,10 @@ in
       extensions = with nur.repos.rycee.firefox-addons; [
         adblocker-ultimate
         automatic-dark
-        browserpass-ce
+        browserpass
         consent-o-matic
-        copy-link-text-webextension
-        duckduckgo-for-firefox
+        copy-link-text
+        duckduckgo-privacy-essentials
         enhanced-github
       ];
       # Enable addons automatically
