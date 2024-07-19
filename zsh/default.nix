@@ -30,7 +30,7 @@
 
       # NixOS
       sne = "se /etc/nixos/configuration.nix";
-      snu = "sudo nixos-rebuild switch --upgrade-all";
+      snu = "sudo nixos-rebuild switch --fast";
 
       # Home Manager
       hm = "home-manager";
