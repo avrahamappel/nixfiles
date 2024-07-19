@@ -36,12 +36,12 @@
       ddgr # Query duckduckgo from command line
       du-dust # Intuitive disk usage
       gron # When I have no patience for JQ
-      toastify # Send ad-hoc notifications 
+      toastify # Send ad-hoc notifications
 
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
-      zbar # `zbarcam` decodes from webcam stream (only on linux)
+      qrscan # Scan QR codes using system camera (from terminal! with a preview!)
     ];
   };
 
