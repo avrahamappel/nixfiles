@@ -41,7 +41,7 @@
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
-    ] ++ lib.optionals pkgs.stdenv.isLinux (with pkgs; [
+    ] ++ lib.optionals stdenv.isLinux [
       # This is currently marked broken on MacOS
       # It needs the following darwin.apple_sdk.frameworks in buildInputs:
       # AppKit AVFoundation CoreMedia
@@ -49,7 +49,7 @@
       # Could not set device property CameraFormat with value 1920x1080@15FPS, NV12 Format: Not Found/Rejected/Unsupported
       # May be related: https://github.com/l1npengtul/nokhwa/issues/100
       qrscan # Scan QR codes using system camera (from terminal! with a preview!)
-    ]);
+    ];
   };
 
   # Home Manager documentation
