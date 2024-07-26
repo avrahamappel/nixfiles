@@ -13,7 +13,10 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.avraham = {
-      imports = [ ../home.nix ];
+      imports = [
+        ./dconf.nix
+        ../home.nix
+      ];
     };
   };
 
@@ -85,4 +88,13 @@
     setuid = true;
     source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
   };
+
+  # Gnome accounts defaults
+  programs.dconf.profiles.user.databases = [
+    {
+      settings = {
+        "org/gnome/desktop/interface".clock-format = "12h";
+      };
+    }
+  ];
 }
