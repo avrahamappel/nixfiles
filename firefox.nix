@@ -13,7 +13,6 @@ in
         adblocker-ultimate
         automatic-dark
         browserpass
-        consent-o-matic
         copy-link-text
         duckduckgo-privacy-essentials
         enhanced-github
