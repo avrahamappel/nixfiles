@@ -17,9 +17,9 @@ in
       default = [ "Alacritty" "Firefox" "Mail" ];
       description = ''
         Up to seven apps to be assigned to hotkeys in the form of:
-        cmd + number (index of the app in the list, starting from 2)
+        cmd - number (index of the app in the list, starting from 2)
 
-        cmd + 1 will automatically be assigned to Finder.
+        cmd - 1 will automatically be assigned to Finder.
       '';
     };
   };
@@ -36,7 +36,7 @@ in
         ctrl + cmd - return : ${config.programs.alacritty.package}/bin/alacritty msg create-window 2>&1 || /usr/bin/open -a ${config.programs.alacritty.package}/Applications/Alacritty.app
 
         # Application shortcuts
-        cmd + 1 : open -a Finder
+        cmd - 1 : open -a Finder
 
         ${hotApps}
       '';
