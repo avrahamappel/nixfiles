@@ -23,6 +23,7 @@
       e = "$EDITOR $*";
       se = "sudo nvim -u ~/.config/nvim/init.lua";
       j = "jobs";
+      o = if pkgs.stdenv.isLinux then "xdg-open" else "open";
 
       # Nix
       ns = "nix-shell -p $@ --run zsh";
