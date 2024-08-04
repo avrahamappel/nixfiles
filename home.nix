@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
@@ -119,6 +119,17 @@
         updates = {
           auto_update = true;
         };
+      };
+    };
+  };
+
+  # Git sync
+  services.git-sync = {
+    enable = true;
+    repositories = {
+      pass = {
+        path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
+        uri = "git@github.com:avrahamappel/password-store.git";
       };
     };
   };
