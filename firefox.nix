@@ -16,6 +16,7 @@ in
         copy-link-text
         duckduckgo-privacy-essentials
         enhanced-github
+        vimium
       ];
 
       search.default = "DuckDuckGo";
