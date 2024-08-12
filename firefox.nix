@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   nur = pkgs.callPackage (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { };
@@ -6,7 +6,10 @@ in
 
 {
   programs.firefox = {
-    enable = pkgs.stdenv.isLinux;
+    enable = true;
+
+    # Disable package installation on Mac
+    package = lib.mkIf pkgs.stdenv.isDarwin null;
 
     profiles.default = {
       extensions = with nur.repos.rycee.firefox-addons; [
