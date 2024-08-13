@@ -24,6 +24,8 @@
       se = "sudo nvim -u ~/.config/nvim/init.lua";
       j = "jobs";
       o = if pkgs.stdenv.isLinux then "xdg-open" else "open";
+      c = if pkgs.stdenv.isLinux then "wl-copy" else "pbcopy";
+      p = if pkgs.stdenv.isLinux then "wl-paste" else "pbpaste";
 
       # Nix
       ns = "nix-shell -p $@ --run zsh";
