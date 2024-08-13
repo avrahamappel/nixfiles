@@ -74,9 +74,13 @@
     };
   };
 
-  # Overlays for nixpkgs
-  nixpkgs.overlays = [
-  ];
+  nixpkgs.config.packageOverrides =
+    let
+      srcs = import ./nix/sources.nix;
+    in
+    {
+      nur = import srcs.NUR.outPath { inherit pkgs; };
+    };
 
   # Enable font discovery
   fonts.fontconfig.enable = true;

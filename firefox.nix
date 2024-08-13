@@ -1,9 +1,5 @@
 { pkgs, lib, ... }:
 
-let
-  nur = pkgs.callPackage (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { };
-in
-
 {
   programs.firefox = {
     enable = true;
@@ -12,7 +8,7 @@ in
     package = lib.mkIf pkgs.stdenv.isDarwin null;
 
     profiles.default = {
-      extensions = with nur.repos.rycee.firefox-addons; [
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         adblocker-ultimate
         automatic-dark
         browserpass
