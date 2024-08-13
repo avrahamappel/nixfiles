@@ -1,6 +1,27 @@
-# Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
+{ pkgs, ... }:
+
 {
-  dconf.settings = {
+    # Gnome extensions
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
+    gnomeExtensions.vitals
+  ];
+
+  # Don't install Gnome web browser by default
+  environment.gnome.excludePackages = with pkgs.gnome; [ epiphany ];
+
+  # Default account settings
+  programs.dconf.profiles.user.databases = [
+    {
+      settings = {
+        "org/gnome/desktop/interface".clock-format = "12h";
+      };
+    }
+  ];
+
+  # My specific user account settings
+  home-manager.users.avraham.dconf.settings = {
+    # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
     "org/gnome/Geary" = {
       autoselect = false;
       single-key-shortcuts = true;

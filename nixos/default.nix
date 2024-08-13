@@ -14,7 +14,6 @@
     useUserPackages = true;
     users.avraham = {
       imports = [
-        ./dconf.nix
         ../home.nix
       ];
     };
@@ -42,20 +41,13 @@
     # Must-have
     vim
 
-    # Gnome extensions
-    gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
-    gnomeExtensions.vitals
-
     # Clipboard support
     wl-clipboard
-    xclip
 
     # VMs
     quickemu
     spice-gtk
   ];
-  # Don't install Gnome web browser by default
-  environment.gnome.excludePackages = with pkgs.gnome; [ epiphany ];
 
   # Generally I don't need a firewall against the local network
   networking.firewall.enable = false;
@@ -88,13 +80,4 @@
     setuid = true;
     source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
   };
-
-  # Gnome accounts defaults
-  programs.dconf.profiles.user.databases = [
-    {
-      settings = {
-        "org/gnome/desktop/interface".clock-format = "12h";
-      };
-    }
-  ];
 }
