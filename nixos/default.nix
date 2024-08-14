@@ -1,7 +1,19 @@
 { pkgs, ... }:
 
 {
-  imports = [ <home-manager/nixos> ];
+  imports = [
+    <home-manager/nixos>
+    ./gnome.nix
+  ];
+
+  # NUR
+  nixpkgs.config.packageOverrides =
+    let
+      srcs = import ../nix/sources.nix;
+    in
+    {
+      nur = import srcs.NUR.outPath { inherit pkgs; };
+    };
 
   # Latest Linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
