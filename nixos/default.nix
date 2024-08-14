@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  srcs = import ../nix/sources.nix;
+in
+
 {
   imports = [
     <home-manager/nixos>
@@ -8,9 +12,7 @@
 
   # NUR
   nixpkgs.config.packageOverrides =
-    let
-      srcs = import ../nix/sources.nix;
-    in
+
     {
       nur = import srcs.NUR.outPath { inherit pkgs; };
     };

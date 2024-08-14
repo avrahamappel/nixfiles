@@ -1,5 +1,9 @@
 { pkgs, config, ... }:
 
+let
+  srcs = import ./nix/sources.nix;
+in
+
 {
   imports = [
     ./firefox.nix
@@ -72,9 +76,6 @@
   };
 
   nixpkgs.config.packageOverrides =
-    let
-      srcs = import ./nix/sources.nix;
-    in
     {
       nur = import srcs.NUR.outPath { inherit pkgs; };
     };
