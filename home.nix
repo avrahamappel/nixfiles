@@ -1,11 +1,8 @@
 { pkgs, config, ... }:
 
-let
-  srcs = import ./npins;
-in
-
 {
   imports = [
+    ./channels.nix
     ./firefox.nix
     ./alacritty.nix
     ./zsh
@@ -74,11 +71,6 @@ in
       keep-outputs = true;
     };
   };
-
-  nixpkgs.config.packageOverrides =
-    {
-      nur = import srcs.NUR { inherit pkgs; };
-    };
 
   # Enable font discovery
   fonts.fontconfig.enable = true;

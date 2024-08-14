@@ -1,21 +1,11 @@
 { pkgs, ... }:
 
-let
-  srcs = import ../npins;
-in
-
 {
   imports = [
     <home-manager/nixos>
+    ../channels.nix
     ./gnome.nix
   ];
-
-  # NUR
-  nixpkgs.config.packageOverrides =
-
-    {
-      nur = import srcs.NUR { inherit pkgs; };
-    };
 
   # Latest Linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
