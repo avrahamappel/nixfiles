@@ -23,6 +23,10 @@
       imports = [
         ../home.nix
       ];
+
+      # Apparently including this here allows nixos to purge old home-manager generations
+      # See https://github.com/nix-community/home-manager/issues/3211#issuecomment-1586018918
+      home.packages = [ pkgs.home-manager ];
     };
   };
 
