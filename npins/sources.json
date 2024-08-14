@@ -1,0 +1,17 @@
+{
+  "pins": {
+    "NUR": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "NUR"
+      },
+      "branch": "master",
+      "revision": "5ac3ad8f27b04dc9c70d8ccbc3b872097c11ba3d",
+      "url": "https://github.com/nix-community/NUR/archive/5ac3ad8f27b04dc9c70d8ccbc3b872097c11ba3d.tar.gz",
+      "hash": "04j4ff0ccc1kijs3smwbmyjx9dp65kw0010i3vs1nbkcq4fb2h1f"
+    }
+  },
+  "version": 3
+}

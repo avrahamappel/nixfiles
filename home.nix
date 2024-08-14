@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 let
-  srcs = import ./nix/sources.nix;
+  srcs = import ./npins;
 in
 
 {
@@ -77,7 +77,7 @@ in
 
   nixpkgs.config.packageOverrides =
     {
-      nur = import srcs.NUR.outPath { inherit pkgs; };
+      nur = import srcs.NUR { inherit pkgs; };
     };
 
   # Enable font discovery

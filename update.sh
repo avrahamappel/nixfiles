@@ -1,4 +1,4 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -p bash niv -i bash
+#!nix-shell -p bash npins -i bash
 
-niv update
+npins update
