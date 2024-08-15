@@ -5,9 +5,9 @@
 let
   srcs = import ./npins;
 
-  nixPath = ''
-    nixpkgs=${pkgs.path}
-  '';
+  # nixPath = [
+  #   "nixpkgs=${pkgs.path}"
+  # ];
 in
 
 {
@@ -17,25 +17,26 @@ in
     };
 
   # Allow nix flake commands to work with current version of nixpkgs
-  nix.registry.nixpkgs.to = {
-    type = "path";
-    path = pkgs.outPath;
-  };
-} // (
-  if builtins.hasAttr "channels" options.nix then
-  # An upcoming home-manager option that allows setting user-level channels directly
-    {
-      nix.channels.nixpkgs = pkgs.path;
-    }
-  else if builtins.hasAttr "nixPath" options.nix then
-  # A NixOS option to set the NIX_PATH environment variable,
-  # also available in home-manager in an upcoming release
-    {
-      nix.nixPath = nixPath;
-    }
-  else
-  # Only relevant for home-manager 24.05
-    {
-      home.sessionVariables.NIX_PATH = builtins.replaceStrings [ "\n" ] [ ":" ] nixPath;
-    }
-)
+  # nix.registry.nixpkgs.to = {
+  #   type = "path";
+  #   path = pkgs.outPath;
+  # };
+}
+# // (
+#   if builtins.hasAttr "channels" options.nix then
+#   # An upcoming home-manager option that allows setting user-level channels directly
+#     {
+#       nix.channels.nixpkgs = pkgs.path;
+#     }
+#   else if builtins.hasAttr "nixPath" options.nix then
+#   # A NixOS option to set the NIX_PATH environment variable,
+#   # also available in home-manager in an upcoming release
+#     {
+#       nix.nixPath = nixPath;
+#     }
+#   else
+#   # Only relevant for home-manager 24.05
+#     {
+#       home.sessionVariables.NIX_PATH = builtins.replaceStrings [ "\n" ] [ ":" ] nixPath;
+#     }
+# )
