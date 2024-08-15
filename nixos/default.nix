@@ -2,7 +2,6 @@
 
 {
   imports = [
-    <home-manager/nixos>
     ../channels.nix
     ./gnome.nix
   ];

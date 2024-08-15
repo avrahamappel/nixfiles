@@ -11,12 +11,20 @@
   };
 
   outputs = { nixpkgs, home-manager, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        inherit (home-manager) lib;
-        inherit pkgs;
-      });
+    # flake-utils.lib.eachDefaultSystem (system:
+    #   let
+    #     pkgs = import nixpkgs { inherit system; };
+    #   in
+    {
+      lib = {
+        makeNixosConfiguration = ({ system, modules, base ? "default" }:
+          nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              home-manager.nixosModules.home-manager
+              ./nixos/${base}.nix
+            ] ++ modules;
+          });
+      };
+    };
 }
