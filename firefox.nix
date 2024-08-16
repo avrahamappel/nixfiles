@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   programs.firefox = {
@@ -8,7 +8,7 @@
     package = lib.mkIf pkgs.stdenv.isDarwin null;
 
     profiles.default = {
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions = with config.nur.repos.rycee.firefox-addons; [
         adblocker-ultimate
         automatic-dark
         browserpass

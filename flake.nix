@@ -10,7 +10,7 @@
     flake-utils.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { self, nixpkgs, home-manager, nur, flake-utils, ... }:
     # flake-utils.lib.eachDefaultSystem (system:
     #   let
     #     pkgs = import nixpkgs { inherit system; };
@@ -22,6 +22,7 @@
             inherit system;
             modules = [
               home-manager.nixosModules.home-manager
+              { home-manager.sharedModules = [ nur.hmModules.nur ]; }
               ./nixos/${base}.nix
             ] ++ modules;
           });

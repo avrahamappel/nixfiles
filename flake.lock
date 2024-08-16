@@ -52,11 +52,26 @@
         "type": "indirect"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1723776495,
+        "narHash": "sha256-/KoLMDrzc5JxH2SFKJgpoDsoQtHkoq/BH6rRoG0oV2g=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "19b01562bcc6ff7125ff4829712c95c523a30000",
+        "type": "github"
+      },
+      "original": {
+        "id": "nur",
+        "type": "indirect"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nur": "nur"
       }
     },
     "systems": {

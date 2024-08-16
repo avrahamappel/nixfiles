@@ -3,19 +3,12 @@
 # This module is designed to work with both NixOS and home-manager modules.
 
 let
-  srcs = import ./npins;
-
   # nixPath = [
   #   "nixpkgs=${pkgs.path}"
   # ];
 in
 
 {
-  nixpkgs.config.packageOverrides =
-    {
-      nur = import srcs.NUR.outPath { inherit pkgs; };
-    };
-
   # Allow nix flake commands to work with current version of nixpkgs
   # nix.registry.nixpkgs.to = {
   #   type = "path";
