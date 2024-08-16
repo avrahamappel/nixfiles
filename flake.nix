@@ -17,7 +17,7 @@
     #   in
     {
       lib = {
-        makeNixosConfiguration = ({ system, modules, base ? "default" }:
+        makeNixosConfiguration = { system, modules, base ? "default" }:
           nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
@@ -25,7 +25,13 @@
               { home-manager.sharedModules = [ nur.hmModules.nur ]; }
               ./nixos/${base}.nix
             ] ++ modules;
-          });
+          };
+      };
+
+      dellLatitude3340 = { modules }: self.lib.makeNixosConfiguration {
+        inherit modules;
+        system = "x86_64-linux";
+        base = "dell-latitude-3340";
       };
     };
 }
