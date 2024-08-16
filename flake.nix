@@ -7,14 +7,9 @@
       url = "home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-utils.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, flake-utils, ... }:
-    # flake-utils.lib.eachDefaultSystem (system:
-    #   let
-    #     pkgs = import nixpkgs { inherit system; };
-    #   in
+  outputs = { self, nixpkgs, home-manager, nur, ... }:
     {
       lib = {
         makeNixosConfiguration = { system, modules, base ? "default" }:
