@@ -26,6 +26,14 @@
               { home-manager.sharedModules = [ nur.hmModules.nur ]; }
             ] ++ modules;
           };
+
+        makeHomeManagerConfiguration = { system, modules }:
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs { inherit system; };
+            modules = [
+              nur.hmModules.nur
+            ] ++ modules;
+          };
       };
 
       dellLatitude3340 = { modules }: self.lib.makeNixosConfiguration {
@@ -34,6 +42,11 @@
           "${nixos-hardware}/dell/latitude/3340"
           ./nixos/dell-latitude-3340.nix
         ] ++ modules;
+      };
+
+      macosM1 = { modules }: self.lib.makeHomeManagerConfiguration {
+        system = "aarch64-darwin";
+        modules = [ ./macos ] ++ modules;
       };
     };
 }
