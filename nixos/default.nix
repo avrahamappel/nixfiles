@@ -2,8 +2,6 @@
 
 {
   imports = [
-    <home-manager/nixos>
-    ../channels.nix
     ./gnome.nix
   ];
 
@@ -21,7 +19,7 @@
     useUserPackages = true;
     users.avraham = {
       imports = [
-        ../home.nix
+        ../home-manager
       ];
 
       # Apparently including this here allows nixos to purge old home-manager generations

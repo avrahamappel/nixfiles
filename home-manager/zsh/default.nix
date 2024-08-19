@@ -34,11 +34,11 @@
       # NixOS
       sne = "se /etc/nixos/configuration.nix";
       snf = "sudo nixos-rebuild switch --fast";
-      snu = "sudo nixos-rebuild switch --upgrade-all";
+      snu = "sudo nixos-rebuild switch --update-input nixfiles --commit-lock-file";
 
       # Home Manager
       hm = "home-manager";
-      hme = "cd ${builtins.toString ../.}; e home.nix";
+      hme = "cd ~/.nixfiles; e .";
       hmu = "nix-channel --update; home-manager switch";
 
       # Git
