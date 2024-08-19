@@ -8,7 +8,7 @@
   # Make nh available
   # There's an open PR with a module for this
   # https://github.com/nix-community/home-manager/pull/5304
-  home.programs = with pkgs; [ nh ];
+  home.packages = with pkgs; [ nh ];
 
   # MacOS updates remove this from /etc/zshrc
   programs.zsh.initExtra = ''
