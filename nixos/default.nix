@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../channels.nix
     ./gnome.nix
   ];
 
@@ -20,7 +19,7 @@
     useUserPackages = true;
     users.avraham = {
       imports = [
-        ../home.nix
+        ../home-manager
       ];
     };
   };

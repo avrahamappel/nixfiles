@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./channels.nix
     ./firefox.nix
     ./alacritty.nix
     ./zsh

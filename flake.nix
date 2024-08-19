@@ -46,7 +46,7 @@
 
       macosM1 = { modules }: self.lib.makeHomeManagerConfiguration {
         system = "aarch64-darwin";
-        modules = [ ./macos ] ++ modules;
+        modules = [ ./home-manager/macos ] ++ modules;
       };
     };
 }

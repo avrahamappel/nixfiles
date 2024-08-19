@@ -1,11 +1,8 @@
-{ pkgs, lib, config, ... }:
+{ config, ... }:
 
 {
   programs.firefox = {
     enable = true;
-
-    # Disable package installation on Mac
-    package = lib.mkIf pkgs.stdenv.isDarwin null;
 
     profiles.default = {
       extensions = with config.nur.repos.rycee.firefox-addons; [

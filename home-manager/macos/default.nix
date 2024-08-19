@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   imports = [
-    ../home.nix
+    ../standalone.nix
     ./skhd.nix
   ];
 
@@ -12,20 +12,8 @@
     offset.x = 1;
   };
 
-  # Standalone needs this 
-  nix = {
-    package = pkgs.nix;
-    gc.automatic = true;
-    gc.options = "--delete-older-than 30d";
-  };
-
-  # MacOS updates remove this from /etc/zshrc, so just adding it here
-  programs.zsh.initExtra = ''
-    # Start Nix daemon
-    if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-      . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-    fi
-  '';
+  # Disable package installation on Mac
+  programs.firefox.package = null;
 
   targets.darwin.defaults = {
     NSGlobalDomain = {
