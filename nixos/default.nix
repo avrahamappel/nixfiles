@@ -21,10 +21,6 @@
       imports = [
         ../home-manager
       ];
-
-      # Apparently including this here allows nixos to purge old home-manager generations
-      # See https://github.com/nix-community/home-manager/issues/3211#issuecomment-1586018918
-      home.packages = [ pkgs.home-manager ];
     };
   };
 
@@ -33,17 +29,26 @@
   nixpkgs.overlays = [
   ];
 
-  # Garbage collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  # Docs: https://nixos.org/manual/nix/unstable/command-ref/conf-file.html
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Nix Helper
+  programs.nh = {
+    enable = true;
+    flake = "/etc/nixos";
+
+    # This replaces garbage collection
+    clean = {
+      enable = true;
+      dates = "Sun 11:45"; # Fifteen minutes before optimise
+      extraArgs = "-keep-since 30d";
+    };
   };
 
   # Optimization
   nix.optimise = {
     automatic = true;
-    dates = [ "weekly" ];
+    dates = [ "Mon 00:00" ];
   };
 
   environment.systemPackages = with pkgs; [

@@ -30,6 +30,7 @@
       # Nix
       ns = "nix-shell -p $@ --run zsh";
       nr = "nix repl";
+      nu = "nix-channel --update";
 
       # NixOS
       sne = "se /etc/nixos/configuration.nix";
