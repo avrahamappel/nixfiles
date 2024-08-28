@@ -1,10 +1,9 @@
-{ config, ... }:
+{ lib, config, ... }:
 
 {
-  programs.firefox = {
-    enable = true;
-
-    profiles.default = {
+  options.firefoxProfileDefaults = lib.mkOption {
+    description = "Defaults for Firefox profiles, extracted to allow merging";
+    default = {
       extensions = with config.nur.repos.rycee.firefox-addons; [
         adblocker-ultimate
         automatic-dark
@@ -25,6 +24,13 @@
         "extensions.formautofill.creditCards.enabled" = false;
         "signon.rememberSignons" = false;
       };
+    };
+  };
+
+  config = {
+    programs.firefox = {
+      enable = true;
+      profiles.default = config.firefoxProfileDefaults;
     };
   };
 }
