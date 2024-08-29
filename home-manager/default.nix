@@ -3,7 +3,7 @@
 {
   imports = [
     ./firefox.nix
-    ./alacritty.nix
+    ./terminal.nix
     ./zsh
     ./git.nix
     ./nvim
@@ -83,19 +83,6 @@
     bash.enable = true;
 
     # Other stuff
-    tmux = {
-      enable = true;
-      terminal = "xterm-256color";
-      shortcut = "z";
-      keyMode = "vi";
-      mouse = true;
-      extraConfig = ''
-        set-option -g status off
-        set-option -g set-titles on
-        set-option -g set-titles-string '#{session_name} (tmux)'
-      '';
-    };
-
     jq.enable = true;
     mpv.enable = true;
     ripgrep.enable = true;

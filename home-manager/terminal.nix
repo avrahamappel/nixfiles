@@ -21,5 +21,17 @@
       });
     };
   };
-}
 
+  programs.tmux = {
+    enable = true;
+    shortcut = "z";
+    terminal = "xterm-256color";
+    keyMode = "vi";
+    mouse = true;
+    extraConfig = ''
+      set-option -g status off
+      set-option -g set-titles on
+      set-option -g set-titles-string '#{session_name} (tmux)'
+    '';
+  };
+}
