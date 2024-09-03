@@ -131,6 +131,21 @@ local settings = {
         },
     },
 
+    nixd = {
+        -- Don't complain about escaping with
+        diagnostic = {
+            suppress = { "sema-escaping-with" },
+        },
+
+        -- Include home-manager options by setting this
+        -- options = {
+        --     home-manager = {
+        --         expr = "some expression"
+        --     }
+        -- }
+        -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
+    },
+
     ['rust-analyzer'] = {
         checkOnSave = {
             command = 'clippy',
