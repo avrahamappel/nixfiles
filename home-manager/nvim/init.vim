@@ -19,6 +19,7 @@ set expandtab
 " Editor appearance
 set number
 set signcolumn=number
+set cursorline
 " Always show the status bar
 set laststatus=2
 set ruler
