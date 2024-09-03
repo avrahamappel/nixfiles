@@ -83,6 +83,7 @@
     bash.enable = true;
 
     # Other stuff
+    fd.enable = true;
     jq.enable = true;
     mpv.enable = true;
     ripgrep.enable = true;
