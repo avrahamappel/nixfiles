@@ -20,6 +20,7 @@ set expandtab
 set number
 set signcolumn=number
 set cursorline
+set cursorlineopt=number
 " Always show the status bar
 set laststatus=2
 set ruler
