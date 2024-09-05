@@ -62,7 +62,7 @@ map <leader>v :let @+=@"<CR>
 " Copy current filename to system clipboard ('k' looks like %)
 map <leader>k :let @+=@%<CR>
 " Copy current file and line to system clipboard
-map <leader>m :let @+=@%.':'.line('.')
+map <leader>m :let @+=@%.':'.line('.')<CR>
 " Copy contents of current file to system clipboard
 map <leader>y :%y+<CR>
 
