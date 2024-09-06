@@ -7,7 +7,11 @@
 
   # Gnome extensions
   environment.systemPackages = with pkgs; [
-    gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
+    # Make picture-in-picture stay on top of all windows
+    (gnomeExtensions.pip-on-top.override {
+      version = "8"; # Version 7 doesn't work with GNOME 46
+      sha256 = "1gwn5wgqhz2nh8icj1byv7kgs8sk16mkzmj2zf7y0svprbl5vf7n";
+    })
     gnomeExtensions.vitals
   ];
 
