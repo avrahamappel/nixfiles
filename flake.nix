@@ -28,6 +28,7 @@
 
                 # Pin nixpkgs
                 nix.registry.nixpkgs.flake = nixpkgs;
+                nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
               }
             ] ++ modules;
           };
@@ -40,6 +41,7 @@
               {
                 # Pin nixpkgs
                 nix.registry.nixpkgs.flake = nixpkgs;
+                home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
               }
             ] ++ modules;
           };
