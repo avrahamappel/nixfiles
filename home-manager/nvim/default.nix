@@ -1,25 +1,16 @@
 { pkgs, lib, ... }:
 
+let
+  pkgs-unstable = import (import ../../npins).nixos-unstable { inherit (pkgs) system; };
+in
+
 {
   programs.neovim = {
     enable = true;
 
-    # Use neovim 0.10
-    package =
-      let
-        pkgs-nvim-0-10 = pkgs.fetchFromGitHub {
-          owner = "NixOS";
-          repo = "nixpkgs";
-          rev = "752d81e439573637074c069df35fda58d4ff73c9";
-          hash = "sha256-HXiP93DPRQG27UT+S67uxcoSwkkHt+WVE5YXNOeA+9Q=";
-        };
-      in
-      lib.mkIf (lib.strings.versionOlder pkgs.neovim.version "0.10")
-        (pkgs.callPackage "${pkgs-nvim-0-10}/pkgs/by-name/ne/neovim-unwrapped/package.nix"
-          {
-            inherit (pkgs.darwin.apple_sdk.frameworks) CoreServices;
-            lua = pkgs.luajit;
-          });
+    # Use neovim >= 0.10
+    package = lib.mkIf (lib.strings.versionOlder pkgs.neovim.version "0.10")
+      pkgs-unstable.neovim-unwrapped;
 
     # Don't use any providers for now.
     withNodeJs = false;
@@ -253,7 +244,7 @@
     lemminx
     lua-language-server
     nil
-    nixd
+    pkgs-unstable.nixd # Use latest nixd
     nixpkgs-fmt # Used by nil for formatting
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
