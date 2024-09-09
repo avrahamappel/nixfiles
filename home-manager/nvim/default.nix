@@ -1,8 +1,4 @@
-{ pkgs, lib, ... }:
-
-let
-  pkgs-unstable = import (import ../../npins).nixos-unstable { inherit (pkgs) system; };
-in
+{ pkgs, lib, pkgs-unstable, ... }:
 
 {
   programs.neovim = {
