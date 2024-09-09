@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 # Configuration for using home-manager outside of NixOS
 
@@ -13,7 +13,7 @@
   home.packages = with pkgs; [ nh ];
 
   # Set the flake path so nh knows what to update
-  home.sessionVariables.FLAKE = "~/.config/home-manager";
+  home.sessionVariables.FLAKE = config.home.homeDirectory + "/.config/home-manager";
 
   # MacOS updates remove this from /etc/zshrc
   programs.zsh.initExtra = ''
