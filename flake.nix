@@ -23,7 +23,12 @@
             inherit system;
             modules = [
               home-manager.nixosModules.home-manager
-              { home-manager.sharedModules = [ nur.hmModules.nur ]; }
+              {
+                home-manager.sharedModules = [ nur.hmModules.nur ];
+
+                # Pin nixpkgs
+                nix.registry.nixpkgs.flake = nixpkgs;
+              }
             ] ++ modules;
           };
 
@@ -32,6 +37,10 @@
             pkgs = import nixpkgs { inherit system; };
             modules = [
               nur.hmModules.nur
+              {
+                # Pin nixpkgs
+                nix.registry.nixpkgs.flake = nixpkgs;
+              }
             ] ++ modules;
           };
       };
