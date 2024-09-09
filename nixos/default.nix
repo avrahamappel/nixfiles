@@ -1,7 +1,12 @@
 { pkgs, ... }:
 
+let
+  home-manager = (import ../npins) home-manager;
+in
+
 {
   imports = [
+    "${home-manager}/nixos"
     ./gnome.nix
   ];
 

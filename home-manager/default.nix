@@ -1,7 +1,12 @@
 { pkgs, config, ... }:
 
+let
+  nur = (import ../npins).NUR;
+in
+
 {
   imports = [
+    nur.hmModules.nur
     ./firefox.nix
     ./terminal.nix
     ./zsh

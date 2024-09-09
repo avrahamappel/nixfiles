@@ -1,0 +1,41 @@
+{
+  "pins": {
+    "NUR": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "NUR"
+      },
+      "branch": "master",
+      "revision": "4ade93389a0440e7e65f96cbaa2d515d56f9f99e",
+      "url": "https://github.com/nix-community/NUR/archive/4ade93389a0440e7e65f96cbaa2d515d56f9f99e.tar.gz",
+      "hash": "1snd6bzhbyjdmz4afk9mg2vg7xhb73bbcsy79xmnv8563rkx0pmn"
+    },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "release-24.05",
+      "revision": "208df2e558b73b6a1f0faec98493cb59a25f62ba",
+      "url": "https://github.com/nix-community/home-manager/archive/208df2e558b73b6a1f0faec98493cb59a25f62ba.tar.gz",
+      "hash": "13jlfifjw6pirk700p61anijv8q66mn0f356fw3ssb16vzhhqf5l"
+    },
+    "nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixos-hardware"
+      },
+      "branch": "master",
+      "revision": "04a1cda0c1725094a4db703cccbb956b7558f5a6",
+      "url": "https://github.com/NixOS/nixos-hardware/archive/04a1cda0c1725094a4db703cccbb956b7558f5a6.tar.gz",
+      "hash": "1j9ixlfs5cif549mcszqsawr4azxm2rqfprlbgi0w0ywxzsddp7c"
+    }
+  },
+  "version": 3
+}
