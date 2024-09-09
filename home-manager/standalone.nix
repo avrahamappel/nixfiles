@@ -12,6 +12,9 @@
   # https://github.com/nix-community/home-manager/pull/5304
   home.packages = with pkgs; [ nh ];
 
+  # Set the flake path so nh knows what to update
+  home.sessionVariables.FLAKE = "~/.config/home-manager";
+
   # MacOS updates remove this from /etc/zshrc
   programs.zsh.initExtra = ''
     # Start Nix daemon
