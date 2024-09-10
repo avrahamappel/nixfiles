@@ -14,6 +14,7 @@ in
     ./git.nix
     ./nvim
     ./passwords.nix
+    ./hledger.nix
   ];
 
   home = {
