@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 let
   pkgs-unstable = import (import ../npins).nixos-unstable { inherit (pkgs) system; };
@@ -105,13 +105,6 @@ in
   };
 
   # Git sync
-  services.git-sync = {
-    enable = true;
-    repositories = {
-      pass = {
-        path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
-        uri = "git@github.com:avrahamappel/password-store.git";
-      };
-    };
-  };
+  # Individual repo settings in sub-modules
+  services.git-sync.enable = true;
 }
