@@ -13,6 +13,7 @@
       sha256 = "1gwn5wgqhz2nh8icj1byv7kgs8sk16mkzmj2zf7y0svprbl5vf7n";
     })
     gnomeExtensions.vitals
+    gnomeExtensions.night-theme-switcher
   ];
 
   # Don't install Gnome web browser by default
@@ -57,6 +58,7 @@
         "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
         "native-window-placement@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
+        "nightthemeswitcher@romainvigier.fr"
       ];
       favorite-apps = [
         "firefox.desktop"
