@@ -205,8 +205,15 @@
         '';
       }
 
-      # Use direnv
+      # Load dotenv variables
+      vim-dotenv
+
+      # Load direnv variables
       direnv-vim
+
+      # Dispatch commands asynchronously
+      vim-dispatch
+      vim-dispatch-neovim
 
       # Mini.nvim (collection of plugins)
       {
