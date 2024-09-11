@@ -13,6 +13,11 @@
 
     home.sessionVariables.LEDGER_FILE = config.hledgerPath + "/ledgers/2024.journal";
 
+    home.shellAliases = {
+      hl = "hledger";
+      hlo = "cd ${config.hledgerPath} && e $LEDGER_FILE";
+    };
+
     services.git-sync.repositories.hledger = {
       path = config.hledgerPath;
       uri = "git@github.com:avrahamappel/pta.git";
