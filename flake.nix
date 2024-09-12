@@ -14,7 +14,6 @@
     , nixpkgs
     , home-manager
     , nur
-    , nixos-hardware
     }:
     {
       lib = {
@@ -49,10 +48,7 @@
 
       dellLatitude3340 = { modules }: self.lib.makeNixosConfiguration {
         system = "x86_64-linux";
-        modules = [
-          "${nixos-hardware}/dell/latitude/3340"
-          ./nixos/dell-latitude-3340.nix
-        ] ++ modules;
+        modules = [ ./nixos/dell-latitude-3340.nix ] ++ modules;
       };
 
       macosM1 = { modules }: self.lib.makeHomeManagerConfiguration {

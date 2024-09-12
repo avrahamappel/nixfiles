@@ -1,5 +1,17 @@
 {
   "pins": {
+    "nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixos-hardware"
+      },
+      "branch": "master",
+      "revision": "04a1cda0c1725094a4db703cccbb956b7558f5a6",
+      "url": "https://github.com/nixos/nixos-hardware/archive/04a1cda0c1725094a4db703cccbb956b7558f5a6.tar.gz",
+      "hash": "1j9ixlfs5cif549mcszqsawr4azxm2rqfprlbgi0w0ywxzsddp7c"
+    },
     "nixos-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",

@@ -1,5 +1,12 @@
+let
+  nixos-hardware = (import ../npins).nixos-hardware;
+in
+
 {
-  imports = [ ./. ];
+  imports = [
+    ./.
+    "${nixos-hardware}/dell/latitude/3340"
+  ];
 
   # Some memory tweaks to improve performance hopefully
   boot.kernel.sysctl = {
