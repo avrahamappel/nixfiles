@@ -6,7 +6,6 @@
     default = {
       extensions = with config.nur.repos.rycee.firefox-addons; [
         adblocker-ultimate
-        automatic-dark
         browserpass
         copy-link-text
         duckduckgo-privacy-essentials
