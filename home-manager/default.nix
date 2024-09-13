@@ -45,6 +45,10 @@ in
       gron # When I have no patience for JQ
       toastify # Send ad-hoc notifications
 
+      # Media
+      ffmpeg
+      imagemagick
+
       # QR utilities
       qrcp # Uses QR code to transfer files between devices
       qrtool # Decode QR codes, even from image files
