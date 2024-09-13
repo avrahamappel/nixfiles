@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 let
   nixos-hardware = (import ../npins).nixos-hardware;
 in
@@ -22,4 +24,7 @@ in
 
   # Firmware
   hardware.enableAllFirmware = true;
+
+  # Prune nix store more aggressively
+  programs.nh.clean.extraArgs = lib.mkForce "--keep-since 15d";
 }
