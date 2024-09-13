@@ -57,10 +57,6 @@
 
     # Clipboard support
     wl-clipboard
-
-    # VMs
-    quickemu
-    spice-gtk
   ];
 
   # Generally I don't need a firewall against the local network
@@ -84,14 +80,5 @@
     isNormalUser = true;
     description = "Guest";
     hashedPassword = "";
-  };
-
-  # Enable forwarding USB devices to virtual machines via SPICE.
-  security.polkit.enable = true;
-  security.wrappers.spice-client-glib-usb-acl-helper = {
-    owner = "root";
-    group = "root";
-    setuid = true;
-    source = "${pkgs.spice-gtk}/bin/spice-client-glib-usb-acl-helper";
   };
 }
