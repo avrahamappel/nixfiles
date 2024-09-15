@@ -8,15 +8,15 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "04a1cda0c1725094a4db703cccbb956b7558f5a6",
-      "url": "https://github.com/nixos/nixos-hardware/archive/04a1cda0c1725094a4db703cccbb956b7558f5a6.tar.gz",
-      "hash": "1j9ixlfs5cif549mcszqsawr4azxm2rqfprlbgi0w0ywxzsddp7c"
+      "revision": "166dee4f88a7e3ba1b7a243edb1aca822f00680e",
+      "url": "https://github.com/nixos/nixos-hardware/archive/166dee4f88a7e3ba1b7a243edb1aca822f00680e.tar.gz",
+      "hash": "0rsfn5338mdd2vkhixsha7n1id4gb8fgi7g5jx865z5mifgc84p5"
     },
     "nixos-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-24.11pre677397.574d1eac1c20/nixexprs.tar.xz",
-      "hash": "0j66kv4xq4csa5hwizlab5a7j47hd44182xvz541ll3cdfd5a7gx"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-24.11pre680873.345c263f2f53/nixexprs.tar.xz",
+      "hash": "1l3myzpc86y4v1ndy5qgvrpyzrhx9gsqq3x0vn6vdzsw4dn9j88s"
     }
   },
   "version": 3
