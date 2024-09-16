@@ -9,7 +9,6 @@
         browserpass
         copy-link-text
         duckduckgo-privacy-essentials
-        enhanced-github
         vimium
       ];
 
