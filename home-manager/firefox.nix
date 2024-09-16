@@ -9,7 +9,7 @@
         browserpass
         copy-link-text
         duckduckgo-privacy-essentials
-        vimium
+        surfingkeys
       ];
 
       search.default = "DuckDuckGo";
