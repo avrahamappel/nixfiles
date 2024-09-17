@@ -125,16 +125,14 @@ local settings = {
         },
     },
 
-    ['nil'] = {
-        formatting = {
-            command = { "nixpkgs-fmt" },
-        },
-    },
-
     nixd = {
         -- Don't complain about escaping with
         diagnostic = {
             suppress = { "sema-escaping-with" },
+        },
+
+        formatting = {
+            command = { "nixpkgs-fmt" },
         },
 
         -- Include home-manager options by setting this

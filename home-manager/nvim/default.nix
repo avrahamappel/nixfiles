@@ -246,9 +246,8 @@
     # LSPs
     lemminx
     lua-language-server
-    nil
     pkgs-unstable.nixd # Use latest nixd
-    nixpkgs-fmt # Used by nil for formatting
+    nixpkgs-fmt
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     nodePackages.vim-language-server
