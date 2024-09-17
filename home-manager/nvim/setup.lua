@@ -91,7 +91,6 @@ local servers = {
     'lemminx',
     'lua_ls',
     'nixd',
-    'nil_ls',
     'pylsp',
     'phpactor',
     'solargraph',
