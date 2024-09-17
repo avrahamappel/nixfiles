@@ -43,15 +43,15 @@
       # Navigation plugins #
       ######################
       {
-        plugin = fzf-vim;
+        plugin = telescope-nvim;
         config = /* vim */ ''
-          map <leader>p :Files<CR>
-          map <leader>b :Buffers<CR>
-          map <leader>z :History<CR>
-          " FZF does the filtering
-          map <leader>f :Rg<CR>
+          map <leader>p :Telescope find_files<CR>
+          map <leader>b :Telescope buffers<CR>
+          map <leader>z :Telescope oldfiles<CR>
+          map <leader>f :Telescope live_grep<CR>
         '';
       }
+      telescope-fzf-native-nvim
       vim-vinegar
       {
         plugin = camelcasemotion;
