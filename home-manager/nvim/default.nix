@@ -51,7 +51,15 @@
           map <leader>f :Telescope live_grep<CR>
         '';
       }
-      telescope-fzf-native-nvim
+      {
+        plugin = telescope-fzf-native-nvim;
+        type = "lua";
+        config = /* lua */ ''
+          local telescope = require('telescope')
+          telescope.setup()
+          telescope.load_extension('fzf')
+        '';
+      }
       vim-vinegar
       {
         plugin = camelcasemotion;
