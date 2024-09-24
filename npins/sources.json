@@ -17,6 +17,21 @@
       "name": "nixos-unstable",
       "url": "https://releases.nixos.org/nixos/unstable/nixos-24.11pre683289.c04d5652cfa9/nixexprs.tar.xz",
       "hash": "1xvjdn0z9w4n3b8c23hnylvdwn9zl8nry039g1fbg97ryzmv9yh4"
+    },
+    "vim-afterimage": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "tpope",
+        "repo": "vim-afterimage"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v2.2",
+      "revision": "782352096f95dcab574fec93e787d0b2e18b362e",
+      "url": "https://api.github.com/repos/tpope/vim-afterimage/tarball/v2.2",
+      "hash": "0r56yp73sp69ay932rd0jzimj0al1ixqqpqw3l16d4m326zd0zbv"
     }
   },
   "version": 3

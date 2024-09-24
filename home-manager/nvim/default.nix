@@ -1,5 +1,9 @@
 { pkgs, lib, pkgs-unstable, ... }:
 
+let
+  vim-afterimage = (import ../../npins).vim-afterimage;
+in
+
 {
   programs.neovim = {
     enable = true;
@@ -222,6 +226,18 @@
       # Dispatch commands asynchronously
       vim-dispatch
       vim-dispatch-neovim
+
+      vim-eunuch # UNIX filesystem utils shortcuts
+
+      # Edit image files in vim
+      {
+        plugin = pkgs.vimUtils.buildVimPlugin {
+          src = vim-afterimage;
+          pname = vim-afterimage.repository.repo;
+          version = vim-afterimage.version;
+          meta.homepage = "https://github.com/tpope/vim-afterimage";
+        };
+      }
 
       # Mini.nvim (collection of plugins)
       {
