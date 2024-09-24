@@ -284,5 +284,9 @@ in
     solargraph
     taplo
     typos-lsp
+
+    # Used by vim-afterimage
+    antiword
+    pdftk
   ];
 }
