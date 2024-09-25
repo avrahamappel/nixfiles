@@ -56,7 +56,6 @@
       enabled-extensions = [
         "pip-on-top@rafostar.github.com"
         "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
-        "native-window-placement@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
         "nightthemeswitcher@romainvigier.fr"
       ];
