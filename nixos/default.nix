@@ -59,6 +59,11 @@
     wl-clipboard
   ];
 
+  # NixOS fails to set a default cursor theme, which breaks Rust applications
+  # using winit and running on Wayland, such as Alacritty
+  # see https://github.com/NixOS/nixpkgs/issues/22652#issuecomment-2222497441
+  environment.variables.XCURSOR_THEME = "Adwaita";
+
   # Generally I don't need a firewall against the local network
   networking.firewall.enable = false;
 
