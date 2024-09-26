@@ -20,6 +20,7 @@
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.weather.temperatureUnits" = "c";
+        "extensions.activeThemeID" = "default-theme@mozilla.org";
         "extensions.formautofill.creditCards.enabled" = false;
         "signon.rememberSignons" = false;
       };
