@@ -22,6 +22,7 @@
         "browser.newtabpage.activity-stream.weather.temperatureUnits" = "c";
         "extensions.activeThemeID" = "default-theme@mozilla.org";
         "extensions.formautofill.creditCards.enabled" = false;
+        "extensions.update.autoUpdateDefault" = false;
         "signon.rememberSignons" = false;
       };
     };
