@@ -8,15 +8,15 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "b493dfd4a8cf9552932179e56ff3b5819a9b8381",
-      "url": "https://github.com/nixos/nixos-hardware/archive/b493dfd4a8cf9552932179e56ff3b5819a9b8381.tar.gz",
-      "hash": "08lq0gz0ni9rzp5dv4vhwfg84c7pbrhnli75kknggimyj0dns8y7"
+      "revision": "f5c239fa9acb27f0a5326ba2949c00fada89ca9f",
+      "url": "https://github.com/nixos/nixos-hardware/archive/f5c239fa9acb27f0a5326ba2949c00fada89ca9f.tar.gz",
+      "hash": "1mdkcg6vzwfrn6j4i7adlrsadkfs30dg9462vhlcdi0z6iyiz8ma"
     },
     "nixos-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-24.11pre683289.c04d5652cfa9/nixexprs.tar.xz",
-      "hash": "1xvjdn0z9w4n3b8c23hnylvdwn9zl8nry039g1fbg97ryzmv9yh4"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-24.11pre685764.1925c603f17f/nixexprs.tar.xz",
+      "hash": "0xsbahnvb8klvrzsg9xmf4r18y2d2mmqvcvaw0asarigp9y1hg0m"
     },
     "vim-afterimage": {
       "type": "GitRelease",
