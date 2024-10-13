@@ -276,7 +276,8 @@ in
     nodePackages.typescript-language-server
     nodePackages.vim-language-server
     nodePackages.vls
-    nodePackages.vscode-langservers-extracted
+    pkgs-unstable.nodePackages.vscode-langservers-extracted # Broken on 24.05 as of a3f9ad65a0bf298ed5847629a57808b97e6e8077
+                                                            # Backport PR for fix: https://nixpk.gs/pr-tracker.html?pr=348035
     nodePackages.yaml-language-server
     phpactor
     python3Packages.python-lsp-server
