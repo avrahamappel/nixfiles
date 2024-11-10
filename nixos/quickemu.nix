@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 # Quickemu VM support
-# Not enabled by default
 
 {
   environment.systemPackages = with pkgs; [
