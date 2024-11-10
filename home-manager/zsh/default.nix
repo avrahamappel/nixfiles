@@ -35,12 +35,12 @@
       # NixOS
       sne = "se /etc/nixos/configuration.nix";
       snf = "sudo nixos-rebuild switch --fast";
-      snu = "sudo nixos-rebuild switch --update-input nixfiles --commit-lock-file";
+      snu = "sudo nix flake update /etc/nixos && nh os switch";
 
       # Home Manager
       hm = "home-manager";
       hme = "cd ~/.nixfiles; e .";
-      hmu = "nix-channel --update; home-manager switch";
+      hmu = "nh home switch -u";
 
       # Git
       ga = "git add -p";
