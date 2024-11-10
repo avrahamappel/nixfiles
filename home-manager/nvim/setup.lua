@@ -125,11 +125,6 @@ local settings = {
     },
 
     nixd = {
-        -- Don't complain about escaping with
-        diagnostic = {
-            suppress = { "sema-escaping-with" },
-        },
-
         formatting = {
             command = { "nixpkgs-fmt" },
         },
