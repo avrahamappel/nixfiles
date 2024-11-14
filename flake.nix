@@ -16,44 +16,42 @@
     , nur
     }:
     {
-      lib = {
-        makeNixosConfiguration = { system, modules }:
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            modules = [
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.sharedModules = [ nur.hmModules.nur ];
+      nixosModules = {
+        default = {
+          imports = [
+            home-manager.nixosModules.home-manager
+            ./nixos
+          ];
 
-                # Pin nixpkgs
-                nix.registry.nixpkgs.flake = nixpkgs;
-                nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
-              }
-            ] ++ modules;
-          };
+          home-manager.sharedModules = [ nur.hmModules.nur ];
 
-        makeHomeManagerConfiguration = { system, modules }:
-          home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs { inherit system; };
-            modules = [
-              nur.hmModules.nur
-              {
-                # Pin nixpkgs
-                nix.registry.nixpkgs.flake = nixpkgs;
-                home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
-              }
-            ] ++ modules;
-          };
+          # Pin nixpkgs
+          nix.registry.nixpkgs.flake = nixpkgs;
+          nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+        };
+
+        dell-latitude-3340.imports = [
+          self.nixosModules.default
+          ./nixos/dell-latitude-3340.nix
+        ];
       };
 
-      dellLatitude3340 = { modules }: self.lib.makeNixosConfiguration {
-        system = "x86_64-linux";
-        modules = [ ./nixos/dell-latitude-3340.nix ] ++ modules;
-      };
+      hmModules = {
+        default = {
+          imports = [
+            nur.hmModules.nur
+            ./home-manager/standalone.nix
+          ];
 
-      macosM1 = { modules }: self.lib.makeHomeManagerConfiguration {
-        system = "aarch64-darwin";
-        modules = [ ./home-manager/macos ] ++ modules;
+          # Pin nixpkgs
+          nix.registry.nixpkgs.flake = nixpkgs;
+          home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
+        };
+
+        macos.imports = [
+          self.hmModules.default
+          ./home-manager/macos
+        ];
       };
     };
 }
