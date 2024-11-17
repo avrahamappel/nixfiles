@@ -71,8 +71,6 @@ in
     settings = {
       # Docs: https://nixos.org/manual/nix/unstable/command-ref/conf-file.html
       experimental-features = [ "nix-command" "flakes" ];
-      keep-derivations = true;
-      keep-outputs = true;
     };
   };
 

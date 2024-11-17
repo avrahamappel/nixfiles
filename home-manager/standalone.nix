@@ -6,6 +6,10 @@
   imports = [ ./. ];
 
   nix.package = pkgs.nixVersions.latest;
+  nix.settings = {
+    keep-derivations = true;
+    keep-outputs = true;
+  };
 
   # Make nh available
   # There will be a module for this in HM 24.11
