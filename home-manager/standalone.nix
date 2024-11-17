@@ -8,7 +8,7 @@
   nix.package = pkgs.nix;
 
   # Make nh available
-  # There's an open PR with a module for this
+  # There will be a module for this in HM 24.11
   # https://github.com/nix-community/home-manager/pull/5304
   home.packages = with pkgs; [ nh ];
 
