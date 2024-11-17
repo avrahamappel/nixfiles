@@ -60,7 +60,7 @@
 
       # Misc
       ts = "toastify send";
-      qr = "qrscan -p";
+      qr = "qrscan";
       qw = "qrtool encode -t terminal";
 
       # Tmux
