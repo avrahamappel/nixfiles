@@ -5,7 +5,7 @@
 {
   imports = [ ./. ];
 
-  nix.package = pkgs.nix;
+  nix.package = pkgs.nixVersions.latest;
 
   # Make nh available
   # There will be a module for this in HM 24.11

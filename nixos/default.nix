@@ -5,6 +5,9 @@
     ./gnome.nix
   ];
 
+  # Latest Nix cli
+  nix.package = pkgs.nixVersions.latest;
+
   # Latest Linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
