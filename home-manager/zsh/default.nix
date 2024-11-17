@@ -35,7 +35,7 @@
       # NixOS
       sne = "se /etc/nixos/configuration.nix";
       snf = "sudo nixos-rebuild switch --fast";
-      snu = "sudo nix flake update /etc/nixos && nh os switch";
+      snu = "sudo nix flake update --flake /etc/nixos && nh os switch";
 
       # Home Manager
       hm = "home-manager";
