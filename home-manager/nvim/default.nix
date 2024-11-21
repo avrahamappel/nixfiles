@@ -280,7 +280,8 @@ in
                                                             # Backport PR for fix: https://nixpk.gs/pr-tracker.html?pr=348035
     nodePackages.yaml-language-server
     phpactor
-    python3Packages.python-lsp-server
+    # python3Packages.python-lsp-server Disabling this LSP until the issue with ghostscript is resolved
+    #                                   https://github.com/NixOS/nixpkgs/issues/355377
     shellcheck # Used by the bash LSP
     solargraph
     taplo

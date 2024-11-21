@@ -91,7 +91,7 @@ local servers = {
     'lemminx',
     'lua_ls',
     'nixd',
-    'pylsp',
+    -- 'pylsp',
     'phpactor',
     'solargraph',
     'taplo',
