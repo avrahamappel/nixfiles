@@ -95,6 +95,7 @@ in
     fd.enable = true;
     jq.enable = true;
     mpv.enable = true;
+    mpv.package = pkgs-unstable.mpv;
     ripgrep.enable = true;
 
     tealdeer = {
