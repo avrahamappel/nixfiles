@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
-let
-  pkgs-unstable = import (import ../npins).nixos-unstable { inherit (pkgs) system; };
-in
+# let
+#   pkgs-unstable = import (import ../npins).nixos-unstable { inherit (pkgs) system; };
+# in
 
 {
-  _module.args.pkgs-unstable = pkgs-unstable;
+  # _module.args.pkgs-unstable = pkgs-unstable;
 
   imports = [
     ./firefox.nix
@@ -95,7 +95,6 @@ in
     fd.enable = true;
     jq.enable = true;
     mpv.enable = true;
-    mpv.package = pkgs-unstable.mpv;
     ripgrep.enable = true;
 
     tealdeer = {

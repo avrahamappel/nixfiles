@@ -7,13 +7,14 @@
 
   nix.package = pkgs.nixVersions.latest;
 
-  # Make nh available
-  # There will be a module for this in HM 24.11
-  # https://github.com/nix-community/home-manager/pull/5304
-  home.packages = with pkgs; [ nh ];
-
-  # Set the flake path so nh knows what to update
-  home.sessionVariables.FLAKE = config.home.homeDirectory + "/.config/home-manager";
+  programs.nh = {
+    enable = true;
+    flake = config.home.homeDirectory + "/.config/home-manager";
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 30d";
+    };
+  };
 
   # MacOS updates remove this from /etc/zshrc
   programs.zsh.initExtra = ''

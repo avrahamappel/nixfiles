@@ -2,9 +2,9 @@
   description = "Entrypoint for both NixOS and standalone home-manager";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.11";
     home-manager = {
-      url = "home-manager/release-24.05";
+      url = "home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

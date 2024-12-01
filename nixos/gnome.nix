@@ -14,10 +14,11 @@
     })
     gnomeExtensions.vitals
     gnomeExtensions.night-theme-switcher
+    gnome-decoder
   ];
 
   # Don't install Gnome web browser by default
-  environment.gnome.excludePackages = with pkgs.gnome; [ epiphany ];
+  environment.gnome.excludePackages = with pkgs; [ epiphany ];
 
   # Default account settings
   programs.dconf.profiles.user.databases = [

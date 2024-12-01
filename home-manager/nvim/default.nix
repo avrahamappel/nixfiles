@@ -1,4 +1,4 @@
-{ pkgs, lib, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 let
   vim-afterimage = (import ../../npins).vim-afterimage;
@@ -7,10 +7,6 @@ in
 {
   programs.neovim = {
     enable = true;
-
-    # Use neovim >= 0.10
-    package = lib.mkIf (lib.strings.versionOlder pkgs.neovim.version "0.10")
-      pkgs-unstable.neovim-unwrapped;
 
     # Don't use any providers for now.
     withNodeJs = false;
@@ -270,18 +266,16 @@ in
     # LSPs
     lemminx
     lua-language-server
-    pkgs-unstable.nixd # Use latest nixd
+    nixd
     nixpkgs-fmt
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     nodePackages.vim-language-server
     nodePackages.vls
-    pkgs-unstable.nodePackages.vscode-langservers-extracted # Broken on 24.05 as of a3f9ad65a0bf298ed5847629a57808b97e6e8077
-                                                            # Backport PR for fix: https://nixpk.gs/pr-tracker.html?pr=348035
+    nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
     phpactor
-    # python3Packages.python-lsp-server Disabling this LSP until the issue with ghostscript is resolved
-    #                                   https://github.com/NixOS/nixpkgs/issues/355377
+    python3Packages.python-lsp-server
     shellcheck # Used by the bash LSP
     solargraph
     taplo

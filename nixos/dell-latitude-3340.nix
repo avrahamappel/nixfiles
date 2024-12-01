@@ -20,7 +20,10 @@ in
   services.psd.enable = true;
 
   # Power management
-  services.auto-cpufreq.enable = true;
+  # Disabling for now as conflicts with services.power-profiles-daemon,
+  # Which is set to true by Gnome
+  # If performance gets really bad I'll revisit this
+  # services.auto-cpufreq.enable = true;
 
   # Firmware
   hardware.enableAllFirmware = true;
