@@ -95,6 +95,7 @@ local servers = {
     'phpactor',
     'solargraph',
     'taplo',
+    'ts_ls',
     'typos_lsp',
     'vimls',
     'vuels',

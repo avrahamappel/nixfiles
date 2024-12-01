@@ -100,21 +100,20 @@ in
       # Language specific plugins #
       #############################
       markdown-preview-nvim
+      # {
+      #   plugin = typescript-nvim;
+      #   type = "lua";
+      #   config = /* lua */ ''
+      #     require("typescript").setup({
+      #         server = {
+      #             on_attach = on_attach,
+      #             settings = settings,
+      #         }
+      #     })
+      #   '';
+      # }
       {
-        plugin = typescript-nvim;
-        type = "lua";
-        config = /* lua */ ''
-          require("typescript").setup({
-              server = {
-                  on_attach = on_attach,
-                  settings = settings,
-              }
-          })
-        '';
-      }
-      {
-        plugin = rust-tools-nvim
-        ;
+        plugin = rust-tools-nvim;
         type = "lua";
         config = /* lua */ ''
           local rt = require("rust-tools")
