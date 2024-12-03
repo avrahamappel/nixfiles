@@ -1,9 +1,14 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
     ../standalone.nix
     ./skhd.nix
+  ];
+
+  home.packages = [
+    # Bluetooth CLI
+    pkgs.blueutil
   ];
 
   # Override font size on mac retina screen
