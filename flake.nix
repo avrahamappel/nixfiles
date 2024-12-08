@@ -7,14 +7,12 @@
       url = "home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
     { self
     , nixpkgs
     , home-manager
-    , nur
     }:
     {
       nixosModules = {
@@ -23,8 +21,6 @@
             home-manager.nixosModules.home-manager
             ./nixos
           ];
-
-          home-manager.sharedModules = [ nur.hmModules.nur ];
 
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
@@ -40,7 +36,6 @@
       hmModules = {
         default = {
           imports = [
-            nur.hmModules.nur
             ./home-manager/standalone.nix
           ];
 

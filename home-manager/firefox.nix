@@ -1,10 +1,14 @@
-{ lib, config, ... }:
+{ pkgs, lib, config, ... }:
+
+let
+  rycee-nur = pkgs.callPackage (import ../npins).nur-expressions { };
+in
 
 {
   options.firefoxProfileDefaults = lib.mkOption {
     description = "Defaults for Firefox profiles, extracted to allow merging";
     default = {
-      extensions = with config.nur.repos.rycee.firefox-addons; [
+      extensions = with rycee-nur.firefox-addons; [
         adblocker-ultimate
         browserpass
         copy-link-text
@@ -29,6 +33,8 @@
   };
 
   config = {
+    _module.args = { inherit rycee-nur; };
+
     programs.firefox = {
       enable = true;
       profiles.default = config.firefoxProfileDefaults;

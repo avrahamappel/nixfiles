@@ -18,6 +18,18 @@
       "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05beta718224.22c3f2cf41a0/nixexprs.tar.xz",
       "hash": "0w8426zrj58rj3y2w65l079j0gdzwhzkhnw7hgnldym5gddzhsxa"
     },
+    "nur-expressions": {
+      "type": "Git",
+      "repository": {
+        "type": "GitLab",
+        "repo_path": "rycee/nur-expressions",
+        "server": "https://gitlab.com/"
+      },
+      "branch": "master",
+      "revision": "7b549b626e367b694787ab2b7c53d3ad9b37a61d",
+      "url": "https://gitlab.com/api/v4/projects/rycee%2Fnur-expressions/repository/archive.tar.gz?sha=7b549b626e367b694787ab2b7c53d3ad9b37a61d",
+      "hash": "06fm7pbkli1ljzmgv0klfyd4a6gknvi3lpyn1fiwd31z407bn5gg"
+    },
     "vim-afterimage": {
       "type": "GitRelease",
       "repository": {
