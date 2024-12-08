@@ -73,7 +73,7 @@
 
     initExtraFirst = ''
       # Prompt customization
-      source ${builtins.toString ./prompt.zsh}
+      source ${./prompt.zsh}
     '';
 
     initExtra = ''
