@@ -7,6 +7,7 @@
       url = "home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
