@@ -15,6 +15,7 @@
     ./nvim
     ./passwords.nix
     ./hledger.nix
+    ./ssh.nix
   ];
 
   home = {
