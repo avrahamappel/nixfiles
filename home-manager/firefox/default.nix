@@ -1,7 +1,11 @@
 { pkgs, lib, config, ... }:
 
 let
-  rycee-nur = pkgs.callPackage (import ../npins).nur-expressions { };
+  rycee-nur = pkgs.callPackage (import ../../npins).nur-expressions { };
+
+  local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
+    inherit (rycee-nur.firefox-addons) buildFirefoxXpiAddon;
+  };
 in
 
 {
@@ -14,6 +18,7 @@ in
         copy-link-text
         duckduckgo-privacy-essentials
         surfingkeys
+        local-addons.internet_archive_downloader
       ];
 
       search.default = "DuckDuckGo";
@@ -34,6 +39,8 @@ in
 
   config = {
     _module.args = { inherit rycee-nur; };
+
+    home.packages = [ rycee-nur.mozilla-addons-to-nix ];
 
     programs.firefox = {
       enable = true;

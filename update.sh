@@ -6,3 +6,7 @@ nix flake update
 
 # Update pins
 npins update
+
+# Update firefox addons
+mozilla-addons-to-nix home-manager/firefox/addons.json \
+    home-manager/firefox/generated-firefox-addons.nix

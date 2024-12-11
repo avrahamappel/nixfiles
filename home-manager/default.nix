@@ -8,7 +8,7 @@
   # _module.args.pkgs-unstable = pkgs-unstable;
 
   imports = [
-    ./firefox.nix
+    ./firefox
     ./terminal.nix
     ./zsh
     ./git.nix
