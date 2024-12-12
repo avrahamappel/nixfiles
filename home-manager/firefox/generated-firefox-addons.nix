@@ -1,5 +1,25 @@
 { buildFirefoxXpiAddon, fetchurl, lib, stdenv }:
   {
+    "cors-everywhere" = buildFirefoxXpiAddon {
+      pname = "cors-everywhere";
+      version = "18.11.13.2044resigned1";
+      addonId = "cors-everywhere@spenibus";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4270788/cors_everywhere-18.11.13.2044resigned1.xpi";
+      sha256 = "57cfe1ab28a483751d33311d8093badcf261b81c94c5f2aecce3d8e599053c69";
+      meta = with lib;
+      {
+        homepage = "http://spenibus.net";
+        description = "A firefox addon allowing the user to enable CORS everywhere by altering http responses.\n\nReport issues to the repository, with enough information to reproduce the problem: \n<a href=\"https://prod.outgoing.prod.webservices.mozgcp.net/v1/088c788a8588a2f85171c2c68d8e2f23a9314d017c39dc1b3a93e8d757f45bb7/https%3A//github.com/spenibus/cors-everywhere-firefox-addon/issues\" rel=\"nofollow\">https://github.com/spenibus/cors-everywhere-firefox-addon/issues</a>";
+        license = licenses.mit;
+        mozPermissions = [
+          "webRequest"
+          "webRequestBlocking"
+          "storage"
+          "<all_urls>"
+        ];
+        platforms = platforms.all;
+      };
+    };
     "internet_archive_downloader" = buildFirefoxXpiAddon {
       pname = "internet_archive_downloader";
       version = "1.0.2";

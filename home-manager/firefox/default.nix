@@ -18,8 +18,12 @@ in
         copy-link-text
         duckduckgo-privacy-essentials
         surfingkeys
-        local-addons.internet_archive_downloader
-      ];
+      ] ++ (with local-addons; [
+        cors-everywhere
+        internet_archive_downloader # For downloading stuff from archive.org.
+                                    # Requires dsabling CORS to use, hence 
+                                    # the previous addon is necessary
+      ]);
 
       search.default = "DuckDuckGo";
       search.force = true; # Rebuilding fails without this
