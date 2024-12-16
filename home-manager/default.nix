@@ -40,6 +40,8 @@
       ubuntu_font_family
       (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
+      npins # Quick and easy pinned sources for Nix
+
       # Utilities
       ddgr # Query duckduckgo from command line
       du-dust # Intuitive disk usage
