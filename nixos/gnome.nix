@@ -61,7 +61,6 @@
         "firefox.desktop"
         "Alacritty.desktop"
         "org.gnome.Nautilus.desktop"
-        "org.gnome.Geary.desktop"
       ];
     };
 
