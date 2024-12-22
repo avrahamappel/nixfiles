@@ -8,15 +8,15 @@
         "repo": "nixos-hardware"
       },
       "branch": "master",
-      "revision": "cf737e2eba82b603f54f71b10cb8fd09d22ce3f5",
-      "url": "https://github.com/nixos/nixos-hardware/archive/cf737e2eba82b603f54f71b10cb8fd09d22ce3f5.tar.gz",
-      "hash": "0rczk0219bz8fdl6yy0bk20aww8ngfxhaasj245jvjf1kyxcyf7s"
+      "revision": "e8516a23524cc9083f5a02a8d64d14770e4c7c09",
+      "url": "https://github.com/nixos/nixos-hardware/archive/e8516a23524cc9083f5a02a8d64d14770e4c7c09.tar.gz",
+      "hash": "135w93vkcrvdv4rp34qi8682sgjqzp6k89k5wm2kf8f7dsqmx36k"
     },
     "nixos-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05beta721821.3566ab724667/nixexprs.tar.xz",
-      "hash": "0b1y8ipzmq2hysb8c4cy3d6zzhmwy18vjlp68r1lmvgpgdfxpj2r"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05beta724962.d70bd19e0a38/nixexprs.tar.xz",
+      "hash": "0f38k2h41xib1z6idb36bvysligq200hrqbbdxaxak9vdibzgmj7"
     },
     "nur-expressions": {
       "type": "Git",
@@ -26,9 +26,9 @@
         "server": "https://gitlab.com/"
       },
       "branch": "master",
-      "revision": "02261a5dd442b8c6eb778c31e7967e734bc2ff76",
-      "url": "https://gitlab.com/api/v4/projects/rycee%2Fnur-expressions/repository/archive.tar.gz?sha=02261a5dd442b8c6eb778c31e7967e734bc2ff76",
-      "hash": "1x0x6csjr6v39pz8hn00b95qm7yyf5nixihlzpx6sscmdxkxa8fk"
+      "revision": "5a5aea6627a4c360ba030ddadeda63d1ad294125",
+      "url": "https://gitlab.com/api/v4/projects/rycee%2Fnur-expressions/repository/archive.tar.gz?sha=5a5aea6627a4c360ba030ddadeda63d1ad294125",
+      "hash": "03iyi9w0rddrg5pb8m5vxdqhwy03jcqrkr3ylxqkjvymnfxjlrig"
     },
     "vim-afterimage": {
       "type": "GitRelease",
