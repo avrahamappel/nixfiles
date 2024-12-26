@@ -21,7 +21,7 @@
     shellAliases = {
       # Shell
       e = "$EDITOR $*";
-      se = "sudo nvim -u ~/.config/nvim/init.lua";
+      se = "sudo nvim";
       j = "jobs";
       o = if pkgs.stdenv.isLinux then "xdg-open" else "open";
       c = if pkgs.stdenv.isLinux then "wl-copy" else "pbcopy";
