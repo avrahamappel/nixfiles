@@ -15,8 +15,8 @@
     "nixos-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05beta729082.634fd4680144/nixexprs.tar.xz",
-      "hash": "07akps44cw2rsnzhq9b538yzb9phrx02nkd5x9w8h0l22g0rakcq"
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05beta732261.6df24922a140/nixexprs.tar.xz",
+      "hash": "19bw7y2rc0v5fdzi98nmpd0xjbx828asqbkyi75mdbq0c6v2p4wr"
     },
     "nur-expressions": {
       "type": "Git",
@@ -26,9 +26,9 @@
         "server": "https://gitlab.com/"
       },
       "branch": "master",
-      "revision": "fe816609e68ee1887ee89e43c9ca1aad75362477",
-      "url": "https://gitlab.com/api/v4/projects/rycee%2Fnur-expressions/repository/archive.tar.gz?sha=fe816609e68ee1887ee89e43c9ca1aad75362477",
-      "hash": "0p9vnkrwmf0r5d2pa720bmz9q2z979k9yqyickkixn4k5801v8gd"
+      "revision": "b93d8cdf12139da45146a6c3cf53141a437c41ec",
+      "url": "https://gitlab.com/api/v4/projects/rycee%2Fnur-expressions/repository/archive.tar.gz?sha=b93d8cdf12139da45146a6c3cf53141a437c41ec",
+      "hash": "1smphazkxbz3lc5jyp41d7fjlfs4ngb7qg3jlqr7shywfqzbjgd9"
     },
     "vim-afterimage": {
       "type": "GitRelease",
