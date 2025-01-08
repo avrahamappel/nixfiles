@@ -96,7 +96,21 @@
 
     # Other stuff
     fd.enable = true;
-    jq.enable = true;
+
+    jq = {
+      enable = true;
+      colors = {
+        # Reset to jq's default colors
+        null = "0;90";
+        false = "0;39";
+        true = "0;39";
+        numbers = "0;39";
+        strings = "0;32";
+        arrays = "1;39";
+        objects = "1;39";
+      };
+    };
+
     mpv.enable = true;
     ripgrep.enable = true;
 
