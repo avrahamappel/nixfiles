@@ -113,30 +113,25 @@ in
       #   '';
       # }
       {
-        plugin = rust-tools-nvim;
+        plugin = rustaceanvim;
         type = "lua";
         config = /* lua */ ''
-          local rt = require("rust-tools")
-          rt.setup({
+          vim.g.rustaceanvim = {
             server = {
-              on_attach = function(_arg, bufnr)
-                -- Call normal on_attach function
-                on_attach(_arg, bufnr)
-                -- Hover actions
-                vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-                -- Code action groups
-                vim.keymap.set("n", "<Leader>C", rt.code_action_group.code_action_group, {
-                  buffer = bufnr
-                })
-              end,
-              settings = settings
+              -- TODO: disabling keymaps for now until I learn the plugin better
+              -- on_attach = function(_arg, bufnr)
+              --   -- Call normal on_attach function
+              --   on_attach(_arg, bufnr)
+              --   -- Hover actions
+              --   vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+              --   -- Code action groups
+              --   vim.keymap.set("n", "<Leader>C", rt.code_action_group.code_action_group, {
+              --     buffer = bufnr
+              --   })
+              -- end,
+              default_settings = settings
             },
-            tools = {
-              inlay_hints = {
-                only_current_line = true,
-              },
-            },
-          })
+          }
         '';
       }
       {
