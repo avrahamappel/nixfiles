@@ -18,6 +18,7 @@ in
         copy-link-text
         duckduckgo-privacy-essentials
         surfingkeys
+        qr-code-address-bar
       ] ++ (with local-addons; [
         cors-everywhere
         internet_archive_downloader # For downloading stuff from archive.org.
