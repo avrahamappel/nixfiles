@@ -15,7 +15,6 @@ in
       extensions = with rycee-nur.firefox-addons; [
         adblocker-ultimate
         browserpass
-        copy-link-text
         duckduckgo-privacy-essentials
         surfingkeys
         qr-code-address-bar
