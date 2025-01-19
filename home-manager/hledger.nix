@@ -11,7 +11,7 @@
   config = {
     home.packages = [ pkgs.hledger ];
 
-    home.sessionVariables.LEDGER_FILE = config.hledgerPath + "/ledgers/2024.journal";
+    home.sessionVariables.LEDGER_FILE = config.hledgerPath + "/ledgers/2025/main.journal";
 
     home.shellAliases = {
       hl = "hledger";
