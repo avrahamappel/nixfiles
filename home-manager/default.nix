@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
-# let
-#   pkgs-unstable = import (import ../npins).nixos-unstable { inherit (pkgs) system; };
-# in
-
 {
-  # _module.args.pkgs-unstable = pkgs-unstable;
-
   imports = [
     ./firefox
     ./terminal.nix

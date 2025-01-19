@@ -1,8 +1,6 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, rycee-nur, ... }:
 
 let
-  rycee-nur = pkgs.callPackage (import ../../npins).nur-expressions { };
-
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
     inherit (rycee-nur.firefox-addons) buildFirefoxXpiAddon;
   };
@@ -42,8 +40,6 @@ in
   };
 
   config = {
-    _module.args = { inherit rycee-nur; };
-
     home.packages = [ rycee-nur.mozilla-addons-to-nix ];
 
     programs.firefox = {

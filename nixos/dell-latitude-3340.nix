@@ -1,15 +1,6 @@
 { lib, ... }:
 
-let
-  nixos-hardware = (import ../npins).nixos-hardware;
-in
-
 {
-  imports = [
-    ./.
-    "${nixos-hardware}/dell/latitude/3340"
-  ];
-
   # Some memory tweaks to improve performance hopefully
   boot.kernel.sysctl = {
     "vm.dirty_ratio" = 1;
