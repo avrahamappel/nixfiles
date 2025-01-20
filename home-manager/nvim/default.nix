@@ -340,6 +340,8 @@ in
 
     # Used by vim-afterimage
     antiword
-    pdftk
-  ];
+    # pdftk -> gradle is broken for Darwin
+    # Fixed in this PR: https://github.com/NixOS/nixpkgs/pull/374559
+    # (at the time of writing there is no stable backport PR)
+  ] ++ lib.optional (!stdenv.isDarwin) pdftk;
 }
