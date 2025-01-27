@@ -6,11 +6,13 @@
       {
         plugin = copilot-vim;
         config = /* vim */ ''
-          "start with copilot disabled, with maps to toggle
-          let g:coplot_filetypes = { '*': v:false }
+          " Maps to enable and disable Copilot
           map <leader>ii :Copilot enable<CR>
           map <leader>io :Copilot disable<CR>
         '';
+      }
+      {
+        plugin = cmp-copilot;
       }
     ];
   };
