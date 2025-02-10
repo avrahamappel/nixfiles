@@ -121,4 +121,10 @@
   # Git sync
   # Individual repo settings in sub-modules
   services.git-sync.enable = true;
+
+  # Thunderbird for email
+  programs.thunderbird = {
+    enable = true;
+    profiles.default.isDefault = true;
+  };
 }
