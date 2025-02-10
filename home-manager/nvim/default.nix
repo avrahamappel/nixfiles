@@ -334,7 +334,6 @@ in
     phpactor
     python3Packages.python-lsp-server
     shellcheck # Used by the bash LSP
-    solargraph
     taplo
     typos-lsp
 

@@ -94,6 +94,7 @@ local servers = {
     'pylsp',
     'phpactor',
     'solargraph',
+    'ruby-lsp',
     'taplo',
     'ts_ls',
     'typos_lsp',
