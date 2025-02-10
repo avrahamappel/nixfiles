@@ -94,7 +94,10 @@ local servers = {
     'pylsp',
     'phpactor',
     'solargraph',
-    'ruby_lsp',
+    -- 'ruby_lsp', -- This requires more work to get it to run than solargraph
+                   -- In principle I like it better, both because it's backed by shopify
+                   -- and because it's better at understanding project gems
+                   -- But getting it to work with nixpkgs / bundix is a challenge
     'taplo',
     'ts_ls',
     'typos_lsp',
