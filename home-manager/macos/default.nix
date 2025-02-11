@@ -19,13 +19,6 @@
 
   # Disable package installation on Mac
   programs.firefox.package = null;
-  programs.thunderbird.package = pkgs.runCommand "dummy-thunderbird" {} "mkdir $out";
-
-  # Required for non-Nix Thunderbird
-  home.sessionVariables = {
-    MOZ_LEGACY_PROFILES = 1;
-    MOZ_ALLOW_DOWNGRADE = 1;
-  };
 
   targets.darwin.defaults = {
     NSGlobalDomain = {
