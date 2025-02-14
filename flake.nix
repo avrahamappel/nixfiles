@@ -7,7 +7,7 @@
       url = "home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixpkgs-unstable.url= "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url= "nixpkgs/nixos-unstable";
     rycee-nur = {
       flake = false;
       url = "gitlab:rycee/nur-expressions";
@@ -19,15 +19,15 @@
     , nixpkgs
     , home-manager
     , nixos-hardware # Indirect, resolved by flake registry
-    # , nixpkgs-unstable
+    , nixpkgs-unstable
     , rycee-nur
     }:
 
     let
       extraArgs = pkgs: {
-        # pkgs-unstable = import nixpkgs-unstable {
-        #   inherit (pkgs) system;
-        # };
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit (pkgs) system;
+        };
         rycee-nur = pkgs.callPackage rycee-nur { };
       };
     in
