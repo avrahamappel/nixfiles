@@ -28,42 +28,42 @@
     };
 
     extraConfig = {
-      push = {
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = "simple";
+      branch.sort = "-committerdate"; # Sort branches by most recently updated
 
-        autoSetupRemote = true;
+      commit.verbose = true; # Always show a full diff in the commit message screen
+
+      diff = { # Smarter diffs
+        algorithm = "histogram";
+        colorMoved = "plain";
+        renames = true;
       };
 
-      commit = {
-        # Always show a full diff in the commit message screen
-        verbose = true;
+      fetch = {
+        prune = true;     # Prune deleted branches
+        pruneTags = true; # Prune deleted tags
       };
 
-      init = {
-        defaultBranch = "master";
+      init.defaultBranch = "master";
+
+      merge.tool = "nvimdiff";
+      mergetool.keepBackup = false;
+
+      pull.ff = "only";
+
+      push.autoSetupRemote = true;
+
+      rerere = { # Reuse Recorded Resolutions, don't resolve the same conflicts over and over
+        enabled = true;
+        autoupdate = true;
       };
 
-      merge = {
-        tool = "nvimdiff";
-      };
-
-      mergetool = {
-        keepBackup = false;
-      };
-
-      pull = {
-        ff = "only";
-      };
+      tag.sort = "version:refname"; # Sort semver tags correctly
     };
 
-    difftastic = {
-      enable = true;
-      # This option is somewhat oddly named. I'm telling it to use bright colors.
-      background = "dark";
-    };
+    # difftastic = {
+    #   enable = true;
+    #   # This option is somewhat oddly named. I'm telling it to use bright colors.
+    #   background = "dark";
+    # };
   };
 }
