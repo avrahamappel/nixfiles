@@ -129,19 +129,19 @@ local settings = {
         },
     },
 
-    nixd = {
-        formatting = {
-            command = { "nixpkgs-fmt" },
-        },
+    -- nixd = {
+    --     formatting = {
+    --         command = { "nixpkgs-fmt" },
+    --     },
 
-        -- Include home-manager options by setting this
-        -- options = {
-        --     home-manager = {
-        --         expr = "some expression"
-        --     }
-        -- }
-        -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
-    },
+    --     -- Include home-manager options by setting this
+    --     -- options = {
+    --     --     home-manager = {
+    --     --         expr = "some expression"
+    --     --     }
+    --     -- }
+    --     -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
+    -- },
 
     ['rust-analyzer'] = {
         checkOnSave = {
