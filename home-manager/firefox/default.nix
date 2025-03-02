@@ -31,6 +31,8 @@ in
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
         "browser.newtabpage.activity-stream.weather.temperatureUnits" = "c";
+        "browser.sessionstore.enabled" = true;
+        "browser.sessionstore.resume_session_once" = true;
         "extensions.activeThemeID" = "default-theme@mozilla.org";
         "extensions.formautofill.creditCards.enabled" = false;
         "extensions.update.autoUpdateDefault" = false;
