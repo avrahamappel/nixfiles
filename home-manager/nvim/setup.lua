@@ -94,6 +94,7 @@ local servers = {
     'pylsp',
     'phpactor',
     'solargraph',
+    'sourcekit', -- Swift and C/C++/Objective-C language server
     -- 'ruby_lsp', -- This requires more work to get it to run than solargraph
                    -- In principle I like it better, both because it's backed by shopify
                    -- and because it's better at understanding project gems
@@ -104,6 +105,11 @@ local servers = {
     'vimls',
     'vuels',
     'yamlls'
+}
+
+-- Server command overrides
+local commands = {
+    sourcekit = { 'nix', 'run', 'nixpkgs#sourcekit-lsp' },
 }
 
 -- Server-specific settings
@@ -166,7 +172,7 @@ local settings = {
 function registerLsps(args)
     local lsps = args.lsps or {}
     local lsp_settings = args.lsp_settings or {}
-    local commands = args.commands or {}
+    local lsp_commands = args.commands or {}
     local root_dirs = args.root_dirs or {}
 
     local setup_opts = {
@@ -176,7 +182,7 @@ function registerLsps(args)
     }
 
     for _, lsp in ipairs(lsps) do
-        if commands[lsp] then
+        if lsp_commands[lsp] then
             setup_opts.cmd = commands[lsp]
         end
 
@@ -188,7 +194,7 @@ function registerLsps(args)
     end
 end
 
-registerLsps { lsps = servers, settings = settings }
+registerLsps { lsps = servers, settings = settings, commands = commands }
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
