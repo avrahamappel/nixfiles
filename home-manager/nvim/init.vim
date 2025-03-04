@@ -45,8 +45,9 @@ set grepprg=rg\ --column\ --line-number\ --no-heading\ $*
 " Mappings configuration
 """""""""""""""""""""""""""""""""""""
 
-" Why reach for ctrl in normal mode?
+" Why reach for modifier keys in normal mode?
 map <leader>w <C-w>
+map <leader>; :
 
 map [q :cprevious<CR>
 map ]q :cnext<CR>
