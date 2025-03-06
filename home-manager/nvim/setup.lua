@@ -109,7 +109,6 @@ local servers = {
 
 -- Server command overrides
 local commands = {
-    sourcekit = { 'nix', 'run', 'nixpkgs#sourcekit-lsp' },
 }
 
 -- Server-specific settings
@@ -243,7 +242,7 @@ cmp.setup({
 })
 
 require 'lsp_signature'.setup({
-    hint_prefix = "", -- no panda
+    hint_prefix = "",        -- no panda
     floating_window = false, -- don't need the whole honkin' window
 })
 
