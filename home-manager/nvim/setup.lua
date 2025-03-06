@@ -135,19 +135,19 @@ local settings = {
         },
     },
 
-    -- nixd = {
-    --     formatting = {
-    --         command = { "nixpkgs-fmt" },
-    --     },
+    nixd = {
+        formatting = {
+            command = { "nixpkgs-fmt" },
+        },
 
-    --     -- Include home-manager options by setting this
-    --     -- options = {
-    --     --     home-manager = {
-    --     --         expr = "some expression"
-    --     --     }
-    --     -- }
-    --     -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
-    -- },
+        -- Include home-manager options by setting this
+        -- options = {
+        --     home-manager = {
+        --         expr = "some expression"
+        --     }
+        -- }
+        -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
+    },
 
     ['rust-analyzer'] = {
         checkOnSave = {
@@ -171,7 +171,7 @@ local settings = {
 -- Global function to allow for project-level LSP config
 function registerLsps(args)
     local lsps = args.lsps or {}
-    local lsp_settings = args.lsp_settings or {}
+    local lsp_settings = args.settings or {}
     local lsp_commands = args.commands or {}
     local root_dirs = args.root_dirs or {}
 
@@ -183,7 +183,7 @@ function registerLsps(args)
 
     for _, lsp in ipairs(lsps) do
         if lsp_commands[lsp] then
-            setup_opts.cmd = commands[lsp]
+            setup_opts.cmd = lsp_commands[lsp]
         end
 
         if root_dirs[lsp] then
