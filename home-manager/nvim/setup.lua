@@ -1,6 +1,7 @@
 ------------------------------
 -- Treesitter configuration --
 ------------------------------
+---@diagnostic disable-next-line: missing-fields
 require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true,
@@ -44,7 +45,7 @@ vim.diagnostic.config({
     severity_sort = true,
     float = {
         -- Show diagnostics sources
-        source = "always",
+        source = true,
     },
 })
 
@@ -252,7 +253,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = ".env*",
     group = group,
     callback = function(args)
-        vim.diagnostic.disable(args.buf)
+        vim.diagnostic.enable(false, { bufnr = args.buf })
     end
 })
 
