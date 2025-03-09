@@ -4,6 +4,11 @@ let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
     inherit (rycee-nur.firefox-addons) buildFirefoxXpiAddon;
   };
+
+  # Having this package in my profile adds an extra 4G of GHC/Haskell stuff
+  mozilla-addons-to-nix = pkgs.writeShellScriptBin "mozilla-addons-to-nix" ''
+    nix run sourcehut:~/rycee/mozilla-addons-to-nix "$@"
+  '';
 in
 
 {
@@ -42,7 +47,7 @@ in
   };
 
   config = {
-    home.packages = [ rycee-nur.mozilla-addons-to-nix ];
+    home.packages = [ mozilla-addons-to-nix ];
 
     programs.firefox = {
       enable = true;
