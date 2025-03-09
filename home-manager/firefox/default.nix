@@ -23,9 +23,10 @@ in
         qr-code-address-bar
       ] ++ (with local-addons; [
         cors-everywhere
-        internet_archive_downloader # For downloading stuff from archive.org.
-                                    # Requires dsabling CORS to use, hence 
-                                    # the previous addon is necessary
+        # For downloading stuff from archive.org.
+        # Requires dsabling CORS to use, hence 
+        # the previous addon
+        internet_archive_downloader
       ]);
 
       search.default = "DuckDuckGo";
