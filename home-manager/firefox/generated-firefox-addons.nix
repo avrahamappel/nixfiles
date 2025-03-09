@@ -9,7 +9,7 @@
       meta = with lib;
       {
         homepage = "http://spenibus.net";
-        description = "A firefox addon allowing the user to enable CORS everywhere by altering http responses.\n\nReport issues to the repository, with enough information to reproduce the problem: \n<a href=\"https://prod.outgoing.prod.webservices.mozgcp.net/v1/088c788a8588a2f85171c2c68d8e2f23a9314d017c39dc1b3a93e8d757f45bb7/https%3A//github.com/spenibus/cors-everywhere-firefox-addon/issues\" rel=\"nofollow\">https://github.com/spenibus/cors-everywhere-firefox-addon/issues</a>";
+        description = "A firefox addon allowing the user to enable CORS everywhere by altering http responses.\n\nReport issues to the repository, with enough information to reproduce the problem: \nhttps://github.com/spenibus/cors-everywhere-firefox-addon/issues";
         license = licenses.mit;
         mozPermissions = [
           "webRequest"
