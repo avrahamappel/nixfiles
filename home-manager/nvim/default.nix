@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 let
   vim-afterimage = (import ../../npins).vim-afterimage;
@@ -183,7 +183,7 @@ in
       }
 
       # LSP / TreeSitter / Completion plugins
-      nvim-treesitter.withAllGrammars
+      pkgs-unstable.vimPlugins.nvim-treesitter.withAllGrammars
 
       cmp-nvim-lsp
       cmp-treesitter
