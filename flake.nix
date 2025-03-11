@@ -42,7 +42,10 @@
             ./nixos
           ];
 
-          home-manager.users.avraham._module.args = extraArgs pkgs;
+          home-manager.users.avraham = {
+            _module.args = extraArgs pkgs;
+            imports = [ ./home-manager/personal.nix ];
+          };
 
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
