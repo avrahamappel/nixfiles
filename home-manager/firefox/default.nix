@@ -17,6 +17,7 @@ in
         surfingkeys
         qr-code-address-bar
       ] ++ (with local-addons; [
+        amazon-orders-to-beancount
         cors-everywhere
         # For downloading stuff from archive.org.
         # Requires dsabling CORS to use, hence 

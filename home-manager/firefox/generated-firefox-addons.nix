@@ -1,5 +1,30 @@
 { buildFirefoxXpiAddon, fetchurl, lib, stdenv }:
   {
+    "amazon-orders-to-beancount" = buildFirefoxXpiAddon {
+      pname = "amazon-orders-to-beancount";
+      version = "1.0";
+      addonId = "amazon-bean@darksair.org";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4282369/amazon_orders_to_beancount-1.0.xpi";
+      sha256 = "f3078ee3f7ca65720db2ebeae087c32b6ad6a49f231e099b926bd73dfbdaaf3b";
+      meta = with lib;
+      {
+        homepage = "https://github.com/MetroWind/amazon-beancount-firefox";
+        description = "Scrap order info from Amazon, and generate Beancount entries.";
+        mozPermissions = [
+          "storage"
+          "webRequest"
+          "*://*.amazon.com/gp/*/order-history?*"
+          "*://amazon.com/gp/*/order-history?*"
+          "*://*.amazon.com/your-orders/orders?*"
+          "*://amazon.com/your-orders/orders?*"
+          "*://*.amazon.ca/gp/*/order-history?*"
+          "*://amazon.ca/gp/*/order-history?*"
+          "*://*.amazon.ca/your-orders/orders?*"
+          "*://amazon.ca/your-orders/orders?*"
+        ];
+        platforms = platforms.all;
+      };
+    };
     "cors-everywhere" = buildFirefoxXpiAddon {
       pname = "cors-everywhere";
       version = "18.11.13.2044resigned1";
