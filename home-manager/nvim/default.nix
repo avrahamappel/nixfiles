@@ -331,7 +331,6 @@ in
     nodePackages.vls
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
-    phpactor
     python3Packages.python-lsp-server
     shellcheck # Used by the bash LSP
     taplo
