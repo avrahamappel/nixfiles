@@ -94,12 +94,9 @@ local servers = {
     'nixd',
     'pylsp',
     'phpactor',
+    'rust_analyzer',
     'solargraph',
     'sourcekit', -- Swift and C/C++/Objective-C language server
-    -- 'ruby_lsp', -- This requires more work to get it to run than solargraph
-                   -- In principle I like it better, both because it's backed by shopify
-                   -- and because it's better at understanding project gems
-                   -- But getting it to work with nixpkgs / bundix is a challenge
     'taplo',
     'ts_ls',
     'typos_lsp',
