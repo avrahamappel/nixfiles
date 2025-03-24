@@ -69,6 +69,11 @@
       # Docs: https://nixos.org/manual/nix/unstable/command-ref/conf-file.html
       experimental-features = [ "nix-command" "flakes" ];
     };
+
+    # Include local access-tokens
+    extraOptions = ''
+      !include access-tokens.conf
+    '';
   };
 
   # Enable font discovery
