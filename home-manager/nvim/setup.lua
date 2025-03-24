@@ -94,7 +94,6 @@ local servers = {
     'nixd',
     'pylsp',
     'phpactor',
-    'rust_analyzer',
     'solargraph',
     'sourcekit', -- Swift and C/C++/Objective-C language server
     'taplo',
