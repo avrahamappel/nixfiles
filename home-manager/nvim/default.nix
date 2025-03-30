@@ -115,7 +115,7 @@ in
       #   '';
       # }
       {
-        plugin = rustaceanvim;
+        plugin = pkgs-unstable.vimPlugins.rustaceanvim;
         type = "lua";
         config = /* lua */ ''
           vim.g.rustaceanvim = {
@@ -190,8 +190,8 @@ in
       cmp-nvim-lsp
       cmp-treesitter
       cmp-vsnip
-      nvim-cmp
-      nvim-lspconfig
+      pkgs-unstable.vimPlugins.nvim-cmp
+      pkgs-unstable.vimPlugins.nvim-lspconfig
       nvim-treesitter-refactor
       lsp_signature-nvim
       SchemaStore-nvim # Adds schemas to json ls
@@ -233,7 +233,7 @@ in
 
       # Mini.nvim (collection of plugins)
       {
-        plugin = mini-nvim;
+        plugin = pkgs-unstable.vimPlugins.mini-nvim;
         type = "lua";
         config = /* lua */ ''
           require('mini.ai').setup()
