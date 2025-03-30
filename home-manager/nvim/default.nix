@@ -8,6 +8,8 @@ in
   programs.neovim = {
     enable = true;
 
+    package = pkgs-unstable.neovim-unwrapped;
+
     # Don't use any providers for now.
     withNodeJs = false;
     withPython3 = false;
