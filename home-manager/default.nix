@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./ai.nix
     ./firefox
     ./terminal.nix
     ./zsh
