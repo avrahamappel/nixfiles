@@ -31,7 +31,7 @@
       ns = "nix-shell -p $@ --run zsh";
       nr = "nix repl";
       nu = "nix-channel --update";
-      nd = "nix build nixpkgs#nixpkgs-manual --no-link --print-out-paths | xargs -I{} xdg-open {}/share/doc/nixpkgs/manual.html";
+      nd = "nix build nixpkgs#nixpkgs-manual --no-link --print-out-paths | xargs -I{} ${if pkgs.stdenv.isDarwin then "open" else "xdg-open"} {}/share/doc/nixpkgs/manual.html";
 
       # NixOS
       sne = "se /etc/nixos/configuration.nix";
