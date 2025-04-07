@@ -17,6 +17,11 @@ in
       lynx # copilot chat wants this
     ];
 
+    # Shell aliases for github-copilot-cli
+    programs.zsh.initExtra = ''
+      eval "$(${pkgs.github-copilot-cli}/bin/github-copilot-cli alias -- "$0")"
+    '';
+
     programs.neovim.extraLuaPackages = ps: with ps; [
       tiktoken_core # Optional dependency of CopilotChat-nvim
     ];
