@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./ai.nix
+    ./copilot.nix
     ./firefox
     ./terminal.nix
     ./zsh

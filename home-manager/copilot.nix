@@ -1,12 +1,12 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.user.ai;
+  cfg = config.user.copilot;
 in
 
 {
-  options.user.ai = {
-    enable = (lib.mkEnableOption "ai / copilot") // {
+  options.user.copilot = {
+    enable = (lib.mkEnableOption "copilot") // {
       default = true;
     };
   };
