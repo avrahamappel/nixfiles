@@ -27,11 +27,6 @@
     };
   };
 
-  # Allow unfree packages (drivers etc.)
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [
-  ];
-
   # Docs: https://nixos.org/manual/nix/unstable/command-ref/conf-file.html
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
