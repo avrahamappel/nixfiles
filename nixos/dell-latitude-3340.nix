@@ -17,7 +17,7 @@
   # services.auto-cpufreq.enable = true;
 
   # Firmware
-  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
 
   # Prune nix store more aggressively
   programs.nh.clean.extraArgs = lib.mkForce "--keep-since 10d";
