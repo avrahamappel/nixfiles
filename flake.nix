@@ -7,7 +7,7 @@
       url = "home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-unstable.url= "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     rycee-nur = {
       flake = false;
       url = "gitlab:rycee/nur-expressions";
@@ -49,6 +49,7 @@
 
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
+          nix.registry.upkgs.flake = nixpkgs-unstable;
           nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
         };
 
@@ -69,6 +70,7 @@
 
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
+          nix.registry.upkgs.flake = nixpkgs-unstable;
           home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
         };
 
