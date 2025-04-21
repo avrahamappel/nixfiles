@@ -3,6 +3,7 @@
 {
   imports = [
     ./gnome.nix
+    ./printers.nix
   ];
 
   # Latest Nix cli
