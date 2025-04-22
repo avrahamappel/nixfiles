@@ -11,11 +11,15 @@
     gnomeExtensions.pip-on-top
     gnomeExtensions.vitals
     gnomeExtensions.night-theme-switcher
-    gnome-decoder
   ];
 
-  # Don't install Gnome web browser by default
-  environment.gnome.excludePackages = with pkgs; [ epiphany ];
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany # Web browser
+    geary # Mail client
+    gnome-software # Software update center
+    gnome-tour
+    orca # Screen reader
+  ];
 
   # Default account settings
   programs.dconf.profiles.user.databases = [
@@ -29,11 +33,6 @@
   # My specific user account settings
   home-manager.users.avraham.dconf.settings = {
     # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-    "org/gnome/Geary" = {
-      autoselect = false;
-      single-key-shortcuts = true;
-    };
-
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       clock-show-weekday = true;
