@@ -8,7 +8,11 @@ in
   programs.neovim = {
     enable = true;
 
-    package = pkgs-unstable.neovim-unwrapped;
+    package = pkgs-unstable.neovim-unwrapped.overrideAttrs (old: {
+      meta = old.meta or { } // {
+        maintainers = old.maintainers or [ ];
+      };
+    });
 
     # Don't use any providers for now.
     withNodeJs = false;
