@@ -8,5 +8,6 @@ nix flake update
 npins update
 
 # Update firefox addons
-mozilla-addons-to-nix home-manager/firefox/addons.json \
+nix run sourcehut:~rycee/mozilla-addons-to-nix -- \
+    home-manager/firefox/addons.json \
     home-manager/firefox/generated-firefox-addons.nix

@@ -45,8 +45,6 @@ in
   };
 
   config = {
-    home.packages = [ rycee-nur.mozilla-addons-to-nix ];
-
     programs.firefox = {
       enable = true;
       profiles.default = config.firefoxProfileDefaults;
