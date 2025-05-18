@@ -10,11 +10,12 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v2.2",
       "revision": "782352096f95dcab574fec93e787d0b2e18b362e",
       "url": "https://api.github.com/repos/tpope/vim-afterimage/tarball/v2.2",
       "hash": "0r56yp73sp69ay932rd0jzimj0al1ixqqpqw3l16d4m326zd0zbv"
     }
   },
-  "version": 3
+  "version": 5
 }
