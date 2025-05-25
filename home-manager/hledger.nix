@@ -28,5 +28,7 @@ in
       path = cfg.hledgerPath;
       uri = "git@github.com:avrahamappel/pta.git";
     };
+
+    programs.neovim.plugins = [ pkgs.vimPlugins.vim-ledger ];
   };
 }

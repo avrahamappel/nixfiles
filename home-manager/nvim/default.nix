@@ -147,7 +147,6 @@ in
         '';
       }
       vim-rails
-      vim-ledger
 
       ##############
       # DB Support #
