@@ -3,6 +3,7 @@
 {
   programs.alacritty = {
     enable = true;
+    package = pkgs.callPackage ./alacritty-bidi { };
     settings = {
       window = {
         opacity = 0.75;
