@@ -333,7 +333,6 @@ in
     nodePackages.bash-language-server
     nodePackages.typescript-language-server
     nodePackages.vim-language-server
-    nodePackages.vls
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
     python3Packages.python-lsp-server
