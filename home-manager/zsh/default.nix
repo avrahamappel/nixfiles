@@ -30,7 +30,6 @@
       # Nix
       ns = "nix-shell -p $@ --run zsh";
       nr = "nix repl";
-      nu = "nix-channel --update";
       nd = "nix build nixpkgs#nixpkgs-manual --no-link --print-out-paths | xargs -I{} ${if pkgs.stdenv.isDarwin then "open" else "xdg-open"} {}/share/doc/nixpkgs/manual.html";
 
       # NixOS
@@ -40,7 +39,6 @@
 
       # Home Manager
       hm = "home-manager";
-      hme = "cd ~/.nixfiles; e .";
       hmu = "nh home switch -u";
 
       # Git
