@@ -83,7 +83,6 @@ end
 local servers = {
     'bashls',
     'cssls',
-    'elmls',
     'eslint',
     'html',
     'jsonls',
@@ -91,9 +90,6 @@ local servers = {
     'lua_ls',
     'nixd',
     'pylsp',
-    'phpactor',
-    'solargraph',
-    'sourcekit', -- Swift and C/C++/Objective-C language server
     'taplo',
     'ts_ls',
     'typos_lsp',
