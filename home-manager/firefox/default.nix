@@ -10,7 +10,7 @@ in
   options.firefoxProfileDefaults = lib.mkOption {
     description = "Defaults for Firefox profiles, extracted to allow merging";
     default = {
-      extensions = with rycee-nur.firefox-addons; [
+      extensions.packages = with rycee-nur.firefox-addons; [
         adblocker-ultimate
         browserpass
         duckduckgo-privacy-essentials
@@ -25,7 +25,7 @@ in
         internet_archive_downloader
       ]);
 
-      search.default = "DuckDuckGo";
+      search.default = "ddg";
       search.force = true; # Rebuilding fails without this
 
       settings = {

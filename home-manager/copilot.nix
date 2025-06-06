@@ -18,7 +18,7 @@ in
     ];
 
     # Shell aliases for github-copilot-cli
-    programs.zsh.initExtra = ''
+    programs.zsh.initContent = ''
       eval "$(${pkgs.github-copilot-cli}/bin/github-copilot-cli alias -- "$0")"
     '';
 

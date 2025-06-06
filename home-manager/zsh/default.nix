@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./prompt.nix ];
+
   programs.zsh = {
     enable = true;
 
@@ -70,12 +72,7 @@
       txb = "${pkgs.ttyd}/bin/ttyd -W -i 127.0.0.1 -q -t fontFamily='UbuntuMono Nerd Font' -t fontSize=18 -B tmux attach";
     };
 
-    initExtraFirst = ''
-      # Prompt customization
-      source ${./prompt.zsh}
-    '';
-
-    initExtra = ''
+    initContent = ''
       # Extra options
       setopt HIST_IGNORE_ALL_DUPS
       setopt HIST_REDUCE_BLANKS

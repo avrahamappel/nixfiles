@@ -15,7 +15,7 @@
   home.sessionVariables.FLAKE = config.home.homeDirectory + "/.config/home-manager";
 
   # MacOS updates remove this from /etc/zshrc
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     # Start Nix daemon
     if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
       . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'

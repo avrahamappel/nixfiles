@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 let
   vim-afterimage = (import ../../npins).vim-afterimage;
@@ -7,12 +7,6 @@ in
 {
   programs.neovim = {
     enable = true;
-
-    package = pkgs-unstable.neovim-unwrapped.overrideAttrs (old: {
-      meta = old.meta or { } // {
-        maintainers = old.maintainers or [ ];
-      };
-    });
 
     # Don't use any providers for now.
     withNodeJs = false;
@@ -188,7 +182,7 @@ in
       }
 
       # LSP / TreeSitter / Completion plugins
-      pkgs-unstable.vimPlugins.nvim-treesitter.withAllGrammars
+      nvim-treesitter.withAllGrammars
 
       cmp-nvim-lsp
       cmp-treesitter

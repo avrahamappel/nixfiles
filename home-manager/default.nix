@@ -33,7 +33,7 @@
     packages = with pkgs; [
       # Fonts
       ubuntu_font_family
-      (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
+      nerd-fonts.ubuntu-mono 
 
       npins # Quick and easy pinned sources for Nix
 
@@ -108,6 +108,7 @@
         strings = "0;32";
         arrays = "1;39";
         objects = "1;39";
+        objectKeys = "1;34";
       };
     };
 
