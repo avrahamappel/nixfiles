@@ -12,7 +12,7 @@
   home.packages = with pkgs; [ nh ];
 
   # Set the flake path so nh knows what to update
-  home.sessionVariables.FLAKE = config.home.homeDirectory + "/.config/home-manager";
+  home.sessionVariables.NH_FLAKE = config.home.homeDirectory + "/.config/home-manager";
 
   # MacOS updates remove this from /etc/zshrc
   programs.zsh.initContent = ''
