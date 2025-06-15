@@ -13,7 +13,6 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      github-copilot-cli
       lynx # copilot chat wants this
     ];
 
