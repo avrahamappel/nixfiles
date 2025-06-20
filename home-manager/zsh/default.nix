@@ -65,7 +65,7 @@
       qw = "qrtool encode -t terminal";
 
       # Tmux
-      tx = "tmux";
+      txl = "tmux ls";
       txn = "tmux new -A -s $*";
       txa = "tmux attach";
       txe = "txn $(basename $PWD) nvim . +\"vert Git\"";
