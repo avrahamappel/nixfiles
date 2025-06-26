@@ -21,4 +21,18 @@
 
   # Prune nix store more aggressively
   programs.nh.clean.extraArgs = lib.mkForce "--keep-since 10d";
+
+  # Don't suspend on lid close if an SSH session is active
+  systemd.services.suspend-ssh-check = {
+    description = "Prevent suspend when SSH sessions are active";
+    wantedBy = [ "suspend.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = ./check_ssh.sh;
+      RemainAfterExit = true;
+      User = "root";
+      ProtectSystem = "strict"; # Makes the system read-only
+      ProtectHome = true; # Restricts access to user home directories
+    };
+  };
 }
