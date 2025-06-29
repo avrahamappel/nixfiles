@@ -28,6 +28,10 @@
     sudo.u2fAuth = true;
   };
 
+  # Disable Vulkan on older Intel GPUs
+  # see https://bbs.archlinux.org/viewtopic.php?id=306078
+  environment.variables.VK_ICD_FILENAMES = "";
+
   # Don't suspend on lid close if an SSH session is active
   systemd.services.suspend-ssh-check = {
     description = "Prevent suspend when SSH sessions are active";
