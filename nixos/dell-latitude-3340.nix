@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Some memory tweaks to improve performance hopefully
@@ -31,6 +31,19 @@
   # Disable Vulkan on older Intel GPUs
   # see https://bbs.archlinux.org/viewtopic.php?id=306078
   environment.variables.VK_ICD_FILENAMES = "";
+
+  # Enable hardware acceleration for video decoding
+  # See https://wiki.nixos.org/wiki/Accelerated_Video_Playback
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-vaapi-driver
+    mesa
+  ];
+  home-manager.users.avraham.programs.mpv.config = {
+    hwdec = "auto-safe";
+    vo = "gpu";
+    profile = "gpu-hq";
+    gpu-context = "wayland";
+  };
 
   # Don't suspend on lid close if an SSH session is active
   systemd.services.suspend-ssh-check = {
