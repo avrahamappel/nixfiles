@@ -22,6 +22,12 @@
   # Prune nix store more aggressively
   programs.nh.clean.extraArgs = lib.mkForce "--keep-since 10d";
 
+  # Login with Yubikey
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
+
   # Don't suspend on lid close if an SSH session is active
   systemd.services.suspend-ssh-check = {
     description = "Prevent suspend when SSH sessions are active";
