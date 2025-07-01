@@ -1,6 +1,10 @@
 { pkgs, lib, ... }:
 
 {
+  imports = [
+    ./wine.nix
+  ];
+
   # Some memory tweaks to improve performance hopefully
   boot.kernel.sysctl = {
     "vm.dirty_ratio" = 1;
