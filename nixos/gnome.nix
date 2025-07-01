@@ -21,6 +21,11 @@
     orca # Screen reader
   ];
 
+  # Fix Remote Desktop not showing in settings
+  systemd.services.gnome-remote-desktop = {
+    wantedBy = [ "graphical.target" ];
+  };
+
   # Default account settings
   programs.dconf.profiles.user.databases = [
     {
