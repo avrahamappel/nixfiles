@@ -102,6 +102,12 @@ local commands = {
 
 -- Server-specific settings
 local settings = {
+    eslint = {
+        workingDirectory = {
+            mode = 'auto', -- Automatically detect the working directory
+        },
+    },
+
     json = {
         schemas = require('schemastore').json.schemas(),
         validate = { enable = true },
