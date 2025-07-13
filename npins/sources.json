@@ -1,5 +1,21 @@
 {
   "pins": {
+    "codecompanion-spinner.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "franco-ruggeri",
+        "repo": "codecompanion-spinner.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.2.1",
+      "revision": "af0dd1af48052c9e6ea0927ed9e5418438b62d84",
+      "url": "https://api.github.com/repos/franco-ruggeri/codecompanion-spinner.nvim/tarball/v0.2.1",
+      "hash": "10x2qhdpsy857pygsxk4rhh5h72ndk246vn0a0s8sz75x326lllv"
+    },
     "vim-afterimage": {
       "type": "GitRelease",
       "repository": {
