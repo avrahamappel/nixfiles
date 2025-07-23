@@ -60,6 +60,14 @@ set_prompt() {
   export RPROMPT=$'$(stash_count)$(tmux_count)$(jobs_count)$(cur_time)'
 }
 
+# Set terminal title to pwd
+set_terminal_title() {
+  local title="${PWD/#$HOME/~}"
+
+  echo -ne "\033]0;${title}\007"
+}
+
 precmd() {
+  set_terminal_title
   set_prompt
 }
