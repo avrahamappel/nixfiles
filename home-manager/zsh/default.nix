@@ -16,8 +16,8 @@
 
     historySubstringSearch = {
       enable = true;
-      searchUpKey = "^[OA";
-      searchDownKey = "^[OB";
+      searchUpKey = if pkgs.stdenv.isDarwin then "^[[A" else "^[OA" ;
+      searchDownKey = if pkgs.stdenv.isDarwin then "^[[B" else "^[OB" ;
     };
 
     shellAliases = {
@@ -80,10 +80,6 @@
 
       # Force emacs mode
       bindkey -e
-
-      # Make sure we can search history
-      bindkey "^[OA" up-line-or-search
-      bindkey "^[OB" down-line-or-search
 
       # Case-insensitive completion
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
