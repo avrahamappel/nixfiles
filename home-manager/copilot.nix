@@ -3,15 +3,6 @@
 let
   cfg = config.user.copilot;
 
-  npins = import ../npins;
-
-  codecompanion-spinner-nvim = pkgs.vimUtils.buildVimPlugin {
-    pname = "codecompanion-spinner.nvim";
-    version = npins."codecompanion-spinner.nvim".version;
-    src = npins."codecompanion-spinner.nvim";
-    meta.homepage = "https://github.com/franco-ruggeri/codecompanion-spinner.nvim";
-  };
-
 in
 
 {
@@ -24,7 +15,6 @@ in
   config = lib.mkIf cfg.enable {
     programs.neovim.plugins = with pkgs.vimPlugins; [
       codecompanion-history-nvim
-      codecompanion-spinner-nvim
       {
         plugin = codecompanion-nvim;
         type = "lua";
@@ -34,7 +24,6 @@ in
               history = {
                 enable = true
               },
-              spinner = {},
             }
           })
 
