@@ -16,6 +16,24 @@ in
     programs.neovim.plugins = with pkgs.vimPlugins; [
       codecompanion-history-nvim
       {
+        plugin = copilot-lua;
+        type = "lua";
+        config = /* lua */ ''
+          require('copilot').setup {
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+            copilot_node_command = '${pkgs.nodejs}/bin/node',
+          }
+        '';
+      }
+      {
+        plugin = copilot-cmp;
+        type = "lua";
+        config = /* lua */ ''
+          require('copilot_cmp').setup {}
+        '';
+      }
+      {
         plugin = codecompanion-nvim;
         type = "lua";
         config = /* lua */ ''
