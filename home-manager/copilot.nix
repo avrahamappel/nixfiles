@@ -13,6 +13,10 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = with pkgs; [
+      vectorcode
+    ];
+
     programs.neovim.plugins = with pkgs.vimPlugins; [
       codecompanion-history-nvim
       {
@@ -45,7 +49,9 @@ in
             }
           })
 
-          vim.api.nvim_set_keymap('n', '<leader>c', ':CodeCompanion', {})
+          vim.api.nvim_set_keymap('n', '<leader>c ', ':CodeCompanion ', {})
+          vim.api.nvim_set_keymap('n', '<leader>cc', ':CodeCompanionChat', {})
+          vim.api.nvim_set_keymap('n', '<leader>ca', ':CodeCompanionActions', {})
         '';
       }
     ];
