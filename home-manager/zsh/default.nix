@@ -16,8 +16,6 @@
 
     historySubstringSearch = {
       enable = true;
-      searchUpKey = if pkgs.stdenv.isDarwin then "^[[A" else "^[OA" ;
-      searchDownKey = if pkgs.stdenv.isDarwin then "^[[B" else "^[OB" ;
     };
 
     shellAliases = {
