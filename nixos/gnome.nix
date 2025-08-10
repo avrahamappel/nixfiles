@@ -7,10 +7,11 @@
 
   # Gnome extensions
   environment.systemPackages = with pkgs; [
-    # Make picture-in-picture stay on top of all windows
-    gnomeExtensions.pip-on-top
+    gnomeExtensions.appindicator
+    gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
     gnomeExtensions.vitals
     gnomeExtensions.night-theme-switcher
+    zenity # Notifications for GNOME
   ];
 
   environment.gnome.excludePackages = with pkgs; [
@@ -60,11 +61,13 @@
         "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
         "Vitals@CoreCoding.com"
         "nightthemeswitcher@romainvigier.fr"
+        "appindicatorsupport@rgcjonas.gmail.com"
       ];
       favorite-apps = [
         "firefox.desktop"
         "Alacritty.desktop"
         "org.gnome.Nautilus.desktop"
+        "Mailspring.desktop"
       ];
     };
 
