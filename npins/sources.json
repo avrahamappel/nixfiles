@@ -1,5 +1,21 @@
 {
   "pins": {
+    "andrewminion/mailspring-automatic-light-dark-mode": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitLab",
+        "repo_path": "andrewminion/mailspring-automatic-light-dark-mode",
+        "server": "https://gitlab.com/"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.1.0",
+      "revision": "bda93ef17aaa8b8fa70dda2d6ba4af07e5119b0e",
+      "url": "https://gitlab.com/api/v4/projects/andrewminion%2Fmailspring-automatic-light-dark-mode/repository/archive.tar.gz?ref=0.1.0",
+      "hash": "0kvv15d316jlqpb1kn9ydk8wz2az0qxjj3ccpzd64in3d4b9hp2l"
+    },
     "vim-afterimage": {
       "type": "GitRelease",
       "repository": {
