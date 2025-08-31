@@ -11,6 +11,7 @@
     ./nvim
     ./passwords.nix
     ./hledger.nix
+    ./gtd.nix
     ./ssh.nix
   ];
 
