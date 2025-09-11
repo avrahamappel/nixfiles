@@ -39,6 +39,7 @@
 
       # Home Manager
       hm = "home-manager";
+      hme = "home-manager edit";
       hmu = "nh home switch -u";
 
       # Git
