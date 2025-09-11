@@ -167,8 +167,14 @@ in
       # Theme plugins
       {
         plugin = tokyonight-nvim;
-        config = /* vim */ ''
-          colorscheme tokyonight-night
+        type = "lua";
+        config = /* lua */ ''
+          require("tokyonight").setup {
+            style = "night",
+            transparent = true,
+          }
+
+          vim.cmd[[colorscheme tokyonight]]
         '';
       }
 
