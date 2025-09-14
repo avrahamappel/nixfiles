@@ -21,7 +21,6 @@
     shellAliases = {
       # Shell
       e = "$EDITOR $*";
-      se = "sudo nvim";
       j = "jobs";
       o = if pkgs.stdenv.isLinux then "xdg-open" else "open";
       c = if pkgs.stdenv.isLinux then "wl-copy" else "pbcopy";
@@ -33,7 +32,7 @@
       nd = "nix build nixpkgs#nixpkgs-manual --no-link --print-out-paths | xargs -I{} ${if pkgs.stdenv.isDarwin then "open" else "xdg-open"} {}/share/doc/nixpkgs/manual.html";
 
       # NixOS
-      sne = "se /etc/nixos/configuration.nix";
+      sne = "sudo nvim /etc/nixos/configuration.nix";
       snf = "sudo nixos-rebuild switch --fast";
       snu = "sudo nix flake update --flake /etc/nixos && nh os switch";
 
