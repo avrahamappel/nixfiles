@@ -13,12 +13,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      vectorcode
-    ];
-
     programs.neovim.plugins = with pkgs.vimPlugins; [
-      codecompanion-history-nvim
       {
         plugin = copilot-lua;
         type = "lua";
@@ -35,23 +30,6 @@ in
         type = "lua";
         config = /* lua */ ''
           require('copilot_cmp').setup {}
-        '';
-      }
-      {
-        plugin = codecompanion-nvim;
-        type = "lua";
-        config = /* lua */ ''
-          require("codecompanion").setup({
-            extensions = {
-              history = {
-                enable = true
-              },
-            }
-          })
-
-          vim.api.nvim_set_keymap('n', '<leader>c ', ':CodeCompanion ', {})
-          vim.api.nvim_set_keymap('n', '<leader>cc', ':CodeCompanionChat', {})
-          vim.api.nvim_set_keymap('n', '<leader>ca', ':CodeCompanionActions', {})
         '';
       }
     ];
