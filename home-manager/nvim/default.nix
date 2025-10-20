@@ -86,6 +86,13 @@ in
       vim-surround
       vim-abolish
       vim-speeddating
+      {
+        plugin = vim-printer;
+        config = /* vim */ ''
+          let g:vim_printer_print_below_keybinding = '<leader>o'
+          let g:vim_printer_print_above_keybinding = '<leader>O'
+        '';
+      }
 
       #############################
       # Language specific plugins #
