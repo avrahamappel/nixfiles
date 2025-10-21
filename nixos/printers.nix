@@ -8,6 +8,8 @@
   };
 
   config = {
+    environment.systemPackages = lib.optional config.hp.enable pkgs.hplip;
+
     services.printing.drivers =
       lib.optional config.canon.enable pkgs.cnijfilter2
       ++ lib.optional config.brother.enable pkgs.brlaser
