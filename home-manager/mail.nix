@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, pkgs-unstable, lib, ... }:
 
 let
   npins = import ../npins;
@@ -12,7 +12,7 @@ let
 in
 
 {
-  home.packages = [ pkgs.mailspring ];
+  home.packages = [ pkgs-unstable.mailspring ];
 
   home.file.".config/Mailspring/packages" =
     lib.mkIf pkgs.stdenv.isLinux mailspringPackages;
