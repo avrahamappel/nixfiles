@@ -12,9 +12,6 @@
   # Latest Linux kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Driver for Canon PIXMA printer
-  services.printing.drivers = [ pkgs.cnijfilter2 ];
-
   # My user account
   programs.zsh.enable = true;
   users.users.avraham.shell = pkgs.zsh;
