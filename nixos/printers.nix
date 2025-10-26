@@ -1,5 +1,7 @@
 { pkgs, lib, config, ... }:
 
+# See https://wiki.nixos.org/wiki/Printing
+
 {
   options = {
     brother.enable = lib.mkEnableOption "Brother printers support";
@@ -10,12 +12,17 @@
   config = {
     environment.systemPackages = lib.optional config.hp.enable pkgs.hplipWithPlugin;
 
-    services.printing.drivers =
-      lib.optional config.canon.enable pkgs.cnijfilter2
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-filters
+        cups-browsed
+      ] ++ lib.optional config.canon.enable pkgs.cnijfilter2
       ++ lib.optional config.brother.enable pkgs.brlaser
       ++ lib.optional config.hp.enable pkgs.hplipWithPlugin;
+    };
 
-    services.avahi = lib.mkIf config.brother.enable {
+    services.avahi = {
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
