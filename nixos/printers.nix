@@ -8,12 +8,12 @@
   };
 
   config = {
-    environment.systemPackages = lib.optional config.hp.enable pkgs.hplip;
+    environment.systemPackages = lib.optional config.hp.enable pkgs.hplipWithPlugin;
 
     services.printing.drivers =
       lib.optional config.canon.enable pkgs.cnijfilter2
       ++ lib.optional config.brother.enable pkgs.brlaser
-      ++ lib.optional config.hp.enable pkgs.hplip;
+      ++ lib.optional config.hp.enable pkgs.hplipWithPlugin;
 
     services.avahi = lib.mkIf config.brother.enable {
       enable = true;
