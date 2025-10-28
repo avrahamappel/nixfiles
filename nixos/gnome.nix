@@ -32,6 +32,7 @@
     {
       settings = {
         "org/gnome/desktop/interface".clock-format = "12h";
+        "org/gnome/system/location".enabled = true;
       };
     }
   ];
@@ -50,8 +51,35 @@
       show-in-lock-screen = false;
     };
 
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/vnc-l.png";
+      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/vnc-d.png";
+      primary-color = "#77767B";
+      secondary-color = "#000000";
+    };
+
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/vnc-l.png";
+      primary-color = "#77767B";
+      secondary-color = "#000000";
+    };
+
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
+      "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+    ];
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "alacritty";
+      name = "Open terminal";
     };
 
     "org/gnome/shell" = {
