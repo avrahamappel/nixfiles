@@ -30,6 +30,7 @@ in
 
       settings = {
         "accessibility.typeaheadfind.enablesound" = false; # Don't make noise when nothing is found
+        "browser.altClickSave" = true; # Alt+Click to save link
         "browser.bookmarks.restore_default_bookmarks" = false;
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "browser.newtabpage.activity-stream.feeds.topsites" = false;
