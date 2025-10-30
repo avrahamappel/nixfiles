@@ -40,6 +40,7 @@ in
         "extensions.activeThemeID" = "default-theme@mozilla.org";
         "extensions.formautofill.creditCards.enabled" = false;
         "extensions.update.autoUpdateDefault" = false;
+        "media.webspeech.recognition.enable" = true; # Enable Web Speech API
         "signon.rememberSignons" = false;
       };
     };
