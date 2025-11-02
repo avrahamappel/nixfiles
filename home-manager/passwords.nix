@@ -7,7 +7,7 @@
     password-store = {
       enable = true;
       package = pkgs.pass.withExtensions (exts: [
-        # exts.pass-audit Seems broken. See https://github.com/NixOS/nixpkgs/issues/401097
+        exts.pass-audit
         exts.pass-update
       ]);
     };
