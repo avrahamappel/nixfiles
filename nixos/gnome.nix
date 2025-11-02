@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Enable the GNOME Desktop Environment.
@@ -38,13 +38,17 @@
   ];
 
   # My specific user account settings
-  home-manager.users.avraham.dconf.settings = {
+  home-manager.users.avraham.dconf.settings = with lib.hm.gvariant; {
     # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       clock-show-weekday = true;
       color-scheme = "prefer-dark";
       show-battery-percentage = true;
+    };
+
+    "org/gnome/desktop/input-settings" = {
+      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "il" ]) ];
     };
 
     "org/gnome/desktop/notifications" = {
