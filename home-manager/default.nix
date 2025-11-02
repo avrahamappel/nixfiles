@@ -12,6 +12,7 @@
     ./passwords.nix
     ./hledger.nix
     ./ssh.nix
+    ./rust.nix
   ];
 
   home = {
