@@ -18,7 +18,6 @@
     { self
     , nixpkgs
     , home-manager
-    , nixos-hardware # Indirect, resolved by flake registry
     , nixpkgs-unstable
     , rycee-nur
     }:
@@ -52,12 +51,6 @@
           nix.registry.upkgs.flake = nixpkgs-unstable;
           nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
         };
-
-        dell-latitude-3340.imports = [
-          self.nixosModules.default
-          "${nixos-hardware}/dell/latitude/3340"
-          ./nixos/dell-latitude-3340.nix
-        ];
       };
 
       hmModules = {

@@ -2,8 +2,13 @@
 
 {
   imports = [
+    ./android.nix
+    ./docker.nix
+    ./intel.nix
     ./gnome.nix
     ./printers.nix
+    ./quickemu.nix
+    ./wine.nix
   ];
 
   # Latest Nix cli

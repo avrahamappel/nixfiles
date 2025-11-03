@@ -1,10 +1,16 @@
+{ lib, config, ... }:
+
 # Rootless Docker support
 
 {
-  virtualisation.docker = {
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
+  options.docker.enable = lib.mkEnableOption "Enable Docker support";
+
+  config = lib.mkIf config.docker.enable {
+    virtualisation.docker = {
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
   };
 }

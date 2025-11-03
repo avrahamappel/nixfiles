@@ -1,10 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
-  # Udev rules
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
+  options.android.enable = lib.mkEnableOption "enable ADB/Android dev support";
 
-  users.users.avraham.packages = [ pkgs.android-tools ];
+  config = lib.mkIf config.android.enable {
+    # Udev rules
+    services.udev.packages = [
+      pkgs.android-udev-rules
+    ];
+
+    users.users.avraham.packages = [ pkgs.android-tools ];
+  };
 }
