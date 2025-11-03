@@ -65,9 +65,6 @@
   # see https://github.com/NixOS/nixpkgs/issues/22652#issuecomment-2222497441
   environment.variables.XCURSOR_THEME = "Adwaita";
 
-  # Generally I don't need a firewall against the local network
-  networking.firewall.enable = false;
-
   # Make /bin/bash available
   system.activationScripts.binbash = {
     deps = [ "binsh" ];
