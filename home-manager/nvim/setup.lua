@@ -144,7 +144,7 @@ local settings = {
     },
 
     ['rust-analyzer'] = {
-        checkOnSave = {
+        check = {
             command = 'clippy',
             extraArgs = { '--', '-Wclippy::pedantic' },
         },
