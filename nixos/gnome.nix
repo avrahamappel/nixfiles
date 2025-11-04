@@ -109,7 +109,7 @@
       };
 
       "org/gnome/shell/extensions/vitals" = {
-        hot-sensors = [ "_memory_usage_" "_system_load_1m_" "_processor_usage_" "_storage_used_" ];
+        hot-sensors = [ "_memory_usage_" "_processor_usage_" "_storage_used_" ];
       };
     };
   };
