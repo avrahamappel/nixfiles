@@ -16,6 +16,8 @@
 
     historySubstringSearch = {
       enable = true;
+      searchUpKey = [ "^[[A" "^[OA" ];
+      searchDownKey = [ "^[[B" "^[OB" ];
     };
 
     shellAliases = {
