@@ -58,6 +58,12 @@ in
           call camelcasemotion#CreateMotionMappings('c')
         '';
       }
+      {
+        plugin = vim-projectionist;
+        config = /* vim */ ''
+          map <leader>t :A<CR>
+        '';
+      }
 
       # Open file:line:column links correctly
       vim-fetch
@@ -138,7 +144,6 @@ in
           let g:rustfmt_autosave = 1
         '';
       }
-      vim-rails
 
       ##############
       # DB Support #
