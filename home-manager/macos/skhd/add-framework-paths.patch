@@ -1,0 +1,13 @@
+diff --git a/build.zig b/build.zig
+--- a/build.zig
++++ b/build.zig
+@@ -4,6 +4,9 @@
+     exe.linkFramework("Cocoa");
+     exe.linkFramework("Carbon");
+     exe.linkFramework("CoreServices");
++    exe.root_module.addFrameworkPath(.{
++        .cwd_relative = "@darwin-frameworks@",
++    });
+ }
+ 
+ fn addVersionImport(b: *std.Build, exe: *std.Build.Step.Compile) void {
