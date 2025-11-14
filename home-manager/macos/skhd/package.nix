@@ -27,4 +27,10 @@ stdenv.mkDerivation {
   ];
 
   zigBuildFlags = [ "-Doptimize=ReleaseFast" ];
+
+  postBuild = ''
+    # TODO: This doesn't work 
+    # implement signing ourselves using the created certificate "skhd-cert"
+    zig build sign
+  '';
 }
