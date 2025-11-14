@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./skhd.nix
+    ./skhd
   ];
 
   home.packages = [

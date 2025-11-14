@@ -19,6 +19,8 @@ let
     # Application shortcuts
     ${hotApps}
   '';
+
+  skhd-zig = pkgs.callPackage (import ./package.nix) { };
 in
 
 {
@@ -43,6 +45,9 @@ in
 
   config.services.skhd = {
     enable = true;
+
+    package = skhd-zig;
+
   } // (if isHmModule then {
     config = skhdConfig;
   } else {
