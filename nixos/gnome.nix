@@ -8,6 +8,7 @@
   # Gnome extensions
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.bangs-search # DuckDuckGo bangs in GNOME search
     gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
     gnomeExtensions.vitals
     gnomeExtensions.night-theme-switcher
