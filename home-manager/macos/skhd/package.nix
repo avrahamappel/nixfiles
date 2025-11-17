@@ -1,6 +1,7 @@
 { stdenv
 , apple-sdk
 , replaceVars
+, rcodesign
 , zig
 }:
 
@@ -20,6 +21,8 @@ stdenv.mkDerivation {
     zig.hook
   ];
 
+  buildInputs = [ rcodesign ];
+
   patches = [
     (replaceVars ./add-framework-paths.patch {
       darwin-frameworks = "${apple-sdk.sdkroot}/System/Library/Frameworks";
@@ -29,8 +32,7 @@ stdenv.mkDerivation {
   zigBuildFlags = [ "-Doptimize=ReleaseFast" ];
 
   postBuild = ''
-    # TODO: This doesn't work 
-    # implement signing ourselves using the created certificate "skhd-cert"
-    zig build sign
+    echo "Signing binary with rcodesign..."
+    rcodesign sign --verbose --code-signature-flags runtime ./zig-out/bin/skhd
   '';
 }
