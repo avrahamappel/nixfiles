@@ -8,6 +8,8 @@ let
       cmd - ${builtins.toString idx} : open -a ${builtins.replaceStrings [" "] ["\\ "] app}
     '')
     cfg.hotApps);
+
+  skhd-zig = pkgs.callPackage (import ./package.nix) { };
 in
 
 {
@@ -24,6 +26,8 @@ in
 
   config.services.skhd = {
     enable = true;
+
+    package = skhd-zig;
 
     config = ''
       # Open alacritty on cmd - return
