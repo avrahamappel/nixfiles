@@ -96,6 +96,7 @@
           "Vitals@CoreCoding.com"
           "nightthemeswitcher@romainvigier.fr"
           "appindicatorsupport@rgcjonas.gmail.com"
+          "bangs-search@suvan"
         ];
         favorite-apps = [
           "firefox.desktop"
