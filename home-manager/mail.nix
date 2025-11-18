@@ -9,10 +9,22 @@ let
         npins."andrewminion/mailspring-automatic-light-dark-mode";
     };
   };
+
+  basePackage = pkgs-unstable.mailspring;
+
+  mailspring =
+    if pkgs.stdenv.isDarwin
+    then basePackage else
+      basePackage.overrideAttrs (prev:
+        # Assert runtimeDependencies does not already contain libnotify
+        assert !builtins.any (p: lib.getName p == "libnotify") prev.runtimeDependencies;
+        {
+          runtimeDependencies = prev.runtimeDependencies ++ [ pkgs.libnotify ];
+        });
 in
 
 {
-  home.packages = [ pkgs-unstable.mailspring ];
+  home.packages = [ mailspring ];
 
   home.file.".config/Mailspring/packages" =
     lib.mkIf pkgs.stdenv.isLinux mailspringPackages;
