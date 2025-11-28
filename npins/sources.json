@@ -16,6 +16,22 @@
       "url": "https://gitlab.com/api/v4/projects/andrewminion%2Fmailspring-automatic-light-dark-mode/repository/archive.tar.gz?ref=0.1.0",
       "hash": "0kvv15d316jlqpb1kn9ydk8wz2az0qxjj3ccpzd64in3d4b9hp2l"
     },
+    "azad": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "philipmulcahy",
+        "repo": "azad"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.16.15",
+      "revision": "7d300e738695fe93df0003a241e1d288d41f00cb",
+      "url": "https://api.github.com/repos/philipmulcahy/azad/tarball/v1.16.15",
+      "hash": "1mqbx75jrgjr6vkz3541vj3116yf0xdzdsq2wrci33pi1aq3bz3c"
+    },
     "vim-afterimage": {
       "type": "GitRelease",
       "repository": {
