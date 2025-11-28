@@ -1,6 +1,6 @@
 { buildNpmPackage
 , importNpmLock
-# , zip
+, zip
 # , jq
 }:
 
@@ -18,21 +18,23 @@ buildNpmPackage rec {
   npmDeps = importNpmLock { npmRoot = src.outPath; };
   inherit (importNpmLock) npmConfigHook;
 
-  # nativeBuildInputs = [ zip jq ];
+  nativeBuildInputs = [ zip ];
 
   postPatch = ''
     echo 'Tweaking build scripts'
 
+    patchShebangs utils
+
     # Override git hash stuff
     sed -i 's/HASH=\$(git rev-parse HEAD)/HASH=${src.revision}/' utils/updateGitHashFile.sh
-    sed -i 's/DIRT=\$(git status --porcelain=v2)/DIRT=/' utils/updateGitHashFile.sh
+    sed -i 's/DIRT=\$(git status --porcelain=v2)/DIRT=/' utils/package.sh utils/updateGitHashFile.sh
 
     # Specify path to tsc for linting
     sed -i 's|lint": "tsc|lint": "node_modules/typescript/bin/tsc|' package.json
   '';
 
   # npmInstallFlags = [ "--include=dev" ];
-  # npmBuildScript = "package";
+  npmBuildScript = "package";
 
   # buildPhase = ''
   #   # Copy source into build dir
