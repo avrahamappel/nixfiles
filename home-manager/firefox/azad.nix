@@ -1,7 +1,7 @@
 { buildNpmPackage
 , importNpmLock
-, zip
-, jq
+# , zip
+# , jq
 }:
 
 let
@@ -18,7 +18,7 @@ buildNpmPackage rec {
   npmDeps = importNpmLock { npmRoot = src.outPath; };
   inherit (importNpmLock) npmConfigHook;
 
-  nativeBuildInputs = [ zip jq ];
+  # nativeBuildInputs = [ zip jq ];
 
   postPatch = ''
     echo 'Tweaking build scripts'
