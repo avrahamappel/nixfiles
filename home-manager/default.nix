@@ -34,7 +34,7 @@
     # $ nix-env -qaP | grep wget
     packages = with pkgs; [
       # Fonts
-      ubuntu_font_family
+      # ubuntu_font_family
       nerd-fonts.ubuntu-mono 
 
       npins # Quick and easy pinned sources for Nix
