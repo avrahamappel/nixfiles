@@ -41,7 +41,7 @@
 
       # Utilities
       ddgr # Query duckduckgo from command line
-      du-dust # Intuitive disk usage
+      dust # Intuitive disk usage
       gron # When I have no patience for JQ
       toastify # Send ad-hoc notifications
 
