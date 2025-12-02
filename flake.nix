@@ -25,7 +25,7 @@
     let
       extraArgs = pkgs: {
         pkgs-unstable = import nixpkgs-unstable {
-          inherit (pkgs) system;
+          system = pkgs.stdenv.hostPlatform.system;
         };
         rycee-nur = pkgs.callPackage rycee-nur { };
       };
