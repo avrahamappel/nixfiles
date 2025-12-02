@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -115,6 +115,8 @@
     };
 
     mpv.enable = true;
+    mpv.scripts = lib.optional pkgs.stdenv.isLinux pkgs.mpvScripts.mpris;
+
     ripgrep.enable = true;
 
     tealdeer = {
