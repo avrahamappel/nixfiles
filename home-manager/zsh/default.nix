@@ -61,7 +61,6 @@
 
       # Misc
       ts = "toastify send";
-      qr = "qrscan";
       qw = "qrtool encode -t terminal";
 
       # Tmux
