@@ -148,7 +148,18 @@ in
       ##############
       # DB Support #
       ##############
-      vim-dadbod
+      {
+        plugin = vim-dadbod;
+        config = # vim
+          ''
+            " Don't add folds in dbout buffers
+            autocmd FileType dbout setlocal nofoldenable
+
+            " Set commentstrings for SQL buffers
+            autocmd FileType sql setlocal commentstring=--\ %s
+            autocmd FileType mysql setlocal commentstring=--\ %s
+          '';
+      }
       {
         plugin = vim-dadbod-ui;
         config = /* vim */ ''
@@ -169,9 +180,6 @@ in
           \ }
           \}
           let g:db_ui_auto_execute_table_helpers = 1
-
-          " Don't add folds in dbout buffers
-          autocmd FileType dbout setlocal nofoldenable
         '';
       }
       vim-dadbod-completion
