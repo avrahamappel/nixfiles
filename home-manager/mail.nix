@@ -3,11 +3,9 @@
 let
   npins = import ../npins;
 
-  mailspringPackages = {
-    source = pkgs.linkFarm "mailspring-packages" {
-      "Mailspring Automatic Light-Dark Mode" =
-        npins."andrewminion/mailspring-automatic-light-dark-mode";
-    };
+  mailspringPackages = pkgs.linkFarm "mailspring-packages" {
+    "Mailspring Automatic Light-Dark Mode" =
+      npins."andrewminion/mailspring-automatic-light-dark-mode";
   };
 
   basePackage = pkgs-unstable.mailspring;
@@ -21,16 +19,17 @@ let
         {
           runtimeDependencies = prev.runtimeDependencies ++ [ pkgs.libnotify ];
         });
+
+  pluginPath =
+    if pkgs.stdenv.isDarwin
+    then "Library/Application Support/Mailspring/packages"
+    else ".config/Mailspring/packages";
 in
 
 {
   home.packages = [ mailspring ];
 
-  home.file.".config/Mailspring/packages" =
-    lib.mkIf pkgs.stdenv.isLinux mailspringPackages;
-
-  home.file."Library/Application Support/Mailspring/packages" =
-    lib.mkIf pkgs.stdenv.isDarwin mailspringPackages;
+  home.file.${pluginPath}.source = mailspringPackages;
 
   xdg.autostart.entries = [ "${mailspring}/share/applications/Mailspring.desktop" ];
 }
