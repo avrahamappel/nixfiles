@@ -31,4 +31,6 @@ in
 
   home.file."Library/Application Support/Mailspring/packages" =
     lib.mkIf pkgs.stdenv.isDarwin mailspringPackages;
+
+  xdg.autostart.entries = [ "${mailspring}/share/applications/Mailspring.desktop" ];
 }
