@@ -48,142 +48,89 @@ vim.diagnostic.config({
     },
 })
 
-local lspconfig = require 'lspconfig'
-
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
--- Mappings
-local on_attach = function(_, bufnr)
-    local opts = { noremap = true, silent = true }
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    --  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    --  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    --  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>e', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>w', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>l', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
-end
+-- Server-specific settings
+vim.lsp.config('jsonls', {
+    settings = {
+        json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
+        }
+    }
+})
+vim.lsp.config('lua_ls', {
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using
+                -- (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+        },
+    }
+})
+vim.lsp.config('nixd', {
+    settings = {
+        nixd = {
+            formatting = {
+                command = { "nixpkgs-fmt" },
+            },
+
+            -- Include home-manager options by setting this
+            -- options = {
+            --     home-manager = {
+            --         expr = "some expression"
+            --     }
+            -- }
+            -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
+        },
+    }
+})
+vim.lsp.config('rust_analyzer', {
+    settings = {
+        ['rust-analyzer'] = {
+            check = {
+                command = 'clippy',
+                extraArgs = { '--', '-Wclippy::pedantic' },
+            },
+          }
+    }
+})
+vim.lsp.config('yamlls', {
+    settings = {
+        yaml = {
+            keyOrdering = false,
+            schemaStore = { enable = true },
+        },
+    }
+})
 
 -- Globally enabled servers
-local servers = {
-    'bashls',
-    'cssls',
-    'eslint',
-    'html',
-    'jsonls',
-    'lemminx',
-    'lua_ls',
-    'nixd',
-    'pylsp',
-    'taplo',
-    'ts_ls',
-    'typos_lsp',
-    'vimls',
-    'yamlls'
-}
-
--- Server command overrides
-local commands = {
-}
-
--- Server-specific settings
-local settings = {
-    eslint = {
-        workingDirectory = {
-            mode = 'auto', -- Automatically detect the working directory
-        },
-    },
-
-    json = {
-        schemas = require('schemastore').json.schemas(),
-        validate = { enable = true },
-    },
-
-    Lua = {
-        runtime = {
-            -- Tell the language server which version of Lua you're using
-            -- (most likely LuaJIT in the case of Neovim)
-            version = 'LuaJIT',
-        },
-        diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = { 'vim', 'registerLsps' },
-        },
-        workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = vim.api.nvim_get_runtime_file("", true),
-        },
-    },
-
-    nixd = {
-        formatting = {
-            command = { "nixpkgs-fmt" },
-        },
-
-        -- Include home-manager options by setting this
-        -- options = {
-        --     home-manager = {
-        --         expr = "some expression"
-        --     }
-        -- }
-        -- see https://github.com/nix-community/nixd/blob/main/nixd/docs/configuration.md#options-options
-    },
-
-    ['rust-analyzer'] = {
-        check = {
-            command = 'clippy',
-            extraArgs = { '--', '-Wclippy::pedantic' },
-        },
-    },
-
-    yaml = {
-        keyOrdering = false,
-        schemaStore = { enable = true },
-    },
-}
-
-
--- Global function to allow for project-level LSP config
-function registerLsps(args)
-    local lsps = args.lsps or {}
-    local lsp_settings = args.settings or {}
-    local lsp_commands = args.commands or {}
-    local root_dirs = args.root_dirs or {}
-
-    local setup_opts = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = lsp_settings,
-    }
-
-    for _, lsp in ipairs(lsps) do
-        if lsp_commands[lsp] then
-            setup_opts.cmd = lsp_commands[lsp]
-        end
-
-        if root_dirs[lsp] then
-            setup_opts.root_dir = root_dirs[lsp]
-        end
-
-        lspconfig[lsp].setup(setup_opts)
-    end
-end
-
-registerLsps { lsps = servers, settings = settings, commands = commands }
+vim.lsp.enable('bashls')
+vim.lsp.enable('cssls')
+vim.lsp.enable('eslint')
+vim.lsp.enable('html')
+vim.lsp.enable('jsonls')
+vim.lsp.enable('lemminx')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('nixd')
+vim.lsp.enable('pylsp')
+vim.lsp.enable('taplo')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('typos_lsp')
+vim.lsp.enable('vimls')
+vim.lsp.enable('yamlls')
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect'
