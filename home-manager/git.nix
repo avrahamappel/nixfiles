@@ -19,7 +19,7 @@
     ];
 
     settings = {
-      aliases.delete-local-merged = "! git branch -d $(git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\\n') 2> /dev/null";
+      alias.delete-local-merged = "! git branch -d $(git branch --merged | grep -v '^*' | grep -v 'master' | tr -d '\\n') 2> /dev/null";
 
       branch.sort = "-committerdate"; # Sort branches by most recently updated
 
