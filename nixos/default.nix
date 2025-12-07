@@ -42,7 +42,7 @@
     clean = {
       enable = true;
       dates = "Sun 23:45"; # Fifteen minutes before optimise
-      extraArgs = "--keep-since 30d";
+      extraArgs = "--keep-since 10d";
     };
   };
 
