@@ -21,6 +21,4 @@
       . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
     fi
   '';
-
-  programs.command-not-found.enable = true;
 }
