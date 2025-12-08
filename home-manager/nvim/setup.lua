@@ -6,32 +6,32 @@ require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true,
     },
-    refactor = {
-        smart_rename = {
-            enable = true,
-            keymaps = {
-                smart_rename = "gs",
-            }
-        },
-        navigation = {
-            enable = true,
-            keymaps = {
-                goto_definition_lsp_fallback = "gtd",
-                list_definitions_toc = "gta",
-                goto_next_usage = "]t",
-                goto_previous_usage = "[t",
-            },
-        },
-        incremental_selection = {
-            enable = true,
-            keymaps = {
-                init_selection = "gnn",
-                node_incremental = "grn",
-                scope_incremental = "grc",
-                node_decremental = "grm",
-            },
-        },
-    }
+    -- refactor = {
+    --     smart_rename = {
+    --         enable = true,
+    --         keymaps = {
+    --             smart_rename = "gs",
+    --         }
+    --     },
+    --     navigation = {
+    --         enable = true,
+    --         keymaps = {
+    --             goto_definition_lsp_fallback = "gtd",
+    --             list_definitions_toc = "gta",
+    --             goto_next_usage = "]t",
+    --             goto_previous_usage = "[t",
+    --         },
+    --     },
+    --     incremental_selection = {
+    --         enable = true,
+    --         keymaps = {
+    --             init_selection = "gnn",
+    --             node_incremental = "grn",
+    --             scope_incremental = "grc",
+    --             node_decremental = "grm",
+    --         },
+    --     },
+    -- }
 }
 
 -----------------------
