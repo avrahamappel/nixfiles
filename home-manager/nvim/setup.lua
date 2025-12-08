@@ -48,6 +48,23 @@ vim.diagnostic.config({
     },
 })
 
+-- Global LSP keymaps
+-- grn - Rename (vim.lsp.buf.rename)
+-- gra - Code Action (vim.lsp.buf.code_action)
+-- grr - References (vim.lsp.buf.references)
+-- gri - Implementation (vim.lsp.buf.implementation)
+-- grt - Type Definition (vim.lsp.buf.type_definition)
+-- gO  - Document Symbols (vim.lsp.buf.document_symbol)
+-- CTRL-S - Signature Help (vim.lsp.buf.signature_help)
+-- K - Hover (vim.lsp.buf.hover)
+-- CTRL-], CTRL-W ], CTRL-W } - Go to Definition (replace buffer, split, preview)
+-- Can use gw or gq for formatting
+vim.keymap.set('n', 'grd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gre', vim.diagnostic.setloclist)
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+vim.keymap.set('n', '<leader>l', vim.lsp.buf.format)
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
