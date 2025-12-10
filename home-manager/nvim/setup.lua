@@ -59,10 +59,11 @@ vim.diagnostic.config({
 -- K - Hover (vim.lsp.buf.hover)
 -- CTRL-], CTRL-W ], CTRL-W } - Go to Definition (replace buffer, split, preview)
 -- Can use gw or gq for formatting
-vim.keymap.set('n', 'grd', vim.lsp.buf.definition)
-vim.keymap.set('n', 'gre', vim.diagnostic.setloclist)
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.setloclist)
 vim.keymap.set('n', '<leader>l', vim.lsp.buf.format)
 
 -- Add additional capabilities supported by nvim-cmp
