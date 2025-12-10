@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       window = {
-        opacity = 0.75;
+        opacity = 0.9;
         decorations = "None";
         startup_mode = "Maximized";
       };
