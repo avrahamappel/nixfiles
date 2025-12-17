@@ -236,9 +236,7 @@ in
             let g:dispatch_no_maps = 1
             " :Dispatch automatically calls insert due to my `neovim_terminal` augroup
             " Add a map to avoid that
-            nnoremap <leader>, :Dispatch<CR><Esc>
-            " Once we're at it, let's add a map to open a terminal in a new vertical split
-            nnoremap <leader>. :vert te<CR>
+            nnoremap <leader>` :Dispatch<CR><Esc>
           '';
       }
       vim-dispatch-neovim

@@ -67,6 +67,10 @@ map <leader>m :let @+=@%.':'.line('.')<CR>
 " Copy contents of current file to system clipboard
 map <leader>y :%y+<CR>
 
+" Terminal shortcuts
+nnoremap <leader>, :horizont terminal<CR>
+nnoremap <leader>. :vertical terminal<CR>
+
 """""""""""""""""""""""""""""""""""""
 " Autocmds
 """""""""""""""""""""""""""""""""""""
