@@ -33,30 +33,11 @@ buildNpmPackage rec {
     sed -i 's|lint": "tsc|lint": "node_modules/typescript/bin/tsc|' package.json
   '';
 
-  # npmInstallFlags = [ "--include=dev" ];
   npmBuildScript = "package";
 
-  # buildPhase = ''
-  #   # Copy source into build dir
-  #   cd $src/src || exit 1
-  #
-  #   # Ensure we have a manifest.json
-  #   if [ ! -f manifest.json ]; then
-  #     echo "manifest.json not found"
-  #     exit 1
-  #   fi
-  #
-  #   # Read version from manifest.json if present
-  #   jq -r '.version // empty' manifest.json > .manifest-version || true
-  #   ver=$(cat .manifest-version || echo "${version}")
-  #
-  #   # Create the xpi (zip of all files at repo root)
-  #   mkdir -p build
-  #   (cd $src/src; zip -r ../build/${pname}-${version}.xpi . -x '.*' ) >/dev/null
-  # '';
-
-  # postBuild = ''
-  #   mkdir -p $out
-  #   cp azad.zip $out/azad.xpi
-  # '';
+  postBuild = ''
+    mkdir -p $out
+    echo "Creating XPI archive"
+    cp azad.zip $out/azad.xpi
+  '';
 }
