@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../standalone.nix
     ./skhd.nix
   ];
 
