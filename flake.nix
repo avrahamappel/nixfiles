@@ -57,6 +57,8 @@
         default = { pkgs, ... }: {
           _module.args = extraArgs pkgs;
 
+          imports = [ ./home-manager ];
+
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
           nix.registry.upkgs.flake = nixpkgs-unstable;
