@@ -58,16 +58,18 @@
           _module.args = extraArgs pkgs;
 
           imports = [ ./home-manager ];
+        };
+
+        standalone = {
+          imports = [
+            ./home-manager/standalone.nix
+          ];
 
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
           nix.registry.upkgs.flake = nixpkgs-unstable;
           home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
         };
-
-        standalone.imports = [
-          ./home-manager/standalone.nix
-        ];
 
         macos.imports = [
           ./home-manager/macos
