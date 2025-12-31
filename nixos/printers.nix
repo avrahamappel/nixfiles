@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, pkgs-unstable, lib, config, ... }:
 
 # See https://wiki.nixos.org/wiki/Printing
 
@@ -28,26 +28,19 @@
       openFirewall = true;
     };
 
-    # Overlay until next CUPS version is available
+    # CUPS-COMPAT
+    # Use packages from unstable that have latest CUPS
     # https://nixpkgs-tracker.ocfox.me/?pr=468820
-    nixpkgs.overlays = [
-      (self: super: {
-        cups = super.cups.overrideAttrs (prev:
-
-          assert prev.version == "2.4.15";
-
-          let
-            version = "2.4.16";
-          in
-
-          {
-            inherit version;
-            src = self.fetchurl {
-              url = "https://github.com/OpenPrinting/cups/releases/download/v${version}/cups-${version}-source.tar.gz";
-              hash = "sha256-AzlYcgS0+UKN0FkuswHewL+epuqNzl2WkNVr5YWrqS0=";
-            };
-          });
-      })
+    assertions = [
+      {
+        assertion = pkgs.cups.version == "2.4.15";
+        message = "CUPS is up to date, remove unstable packages";
+      }
+      {
+        assertion = pkgs-unstable.cups.version == "2.4.16";
+        message = "Unstable CUPS is not the correct version";
+      }
     ];
+    services.printing.package = pkgs-unstable.cups;
   };
 }
