@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, lib, ... }:
+{ pkgs, pkgs-unstable, lib, config, ... }:
 
 let
   npins = import ../npins;
@@ -27,9 +27,15 @@ let
 in
 
 {
-  home.packages = [ mailspring ];
+  options.mailspring = {
+    enable = lib.mkEnableOption "Enable mailspring client";
+  };
 
-  home.file.${pluginPath}.source = mailspringPackages;
+  config = lib.mkIf config.mailspring.enable {
+    home.packages = [ mailspring ];
 
-  xdg.autostart.entries = [ "${mailspring}/share/applications/Mailspring.desktop" ];
+    home.file.${pluginPath}.source = mailspringPackages;
+
+    xdg.autostart.entries = [ "${mailspring}/share/applications/Mailspring.desktop" ];
+  };
 }
