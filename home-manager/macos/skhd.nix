@@ -1,6 +1,8 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, options, config, ... }:
 
 let
+  isHmModule = options ? home;
+
   cfg = config.services.skhd;
 
   hotApps = lib.strings.concatLines (lib.lists.imap1
@@ -8,6 +10,15 @@ let
       cmd - ${builtins.toString idx} : open -a ${builtins.replaceStrings [" "] ["\\ "] app}
     '')
     cfg.hotApps);
+
+  skhdConfig = ''
+    # Open alacritty on cmd - return
+    # if there's already an instance running, open new window, otherwise start a new instance
+    cmd - return : ${cfg.alacrittyPkg}/bin/alacritty msg create-window 2>&1 || /usr/bin/open -a ${cfg.alacrittyPkg}/Applications/Alacritty.app
+
+    # Application shortcuts
+    ${hotApps}
+  '';
 in
 
 {
@@ -32,14 +43,9 @@ in
 
   config.services.skhd = {
     enable = true;
-
-    config = ''
-      # Open alacritty on cmd - return
-      # if there's already an instance running, open new window, otherwise start a new instance
-      cmd - return : ${cfg.alacrittyPkg}/bin/alacritty msg create-window 2>&1 || /usr/bin/open -a ${cfg.alacrittyPkg}/Applications/Alacritty.app
-
-      # Application shortcuts
-      ${hotApps}
-    '';
-  };
+  } // (if isHmModule then {
+    config = skhdConfig;
+  } else {
+    skhdConfig = skhdConfig;
+  });
 }
