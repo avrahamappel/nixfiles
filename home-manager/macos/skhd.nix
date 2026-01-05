@@ -12,6 +12,14 @@ in
 
 {
   options.services.skhd = {
+    alacrittyPkg = lib.mkOption {
+      type = lib.types.package;
+      default = if config.programs ? alacritty then config.programs.alacritty.package else pkgs.alacritty;
+      description = ''
+        The Alacritty package to use when launching Alacritty from skhd.
+      '';
+    };
+
     hotApps = lib.mkOption {
       type = lib.types.addCheck (lib.types.listOf lib.types.str) (val: builtins.length val <= 7);
       example = [ "Alacritty" "Firefox" "Mail" ];
@@ -28,7 +36,7 @@ in
     config = ''
       # Open alacritty on cmd - return
       # if there's already an instance running, open new window, otherwise start a new instance
-      cmd - return : ${config.programs.alacritty.package}/bin/alacritty msg create-window 2>&1 || /usr/bin/open -a ${config.programs.alacritty.package}/Applications/Alacritty.app
+      cmd - return : ${cfg.alacrittyPkg}/bin/alacritty msg create-window 2>&1 || /usr/bin/open -a ${cfg.alacrittyPkg}/Applications/Alacritty.app
 
       # Application shortcuts
       ${hotApps}
