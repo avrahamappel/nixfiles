@@ -1,10 +1,12 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
-  programs = {
-    gpg.enable = true;
+  options.passwords.enable = lib.mkEnableOption "Enable password-store manager";
 
-    password-store = {
+  config = lib.mkIf config.passwords.enable {
+    programs.gpg.enable = true;
+
+    programs.password-store = {
       enable = true;
       settings.PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password-store";
       package = pkgs.pass.withExtensions (exts: [
@@ -13,14 +15,14 @@
       ]);
     };
 
-    browserpass = {
+    programs.browserpass = {
       enable = true;
       browsers = [ "firefox" ];
     };
-  };
 
-  services.git-sync.repositories.pass = {
-    path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
-    uri = "git@github.com:avrahamappel/password-store.git";
+    services.git-sync.repositories.pass = {
+      path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
+      uri = "git@github.com:avrahamappel/password-store.git";
+    };
   };
 }
