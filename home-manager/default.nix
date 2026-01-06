@@ -43,6 +43,7 @@
       # Utilities
       ddgr # Query duckduckgo from command line
       dust # Intuitive disk usage
+      file # Don't know why this isn't available by default
       gron # When I have no patience for JQ
       toastify # Send ad-hoc notifications
 
