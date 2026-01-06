@@ -9,6 +9,7 @@
     ./printers.nix
     ./quickemu.nix
     ./wine.nix
+    ../common/unfree.nix
   ];
 
   # Latest Nix cli
