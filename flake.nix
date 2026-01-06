@@ -43,7 +43,7 @@
 
           home-manager.users.avraham = {
             _module.args = extraArgs pkgs;
-            imports = [ ./home-manager/personal.nix ];
+            imports = [ ./home-manager ];
           };
 
           # Pin nixpkgs
