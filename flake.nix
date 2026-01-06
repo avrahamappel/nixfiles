@@ -49,7 +49,7 @@
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
           nix.registry.upkgs.flake = nixpkgs-unstable;
-          nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+          nix.nixPath = [ "nixpkgs=flake:nixpkgs;upkgs=flake:upkgs" ];
         };
       };
 
@@ -68,7 +68,7 @@
           # Pin nixpkgs
           nix.registry.nixpkgs.flake = nixpkgs;
           nix.registry.upkgs.flake = nixpkgs-unstable;
-          home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
+          home.sessionVariables.NIX_PATH = "nixpkgs=flake:nixpkgs;upkgs=flake:upkgs$\{NIX_PATH:+:$NIX_PATH}";
         };
 
         macos.imports = [
