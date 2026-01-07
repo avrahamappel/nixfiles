@@ -2,24 +2,20 @@
 
 # See https://wiki.nixos.org/wiki/Printing
 
+let
+  brotherName = "Brother";
+  hpDeskjetName = "HP_DeskJet_2800_series";
+in
+
 {
   options = {
-    brother.enable = lib.mkEnableOption "Brother printers support";
-    canon.enable = lib.mkEnableOption "Canon printer support";
+    brother.enable = lib.mkEnableOption "Brother printer support";
     hp.enable = lib.mkEnableOption "HP printer support";
   };
 
   config = {
-    environment.systemPackages = lib.optional config.hp.enable pkgs.hplipWithPlugin;
-
     services.printing = {
       enable = true;
-      drivers = with pkgs; [
-        cups-filters
-        cups-browsed
-      ] ++ lib.optional config.canon.enable pkgs.cnijfilter2
-      ++ lib.optional config.brother.enable pkgs.brlaser
-      ++ lib.optional config.hp.enable pkgs.hplipWithPlugin;
     };
 
     services.avahi = {
@@ -27,6 +23,27 @@
       nssmdns4 = true;
       openFirewall = true;
     };
+
+    # PRINTERS
+    hardware.printers.ensureDefaultPrinter =
+      if config.hp.enable then
+        hpDeskjetName
+      else if config.brother.enable then
+        brotherName
+      else
+        null;
+
+    hardware.printers.ensurePrinters = (lib.optional config.hp.enable {
+      name = hpDeskjetName;
+      description = "HP Deskjet 2855e";
+      deviceUri = "ipp://HP246A0EFC5F37.local:631/ipp/print";
+      model = "everywhere";
+      ppdOptions = {
+        PageSize = "Custom.8.5x11";
+      };
+    }) ++ (lib.optional config.brother.enable {
+      name = brotherName;
+    });
 
     # CUPS-COMPAT
     # Use packages from unstable that have latest CUPS
