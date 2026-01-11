@@ -24,6 +24,7 @@ in
       hlo = "cd ${cfg.hledgerPath} && e $LEDGER_FILE";
     };
 
+    services.git-sync.enable = true;
     services.git-sync.repositories.hledger = {
       path = cfg.hledgerPath;
       uri = "git@github.com:avrahamappel/pta.git";

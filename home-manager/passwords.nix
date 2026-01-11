@@ -20,6 +20,7 @@
       browsers = [ "firefox" ];
     };
 
+    services.git-sync.enable = true;
     services.git-sync.repositories.pass = {
       path = config.programs.password-store.settings.PASSWORD_STORE_DIR;
       uri = "git@github.com:avrahamappel/password-store.git";

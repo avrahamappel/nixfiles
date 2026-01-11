@@ -123,10 +123,6 @@
     };
   };
 
-  # Git sync
-  # Individual repo settings in sub-modules
-  services.git-sync.enable = true;
-
   # XDG autostart
   xdg.autostart = {
     enable = pkgs.stdenv.isLinux;
