@@ -8,6 +8,8 @@ let
       npins."andrewminion/mailspring-automatic-light-dark-mode";
   };
 
+  # Mailspring is very noisy about available updates,
+  # therefore we always pull it from pkgs-unstable
   basePackage = pkgs-unstable.mailspring;
 
   mailspring =
