@@ -17,7 +17,8 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [ pkgs.hledger ];
 
-    home.sessionVariables.LEDGER_FILE = cfg.hledgerPath + "/ledgers/2025/main.journal";
+    home.sessionVariables.LEDGER_FILE = cfg.hledgerPath +
+      "/ledgers/$(${pkgs.coreutils}/bin/date +%Y)/main.journal";
 
     home.shellAliases = {
       hl = "hledger";
