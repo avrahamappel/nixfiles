@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./android.nix
     ./docker.nix
     ./intel.nix
     ./gnome.nix
