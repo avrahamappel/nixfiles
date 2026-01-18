@@ -4,6 +4,9 @@
   options.wine.enable = lib.mkEnableOption "Wine and 32-bit graphics support";
 
   config = lib.mkIf config.wine.enable {
+    # Enable other graphics optimizations
+    intel.enable = true;
+
     hardware.graphics.enable32Bit = true;
     hardware.graphics.extraPackages32 = with pkgs.pkgsi686Linux; [
       intel-vaapi-driver
