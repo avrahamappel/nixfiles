@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, lib, config, ... }:
+{ lib, config, ... }:
 
 # See https://wiki.nixos.org/wiki/Printing
 
@@ -44,20 +44,5 @@ in
     }) ++ (lib.optional config.brother.enable {
       name = brotherName;
     });
-
-    # CUPS-COMPAT
-    # Use packages from unstable that have latest CUPS
-    # https://nixpkgs-tracker.ocfox.me/?pr=468820
-    assertions = [
-      {
-        assertion = pkgs.cups.version == "2.4.15";
-        message = "CUPS is up to date, remove unstable packages";
-      }
-      {
-        assertion = pkgs-unstable.cups.version == "2.4.16";
-        message = "Unstable CUPS is not the correct version";
-      }
-    ];
-    services.printing.package = pkgs-unstable.cups;
   };
 }
