@@ -13,7 +13,6 @@
     ./hledger.nix
     ./ssh.nix
     ./rust.nix
-    ../common/unfree.nix
   ];
 
   home = {

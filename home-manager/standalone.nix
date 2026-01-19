@@ -3,6 +3,10 @@
 # Configuration for using home-manager outside of NixOS
 
 {
+  imports = [
+    ../common/unfree.nix
+  ];
+
   nix.package = pkgs.nixVersions.latest;
 
   # Make nh available
