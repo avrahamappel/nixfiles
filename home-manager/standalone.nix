@@ -4,7 +4,7 @@
 
 {
   imports = [
-    ../common/unfree.nix
+    ../common
   ];
 
   nix.package = pkgs.nixVersions.latest;

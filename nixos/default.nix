@@ -2,13 +2,13 @@
 
 {
   imports = [
+    ../common
     ./docker.nix
     ./intel.nix
     ./gnome.nix
     ./printers.nix
     ./quickemu.nix
     ./wine.nix
-    ../common/unfree.nix
   ];
 
   # Latest Nix cli
