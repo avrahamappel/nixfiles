@@ -1,13 +1,15 @@
 { stdenv
 , apple-sdk
 , replaceVars
-, zig
+, zig_0_14
 }:
 
 let
   srcs = import ../../../npins;
 
   src = srcs."skhd.zig";
+
+  zig = zig_0_14;
 in
 
 stdenv.mkDerivation {
