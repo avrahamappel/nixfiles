@@ -9,5 +9,5 @@ diff --git a/build.zig b/build.zig
 +        .cwd_relative = "@darwin-frameworks@",
 +    });
  }
- 
+
  fn addVersionImport(b: *std.Build, exe: *std.Build.Step.Compile) void {

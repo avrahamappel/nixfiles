@@ -1,4 +1,5 @@
 { stdenv
+, darwin
 , apple-sdk
 , replaceVars
 , zig_0_14
@@ -20,6 +21,7 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [
     zig.hook
+    darwin.autoSignDarwinBinariesHook
   ];
 
   patches = [
