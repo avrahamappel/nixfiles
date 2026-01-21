@@ -25,8 +25,11 @@ stdenv.mkDerivation {
   ];
 
   patches = [
-    (replaceVars ./add-framework-paths.patch {
-      darwin-frameworks = "${apple-sdk.sdkroot}/System/Library/Frameworks";
+    (replaceVars ./patches/add-framework-paths.patch {
+      darwinFrameworks = "${apple-sdk.sdkroot}/System/Library/Frameworks";
+    })
+    (replaceVars ./patches/use-git-hash-from-nix.patch {
+      gitHash = builtins.substring 0 7 src.revision;
     })
   ];
 
