@@ -38,6 +38,7 @@ in
         "browser.sessionstore.enabled" = true;
         "browser.sessionstore.resume_session_once" = true;
         "extensions.activeThemeID" = "default-theme@mozilla.org";
+        "extensions.autoDisableScopes" = 0; # Automatically enable extensions
         "extensions.formautofill.creditCards.enabled" = false;
         "extensions.update.autoUpdateDefault" = false;
         "media.webspeech.recognition.enable" = true; # Enable Web Speech API
