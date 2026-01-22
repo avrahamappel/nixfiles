@@ -248,7 +248,7 @@ in
         plugin = pkgs.vimUtils.buildVimPlugin {
           src = vim-afterimage;
           pname = vim-afterimage.repository.repo;
-          version = vim-afterimage.version;
+          version = builtins.substring 1 (-1) vim-afterimage.version; # Remove leading 'v'
           meta.homepage = "https://github.com/tpope/vim-afterimage";
         };
       }

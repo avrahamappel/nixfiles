@@ -15,8 +15,8 @@ in
 
 stdenv.mkDerivation {
   pname = "skhd.zig";
+  version = builtins.substring 1 (-1) src.version; # Remove leading 'v'
 
-  inherit (src) version;
   inherit src;
 
   nativeBuildInputs = [
