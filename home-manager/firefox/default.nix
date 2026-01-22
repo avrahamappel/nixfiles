@@ -4,6 +4,8 @@ let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
     inherit (rycee-nur.firefox-addons) buildFirefoxXpiAddon;
   };
+
+  bus-extension = pkgs.callPackage (import ../../npins).bus-extension { };
 in
 
 {
@@ -24,7 +26,7 @@ in
           # Requires disabling CORS to use,
           # hence the previous addon
           internet_archive_downloader
-        ]);
+        ]) ++ [ bus-extension ];
 
         exhaustivePermissions = true;
         exactPermissions = true;
@@ -111,6 +113,7 @@ in
             "storage"
             "tabs"
           ];
+          ${bus-extension.addonId}.permissions = [ "activeTab" ];
         };
       };
 
@@ -132,6 +135,7 @@ in
         "extensions.update.autoUpdateDefault" = false;
         "media.webspeech.recognition.enable" = true; # Enable Web Speech API
         "signon.rememberSignons" = false;
+        "xpinstall.signatures.required" = false; # Allow unsigned addons
       };
     };
   };
