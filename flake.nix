@@ -12,15 +12,20 @@
       flake = false;
       url = "gitlab:rycee/nur-expressions";
     };
+    qrscan = {
+      url = "github:avrahamappel/qrscan";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.flake-compat.follows = "";
+    };
   };
 
   outputs =
-    { self
-    , nixpkgs
+    { nixpkgs
     , home-manager
     , nixpkgs-unstable
     , rycee-nur
-    }:
+    , ...
+    }@inputs:
 
     let
       extraArgs = pkgs: {
@@ -28,6 +33,7 @@
           system = pkgs.stdenv.hostPlatform.system;
         };
         rycee-nur = pkgs.callPackage rycee-nur { };
+        inherit inputs;
       };
     in
 

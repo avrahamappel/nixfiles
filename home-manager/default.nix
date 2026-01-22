@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
+
+let
+  qrscan = inputs.qrscan.packages.${pkgs.stdenv.hostPlatform.system}.qrscan;
+in
 
 {
   imports = [
@@ -52,6 +56,7 @@
 
       # QR utilities
       qrtool # Decode QR codes, even from image files
+      qrscan # Scan QR codes from command line using system camera
     ];
   };
 

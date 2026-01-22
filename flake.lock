@@ -50,11 +50,33 @@
         "type": "indirect"
       }
     },
+    "qrscan": {
+      "inputs": {
+        "flake-compat": [],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769039859,
+        "narHash": "sha256-DG4dMEyJv1s069a/G5omdbxqCtedy83q2qxfszVNDDM=",
+        "owner": "avrahamappel",
+        "repo": "qrscan",
+        "rev": "3b696924a11c9dce7c1629eb6dbd5e1d81f23aa3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "avrahamappel",
+        "repo": "qrscan",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "qrscan": "qrscan",
         "rycee-nur": "rycee-nur"
       }
     },
