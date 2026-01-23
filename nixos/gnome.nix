@@ -116,7 +116,7 @@
             "bangs-search@suvan"
           ];
           favorite-apps = [
-            "firefox.desktop"
+            "firefox-devedition.desktop"
             "Alacritty.desktop"
             "org.gnome.Nautilus.desktop"
             "Mailspring.desktop"
