@@ -16,19 +16,6 @@
       "url": "https://gitlab.com/api/v4/projects/andrewminion%2Fmailspring-automatic-light-dark-mode/repository/archive.tar.gz?ref=0.1.0",
       "hash": "0kvv15d316jlqpb1kn9ydk8wz2az0qxjj3ccpzd64in3d4b9hp2l"
     },
-    "bus-extension": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "avrahamappel",
-        "repo": "bus-extension"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "1c9e4af6cf945350acf327e34d355c8b81bae821",
-      "url": "https://github.com/avrahamappel/bus-extension/archive/1c9e4af6cf945350acf327e34d355c8b81bae821.tar.gz",
-      "hash": "1mm0m968b5m9zv57qjinv4yq780a5cas56mnlsxa7whc9y1b45a7"
-    },
     "skhd.zig": {
       "type": "GitRelease",
       "repository": {

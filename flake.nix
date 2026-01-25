@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.flake-compat.follows = "";
     };
+    bus-extension.url = "github:avrahamappel/bus-extension";
   };
 
   outputs =
