@@ -1,4 +1,4 @@
-{ pkgs, rycee-nur, inputs, ... }:
+{ pkgs, lib, config, rycee-nur, inputs, ... }:
 
 let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
@@ -22,7 +22,7 @@ let
         # Requires disabling CORS to use,
         # hence the previous addon
         internet_archive_downloader
-      ]) ++ [ bus-extension ];
+      ]) ++ lib.optional config.bus-extension.enable bus-extension;
 
       exhaustivePermissions = true;
       exactPermissions = true;
@@ -109,6 +109,7 @@ let
           "storage"
           "tabs"
         ];
+      } // lib.optionalAttrs config.bus-extension.enable {
         ${bus-extension.addonId}.permissions = [ "activeTab" ];
       };
     };
@@ -137,7 +138,9 @@ let
 in
 
 {
-  programs.firefox = {
+  options.bus-extension.enable = lib.mkEnableOption "Enable bus-extension in firefox (developer edition required)";
+
+  config.programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;
     profiles.dev-edition-default = profile;
