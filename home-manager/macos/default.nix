@@ -16,9 +16,6 @@
     offset.x = 1;
   };
 
-  # Disable package installation on Mac
-  programs.firefox.package = null;
-
   targets.darwin.defaults = {
     NSGlobalDomain = {
       NSAutomaticPeriodSubstitutionEnabled = false;
