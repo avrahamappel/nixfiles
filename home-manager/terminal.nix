@@ -3,6 +3,7 @@
 {
   programs.alacritty = {
     enable = true;
+    package = pkgs.alacritty-graphics; # Supports sixel etc.
     settings = {
       window = {
         opacity = 0.9;
