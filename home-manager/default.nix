@@ -1,8 +1,4 @@
-{ pkgs, lib, inputs, ... }:
-
-let
-  qrscan = inputs.qrscan.packages.${pkgs.stdenv.hostPlatform.system}.qrscan;
-in
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -17,6 +13,7 @@ in
     ./hledger.nix
     ./ssh.nix
     ./rust.nix
+    ./qr.nix
   ];
 
   home = {
@@ -53,10 +50,6 @@ in
       # Media
       ffmpeg
       imagemagick
-
-      # QR utilities
-      qrtool # Decode QR codes, even from image files
-      qrscan # Scan QR codes from command line using system camera
     ];
   };
 
