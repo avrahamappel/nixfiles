@@ -1,7 +1,7 @@
 { pkgs, pkgs-unstable, lib, config, ... }:
 
 let
-  npins = import ../npins;
+  npins = import ../../npins;
 
   mailspringPackages = pkgs.linkFarm "mailspring-packages" {
     "Mailspring Automatic Light-Dark Mode" =

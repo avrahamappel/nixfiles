@@ -4,7 +4,7 @@
   imports = [
     ./copilot.nix
     ./firefox
-    ./mail.nix
+    ./mail
     ./terminal.nix
     ./zsh
     ./git.nix
