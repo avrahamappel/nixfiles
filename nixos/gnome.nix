@@ -12,7 +12,6 @@
     gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
     gnomeExtensions.vitals
     gnomeExtensions.night-theme-switcher
-    zenity # Notifications for GNOME
   ];
 
   environment.gnome.excludePackages = with pkgs; [
