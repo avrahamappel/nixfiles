@@ -117,28 +117,6 @@ in
       #   '';
       # }
       {
-        plugin = rustaceanvim;
-        type = "lua";
-        config = /* lua */ ''
-          vim.g.rustaceanvim = {
-            server = {
-              -- TODO: disabling keymaps for now until I learn the plugin better
-              -- on_attach = function(_arg, bufnr)
-              --   -- Call normal on_attach function
-              --   on_attach(_arg, bufnr)
-              --   -- Hover actions
-              --   vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-              --   -- Code action groups
-              --   vim.keymap.set("n", "<Leader>C", rt.code_action_group.code_action_group, {
-              --     buffer = bufnr
-              --   })
-              -- end,
-              default_settings = settings
-            },
-          }
-        '';
-      }
-      {
         plugin = rust-vim;
         config = /* vim */ ''
           let g:rustfmt_autosave = 1
