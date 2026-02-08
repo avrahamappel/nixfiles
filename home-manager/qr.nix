@@ -15,7 +15,7 @@ in
   home.shellAliases = {
     qr = "qrscan";
     qrc = "qrscan | ${if pkgs.stdenv.isDarwin then "pbcopy" else "wl-copy"}";
-    qrd = "qrscan | tee /dev/tty | xargs ddgr --np";
+    qrd = "qrscan | tee /dev/tty | xargs ddgr -x --np";
     qro = "qrscan | xargs ${if pkgs.stdenv.isDarwin then "open" else "xdg-open"}";
     qrv = "qrscan >> ~/Downloads/contacts.vcf";
     qw = "qrtool encode -t terminal";
