@@ -21,11 +21,11 @@ in
       "/ledgers/$(${pkgs.coreutils}/bin/date +%Y)/main.journal";
 
     home.shellAliases = {
-      hl = "hledger";
+      hl = "hledger --pretty";
       hlo = "cd ${cfg.hledgerPath} && e $LEDGER_FILE";
-      hlb = "hledger bal --budget -V --invert 'expenses|income'";
-      hl24 = "hledger -f ${cfg.hledgerPath}/ledgers/2024/main.journal";
-      hl25 = "hledger -f ${cfg.hledgerPath}/ledgers/2025/main.journal";
+      hlb = "hl bal --budget -V --invert 'expenses|income'";
+      hl24 = "hl -f ${cfg.hledgerPath}/ledgers/2024/main.journal";
+      hl25 = "hl -f ${cfg.hledgerPath}/ledgers/2025/main.journal";
     };
 
     services.git-sync.enable = true;
