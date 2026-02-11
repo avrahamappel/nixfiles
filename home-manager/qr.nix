@@ -18,6 +18,6 @@ in
     qrd = "qrscan | tee /dev/tty | xargs ddgr -x --np";
     qro = "qrscan | xargs ${if pkgs.stdenv.isDarwin then "open" else "xdg-open"}";
     qrv = "qrscan >> ~/Downloads/contacts.vcf";
-    qw = "qrtool encode -t terminal";
+    qrw = "qrtool encode -t terminal";
   };
 }
