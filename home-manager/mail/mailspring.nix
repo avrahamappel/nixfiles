@@ -11,8 +11,8 @@
 let
   # Not npinning as the nixpkgs version downloads the prebuilt package
   # and I don't want to roll my own build
-  version = "1.17.3";
-  hash = "sha256-cDnr8TxeVYH9ES1+l9JqgCoWO9IcXGZis+kNNVWHCmQ=";
+  version = "1.17.4";
+  hash = "sha256-PHxe44yzX9Zz+fQu30kX9epLEeG3wqqVL3p5+ZHMmos=";
 in
 
 mailspring.overrideAttrs (prev: {
