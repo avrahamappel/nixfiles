@@ -1,18 +1,22 @@
 { pkgs, lib, ... }:
 
+let
+  # Gnome extensions
+  extensions = with pkgs.gnomeExtensions; [
+    appindicator # Necessary for mailspring icon
+    light-style # Make topbar etc. match light theme when enabled
+    night-theme-switcher # Automatically switch to dark theme at night
+    pip-on-top # Make picture-in-picture stay on top of all windows
+    vitals # System stats in topbar
+  ];
+in
+
 {
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Gnome extensions
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.appindicator # Necessary for mailspring icon
-    gnomeExtensions.bangs-search # DuckDuckGo bangs in GNOME search
-    gnomeExtensions.pip-on-top # Make picture-in-picture stay on top of all windows
-    gnomeExtensions.vitals
-    gnomeExtensions.night-theme-switcher
-  ];
+  environment.systemPackages = extensions;
 
   environment.gnome.excludePackages = with pkgs; [
     epiphany # Web browser
@@ -117,14 +121,7 @@
 
         "org/gnome/shell" = {
           disable-user-extensions = false;
-          enabled-extensions = [
-            "pip-on-top@rafostar.github.com"
-            "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
-            "Vitals@CoreCoding.com"
-            "nightthemeswitcher@romainvigier.fr"
-            "appindicatorsupport@rgcjonas.gmail.com"
-            "bangs-search@suvan"
-          ];
+          enabled-extensions = map (e: e.extensionUuid) extensions;
           favorite-apps = [
             "firefox-devedition.desktop"
             "Alacritty.desktop"
