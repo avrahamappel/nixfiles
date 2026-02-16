@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.alacritty = {
@@ -15,11 +15,22 @@
         size = 12.5;
       };
       cursor.vi_mode_style.blinking = "On";
-      keyboard.bindings = (pkgs.lib.optional pkgs.stdenv.isLinux {
-        key = "N";
-        mods = "Shift|Control";
-        action = "CreateNewWindow";
-      });
+      keyboard.bindings = lib.optionals pkgs.stdenv.isLinux [
+        {
+          key = "N";
+          mods = "Shift|Control";
+          action = "CreateNewWindow";
+        }
+        {
+          key = "F";
+          mods = "Control";
+          action = "ToggleFullscreen";
+        }
+      ] ++ lib.optional pkgs.stdenv.isDarwin {
+        key = "Space";
+        mods = "Control|Alt";
+        action = "ToggleViMode";
+      };
 
       env.term = "xterm-256color";
     };
