@@ -127,6 +127,7 @@ in
             "Alacritty.desktop"
             "org.gnome.Nautilus.desktop"
             "Mailspring.desktop"
+            "org.gnome.GTG.desktop"
           ];
         };
 
