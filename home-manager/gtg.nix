@@ -10,6 +10,15 @@ let
       import gi
       gi.require_version('Gtk', '3.0')
       PYTHON
+
+      # Move imports lines down
+      # See here for explanation
+      # http://stackoverflow.com/questions/44920864/ddg#44928133
+      sed -i '19{N;h;d};23G' GTG/gtk/browser/cell_renderer_tags.py
+
+      # Add version
+      sed -i "23i gi.require_version('Gtk', '3.0')" \
+        GTG/gtk/browser/cell_renderer_tags.py
     '';
   };
 in
