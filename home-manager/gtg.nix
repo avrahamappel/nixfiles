@@ -3,13 +3,22 @@
 let
   cfg = config.gtg;
   gtgHome = config.xdg.dataHome + "/gtg";
+
+  package = pkgs.gtg.overridePythonAttrs {
+    postPatch = ''
+      cat <<PYTHON > GTG/__init__.py
+      import gi
+      gi.require_version('Gtk', '3.0')
+      PYTHON
+    '';
+  };
 in
 
 {
   options.gtg.enable = lib.mkEnableOption "Whether to enable GTG";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.gtg ];
+    home.packages = [ package ];
 
     home.sessionVariables.GTG_HOME = gtgHome;
 
