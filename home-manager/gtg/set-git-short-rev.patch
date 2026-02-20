@@ -1,0 +1,18 @@
+diff --git a/GTG/core/meson.build b/GTG/core/meson.build
+index aa2568e5..3def3dc9 100644
+--- a/GTG/core/meson.build
++++ b/GTG/core/meson.build
+@@ -1,11 +1,6 @@
+-git = find_program('git', required : false, disabler : true)
+-
+-if git.found() and get_option('profile') == 'development'
++if get_option('profile') == 'development'
+     base_version = meson.project_version()
+-    commit = run_command(
+-            ['git', 'rev-parse', '--short', 'HEAD'],
+-            check: true
+-        ).stdout().strip()
++    commit = '@shortRev@'
+     version = base_version + '-' + commit
+ else
+     version = meson.project_version()
