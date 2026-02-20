@@ -4,7 +4,7 @@ let
   cfg = config.gtg;
   gtgHome = config.xdg.dataHome + "/gtg";
 
-  package = pkgs.callPackage ./package { };
+  package = pkgs.callPackage ./package.nix { };
 in
 
 {
