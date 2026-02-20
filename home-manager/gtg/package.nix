@@ -6,6 +6,7 @@
 , gtksourceview5
 , libportal
 , pkg-config
+, python3Packages
 , wrapGAppsHook3
 , wrapGAppsHook4
 }:
@@ -28,6 +29,7 @@ in
 gtg.overrideAttrs
   ({ nativeBuildInputs
    , buildInputs
+   , propagatedBuildInputs
    , ...
    }: {
     inherit src version;
@@ -52,5 +54,11 @@ gtg.overrideAttrs
       gtksourceview5
       libportal
     ];
+
+    propagatedBuildInputs = (with python3Packages; propagatedBuildInputs ++ [
+      cheetah3
+      dbus-python
+      typing-extensions
+    ]);
 
   })
