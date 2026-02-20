@@ -14,7 +14,7 @@
     ./ssh.nix
     ./rust.nix
     ./qr.nix
-    ./gtg.nix
+    ./gtg
   ];
 
   home = {
