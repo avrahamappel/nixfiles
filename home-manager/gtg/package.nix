@@ -6,6 +6,7 @@
 , gtksourceview5
 , libportal
 , pkg-config
+, python3
 , python3Packages
 , wrapGAppsHook3
 , wrapGAppsHook4
@@ -26,7 +27,7 @@ let
   ;
 in
 
-gtg.overrideAttrs
+gtg.overridePythonAttrs
   ({ nativeBuildInputs
    , buildInputs
    , propagatedBuildInputs
@@ -55,10 +56,19 @@ gtg.overrideAttrs
       libportal
     ];
 
-    propagatedBuildInputs = (with python3Packages; propagatedBuildInputs ++ [
+    propagatedBuildInputs = (with python3Packages; lib.remove [
+      gst-python
+      liblarch
+    ]
+      propagatedBuildInputs
+    ++ [
       cheetah3
       dbus-python
       typing-extensions
     ]);
 
+    checkPhase = ''
+      export PYTHONPATH="$PYTHONPATH:$out/lib/${python3.libPrefix}/site-packages"
+      xvfb-run pytest ../tests
+    '';
   })
