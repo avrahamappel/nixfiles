@@ -8,6 +8,7 @@
 , pkg-config
 , python3
 , python3Packages
+, replaceVars
 , wrapGAppsHook3
 , wrapGAppsHook4
 }:
@@ -25,6 +26,8 @@ let
         ) 3
       )
   ;
+
+  shortRev = builtins.substring 0 7 src.revision;
 in
 
 gtg.overridePythonAttrs
@@ -33,9 +36,12 @@ gtg.overridePythonAttrs
    , propagatedBuildInputs
    , ...
    }: {
-    inherit src version;
+    inherit src;
+    version = "${version}-${shortRev}";
 
-    patches = [ ];
+    patches = [
+      (replaceVars ./set-git-short-rev.patch { inherit shortRev; })
+    ];
 
     nativeBuildInputs = lib.remove [
       wrapGAppsHook3
@@ -66,6 +72,10 @@ gtg.overridePythonAttrs
       dbus-python
       typing-extensions
     ]);
+
+    mesonFlags = [
+      (lib.mesonOption "profile" "development")
+    ];
 
     checkPhase = ''
       export PYTHONPATH="$PYTHONPATH:$out/lib/${python3.libPrefix}/site-packages"
