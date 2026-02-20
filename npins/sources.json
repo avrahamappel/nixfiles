@@ -16,6 +16,19 @@
       "url": "https://gitlab.com/api/v4/projects/andrewminion%2Fmailspring-automatic-light-dark-mode/repository/archive.tar.gz?ref=0.1.0",
       "hash": "0kvv15d316jlqpb1kn9ydk8wz2az0qxjj3ccpzd64in3d4b9hp2l"
     },
+    "gtg": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "getting-things-gnome",
+        "repo": "gtg"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "2b2ecb1f19f57de79cb07a99398f110532945f84",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/2b2ecb1f19f57de79cb07a99398f110532945f84.tar.gz",
+      "hash": "0d45sav8cwlnljmc4a9q9ak6gha7m9vq7w6s5kidrf77nyg8x79q"
+    },
     "skhd.zig": {
       "type": "GitRelease",
       "repository": {
