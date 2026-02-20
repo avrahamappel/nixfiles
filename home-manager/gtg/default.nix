@@ -23,7 +23,7 @@ in
 
     assertions = [
       {
-        assertion = lib.versionOlder "0.7" pkgs.gtg.version;
+        assertion = lib.versionOlder pkgs.gtg.version "0.7";
         message = "Upstream GTG has been updated to 0.7";
       }
       {
