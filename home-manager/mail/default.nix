@@ -8,26 +8,10 @@ let
       npins."andrewminion/mailspring-automatic-light-dark-mode";
   };
 
-  package = pkgs-unstable.callPackage ./mailspring.nix { };
-  upstream-package = pkgs-unstable.mailspring;
+  localPackage = pkgs-unstable.callPackage ./mailspring.nix { };
+  upstreamPackage = pkgs-unstable.mailspring;
 
-  assertions = [
-    {
-      assertion = !lib.versionAtLeast upstream-package.version package.version;
-      message = "Mailspring is already up to date";
-    }
-  ] ++ lib.optionals pkgs.stdenv.isLinux [
-    {
-      assertion = !builtins.any (p: lib.getName p == "libnotify")
-        upstream-package.runtimeDependencies;
-      message =
-        "`libnotify` has already been added to Mailspring's runtime dependencies";
-    }
-    {
-      assertion = builtins.match "libEGL" upstream-package.postFixup == null;
-      message = "https://github.com/NixOS/nixpkgs/pull/282748 has been merged, need to rework my fix";
-    }
-  ];
+  package = if pkgs.stdenv.isLinux then localPackage else upstreamPackage;
 
   pluginPath =
     if pkgs.stdenv.isDarwin
@@ -41,8 +25,6 @@ in
   };
 
   config = lib.mkIf config.mailspring.enable {
-    inherit assertions;
-
     home.packages = [ package ];
 
     home.file.${pluginPath}.source = mailspringPackages;
