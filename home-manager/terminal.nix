@@ -22,8 +22,7 @@
           action = "CreateNewWindow";
         }
         {
-          key = "F";
-          mods = "Control";
+          key = "F11";
           action = "ToggleFullscreen";
         }
       ] ++ lib.optional pkgs.stdenv.isDarwin {
