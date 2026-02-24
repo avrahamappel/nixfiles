@@ -8,8 +8,8 @@
 let
   # Not npinning as the nixpkgs version downloads the prebuilt package
   # and I don't want to roll my own build
-  version = "1.17.4";
-  hash = "sha256-PHxe44yzX9Zz+fQu30kX9epLEeG3wqqVL3p5+ZHMmos=";
+  version = "1.18.0";
+  hash = "sha256-FOcNUcJh9FbQ+s2uxlKEqsNfqFqS0NbwHGecIUQruDY=";
 
   assertions = [
     {
