@@ -8,21 +8,27 @@ let
   bus-extension = inputs.bus-extension.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
   profile = {
-    extensions = with rycee-nur.firefox-addons; {
-      packages = [
-        adblocker-ultimate
-        browserpass
-        duckduckgo-privacy-essentials
-        surfingkeys
-        qr-code-address-bar
-      ] ++ (with local-addons; [
-        amazon-orders-to-beancount
-        cors-everywhere
-        # For downloading stuff from archive.org.
-        # Requires disabling CORS to use,
-        # hence the previous addon
-        internet_archive_downloader
-      ]) ++ lib.optional config.bus-extension.enable bus-extension;
+    extensions = with rycee-nur.firefox-addons; with local-addons; {
+      packages =
+        # rycee
+        [
+          adblocker-ultimate
+          browserpass
+          duckduckgo-privacy-essentials
+          surfingkeys
+          qr-code-address-bar
+        ]
+        # local
+        ++ [
+          amazon-orders-to-beancount
+          cors-everywhere
+          # For downloading stuff from archive.org.
+          # Requires disabling CORS to use,
+          # hence the previous addon
+          internet_archive_downloader
+          sixthirteentube
+        ]
+        ++ lib.optional config.bus-extension.enable bus-extension;
 
       exhaustivePermissions = true;
       exactPermissions = true;
@@ -83,7 +89,7 @@ let
           "topSites"
         ];
         ${qr-code-address-bar.addonId}.permissions = [ "activeTab" "menus" ];
-        ${local-addons.amazon-orders-to-beancount.addonId}.permissions = [
+        ${amazon-orders-to-beancount.addonId}.permissions = [
           "*://*.amazon.ca/gp/*/order-history?*"
           "*://amazon.ca/gp/*/order-history?*"
           "*://*.amazon.ca/your-orders/orders?*"
@@ -95,19 +101,33 @@ let
           "storage"
           "webRequest"
         ];
-        ${local-addons.cors-everywhere.addonId}.permissions = [
+        ${cors-everywhere.addonId}.permissions = [
           "<all_urls>"
           "storage"
           "webRequest"
           "webRequestBlocking"
         ];
-        ${local-addons.internet_archive_downloader.addonId}.permissions = [
+        ${internet_archive_downloader.addonId}.permissions = [
           "declarativeNetRequest"
           "downloads"
           "notifications"
           "scripting"
           "storage"
           "tabs"
+        ];
+        ${sixthirteentube.addonId}.permissions = [
+          "storage"
+          "webRequest"
+          "webRequestBlocking"
+          "*://www.youtube.com/*"
+          "*://youtube.com/*"
+          "*://www.youtube-nocookie.com/*"
+          "*://youtube-nocookie.com/*"
+          "https://613tube.com/*"
+          "https://www.youtube-nocookie.com/embed/*"
+          "https://youtube-nocookie.com/embed/*"
+          "https://www.youtube.com/embed/*"
+          "https://youtube/embed/*"
         ];
       } // lib.optionalAttrs config.bus-extension.enable {
         ${bus-extension.addonId}.permissions = [ "activeTab" ];

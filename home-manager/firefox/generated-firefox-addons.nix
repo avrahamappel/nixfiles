@@ -67,4 +67,31 @@
         platforms = platforms.all;
       };
     };
+    "sixthirteentube" = buildFirefoxXpiAddon {
+      pname = "sixthirteentube";
+      version = "3.3resigned1";
+      addonId = "jid1-ruEhd5TsXi25xA@jetpack";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4270576/613tube-3.3resigned1.xpi";
+      sha256 = "d97d0391d6789cb3ef6831e56f3b30f1c4de28022bf5c441410b762300d4584f";
+      meta = with lib;
+      {
+        description = "Redirects YouTube videos to 613Tube for a cleaner experience.";
+        license = licenses.mpl20;
+        mozPermissions = [
+          "storage"
+          "webRequest"
+          "webRequestBlocking"
+          "*://www.youtube.com/*"
+          "*://youtube.com/*"
+          "*://www.youtube-nocookie.com/*"
+          "*://youtube-nocookie.com/*"
+          "https://613tube.com/*"
+          "https://www.youtube-nocookie.com/embed/*"
+          "https://youtube-nocookie.com/embed/*"
+          "https://www.youtube.com/embed/*"
+          "https://youtube/embed/*"
+        ];
+        platforms = platforms.all;
+      };
+    };
   }
