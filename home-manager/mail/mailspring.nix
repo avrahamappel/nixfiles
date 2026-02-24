@@ -22,16 +22,14 @@ let
     }
   ];
 
-  warnings = [
-    (lib.optionalString
-      (builtins.any (p: lib.getName p == "libnotify")
-        mailspring.runtimeDependencies)
-      "`libnotify` has already been added to Mailspring's runtime dependencies")
-    (lib.optionalString
-      (builtins.any (p: lib.getName p == "html-tidy")
-        mailspring.runtimeDependencies)
-      "`libtidy`/`html-tidy` has already been added to Mailspring's runtime dependencies")
-  ];
+  warnings = lib.optional
+    (builtins.any (p: lib.getName p == "libnotify")
+      mailspring.runtimeDependencies)
+    "`libnotify` has already been added to Mailspring's runtime dependencies"
+  ++ lib.optional
+    (builtins.any (p: lib.getName p == "html-tidy")
+      mailspring.runtimeDependencies)
+    "`libtidy`/`html-tidy` has already been added to Mailspring's runtime dependencies";
 
   package = mailspring.overrideAttrs (prev: {
     inherit version;
