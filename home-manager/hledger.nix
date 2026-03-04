@@ -22,7 +22,6 @@ in
   config = lib.mkIf cfg.enable {
     hledger.settings = ''
       --pretty
-      --tree
     '';
 
     home.packages = [ pkgs.hledger ];
@@ -37,7 +36,7 @@ in
     home.shellAliases = {
       hl = "hledger --conf ${fullSettingsPath}";
       hlo = "cd ${hledgerPath} && e $LEDGER_FILE";
-      hlb = "hl bal --budget -V --invert 'expenses|income'";
+      hlb = "hl bal --budget -V --invert --tree type:rx";
       hl24 = "hl -f ${hledgerPath}/ledgers/2024/main.journal";
       hl25 = "hl -f ${hledgerPath}/ledgers/2025/main.journal";
     };
