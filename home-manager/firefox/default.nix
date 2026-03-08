@@ -2,7 +2,7 @@
 
 let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
-    inherit (rycee-nur.firefox-addons) buildFirefoxXpiAddon;
+    buildMozillaXpiAddon = rycee-nur.firefox-addons.buildFirefoxXpiAddon;
   };
 
   bus-extension = inputs.bus-extension.packages.${pkgs.stdenv.hostPlatform.system}.default;
