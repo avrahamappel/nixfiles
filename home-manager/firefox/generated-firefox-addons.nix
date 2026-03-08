@@ -1,6 +1,6 @@
-{ buildFirefoxXpiAddon, fetchurl, lib, stdenv }:
+{ buildMozillaXpiAddon, fetchurl, lib, stdenv }:
   {
-    "amazon-orders-to-beancount" = buildFirefoxXpiAddon {
+    "amazon-orders-to-beancount" = buildMozillaXpiAddon {
       pname = "amazon-orders-to-beancount";
       version = "1.0";
       addonId = "amazon-bean@darksair.org";
@@ -25,7 +25,7 @@
         platforms = platforms.all;
       };
     };
-    "cors-everywhere" = buildFirefoxXpiAddon {
+    "cors-everywhere" = buildMozillaXpiAddon {
       pname = "cors-everywhere";
       version = "18.11.13.2044resigned1";
       addonId = "cors-everywhere@spenibus";
@@ -45,7 +45,7 @@
         platforms = platforms.all;
       };
     };
-    "internet_archive_downloader" = buildFirefoxXpiAddon {
+    "internet_archive_downloader" = buildMozillaXpiAddon {
       pname = "internet_archive_downloader";
       version = "1.1.0";
       addonId = "internet_archive_downloader@timelegend.net";
@@ -67,7 +67,7 @@
         platforms = platforms.all;
       };
     };
-    "sixthirteentube" = buildFirefoxXpiAddon {
+    "sixthirteentube" = buildMozillaXpiAddon {
       pname = "sixthirteentube";
       version = "3.3resigned1";
       addonId = "jid1-ruEhd5TsXi25xA@jetpack";
