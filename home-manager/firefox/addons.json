@@ -4,12 +4,12 @@
     "pname": "sixthirteentube"
   },
   {
-    "slug": "amazon-orders-to-beancount"
-  },
-  {
     "slug": "cors-everywhere"
   },
   {
     "slug": "internet_archive_downloader"
+  },
+  {
+    "slug": "order-history-exporter-amazon"
   }
 ]
