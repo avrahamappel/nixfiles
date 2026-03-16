@@ -26,7 +26,6 @@ let
           # hence the previous addon
           internet_archive_downloader
           order-history-exporter-amazon
-          sixthirteentube
         ]
         ++ lib.optional config.bus-extension.enable bus-extension;
 
@@ -158,20 +157,6 @@ let
           "*://*.amazon.com.be/*gp/your-account/order-history*"
           "*://*.amazon.com.be/*gp/css/order-history*"
           "*://*.amazon.com.be/*your-orders*"
-        ];
-        ${sixthirteentube.addonId}.permissions = [
-          "storage"
-          "webRequest"
-          "webRequestBlocking"
-          "*://www.youtube.com/*"
-          "*://youtube.com/*"
-          "*://www.youtube-nocookie.com/*"
-          "*://youtube-nocookie.com/*"
-          "https://613tube.com/*"
-          "https://www.youtube-nocookie.com/embed/*"
-          "https://youtube-nocookie.com/embed/*"
-          "https://www.youtube.com/embed/*"
-          "https://youtube/embed/*"
         ];
       } // lib.optionalAttrs config.bus-extension.enable {
         ${bus-extension.addonId}.permissions = [ "activeTab" ];
