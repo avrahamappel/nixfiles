@@ -16,6 +16,9 @@ in
       '';
     };
 
-    environment.systemPackages = [ pkgs.droidcam ];
+    environment.systemPackages = with pkgs; [
+      android-tools # For connecting over USB
+      droidcam
+    ];
   };
 }
