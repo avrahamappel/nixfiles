@@ -9,6 +9,7 @@
     ./printers.nix
     ./quickemu.nix
     ./wine.nix
+    ./droidcam.nix
   ];
 
   # Latest Nix cli
