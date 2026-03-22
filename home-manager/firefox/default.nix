@@ -25,6 +25,7 @@ let
           # Requires disabling CORS to use,
           # hence the previous addon
           internet_archive_downloader
+          feeder
           order-history-exporter-amazon
         ]
         ++ lib.optional config.bus-extension.enable bus-extension;
@@ -101,6 +102,22 @@ let
           "scripting"
           "storage"
           "tabs"
+        ];
+        ${feeder.addonId}.permissions = [
+          "tabs"
+          "http://*/*"
+          "https://*/*"
+          "chrome://favicon/"
+          "storage"
+          "notifications"
+          "webNavigation"
+          "webRequest"
+          "webRequestBlocking"
+          "unlimitedStorage"
+          "http://feeder.co/*"
+          "http://*.feeder.co/*"
+          "https://feeder.co/*"
+          "https://*.feeder.co/*"
         ];
         ${order-history-exporter-amazon.addonId}.permissions = [
           "activeTab"

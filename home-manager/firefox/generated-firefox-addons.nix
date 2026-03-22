@@ -20,6 +20,35 @@
         platforms = platforms.all;
       };
     };
+    "feeder" = buildMozillaXpiAddon {
+      pname = "feeder";
+      version = "7.7.3";
+      addonId = "{73239762-0d26-4b2e-82a5-49bfd13457f0}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/3577754/feeder-7.7.3.xpi";
+      sha256 = "076b0e9df62d463d7a43c532b3d4bbb95ac4a2becaa987b26858462241f76ce7";
+      meta = with lib;
+      {
+        homepage = "https://feeder.co/";
+        description = "Get a simple overview of your RSS and Atom feeds in the toolbar.";
+        mozPermissions = [
+          "tabs"
+          "http://*/*"
+          "https://*/*"
+          "chrome://favicon/"
+          "storage"
+          "notifications"
+          "webNavigation"
+          "webRequest"
+          "webRequestBlocking"
+          "unlimitedStorage"
+          "http://feeder.co/*"
+          "http://*.feeder.co/*"
+          "https://feeder.co/*"
+          "https://*.feeder.co/*"
+        ];
+        platforms = platforms.all;
+      };
+    };
     "internet_archive_downloader" = buildMozillaXpiAddon {
       pname = "internet_archive_downloader";
       version = "1.1.0";
