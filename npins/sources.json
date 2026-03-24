@@ -1,5 +1,18 @@
 {
   "pins": {
+    "Walmart-Invoice-Exporter": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "hppanpaliya",
+        "repo": "Walmart-Invoice-Exporter"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4626af58e5810bc41d7e6ffc1dffeeab4b970c00",
+      "url": "https://github.com/hppanpaliya/Walmart-Invoice-Exporter/archive/4626af58e5810bc41d7e6ffc1dffeeab4b970c00.tar.gz",
+      "hash": "0wd647nsavlfrvx4swjsq1n3x2dyz1a8q4fqf7xwddd64vkxl81k"
+    },
     "andrewminion/mailspring-automatic-light-dark-mode": {
       "type": "GitRelease",
       "repository": {

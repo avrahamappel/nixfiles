@@ -6,6 +6,7 @@ let
   };
 
   bus-extension = inputs.bus-extension.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  walmart-invoice-exporter = pkgs.callPackage ./walmart-invoice-exporter.nix { };
 
   profile = {
     extensions = with rycee-nur.firefox-addons; with local-addons; {
@@ -28,6 +29,8 @@ let
           feeder
           order-history-exporter-amazon
         ]
+        # ported from Chrome
+        ++ [ walmart-invoice-exporter ]
         ++ lib.optional config.bus-extension.enable bus-extension;
 
       exhaustivePermissions = true;
@@ -174,6 +177,11 @@ let
           "*://*.amazon.com.be/*gp/your-account/order-history*"
           "*://*.amazon.com.be/*gp/css/order-history*"
           "*://*.amazon.com.be/*your-orders*"
+        ];
+        ${walmart-invoice-exporter.addonId}.permissions = [
+          "activeTab"
+          "storage"
+          "https://www.walmart.com/*"
         ];
       } // lib.optionalAttrs config.bus-extension.enable {
         ${bus-extension.addonId}.permissions = [ "activeTab" ];
