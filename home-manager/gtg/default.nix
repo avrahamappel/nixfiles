@@ -21,6 +21,10 @@ in
       uri = "git@github.com/avrahamappel/gtg.git";
     };
 
+    xdg.autostart.entries = [
+      "${package}/share/applications/org.gnome.GTG.Devel.desktop"
+    ];
+
     assertions = [
       {
         assertion = lib.versionOlder pkgs.gtg.version "0.7";
