@@ -184,7 +184,10 @@ let
           "https://www.walmart.com/*"
         ];
       } // lib.optionalAttrs config.bus-extension.enable {
-        ${bus-extension.addonId}.permissions = [ "activeTab" ];
+        ${bus-extension.addonId}.permissions = [
+          "activeTab"
+          "storage"
+        ];
       };
     };
 
