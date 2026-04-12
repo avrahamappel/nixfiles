@@ -51,10 +51,10 @@
     };
     "internet_archive_downloader" = buildMozillaXpiAddon {
       pname = "internet_archive_downloader";
-      version = "1.1.0";
+      version = "1.2.1";
       addonId = "internet_archive_downloader@timelegend.net";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4511297/internet_archive_downloader-1.1.0.xpi";
-      sha256 = "960aaeedc3b5163649efc3acf1c7d696b0db89fcb94ec164675af0611cf4c5be";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4749428/internet_archive_downloader-1.2.1.xpi";
+      sha256 = "c2fe7ba5876873ef0fb3c298751e7a820be8bc42c19cce1a7e1a4bafcc5a52ff";
       meta = with lib;
       {
         homepage = "https://github.com/elementdavv/internet_archive_downloader";
