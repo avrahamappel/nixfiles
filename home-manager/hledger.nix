@@ -22,6 +22,7 @@ in
   config = lib.mkIf cfg.enable {
     hledger.settings = ''
       --pretty
+      --infer-market-prices
     '';
 
     home.packages = [ pkgs.hledger ];
