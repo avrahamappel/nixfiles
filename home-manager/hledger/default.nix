@@ -10,6 +10,8 @@ let
 in
 
 {
+  imports = [ ./firefox.nix ];
+
   options.hledger = with lib.types; {
     enable = lib.mkEnableOption "Enable hledger";
 

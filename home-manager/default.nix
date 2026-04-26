@@ -10,7 +10,7 @@
     ./git.nix
     ./nvim
     ./passwords.nix
-    ./hledger.nix
+    ./hledger
     ./ssh.nix
     ./rust.nix
     ./qr.nix
