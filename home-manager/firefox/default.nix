@@ -41,11 +41,11 @@ let
         ${adblocker-ultimate.addonId}.permissions = [
           "<all_urls>"
           "contextMenus"
+          "cookies"
           "http://*/*"
           "https://*/*"
           "storage"
           "tabs"
-          "unlimitedStorage"
           "webNavigation"
           "webRequest"
           "webRequestBlocking"
@@ -105,6 +105,7 @@ let
           "scripting"
           "storage"
           "tabs"
+          "unlimitedStorage"
         ];
         ${feeder.addonId}.permissions = [
           "tabs"
