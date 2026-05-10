@@ -124,11 +124,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778216735,
-        "narHash": "sha256-/WM0bmxG134EqVUG1UgHDVSqI8RqXdEGJd+1QMtXxVk=",
+        "lastModified": 1778382355,
+        "narHash": "sha256-tn7UGNHbqydHOio4qzLAIMxWEfy8M+QkGJjROf22EiE=",
         "owner": "avrahamappel",
         "repo": "qrscan",
-        "rev": "4f67a229b61e6b74fc0c3305be3d28b4e6881638",
+        "rev": "98236fda033a75884f6af23bde7384ed4c501264",
         "type": "github"
       },
       "original": {
