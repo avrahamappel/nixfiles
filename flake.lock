@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777851538,
-        "narHash": "sha256-Gp8qwTEYNoy2yvmErVGlvLOQvrtEECCAKbonW7VJef8=",
+        "lastModified": 1778905220,
+        "narHash": "sha256-ox/5IHc8uwy6UTw6N7Shp6uCHIgu/S2PsWeuXsOHSo8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "cc09c0f9b7eaa95c2d9827338a5eb03d32505ca5",
+        "rev": "d1686dc7d36cbd1234cb226ad6ef97e882716acb",
         "type": "github"
       },
       "original": {
@@ -88,11 +88,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1777954456,
-        "narHash": "sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9+hrDTkDU=",
+        "lastModified": 1778869304,
+        "narHash": "sha256-30sZNZoA1cqF5JNO9fVX+wgiQYjB7HJqqJ4ztCDeBZE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "549bd84d6279f9852cae6225e372cc67fb91a4c1",
+        "rev": "d233902339c02a9c334e7e593de68855ad26c4cb",
         "type": "github"
       },
       "original": {
@@ -103,11 +103,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1778003029,
-        "narHash": "sha256-q/nkKLDtHIyLjZpKhWk3cSK5IYsFqtMd6UtXF3ddjgA=",
+        "lastModified": 1778737229,
+        "narHash": "sha256-6xWoytx8jFW4PF1GjRm/i/53trbpKGfz6zjzQGBr4cI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "0c88e1f2bdb93d5999019e99cb0e61e1fe2af4c5",
+        "rev": "d7a713c0b7e47c908258e71cba7a2d77cc8d71d5",
         "type": "github"
       },
       "original": {
@@ -124,11 +124,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778382355,
-        "narHash": "sha256-tn7UGNHbqydHOio4qzLAIMxWEfy8M+QkGJjROf22EiE=",
+        "lastModified": 1778813893,
+        "narHash": "sha256-3RTel8489m+WCh0570RlbSwSMhtCRFGpLCZ/31Bp3XU=",
         "owner": "avrahamappel",
         "repo": "qrscan",
-        "rev": "98236fda033a75884f6af23bde7384ed4c501264",
+        "rev": "c8b5929302a18004987476560eadd63729319f48",
         "type": "github"
       },
       "original": {
@@ -150,11 +150,11 @@
     "rycee-nur": {
       "flake": false,
       "locked": {
-        "lastModified": 1778299372,
-        "narHash": "sha256-QDhWZoh+154Qv9ygN/TFcn8p4XYTrNHMyRfyf9CFVpg=",
+        "lastModified": 1778964611,
+        "narHash": "sha256-xXrOpQKFIvesTuSGhCbI++FJ5+bVSEs08O+D9yQ4OTQ=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "01cd3b6978214af1d1de59ed70fde9e8802b3543",
+        "rev": "2ab4d334896d3b6a45e1ac077bdc6a374bd13541",
         "type": "gitlab"
       },
       "original": {
