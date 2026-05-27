@@ -206,18 +206,20 @@ in
       # Load direnv variables
       direnv-vim
 
-      # Dispatch commands asynchronously
       {
-        plugin = vim-dispatch;
+        plugin = vim-test;
         config = # vim
           ''
-            let g:dispatch_no_maps = 1
-            " :Dispatch automatically calls insert due to my `neovim_terminal` augroup
-            " Add a map to avoid that
-            nnoremap <leader>` :Dispatch<CR><Esc>
+            " (r is next to t, and t is used for projections)
+            map <leader>rr :TestNearest<CR>
+            map <leader>rf :TestFile<CR>
+            map <leader>ra :TestSuite<CR>
+            map <leader>rl :TestLast<CR>
+
+            let test#strategy = "neovim"
+            let test#neovim#term_position = "vert"
           '';
       }
-      vim-dispatch-neovim
 
       vim-eunuch # UNIX filesystem utils shortcuts
 
