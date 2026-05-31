@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, lib, config, ... }:
+{ pkgs, lib, config, ... }:
 
 let
   npins = import ../../npins;
@@ -8,8 +8,8 @@ let
       npins."andrewminion/mailspring-automatic-light-dark-mode";
   };
 
-  localPackage = pkgs-unstable.callPackage ./mailspring.nix { };
-  upstreamPackage = pkgs-unstable.mailspring;
+  localPackage = pkgs.callPackage ./mailspring.nix { };
+  upstreamPackage = pkgs.mailspring;
 
   package = if pkgs.stdenv.isLinux then localPackage else upstreamPackage;
 
