@@ -1,16 +1,12 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.user.copilot;
+  cfg = config.copilot;
 
 in
 
 {
-  options.user.copilot = {
-    enable = (lib.mkEnableOption "copilot") // {
-      default = true;
-    };
-  };
+  options.copilot.enable = lib.mkEnableOption "Enable Github Copilot in Neovim";
 
   config = lib.mkIf cfg.enable {
     programs.neovim.plugins = with pkgs.vimPlugins; [
