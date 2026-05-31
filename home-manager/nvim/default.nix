@@ -246,10 +246,6 @@ in
       ###################
       {
         plugin = nvim-dap;
-        # .overrideAttrs (prev: {
-        #   # Include Xdebug for PHP debugging
-        #   dependencies = [ pkgs.vscode-extensions.xdebug.php-debug ];
-        # });
         type = "lua";
         config = /* lua */ ''
           local dap = require('dap')
@@ -264,24 +260,6 @@ in
           -- vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
           -- vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
           -- vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-
-          -- Xdebug setup
-          -- dap.adapters.php = {
-          --   type = 'executable',
-          --   command = 'node',
-          --   args = { '${pkgs.vscode-extensions.xdebug.php-debug}/share/vscode/extensions/xdebug.php-debug/out/phpDebug.js' },
-          -- }
-          -- dap.configurations.php = {
-          --   {
-          --     type = 'php',
-          --     request = 'launch',
-          --     name = 'Listen for Xdebug',
-          --     stopOnEntry = true,
-          --   },
-          -- }
-          -- function RegisterXdebugPathMappings(mappings)
-          --   dap.configurations.php[1].pathMappings = mappings
-          -- end
         '';
       }
       # {
