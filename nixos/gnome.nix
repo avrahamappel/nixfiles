@@ -20,7 +20,6 @@ in
 
   environment.gnome.excludePackages = with pkgs; [
     epiphany # Web browser
-    geary # Mail client
     gnome-software # Software update center
     gnome-tour
     orca # Screen reader

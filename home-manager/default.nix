@@ -106,6 +106,7 @@
     };
 
     mpv.enable = true;
+    # Enable media controls on Linux
     mpv.scripts = lib.optional pkgs.stdenv.isLinux pkgs.mpvScripts.mpris;
 
     ripgrep.enable = true;

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let
   vim-afterimage = (import ../../npins).vim-afterimage;
@@ -73,7 +73,7 @@ in
 
       # Code style / syntax plugins
       editorconfig-vim
-      vim-polyglot
+      (vim-polyglot.overrideAttrs { meta.license = lib.licenses.mit; }) # License incorrectly set to unfree in nixpkgs, see https://github.com/vim-polyglot/vim-polyglot#license
       vim-endwise
 
       # Plugins that add actions
@@ -183,7 +183,6 @@ in
       cmp-vsnip
       nvim-cmp
       nvim-lspconfig
-      nvim-treesitter-refactor
       lsp_signature-nvim
       SchemaStore-nvim # Adds schemas to json ls
       vim-vsnip
@@ -325,19 +324,19 @@ in
 
   home.packages = with pkgs; [
     # LSPs
+    bash-language-server
     lemminx
     lua-language-server
     nixd
     nixpkgs-fmt
-    nodePackages.bash-language-server
-    nodePackages.typescript-language-server
-    nodePackages.vim-language-server
-    nodePackages.vscode-langservers-extracted
-    nodePackages.yaml-language-server
     python3Packages.python-lsp-server
     shellcheck # Used by the bash LSP
     taplo
+    typescript-language-server
     typos-lsp
+    vim-language-server
+    vscode-langservers-extracted
+    yaml-language-server
 
     # Used by vim-afterimage
     antiword

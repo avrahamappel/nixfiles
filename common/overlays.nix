@@ -10,10 +10,8 @@
       # More overlays here
     ]
     ++ lib.optional config.mpvCdSupport (self: super: {
-      mpv = super.mpv.override {
-        mpv = super.mpv-unwrapped.override {
-          cddaSupport = true;
-        };
+      mpv-unwrapped = super.mpv-unwrapped.override {
+        cddaSupport = true;
       };
     });
   };
