@@ -1,11 +1,9 @@
-{ pkgs, lib, config, rycee-nur, inputs, ... }:
+{ pkgs, rycee-nur, ... }:
 
 let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
     buildMozillaXpiAddon = rycee-nur.firefox-addons.buildFirefoxXpiAddon;
   };
-
-  bus-extension = inputs.bus-extension.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
   profile = {
     extensions = with rycee-nur.firefox-addons; with local-addons; {
@@ -26,8 +24,7 @@ let
           # hence the previous addon
           internet_archive_downloader
           feeder
-        ]
-        ++ lib.optional config.bus-extension.enable bus-extension;
+        ];
 
       exhaustivePermissions = true;
       exactPermissions = true;
@@ -119,11 +116,6 @@ let
           "https://feeder.co/*"
           "https://*.feeder.co/*"
         ];
-      } // lib.optionalAttrs config.bus-extension.enable {
-        ${bus-extension.addonId}.permissions = [
-          "activeTab"
-          "storage"
-        ];
       };
     };
 
@@ -151,8 +143,6 @@ let
 in
 
 {
-  options.bus-extension.enable = lib.mkEnableOption "Enable bus-extension in firefox (developer edition required)";
-
   config.programs.firefox = {
     enable = true;
     package = pkgs.firefox-devedition;
