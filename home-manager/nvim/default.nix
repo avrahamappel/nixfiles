@@ -24,7 +24,8 @@ in
             cp -r $src $out
           '';
         };
-        config = ''
+        type = "viml";
+        config = /* vim */ ''
           let g:mapleader = ' '
           let g:maplocalleader = ' '
         '';
@@ -35,6 +36,7 @@ in
       ######################
       {
         plugin = telescope-nvim;
+        type = "viml";
         config = /* vim */ ''
           map <leader>p :Telescope find_files<CR>
           map <leader>b :Telescope buffers sort_mru=true<CR>
@@ -54,12 +56,14 @@ in
       vim-vinegar
       {
         plugin = camelcasemotion;
+        type = "viml";
         config = /* vim */ ''
           call camelcasemotion#CreateMotionMappings('c')
         '';
       }
       {
         plugin = vim-projectionist;
+        type = "viml";
         config = /* vim */ ''
           map <leader>t :A<CR>
         '';
@@ -81,6 +85,7 @@ in
       vim-repeat
       {
         plugin = vim-fugitive;
+        type = "viml";
         config = /* vim */ ''
           " Shortcut to open fugitive window. 'n' is close to the spacebar
           map <leader>n :Git<CR>
@@ -94,6 +99,7 @@ in
       vim-speeddating
       {
         plugin = vim-printer;
+        type = "viml";
         config = /* vim */ ''
           let g:vim_printer_print_below_keybinding = '<leader>o'
           let g:vim_printer_print_above_keybinding = '<leader>O'
@@ -118,6 +124,7 @@ in
       # }
       {
         plugin = rust-vim;
+        type = "viml";
         config = /* vim */ ''
           let g:rustfmt_autosave = 1
         '';
@@ -128,6 +135,7 @@ in
       ##############
       {
         plugin = vim-dadbod;
+        type = "viml";
         config = # vim
           ''
             " Don't add folds in dbout buffers
@@ -140,6 +148,7 @@ in
       }
       {
         plugin = vim-dadbod-ui;
+        type = "viml";
         config = /* vim */ ''
           " Shortcut to open db window.
           map <leader>d :DBUI<CR>
@@ -207,6 +216,7 @@ in
 
       {
         plugin = vim-test;
+        type = "viml";
         config = # vim
           ''
             " (r is next to t, and t is used for projections)
@@ -286,7 +296,7 @@ in
 
     # Custom config
     extraConfig = builtins.readFile ./init.vim;
-    extraLuaConfig = builtins.readFile ./setup.lua;
+    initLua = builtins.readFile ./setup.lua;
 
     # Symlink vim to nvim binary.
     vimAlias = true;

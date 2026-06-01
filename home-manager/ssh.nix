@@ -3,7 +3,7 @@
 
   programs.ssh.enableDefaultConfig = false;
 
-  programs.ssh.matchBlocks."*" = {
+  programs.ssh.settings."*" = {
     forwardAgent = false;
     # Add key passwords to agent after they are entered once
     addKeysToAgent = "yes";
