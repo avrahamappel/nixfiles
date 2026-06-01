@@ -82,8 +82,8 @@ augroup neovim_terminal
     autocmd TermOpen * setlocal nonumber
 augroup END
 
-" Remap exiting terminal. Less useful than it sounds
-" tnoremap <A-q> <C-\><C-n>
+" Exit terminal with CTRL-O
+tnoremap <C-o> <C-\><C-n>
 
 " Enable pasting from registers in terminal mode
 tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
