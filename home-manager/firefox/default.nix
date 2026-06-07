@@ -44,6 +44,7 @@ let
           "webRequestBlocking"
         ];
         ${browserpass.addonId}.permissions = [
+          "<all_urls>"
           "activeTab"
           "alarms"
           "clipboardRead"
