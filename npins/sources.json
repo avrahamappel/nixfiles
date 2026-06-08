@@ -11,7 +11,7 @@
       "submodules": false,
       "revision": "4626af58e5810bc41d7e6ffc1dffeeab4b970c00",
       "url": "https://github.com/hppanpaliya/Walmart-Invoice-Exporter/archive/4626af58e5810bc41d7e6ffc1dffeeab4b970c00.tar.gz",
-      "hash": "0wd647nsavlfrvx4swjsq1n3x2dyz1a8q4fqf7xwddd64vkxl81k"
+      "hash": "sha256-MyDa5yamtcb7cdgRjFT4vok+bMBack36zo5upe0hpnE="
     },
     "andrewminion/mailspring-automatic-light-dark-mode": {
       "type": "GitRelease",
@@ -27,7 +27,7 @@
       "version": "0.1.0",
       "revision": "bda93ef17aaa8b8fa70dda2d6ba4af07e5119b0e",
       "url": "https://gitlab.com/api/v4/projects/andrewminion%2Fmailspring-automatic-light-dark-mode/repository/archive.tar.gz?ref=0.1.0",
-      "hash": "0kvv15d316jlqpb1kn9ydk8wz2az0qxjj3ccpzd64in3d4b9hp2l"
+      "hash": "sha256-VFyYFmnDRmLav4wNKTsGX4nP0Ww+2RnWxVSaMFoJe08="
     },
     "gtg": {
       "type": "Git",
@@ -38,9 +38,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "2b2ecb1f19f57de79cb07a99398f110532945f84",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/2b2ecb1f19f57de79cb07a99398f110532945f84.tar.gz",
-      "hash": "0d45sav8cwlnljmc4a9q9ak6gha7m9vq7w6s5kidrf77nyg8x79q"
+      "revision": "c41d72d9c290b0c9e2d96ea6d264fea98e004e55",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/c41d72d9c290b0c9e2d96ea6d264fea98e004e55.tar.gz",
+      "hash": "sha256-rEAxt/tgsQX3hFVd3RLxNmNM3rt0RYjNTpec99E8krg="
     },
     "skhd.zig": {
       "type": "GitRelease",
@@ -53,10 +53,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.0.17",
-      "revision": "4a17c51ed348629f700b64d4a7be890630b92835",
-      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/v0.0.17",
-      "hash": "0b8zxdy210dyxbs05ws3y3w19jyvsm8hxb47f9gh9glshqwxc269"
+      "version": "v0.1.8",
+      "revision": "c6671341624eda5905dd27fc6a8cff59238d59b0",
+      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.8",
+      "hash": "sha256-Om+Dyayt9lWF61f6LR4UnyA8KPXLOlb9ze/JhRyaPas="
     },
     "vim-afterimage": {
       "type": "GitRelease",
@@ -72,8 +72,8 @@
       "version": "v2.2",
       "revision": "782352096f95dcab574fec93e787d0b2e18b362e",
       "url": "https://api.github.com/repos/tpope/vim-afterimage/tarball/v2.2",
-      "hash": "0r56yp73sp69ay932rd0jzimj0al1ixqqpqw3l16d4m326zd0zbv"
+      "hash": "sha256-e33QvhGjkmYCHRxfjHsMVAFZ45egZTGSV8lcPc71pmQ="
     }
   },
-  "version": 5
+  "version": 7
 }
