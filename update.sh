@@ -1,6 +1,8 @@
 #!/usr/bin/env nix-shell
 #!nix-shell -p npins -i bash
 
+set -e
+
 # Update flake
 nix flake update
 
