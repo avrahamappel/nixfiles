@@ -53,10 +53,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.1.8",
-      "revision": "c6671341624eda5905dd27fc6a8cff59238d59b0",
-      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.8",
-      "hash": "sha256-Om+Dyayt9lWF61f6LR4UnyA8KPXLOlb9ze/JhRyaPas="
+      "version": "v0.1.9",
+      "revision": "8bd491a8b2a658933f65f79dd7bfb679b6fc851b",
+      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.9",
+      "hash": "sha256-HLA8T5m3s8OwNbz6n1z+LUErHvnqyqLGLFWO6JloJog="
     },
     "vim-afterimage": {
       "type": "GitRelease",
