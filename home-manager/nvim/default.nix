@@ -348,5 +348,8 @@ in
     # Used by vim-afterimage
     antiword
     pdftk
+
+    # Treesitter complains if we don't install the CLI
+    tree-sitter
   ];
 }
