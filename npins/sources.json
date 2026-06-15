@@ -58,6 +58,19 @@
       "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.9",
       "hash": "sha256-HLA8T5m3s8OwNbz6n1z+LUErHvnqyqLGLFWO6JloJog="
     },
+    "treesitter-autoinstall-nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mks-h",
+        "repo": "treesitter-autoinstall.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b60bd6b84ec9bd3ce6447e51bff6ffc6142f60b7",
+      "url": "https://github.com/mks-h/treesitter-autoinstall.nvim/archive/b60bd6b84ec9bd3ce6447e51bff6ffc6142f60b7.tar.gz",
+      "hash": "sha256-s/klrEOUQ9F3SLqqI7rcK7+jfZmjkTQKN0PMfLqYpNk="
+    },
     "vim-afterimage": {
       "type": "GitRelease",
       "repository": {

@@ -1,7 +1,11 @@
 { lib, pkgs, ... }:
 
 let
-  vim-afterimage = (import ../../npins).vim-afterimage;
+  npins = import ../../npins;
+  treesitter-autoinstall-nvim = npins.treesitter-autoinstall-nvim { inherit pkgs; };
+  vim-afterimage = npins.vim-afterimage { inherit pkgs; };
+
+  nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
 in
 
 {
@@ -185,7 +189,22 @@ in
       }
 
       # LSP / TreeSitter / Completion plugins
-      nvim-treesitter.withAllGrammars
+      nvim-treesitter
+      {
+        # Automatically install treesitter languages
+        plugin = pkgs.vimUtils.buildVimPlugin {
+          src = treesitter-autoinstall-nvim;
+          pname = treesitter-autoinstall-nvim.repository.repo;
+          version = builtins.substring 0 7 treesitter-autoinstall-nvim.revision;
+          dependencies = [ nvim-treesitter ];
+          meta.homepage = "https://github.com/mks-h/treesitter-autoinstall.nvim";
+        };
+        type = "lua";
+        config = # lua
+          ''
+            require("treesitter-autoinstall").setup()
+          '';
+      }
 
       cmp-nvim-lsp
       cmp-treesitter
