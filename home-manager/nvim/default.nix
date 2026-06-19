@@ -43,6 +43,7 @@ in
         type = "viml";
         config = /* vim */ ''
           map <leader>p :Telescope find_files<CR>
+          map <leader>j :Telescope git_files<CR>
           map <leader>b :Telescope buffers sort_mru=true<CR>
           map <leader>z :Telescope oldfiles<CR>
           map <leader>f :Telescope live_grep<CR>
