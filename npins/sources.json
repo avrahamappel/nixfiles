@@ -38,9 +38,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c41d72d9c290b0c9e2d96ea6d264fea98e004e55",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/c41d72d9c290b0c9e2d96ea6d264fea98e004e55.tar.gz",
-      "hash": "sha256-rEAxt/tgsQX3hFVd3RLxNmNM3rt0RYjNTpec99E8krg="
+      "revision": "1b8dd86db79e472d932d1e536dae57ec502d60b0",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/1b8dd86db79e472d932d1e536dae57ec502d60b0.tar.gz",
+      "hash": "sha256-jmSk4/AwTzJ3AAJWykpKoRQeaAsIwBJy4gQAQoemG6s="
     },
     "skhd.zig": {
       "type": "GitRelease",
@@ -53,10 +53,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.1.9",
-      "revision": "8bd491a8b2a658933f65f79dd7bfb679b6fc851b",
-      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.9",
-      "hash": "sha256-HLA8T5m3s8OwNbz6n1z+LUErHvnqyqLGLFWO6JloJog="
+      "version": "v0.1.10",
+      "revision": "f8c144cd25df65c35b47d2a8cfcd3975b9545cf9",
+      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.10",
+      "hash": "sha256-2ZExrFrdnf936oCkU0b5UGiI0KE5f8nroiyH85xQMUs="
     },
     "treesitter-autoinstall-nvim": {
       "type": "Git",
