@@ -42,15 +42,9 @@
     # This replaces garbage collection
     clean = {
       enable = true;
-      dates = "Sun 23:45"; # Fifteen minutes before optimise
-      extraArgs = "--keep-since 10d";
+      dates = "Mon 00:00";
+      extraArgs = "--keep-since 10d --optimise";
     };
-  };
-
-  # Optimization
-  nix.optimise = {
-    automatic = true;
-    dates = [ "Mon 00:00" ];
   };
 
   environment.systemPackages = with pkgs; [
