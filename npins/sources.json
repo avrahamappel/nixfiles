@@ -38,9 +38,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1b8dd86db79e472d932d1e536dae57ec502d60b0",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/1b8dd86db79e472d932d1e536dae57ec502d60b0.tar.gz",
-      "hash": "sha256-jmSk4/AwTzJ3AAJWykpKoRQeaAsIwBJy4gQAQoemG6s="
+      "revision": "4e59b91f91d7988455b609ef7030791dcbe10cbb",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/4e59b91f91d7988455b609ef7030791dcbe10cbb.tar.gz",
+      "hash": "sha256-AeXfd4ndko5cv8Kj73YPK9junLqkha+V4SLCQs3Te5s="
     },
     "skhd.zig": {
       "type": "GitRelease",
