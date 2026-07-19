@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4626af58e5810bc41d7e6ffc1dffeeab4b970c00",
-      "url": "https://github.com/hppanpaliya/Walmart-Invoice-Exporter/archive/4626af58e5810bc41d7e6ffc1dffeeab4b970c00.tar.gz",
-      "hash": "sha256-MyDa5yamtcb7cdgRjFT4vok+bMBack36zo5upe0hpnE="
+      "revision": "7b245c04c86ccf87ad080cd33dfb61656b8dcb29",
+      "url": "https://github.com/hppanpaliya/Walmart-Invoice-Exporter/archive/7b245c04c86ccf87ad080cd33dfb61656b8dcb29.tar.gz",
+      "hash": "sha256-yDcpE/cez2p9Xi+0panQHi3vV+FFsxq8os4fY6+z1VU="
     },
     "andrewminion/mailspring-automatic-light-dark-mode": {
       "type": "GitRelease",
@@ -38,9 +38,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "4e59b91f91d7988455b609ef7030791dcbe10cbb",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/4e59b91f91d7988455b609ef7030791dcbe10cbb.tar.gz",
-      "hash": "sha256-AeXfd4ndko5cv8Kj73YPK9junLqkha+V4SLCQs3Te5s="
+      "revision": "50c549ce59d8951987ed66c114adc37ddd511c39",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/50c549ce59d8951987ed66c114adc37ddd511c39.tar.gz",
+      "hash": "sha256-+45zvu1cVYwtx5dEgLGCE5pK4k8Fd3jxHDztmo0TI0I="
     },
     "skhd.zig": {
       "type": "GitRelease",
@@ -53,10 +53,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.1.10",
-      "revision": "f8c144cd25df65c35b47d2a8cfcd3975b9545cf9",
-      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.10",
-      "hash": "sha256-2ZExrFrdnf936oCkU0b5UGiI0KE5f8nroiyH85xQMUs="
+      "version": "v0.1.11",
+      "revision": "d25abb5b47ccb32be29ca241d0e1a7df91889728",
+      "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.1.11",
+      "hash": "sha256-KZ2cRb+oe98XkiNf5zhszxXnV/OxqKcaSm8RC2aQcqU="
     },
     "treesitter-autoinstall-nvim": {
       "type": "Git",
