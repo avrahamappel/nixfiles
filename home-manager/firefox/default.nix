@@ -1,4 +1,4 @@
-{ pkgs, rycee-nur, ... }:
+{ pkgs, pkgs-unstable, rycee-nur, ... }:
 
 let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
@@ -146,7 +146,7 @@ in
 {
   config.programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
+    package = pkgs-unstable.firefox-devedition;
     profiles.dev-edition-default = profile;
   };
 }
