@@ -11,7 +11,8 @@
       "submodules": false,
       "revision": "d9733851b47b1b97de28a1dce81bd11e03f03b65",
       "url": "https://github.com/hppanpaliya/Walmart-Invoice-Exporter/archive/d9733851b47b1b97de28a1dce81bd11e03f03b65.tar.gz",
-      "hash": "sha256-qDPWAebul20mpaUEmvA5Bptga+fgKrWcONXiGI/VTw8="
+      "hash": "sha256-qDPWAebul20mpaUEmvA5Bptga+fgKrWcONXiGI/VTw8=",
+      "frozen": true
     },
     "gtg": {
       "type": "Git",
@@ -40,7 +41,8 @@
       "version": "v0.2.0",
       "revision": "9c7c09d2dcd101f377338ad93682b4c8856ade06",
       "url": "https://api.github.com/repos/jackielii/skhd.zig/tarball/refs/tags/v0.2.0",
-      "hash": "sha256-Qi5srrpdhf3VcXaqZbijJD23Um0G7WgRzK0hR+mb7nU="
+      "hash": "sha256-Qi5srrpdhf3VcXaqZbijJD23Um0G7WgRzK0hR+mb7nU=",
+      "frozen": true
     },
     "treesitter-autoinstall-nvim": {
       "type": "Git",

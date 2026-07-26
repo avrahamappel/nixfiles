@@ -8,8 +8,6 @@ let
   };
 
   inherit (local-addons) order-history-exporter-amazon;
-
-  walmart-invoice-exporter = pkgs.callPackage ./walmart-invoice-exporter.nix { };
 in
 
 {
@@ -17,7 +15,6 @@ in
     programs.firefox.profiles.dev-edition-default.extensions = {
       packages = [
         order-history-exporter-amazon
-        walmart-invoice-exporter
       ];
       settings = {
         ${order-history-exporter-amazon.addonId}.permissions = [
@@ -75,11 +72,6 @@ in
           "*://*.amazon.com.be/*gp/your-account/order-history*"
           "*://*.amazon.com.be/*gp/css/order-history*"
           "*://*.amazon.com.be/*your-orders*"
-        ];
-        ${walmart-invoice-exporter.addonId}.permissions = [
-          "activeTab"
-          "storage"
-          "https://www.walmart.com/*"
         ];
       };
     };
