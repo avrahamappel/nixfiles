@@ -27,6 +27,22 @@
       "url": "https://github.com/getting-things-gnome/gtg/archive/83dc50281c14d2ed62c676481134bb91ec245cef.tar.gz",
       "hash": "sha256-jT8lFQh9JTBEL9wa8odCONAPBRzQhvewwrynvijuVxE="
     },
+    "irql-vaapi-driver": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "irql-notlessorequal",
+        "repo": "intel-vaapi-driver"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "2.4.5",
+      "revision": "0b648be50cd80e16469c135c76ff61bbd2f2d12b",
+      "url": "https://api.github.com/repos/irql-notlessorequal/intel-vaapi-driver/tarball/refs/tags/2.4.5",
+      "hash": "sha256-exQBA42jCmwybE7WIfF83cjmzBdtluDzUtOdqt49HSg="
+    },
     "skhd.zig": {
       "type": "GitRelease",
       "repository": {
