@@ -74,10 +74,10 @@
     };
     "order-history-exporter-amazon" = buildMozillaXpiAddon {
       pname = "order-history-exporter-amazon";
-      version = "1.2.0";
+      version = "1.3.0";
       addonId = "order-history-exporter@amazon.example";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4701602/order_history_exporter_amazon-1.2.0.xpi";
-      sha256 = "68167c14e55c43df368e6f8bde71f2727855569afb429c8bfad8bbc930c9d8e7";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4937329/order_history_exporter_amazon-1.3.0.xpi";
+      sha256 = "a2e0c09a01a5fdfe185a06ef779ed4e0fd8f2787e47f0666cac5147fe87f5b88";
       meta = with lib;
       {
         homepage = "https://github.com/xenolphthalein/order-history-exporter-for-amazon";
@@ -85,8 +85,10 @@
         mozPermissions = [
           "activeTab"
           "downloads"
+          "storage"
           "*://*.amazon.com/*"
           "*://*.amazon.co.uk/*"
+          "*://*.amazon.se/*"
           "*://*.amazon.de/*"
           "*://*.amazon.fr/*"
           "*://*.amazon.it/*"
@@ -104,6 +106,9 @@
           "*://*.amazon.co.uk/*gp/your-account/order-history*"
           "*://*.amazon.co.uk/*gp/css/order-history*"
           "*://*.amazon.co.uk/*your-orders*"
+          "*://*.amazon.se/*gp/your-account/order-history*"
+          "*://*.amazon.se/*gp/css/order-history*"
+          "*://*.amazon.se/*your-orders*"
           "*://*.amazon.de/*gp/your-account/order-history*"
           "*://*.amazon.de/*gp/css/order-history*"
           "*://*.amazon.de/*your-orders*"
