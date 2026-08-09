@@ -70,6 +70,7 @@ gtg.overridePythonAttrs
     ++ [
       cheetah3
       dbus-python
+      requests
       typing-extensions
     ]);
 
