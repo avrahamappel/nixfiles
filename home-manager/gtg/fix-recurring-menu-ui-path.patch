@@ -1,0 +1,13 @@
+diff --git a/tests/gtk/test_recurring_menu_ui.py b/tests/gtk/test_recurring_menu_ui.py
+index 10ebf503..da999226 100644
+--- a/tests/gtk/test_recurring_menu_ui.py
++++ b/tests/gtk/test_recurring_menu_ui.py
+@@ -28,7 +28,7 @@ from unittest import TestCase
+ 
+ from lxml import etree
+ 
+-UI_FILE = 'GTG/gtk/data/recurring_menu.ui'
++UI_FILE = '../GTG/gtk/data/recurring_menu.ui'
+ 
+ KNOWN_ACTIONS = (
+     'recurring_menu.is_recurring',

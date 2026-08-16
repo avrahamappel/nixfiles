@@ -40,6 +40,7 @@ gtg.overridePythonAttrs
     version = "${version}-${shortRev}";
 
     patches = [
+      ./fix-recurring-menu-ui-path.patch
       (replaceVars ./set-git-short-rev.patch { inherit shortRev; })
     ];
 
