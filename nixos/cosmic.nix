@@ -14,12 +14,12 @@ in
     services.desktopManager.cosmic.enable = true;
     services.system76-scheduler.enable = true;
 
-    # Ensure gstreamer is present so cosmic-player works
-    environment.systemPackages = with pkgs.gst_all_1; [
-      gstreamer
-      gst-plugins-base
-      gst-plugins-good
-    ];
-
+    # Set GStreamer variable so cosmic-player works
+    environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
+      lib.makeSearchPath "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
+        gstreamer
+        gst-plugins-base
+        gst-plugins-good
+      ]);
   };
 }
