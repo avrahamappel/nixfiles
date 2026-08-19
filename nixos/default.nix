@@ -3,6 +3,7 @@
 {
   imports = [
     ../common
+    ./cosmic.nix
     ./docker.nix
     ./intel.nix
     ./gnome.nix
