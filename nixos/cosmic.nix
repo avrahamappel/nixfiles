@@ -31,6 +31,7 @@ in
       cosmic-monitor # System monitor
       cosmic-ext-applet-sysinfo # Simple system info widget
       cosmic-ext-applet-weather # Simple weather widget
+      gnome-bluetooth # Send files to device via Bluetooth (COSMIC does not have this yet)
     ];
   };
 }
