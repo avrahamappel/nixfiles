@@ -25,5 +25,12 @@ in
         gst-libav
         gst-vaapi
       ]);
+
+    # COSMIC plugins
+    home-manager.users.avraham.home.packages = with pkgs; [
+      cosmic-monitor # System monitor
+      cosmic-ext-applet-sysinfo # Simple system info widget
+      cosmic-ext-applet-weather # Simple weather widget
+    ];
   };
 }
