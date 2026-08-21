@@ -14,6 +14,19 @@
       "hash": "sha256-qDPWAebul20mpaUEmvA5Bptga+fgKrWcONXiGI/VTw8=",
       "frozen": true
     },
+    "cosmic-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "HeitorAugustoLN",
+        "repo": "cosmic-manager"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "1630bbf792a95baffbd3169885580cd53a7027d8",
+      "url": "https://github.com/HeitorAugustoLN/cosmic-manager/archive/1630bbf792a95baffbd3169885580cd53a7027d8.tar.gz",
+      "hash": "sha256-98aHwiGZcvb0VJUGE+lCS/zuGdFAlNvm8keIimuLOK0="
+    },
     "gtg": {
       "type": "Git",
       "repository": {
