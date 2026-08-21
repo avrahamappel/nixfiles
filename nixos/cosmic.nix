@@ -26,6 +26,11 @@ in
         gst-vaapi
       ]);
 
+    services.desktopManager.cosmic.showExcludedPkgsWarning = false;
+    environment.cosmic.excludePackages = with pkgs; [
+      orca # BH I don't need a screen reader
+    ];
+
     # COSMIC plugins
     home-manager.users.avraham.home.packages = with pkgs; [
       cosmic-monitor # System monitor
