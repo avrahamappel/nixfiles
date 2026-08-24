@@ -2,6 +2,10 @@
 
 let
   cfg = config.cosmic;
+
+  inherit (import ../npins) cosmic-manager;
+
+  cosmic-battery-applet = pkgs.callPackage ./pkgs/cosmic-battery-applet.nix { };
 in
 
 {
@@ -39,11 +43,12 @@ in
 
     home-manager.users.avraham = { cosmicLib, ... }: {
       imports = [
-        ((import ../npins).cosmic-manager + "/modules")
+        "${cosmic-manager}/modules"
       ];
 
       # COSMIC plugins and extra packages
       home.packages = with pkgs; [
+        cosmic-battery-applet # Show battery percentage (apparently this already exists in latest COSMIC, but nixpkgs is slow to update and I don't want to override all the packages myself)
         cosmic-monitor # System monitor
         cosmic-ext-applet-sysinfo # Simple system info widget
         cosmic-ext-applet-weather # Simple weather widget

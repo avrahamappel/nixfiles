@@ -14,6 +14,19 @@
       "hash": "sha256-qDPWAebul20mpaUEmvA5Bptga+fgKrWcONXiGI/VTw8=",
       "frozen": true
     },
+    "cosmic-battery-applet": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rapsalands",
+        "repo": "cosmic-battery-applet"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c0094c15c06f8e27371c642b56cda8a1f1727e75",
+      "url": "https://github.com/rapsalands/cosmic-battery-applet/archive/c0094c15c06f8e27371c642b56cda8a1f1727e75.tar.gz",
+      "hash": "sha256-1lk1q1Xhzm2+v+LXw343oJ4xAivBgFwhCFSNkAL+pPU="
+    },
     "cosmic-manager": {
       "type": "Git",
       "repository": {
