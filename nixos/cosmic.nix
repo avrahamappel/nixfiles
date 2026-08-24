@@ -14,8 +14,8 @@ in
 
     manualLocation = {
       enable = lib.mkEnableOption "Enable setting manual location (e.g. for weather)";
-      latitude = lib.mkOption { type = float; };
-      longitude = lib.mkOption { type = float; };
+      latitude = lib.mkOption { type = oneOf [ float str ]; };
+      longitude = lib.mkOption { type = oneOf [ float str ]; };
     };
   };
 
