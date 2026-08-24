@@ -95,7 +95,7 @@ in
             version = 1;
             entries = {
               latitude = cfg.manualLocation.latitude;
-              longitude = cfg.manualLocation.latitude;
+              longitude = cfg.manualLocation.longitude;
               use_ip_location = false;
             };
           };
