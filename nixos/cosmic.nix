@@ -75,6 +75,7 @@ in
       #   # TODO: media hotkeys
       # ];
       # TODO: panel size
+      # TODO: enabled panel applets
       # TODO: dock autohide
       wayland.desktopManager.cosmic.systemActions = cosmicLib.cosmic.mkRON "map" [
         {
