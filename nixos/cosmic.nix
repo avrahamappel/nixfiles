@@ -41,7 +41,7 @@ in
       orca # BH I don't need a screen reader
     ];
 
-    home-manager.users.avraham = { cosmicLib, ... }: {
+    home-manager.users.avraham = { cosmicLib, ... }: with cosmicLib.cosmic; {
       imports = [
         "${cosmic-manager}/modules"
       ];
@@ -74,12 +74,56 @@ in
       #   # TODO: shortcuts for Mailspring and GTG etc
       #   # TODO: media hotkeys
       # ];
-      # TODO: panel size
-      # TODO: enabled panel applets
-      # TODO: dock autohide
-      wayland.desktopManager.cosmic.systemActions = cosmicLib.cosmic.mkRON "map" [
+
+      wayland.desktopManager.cosmic.panels = [
+        # Panel (top bar)
         {
-          key = cosmicLib.cosmic.mkRON "enum" "Terminal";
+          name = "Panel";
+          margin = 0;
+          plugins_center = mkRON "optional" [
+            "com.system76.CosmicAppletTime"
+            "io.github.cosmic_utils.weather-applet"
+          ];
+          plugins_wings = mkRON "optional" (mkRON "tuple" [
+            [
+              "io.github.cosmic_utils.sysinfo-applet"
+            ]
+            [
+              "com.system76.CosmicAppletInputSources" # keyboard lang
+              "com.system76.CosmicAppletStatusArea" # idk? Contains Mailspring 
+              "com.system76.CosmicAppletTiling"
+              "com.system76.CosmicAppletAudio"
+              "com.system76.CosmicAppletBluetooth"
+              "com.system76.CosmicAppletNetwork"
+              "com.system76.CosmicAppletBattery"
+              "cosmic-battery-applet" # TODO: remove when COSMIC shows percent
+              "com.system76.CosmicAppletNotifications"
+              "com.system76.CosmicAppletPower"
+            ]
+          ]);
+        }
+
+        # Dock (bottom bar)
+        {
+          name = "Dock";
+          autohide = mkRON "optional" {
+            wait_time = 0;
+            transition_time = 0;
+            handle_size = 4;
+            unhide_delay = 0;
+          };
+          margin = 4;
+          plugins_center = mkRON "optional" [
+            "com.system76.CosmicAppList"
+            "com.system76.CosmicAppletMinimize"
+          ];
+          plugins_wings = mkRON "optional" (mkRON "tuple" [ [ ] [ ] ]);
+        }
+      ];
+
+      wayland.desktopManager.cosmic.systemActions = mkRON "map" [
+        {
+          key = mkRON "enum" "Terminal";
           value = "alacritty";
         }
       ];
