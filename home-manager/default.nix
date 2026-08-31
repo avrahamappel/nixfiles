@@ -46,11 +46,13 @@
       dust # Intuitive disk usage
       file # Don't know why this isn't available by default
       gron # When I have no patience for JQ
+      htmlq # jq for html
       toastify # Send ad-hoc notifications
 
       # Media
       ffmpeg
       imagemagick
+      yt-dlp
     ];
   };
 
