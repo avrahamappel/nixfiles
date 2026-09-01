@@ -27,6 +27,22 @@
       "url": "https://github.com/rapsalands/cosmic-battery-applet/archive/c0094c15c06f8e27371c642b56cda8a1f1727e75.tar.gz",
       "hash": "sha256-1lk1q1Xhzm2+v+LXw343oJ4xAivBgFwhCFSNkAL+pPU="
     },
+    "cosmic-epoch": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pop-os",
+        "repo": "cosmic-epoch"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": "epoch-",
+      "submodules": true,
+      "version": "epoch-1.7.0",
+      "revision": "b61449633097583c727bc22e14ea765e3e86cb20",
+      "url": null,
+      "hash": "sha256-85sNegUZQ0IfSpgFH3A/2oAvG7t+kwKBWcVdYoDbdTQ="
+    },
     "cosmic-manager": {
       "type": "Git",
       "repository": {

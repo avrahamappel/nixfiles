@@ -23,6 +23,7 @@ in
       mpv-unwrapped = super.mpv-unwrapped.override {
         cddaSupport = true;
       };
-    });
+    })
+    ++ lib.optional config.cosmic.enable (import ./cosmic-unstable.nix);
   };
 }
