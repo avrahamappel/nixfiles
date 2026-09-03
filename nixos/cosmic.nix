@@ -84,10 +84,15 @@ in
         settings.show_media_controls_in_top_panel = true;
       };
       wayland.desktopManager.cosmic.applets.time.settings.show_weekday = true;
-      # wayland.desktopManager.cosmic.shortcuts = [
-      #   # TODO: shortcuts for Mailspring and GTG etc
-      #   # TODO: media hotkeys
-      # ];
+      wayland.desktopManager.cosmic.shortcuts = [
+        {
+          description = mkRON "optional" "Minimize current window";
+          key = "Super+N";
+          action = mkRON "enum" "Minimize";
+        }
+        # TODO: shortcuts for Mailspring and GTG etc
+        # TODO: media hotkeys
+      ];
 
       wayland.desktopManager.cosmic.panels = [
         # Panel (top bar)
