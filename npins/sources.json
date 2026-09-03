@@ -27,6 +27,19 @@
       "url": "https://github.com/rapsalands/cosmic-battery-applet/archive/c0094c15c06f8e27371c642b56cda8a1f1727e75.tar.gz",
       "hash": "sha256-1lk1q1Xhzm2+v+LXw343oJ4xAivBgFwhCFSNkAL+pPU="
     },
+    "cosmic-ext-applet-sysinfo-src": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "cosmic-utils",
+        "repo": "cosmic-ext-applet-sysinfo"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "7335c27f936b8d68c07c6441d086474c523baddc",
+      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/7335c27f936b8d68c07c6441d086474c523baddc.tar.gz",
+      "hash": "sha256-xJOnOYdPmdvxLDbK9OZbmue0FuT5NzoTvaauyscxtnY="
+    },
     "cosmic-manager": {
       "type": "Git",
       "repository": {

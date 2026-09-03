@@ -3,9 +3,23 @@
 let
   cfg = config.cosmic;
 
-  inherit (import ../npins) cosmic-manager;
+  inherit (import ../npins)
+    cosmic-ext-applet-sysinfo-src
+    cosmic-manager
+    ;
 
   cosmic-battery-applet = pkgs.callPackage ./pkgs/cosmic-battery-applet.nix { };
+
+  cosmic-ext-applet-sysinfo = pkgs.cosmic-ext-applet-sysinfo.overrideAttrs (final: prev: {
+    version = "0-unstable-${builtins.substring 0 7 cosmic-ext-applet-sysinfo-src.revision}";
+    src = cosmic-ext-applet-sysinfo-src;
+    cargoHash = "sha256-xCzrsLQb9k7VcNmt+pyHQk6UdxR0TjdhRz9wPZ4tsEY=";
+    cargoDeps = prev.cargoDeps.overrideAttrs (deps: {
+      vendorStaging = deps.vendorStaging.overrideAttrs {
+        outputHash = final.cargoHash;
+      };
+    });
+  });
 in
 
 {
@@ -136,7 +150,7 @@ in
           version = 1;
           entries = {
             include_swap_in_ram = false;
-            template = "CPU {cpu_usage} | GPU {gpu_usage} | RAM {ram_usage}";
+            template = "CPU {cpu_usage} {cpu_temp} | GPU {gpu_usage} | RAM {ram_usage} | Disk {disk_usage}";
             use_mono_font = true;
           };
         };
