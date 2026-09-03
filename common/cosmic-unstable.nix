@@ -1,35 +1,82 @@
-final: prev:
+self: super:
 
 let
-  inherit (prev) lib;
+  pkgs = super;
+
+  inherit (pkgs)
+    lib
+    rustPlatform
+    ;
+
   inherit (import ../npins) cosmic-epoch;
 
   version = builtins.substring 6 (-1) cosmic-epoch.version;
 
   cargoHashes = {
     "cosmic-applets-1.7.0" = "sha256-xgpsIynrVcN62IQ++ABZqqbP0ak86eQYTc1SCSxy2l4=";
+    "cosmic-applibrary-1.7.0" = "sha256-pr90LG3H8hKD1dJAeO4vfLQLlihB7gjwvhlDNHdRTec=";
   };
 
-  latestCosmicVersion = name: prev.${name}.overrideAttrs {
+  latestCosmicVersion = name: pkgs.${name}.overrideAttrs (final: prev: {
     inherit version;
     src = cosmic-epoch.outPath + "/${name}";
-    cargoHash = cargoHashes."${name}-${version}" or lib.fakeHash;
-    doCheck = false;
-  };
-in
 
-{
-  cosmic-applets = (latestCosmicVersion "cosmic-applets").overrideAttrs (old: {
-    patches = [ ];
-    cargoDeps = old.cargoDeps.overrideAttrs (oldDeps: {
-      patches = [ ];
+    # Update cargo deps hash
+    cargoHash = cargoHashes."${name}-${version}" or lib.fakeHash;
+
+    # Avoid compiling twice
+    doCheck = false;
+
+    # Drill down into deps
+    cargoDeps = prev.cargoDeps.overrideAttrs (oldDeps: {
       vendorStaging = oldDeps.vendorStaging.overrideAttrs {
-        patches = [ ];
-        outputHash = old.cargoHash;
+        # Forward cargo deps hash
+        outputHash = final.cargoHash;
       };
     });
   });
-  # cosmic-applibrary = prev.cosmic-applibrary.overrideAttrs { src = "${cosmic-epoch}/cosmic-applibrary"; inherit version; };
+in
+
+{
+  cosmic-applets = (latestCosmicVersion "cosmic-applets").overrideAttrs (prev: {
+    patches = [ ];
+    cargoDeps = prev.cargoDeps.overrideAttrs (prevDeps: {
+      patches = [ ];
+      vendorStaging = prevDeps.vendorStaging.overrideAttrs {
+        patches = [ ];
+      };
+    });
+  });
+
+  cosmic-applibrary = (latestCosmicVersion "cosmic-applibrary").overrideAttrs (prev:
+
+    let
+      xdgen-generate-src = "${prev.src}/scripts/xdgen";
+      xdgen-generate-version = (fromTOML (builtins.readFile (xdgen-generate-src + "/Cargo.toml"))).package.version;
+      xdgen-generate = rustPlatform.buildRustPackage {
+        pname = "xdgen-generate";
+        version = xdgen-generate-version;
+
+        src = xdgen-generate-src;
+
+        cargoHash = "sha256-u3ia4MOL1cNj3K5ofJ5piwEDsDna2ImZh9uSVRPIQ/o=";
+
+        meta.mainProgram = "xdgen-generate";
+      };
+    in
+
+    {
+      preInstall = prev.preInstall or ''
+        env \
+            APP_ID=com.system76.CosmicAppLibrary \
+            APP_NAME=cosmic-app-library \
+            ${lib.getExe xdgen-generate}
+      '';
+
+      passthru = { inherit xdgen-generate; };
+    }
+  );
+
   # cosmic-bg = prev.cosmic-bg.overrideAttrs { src = "${cosmic-epoch}/cosmic-bg"; inherit version; };
   # cosmic-comp = prev.cosmic-comp.overrideAttrs { src = "${cosmic-epoch}/cosmic-comp"; inherit version; };
   # cosmic-edit = prev.cosmic-edit.overrideAttrs { src = "${cosmic-epoch}/cosmic-edit"; inherit version; };
