@@ -16,6 +16,7 @@ let
     "cosmic-applets-1.7.0" = "sha256-xgpsIynrVcN62IQ++ABZqqbP0ak86eQYTc1SCSxy2l4=";
     "cosmic-applibrary-1.7.0" = "sha256-pr90LG3H8hKD1dJAeO4vfLQLlihB7gjwvhlDNHdRTec=";
     "cosmic-bg-1.7.0" = "sha256-j07BZ9JsY6UG9eXVxdn0CTWU8j/cGNA9lXrDsdF40lM=";
+    "cosmic-comp-1.7.0" = "sha256-g5DCr8x8UQik8dSg+799lRDBeQQ47XvI7EbanR1de2k=";
   };
 
   latestCosmicVersion = name: pkgs.${name}.overrideAttrs (final: prev: {
@@ -82,7 +83,8 @@ in
     buildInputs = [ pkgs.dav1d ];
   };
 
-  # cosmic-comp = prev.cosmic-comp.overrideAttrs { src = "${cosmic-epoch}/cosmic-comp"; inherit version; };
+  cosmic-comp = latestCosmicVersion "cosmic-comp";
+
   # cosmic-edit = prev.cosmic-edit.overrideAttrs { src = "${cosmic-epoch}/cosmic-edit"; inherit version; };
   # cosmic-files = prev.cosmic-files.overrideAttrs { src = "${cosmic-epoch}/cosmic-files"; inherit version; };
   # cosmic-greeter = prev.cosmic-greeter.overrideAttrs { src = "${cosmic-epoch}/cosmic-greeter"; inherit version; };
