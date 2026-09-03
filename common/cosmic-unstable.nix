@@ -15,6 +15,7 @@ let
   cargoHashes = {
     "cosmic-applets-1.7.0" = "sha256-xgpsIynrVcN62IQ++ABZqqbP0ak86eQYTc1SCSxy2l4=";
     "cosmic-applibrary-1.7.0" = "sha256-pr90LG3H8hKD1dJAeO4vfLQLlihB7gjwvhlDNHdRTec=";
+    "cosmic-bg-1.7.0" = "sha256-j07BZ9JsY6UG9eXVxdn0CTWU8j/cGNA9lXrDsdF40lM=";
   };
 
   latestCosmicVersion = name: pkgs.${name}.overrideAttrs (final: prev: {
@@ -77,7 +78,10 @@ in
     }
   );
 
-  # cosmic-bg = prev.cosmic-bg.overrideAttrs { src = "${cosmic-epoch}/cosmic-bg"; inherit version; };
+  cosmic-bg = (latestCosmicVersion "cosmic-bg").overrideAttrs {
+    buildInputs = [ pkgs.dav1d ];
+  };
+
   # cosmic-comp = prev.cosmic-comp.overrideAttrs { src = "${cosmic-epoch}/cosmic-comp"; inherit version; };
   # cosmic-edit = prev.cosmic-edit.overrideAttrs { src = "${cosmic-epoch}/cosmic-edit"; inherit version; };
   # cosmic-files = prev.cosmic-files.overrideAttrs { src = "${cosmic-epoch}/cosmic-files"; inherit version; };
