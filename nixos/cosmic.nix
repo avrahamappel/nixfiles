@@ -162,9 +162,10 @@ in
         "io.github.cosmic_utils.weather-applet" = {
           version = 1;
           entries = {
+            use_ip_location = !cfg.manualLocation.enable;
+          } // lib.optionalAttrs cfg.manualLocation.enable {
             latitude = mkRON "raw" cfg.manualLocation.latitude;
             longitude = mkRON "raw" cfg.manualLocation.longitude;
-            use_ip_location = !cfg.manualLocation.enable;
           };
         };
       };
