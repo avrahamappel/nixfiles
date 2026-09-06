@@ -1,5 +1,21 @@
 {
   "pins": {
+    "mailspring-src": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Foundry376",
+        "repo": "Mailspring"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": true,
+      "version": "1.23.0",
+      "revision": "5b37181118243439d7777e863faf6e7138de60b0",
+      "url": null,
+      "hash": "sha256-GbY3lov3MT8c8LehEifzOH28VAYpBWDbwXrqEfFfwJg="
+    },
     "Walmart-Invoice-Exporter": {
       "type": "Git",
       "repository": {

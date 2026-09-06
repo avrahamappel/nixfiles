@@ -1,11 +1,17 @@
-{ pkgs, lib, config, ... }:
+{ pkgs-unstable, lib, config, ... }:
 
 let
-  localPackage = pkgs.callPackage ./mailspring.nix { };
-  upstreamPackage = pkgs.mailspring;
+  inherit (import ../../npins) mailspring-src;
 
-  package = if pkgs.stdenv.isLinux then localPackage else upstreamPackage;
-
+  package =
+    if pkgs-unstable.mailspring.version == mailspring-src.version
+    then
+      pkgs-unstable.mailspring
+    else
+      pkgs-unstable.mailspring.overrideAttrs {
+        version = mailspring-src.version;
+        src = mailspring-src;
+      };
 in
 
 {
