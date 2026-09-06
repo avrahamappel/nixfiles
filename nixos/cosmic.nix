@@ -159,15 +159,14 @@ in
             use_mono_font = true;
           };
         };
-        "io.github.cosmic_utils.weather-applet" =
-          lib.mkIf cfg.manualLocation.enable {
-            version = 1;
-            entries = {
-              latitude = mkRON "raw" cfg.manualLocation.latitude;
-              longitude = mkRON "raw" cfg.manualLocation.longitude;
-              use_ip_location = false;
-            };
+        "io.github.cosmic_utils.weather-applet" = {
+          version = 1;
+          entries = {
+            latitude = mkRON "raw" cfg.manualLocation.latitude;
+            longitude = mkRON "raw" cfg.manualLocation.longitude;
+            use_ip_location = !cfg.manualLocation.enable;
           };
+        };
       };
 
       # TODO: Remove unmanaged settings (once I'm confident in these)
