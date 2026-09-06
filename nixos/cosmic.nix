@@ -163,8 +163,8 @@ in
           lib.mkIf cfg.manualLocation.enable {
             version = 1;
             entries = {
-              latitude = cfg.manualLocation.latitude;
-              longitude = cfg.manualLocation.longitude;
+              latitude = mkRON "raw" cfg.manualLocation.latitude;
+              longitude = mkRON "raw" cfg.manualLocation.longitude;
               use_ip_location = false;
             };
           };
