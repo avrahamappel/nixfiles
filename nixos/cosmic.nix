@@ -34,6 +34,11 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # Warn if my PR landed in upstream nixpkgs
+    warnings = lib.optional
+      (lib.versionAtLeast pkgs.cosmic-ext-applet-sysinfo.version "0-unstable-2026-08-31")
+      "Disk usage info is already in upstream cosmic-ext-applet-sysinfo";
+
     services.displayManager.cosmic-greeter.enable = true;
     services.desktopManager.cosmic.enable = true;
     services.system76-scheduler.enable = true;
