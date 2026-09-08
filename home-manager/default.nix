@@ -4,17 +4,18 @@
   imports = [
     ./copilot.nix
     ./firefox
-    ./mail
-    ./terminal.nix
-    ./zsh
     ./git.nix
+    ./gtg
+    ./hledger
+    ./mail
+    ./mpv.nix
     ./nvim
     ./passwords.nix
-    ./hledger
-    ./ssh.nix
-    ./rust.nix
     ./qr.nix
-    ./gtg
+    ./rust.nix
+    ./ssh.nix
+    ./terminal.nix
+    ./zsh
   ];
 
   home = {
@@ -106,10 +107,6 @@
         objectKeys = "1;34";
       };
     };
-
-    mpv.enable = true;
-    # Enable media controls on Linux
-    mpv.scripts = lib.optional pkgs.stdenv.isLinux pkgs.mpvScripts.mpris;
 
     ripgrep.enable = true;
 
