@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, pkgs-unstable, config, ... }:
 
 let
   cfg = config.cosmic;
@@ -12,8 +12,8 @@ let
 in
 
 {
-  imports = [
-  ];
+  disabledModules = [ "nixos/modules/services/desktop-managers/cosmic.nix" ];
+  imports = [ "${pkgs-unstable}/nixos/modules/services/desktop-managers/cosmic.nix" ];
 
   options.cosmic = with lib.types; {
     enable = lib.mkEnableOption "Enable COSMIC desktop environment";
@@ -30,9 +30,40 @@ in
     services.desktopManager.cosmic.enable = true;
     services.system76-scheduler.enable = true;
 
+    # Make everything unstable
+    services.displayManager.cosmic-greeter.package = pkgs-unstable.cosmic-greeter;
+    nixpkgs.overlays = [
+      (final: prev: {
+        cosmic-applets = pkgs-unstable.cosmic-applets;
+        cosmic-app-library = pkgs-unstable.cosmic-app-library;
+        cosmic-bg = pkgs-unstable.cosmic-bg;
+        cosmic-comp = pkgs-unstable.cosmic-comp;
+        cosmic-edit = pkgs-unstable.cosmic-edit;
+        cosmic-files = pkgs-unstable.cosmic-files;
+        cosmic-icons = pkgs-unstable.cosmic-icons;
+        cosmic-idle = pkgs-unstable.cosmic-idle;
+        cosmic-initial-setup = pkgs-unstable.cosmic-initial-setup;
+        cosmic-launcher = pkgs-unstable.cosmic-launcher;
+        cosmic-notifications = pkgs-unstable.cosmic-notifications;
+        cosmic-osd = pkgs-unstable.cosmic-osd;
+        cosmic-panel = pkgs-unstable.cosmic-panel;
+        cosmic-player = pkgs-unstable.cosmic-player;
+        cosmic-randr = pkgs-unstable.cosmic-randr;
+        cosmic-reader = pkgs-unstable.cosmic-reader;
+        cosmic-screenshot = pkgs-unstable.cosmic-screenshot;
+        cosmic-session = pkgs-unstable.cosmic-session;
+        cosmic-settings-daemon = pkgs-unstable.cosmic-settings-daemon;
+        cosmic-settings = pkgs-unstable.cosmic-settings;
+        cosmic-term = pkgs-unstable.cosmic-term;
+        cosmic-wallpapers = pkgs-unstable.cosmic-wallpapers;
+        cosmic-workspaces-epoch = pkgs-unstable.cosmic-workspaces-epoch;
+        xdg-desktop-portal-cosmic = pkgs-unstable.xdg-desktop-portal-cosmic;
+      })
+    ];
+
     # Set GStreamer variable so cosmic-player works
     environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
-      lib.makeSearchPath "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
+      lib.makeSearchPath "lib/gstreamer-1.0" (with pkgs-unstable.gst_all_1; [
         gstreamer.out
         gst-plugins-base
         gst-plugins-good
@@ -54,7 +85,7 @@ in
       ];
 
       # COSMIC plugins and extra packages
-      home.packages = with pkgs; [
+      home.packages = with pkgs-unstable; [
         cosmic-battery-applet # Show battery percentage (apparently this already exists in latest COSMIC, but nixpkgs is slow to update and I don't want to override all the packages myself)
         cosmic-monitor # System monitor
         cosmic-ext-applet-weather # Simple weather widget
