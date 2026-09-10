@@ -3,26 +3,18 @@
 let
   cfg = config.cosmic;
 
-  inherit (import ../npins)
-    cosmic-ext-applet-sysinfo-src
+  inherit (import ../../npins)
     cosmic-manager
     ;
 
   cosmic-battery-applet = pkgs.callPackage ./pkgs/cosmic-battery-applet.nix { };
 
-  cosmic-ext-applet-sysinfo = pkgs.cosmic-ext-applet-sysinfo.overrideAttrs (final: prev: {
-    version = "0-unstable-${builtins.substring 0 7 cosmic-ext-applet-sysinfo-src.revision}";
-    src = cosmic-ext-applet-sysinfo-src;
-    cargoHash = "sha256-xCzrsLQb9k7VcNmt+pyHQk6UdxR0TjdhRz9wPZ4tsEY=";
-    cargoDeps = prev.cargoDeps.overrideAttrs (deps: {
-      vendorStaging = deps.vendorStaging.overrideAttrs {
-        outputHash = final.cargoHash;
-      };
-    });
-  });
 in
 
 {
+  imports = [
+  ];
+
   options.cosmic = with lib.types; {
     enable = lib.mkEnableOption "Enable COSMIC desktop environment";
 
@@ -34,11 +26,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # Warn if my PR landed in upstream nixpkgs
-    warnings = lib.optional
-      (lib.versionAtLeast pkgs.cosmic-ext-applet-sysinfo.version "0-unstable-2026-08-31")
-      "Disk usage info is already in upstream cosmic-ext-applet-sysinfo";
-
     services.displayManager.cosmic-greeter.enable = true;
     services.desktopManager.cosmic.enable = true;
     services.system76-scheduler.enable = true;
@@ -63,13 +50,13 @@ in
     home-manager.users.avraham = { cosmicLib, ... }: with cosmicLib.cosmic; {
       imports = [
         "${cosmic-manager}/modules"
+        ./cosmic-ext-applet-sysinfo.nix
       ];
 
       # COSMIC plugins and extra packages
       home.packages = with pkgs; [
         cosmic-battery-applet # Show battery percentage (apparently this already exists in latest COSMIC, but nixpkgs is slow to update and I don't want to override all the packages myself)
         cosmic-monitor # System monitor
-        cosmic-ext-applet-sysinfo # Simple system info widget
         cosmic-ext-applet-weather # Simple weather widget
         gnome-bluetooth # Send files to device via Bluetooth (COSMIC does not have this yet)
       ];
@@ -155,14 +142,6 @@ in
         "com.system76.CosmicTheme.Mode" = {
           version = 1;
           entries.auto_switch = true; # Auto switch dark/light for day/night
-        };
-        "io.github.cosmic-utils.cosmic-ext-applet-sysinfo" = {
-          version = 1;
-          entries = {
-            include_swap_in_ram = false;
-            template = "CPU {cpu_usage} {cpu_temp} | GPU {gpu_usage} | RAM {ram_usage} | Disk {disk_usage}";
-            use_mono_font = true;
-          };
         };
         "io.github.cosmic_utils.weather-applet" = {
           version = 1;
