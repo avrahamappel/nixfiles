@@ -14,42 +14,48 @@ in
   disabledModules = [ "${modulesPath}/services/desktop-managers/cosmic.nix" ];
   imports = [ "${nixpkgs-unstable}/nixos/modules/services/desktop-managers/cosmic.nix" ];
 
-  # Overlay unstable cosmic packages
-  nixpkgs.overlays = [
-    (final: prev:
-      let
-        cosmicPkgNames = [
-          "cosmic-applets"
-          "cosmic-app-library"
-          "cosmic-bg"
-          "cosmic-comp"
-          "cosmic-edit"
-          "cosmic-files"
-          "cosmic-greeter"
-          "cosmic-icons"
-          "cosmic-idle"
-          "cosmic-initial-setup"
-          "cosmic-launcher"
-          "cosmic-monitor"
-          "cosmic-notifications"
-          "cosmic-osd"
-          "cosmic-panel"
-          "cosmic-player"
-          "cosmic-protocols"
-          "cosmic-randr"
-          "cosmic-screenshot"
-          "cosmic-session"
-          "cosmic-settings"
-          "cosmic-settings-daemon"
-          "cosmic-store"
-          "cosmic-term"
-          "cosmic-wallpapers"
-          "cosmic-workspaces-epoch"
-          "xdg-desktop-portal-cosmic"
-        ];
-      in
+  options = {
+    security.polkit.enablePkexecWrapper = lib.mkEnableOption "Dummy enablePkexecWrapper to satisfy unstable cosmic module";
+  };
 
-      lib.genAttrs cosmicPkgNames (name: pkgs-unstable.${name})
-    )
-  ];
+  config = {
+    # Overlay unstable cosmic packages
+    nixpkgs.overlays = [
+      (final: prev:
+        let
+          cosmicPkgNames = [
+            "cosmic-applets"
+            "cosmic-app-library"
+            "cosmic-bg"
+            "cosmic-comp"
+            "cosmic-edit"
+            "cosmic-files"
+            "cosmic-greeter"
+            "cosmic-icons"
+            "cosmic-idle"
+            "cosmic-initial-setup"
+            "cosmic-launcher"
+            "cosmic-monitor"
+            "cosmic-notifications"
+            "cosmic-osd"
+            "cosmic-panel"
+            "cosmic-player"
+            "cosmic-protocols"
+            "cosmic-randr"
+            "cosmic-screenshot"
+            "cosmic-session"
+            "cosmic-settings"
+            "cosmic-settings-daemon"
+            "cosmic-store"
+            "cosmic-term"
+            "cosmic-wallpapers"
+            "cosmic-workspaces-epoch"
+            "xdg-desktop-portal-cosmic"
+          ];
+        in
+
+        lib.genAttrs cosmicPkgNames (name: pkgs-unstable.${name})
+      )
+    ];
+  };
 }
