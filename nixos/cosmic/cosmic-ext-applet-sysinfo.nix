@@ -22,7 +22,7 @@ let
 in
 
 {
-  config = lib.mkIf config.cosmic.enable {
+  home-manager.users.avraham = lib.mkIf config.cosmic.enable {
     # Warn if my PR landed in upstream nixpkgs
     warnings = lib.optional
       (lib.versionAtLeast upstream.version "0-unstable-2026-08-31")
