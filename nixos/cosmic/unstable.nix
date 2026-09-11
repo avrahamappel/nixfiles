@@ -46,6 +46,7 @@ in
             "cosmic-session"
             "cosmic-settings"
             "cosmic-settings-daemon"
+            "cosmic-sound-theme"
             "cosmic-store"
             "cosmic-term"
             "cosmic-wallpapers"
