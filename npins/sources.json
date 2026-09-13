@@ -1,21 +1,5 @@
 {
   "pins": {
-    "mailspring-src": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Foundry376",
-        "repo": "Mailspring"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": true,
-      "version": "1.23.0",
-      "revision": "5b37181118243439d7777e863faf6e7138de60b0",
-      "url": null,
-      "hash": "sha256-GbY3lov3MT8c8LehEifzOH28VAYpBWDbwXrqEfFfwJg="
-    },
     "Walmart-Invoice-Exporter": {
       "type": "Git",
       "repository": {
@@ -52,9 +36,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7335c27f936b8d68c07c6441d086474c523baddc",
-      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/7335c27f936b8d68c07c6441d086474c523baddc.tar.gz",
-      "hash": "sha256-xJOnOYdPmdvxLDbK9OZbmue0FuT5NzoTvaauyscxtnY="
+      "revision": "74265699a6d2b9803707bd1be9a4241b192f78fe",
+      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/74265699a6d2b9803707bd1be9a4241b192f78fe.tar.gz",
+      "hash": "sha256-kSxBoRepJX0bw6xhFXNp6inzv5vMlp2c5SDHxLY4I0s="
     },
     "cosmic-manager": {
       "type": "Git",
@@ -78,9 +62,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5045363b191321057b5b7cbec343a499fc04613b",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/5045363b191321057b5b7cbec343a499fc04613b.tar.gz",
-      "hash": "sha256-L62QU8D8RFgG3K+gJxZiExowLroAD6nibC+xNGtOuak="
+      "revision": "710f9b875accb2066c05127b46a537b49ad16654",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/710f9b875accb2066c05127b46a537b49ad16654.tar.gz",
+      "hash": "sha256-AhUl+9jB4ic5wQ1hmrAJYfKymv+w5J0yaQ4cfsBvy9s="
     },
     "irql-vaapi-driver": {
       "type": "GitRelease",
@@ -97,6 +81,22 @@
       "revision": "0b648be50cd80e16469c135c76ff61bbd2f2d12b",
       "url": "https://api.github.com/repos/irql-notlessorequal/intel-vaapi-driver/tarball/refs/tags/2.4.5",
       "hash": "sha256-exQBA42jCmwybE7WIfF83cjmzBdtluDzUtOdqt49HSg="
+    },
+    "mailspring-src": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Foundry376",
+        "repo": "Mailspring"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": true,
+      "version": "1.24.0",
+      "revision": "8e121c6439f6e225950277b890e9765d4f34e169",
+      "url": null,
+      "hash": "sha256-nOVA+aR/jaxnRGMstQvHwC5eu/0K63gXC37q3ebaMrw="
     },
     "skhd.zig": {
       "type": "GitRelease",
