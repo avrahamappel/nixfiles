@@ -1,17 +1,17 @@
 { pkgs-unstable, lib, config, ... }:
 
 let
-  inherit (import ../../npins) mailspring-src;
+  # inherit (import ../../npins) mailspring-src;
 
   package =
-    if pkgs-unstable.mailspring.version == mailspring-src.version
-    then
-      pkgs-unstable.mailspring
-    else
-      pkgs-unstable.mailspring.overrideAttrs {
-        version = mailspring-src.version;
-        src = mailspring-src;
-      };
+    # if pkgs-unstable.mailspring.version == mailspring-src.version
+    # then
+      pkgs-unstable.mailspring;
+    # else
+    #   pkgs-unstable.mailspring.overrideAttrs {
+    #     version = mailspring-src.version;
+    #     src = mailspring-src;
+    #   };
 in
 
 {
