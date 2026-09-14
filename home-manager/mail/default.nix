@@ -1,17 +1,12 @@
 { pkgs-unstable, lib, config, ... }:
 
 let
-  # inherit (import ../../npins) mailspring-src;
-
-  package =
-    # if pkgs-unstable.mailspring.version == mailspring-src.version
-    # then
-      pkgs-unstable.mailspring;
-    # else
-    #   pkgs-unstable.mailspring.overrideAttrs {
-    #     version = mailspring-src.version;
-    #     src = mailspring-src;
-    #   };
+  package = pkgs-unstable.mailspring.overrideAttrs {
+    postPatch = ''
+      echo 'Disabling update notification'
+      sed -i 's/updater.getState()/false/' app/internal_packages/notifications/lib/items/update-notification.tsx
+    '';
+  };
 in
 
 {

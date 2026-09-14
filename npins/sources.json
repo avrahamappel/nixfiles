@@ -82,22 +82,6 @@
       "url": "https://api.github.com/repos/irql-notlessorequal/intel-vaapi-driver/tarball/refs/tags/2.4.5",
       "hash": "sha256-exQBA42jCmwybE7WIfF83cjmzBdtluDzUtOdqt49HSg="
     },
-    "mailspring-src": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Foundry376",
-        "repo": "Mailspring"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": true,
-      "version": "1.24.0",
-      "revision": "8e121c6439f6e225950277b890e9765d4f34e169",
-      "url": null,
-      "hash": "sha256-nOVA+aR/jaxnRGMstQvHwC5eu/0K63gXC37q3ebaMrw="
-    },
     "skhd.zig": {
       "type": "GitRelease",
       "repository": {
