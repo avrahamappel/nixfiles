@@ -36,9 +36,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "74265699a6d2b9803707bd1be9a4241b192f78fe",
-      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/74265699a6d2b9803707bd1be9a4241b192f78fe.tar.gz",
-      "hash": "sha256-kSxBoRepJX0bw6xhFXNp6inzv5vMlp2c5SDHxLY4I0s="
+      "revision": "7677375759c357c8c60e7f7d6f84424cadd73356",
+      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/7677375759c357c8c60e7f7d6f84424cadd73356.tar.gz",
+      "hash": "sha256-Cl9CmJrbHen7SSwK2BRdmx7WWlM//qel0vlaj0glGJU="
     },
     "cosmic-manager": {
       "type": "Git",
@@ -62,9 +62,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "710f9b875accb2066c05127b46a537b49ad16654",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/710f9b875accb2066c05127b46a537b49ad16654.tar.gz",
-      "hash": "sha256-AhUl+9jB4ic5wQ1hmrAJYfKymv+w5J0yaQ4cfsBvy9s="
+      "revision": "de4f36c7e1408ceb4bbe2375da167c2dce40cfa0",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/de4f36c7e1408ceb4bbe2375da167c2dce40cfa0.tar.gz",
+      "hash": "sha256-53nMFeFjT7xsEtYlkCuXB8lEFPM2QmSJG7RWTcw1/Wc="
     },
     "irql-vaapi-driver": {
       "type": "GitRelease",
