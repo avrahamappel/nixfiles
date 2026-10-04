@@ -36,9 +36,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7677375759c357c8c60e7f7d6f84424cadd73356",
-      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/7677375759c357c8c60e7f7d6f84424cadd73356.tar.gz",
-      "hash": "sha256-Cl9CmJrbHen7SSwK2BRdmx7WWlM//qel0vlaj0glGJU="
+      "revision": "b9b0ae281f52dad040c263df85cbeeb0b6aac0b0",
+      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/b9b0ae281f52dad040c263df85cbeeb0b6aac0b0.tar.gz",
+      "hash": "sha256-rgNT/A1i+muF/NUSMfq7EPva+aagWzRa4di0SST1+QE="
     },
     "cosmic-manager": {
       "type": "Git",
@@ -49,9 +49,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1630bbf792a95baffbd3169885580cd53a7027d8",
-      "url": "https://github.com/HeitorAugustoLN/cosmic-manager/archive/1630bbf792a95baffbd3169885580cd53a7027d8.tar.gz",
-      "hash": "sha256-98aHwiGZcvb0VJUGE+lCS/zuGdFAlNvm8keIimuLOK0="
+      "revision": "f7e32c4b314f8c3a1a23cfdac65132c0ab87d80c",
+      "url": "https://github.com/HeitorAugustoLN/cosmic-manager/archive/f7e32c4b314f8c3a1a23cfdac65132c0ab87d80c.tar.gz",
+      "hash": "sha256-1dHqiMHuMHvuru0f9ybyW+3XJHb7P8cz4k4GPa1YYyY="
     },
     "gtg": {
       "type": "Git",
