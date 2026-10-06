@@ -13,7 +13,7 @@ let
   cosmic-ext-applet-sysinfo = pkgs.cosmic-ext-applet-sysinfo.overrideAttrs (final: prev: {
     version = "0-unstable-${builtins.substring 0 7 cosmic-ext-applet-sysinfo-src.revision}";
     src = cosmic-ext-applet-sysinfo-src;
-    cargoHash = "sha256-GbHRdz7RZHSCIN6wBW+cTZS8JwYB3mCW6tgnKawFPao=";
+    cargoHash = "sha256-ajYoSx+rRUjlVA0WFVsI38Y0YcpvjIRo02hEuEdNtf8=";
     cargoDeps = prev.cargoDeps.overrideAttrs (deps: {
       vendorStaging = deps.vendorStaging.overrideAttrs {
         outputHash = final.cargoHash;
