@@ -37,6 +37,8 @@ let
           "cookies"
           "http://*/*"
           "https://*/*"
+          "https://*.adblockultimate.net/*/welcome*"
+          "https://*.adblockultimate.net/welcome*"
           "storage"
           "tabs"
           "webNavigation"
