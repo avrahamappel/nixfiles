@@ -62,9 +62,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "de4f36c7e1408ceb4bbe2375da167c2dce40cfa0",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/de4f36c7e1408ceb4bbe2375da167c2dce40cfa0.tar.gz",
-      "hash": "sha256-53nMFeFjT7xsEtYlkCuXB8lEFPM2QmSJG7RWTcw1/Wc="
+      "revision": "f15bb3ae6557c4c26d7531a8f8af7fa39f364615",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/f15bb3ae6557c4c26d7531a8f8af7fa39f364615.tar.gz",
+      "hash": "sha256-10JqenNyV+z03bQ7BWlt1ekY5Qvgi+AiMiPIwluX2zE="
     },
     "irql-vaapi-driver": {
       "type": "GitRelease",
