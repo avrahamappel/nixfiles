@@ -10,7 +10,7 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     rycee-nur = {
       flake = false;
-      url = "gitlab:rycee/nur-expressions";
+      url = "git+https://gitlab.com/rycee/nur-expressions.git";
     };
     qrscan = {
       url = "github:avrahamappel/qrscan";

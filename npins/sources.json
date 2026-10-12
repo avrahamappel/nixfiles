@@ -1,21 +1,5 @@
 {
   "pins": {
-    "mailspring-src": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Foundry376",
-        "repo": "Mailspring"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": true,
-      "version": "1.23.0",
-      "revision": "5b37181118243439d7777e863faf6e7138de60b0",
-      "url": null,
-      "hash": "sha256-GbY3lov3MT8c8LehEifzOH28VAYpBWDbwXrqEfFfwJg="
-    },
     "Walmart-Invoice-Exporter": {
       "type": "Git",
       "repository": {
@@ -52,9 +36,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7335c27f936b8d68c07c6441d086474c523baddc",
-      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/7335c27f936b8d68c07c6441d086474c523baddc.tar.gz",
-      "hash": "sha256-xJOnOYdPmdvxLDbK9OZbmue0FuT5NzoTvaauyscxtnY="
+      "revision": "b9b0ae281f52dad040c263df85cbeeb0b6aac0b0",
+      "url": "https://github.com/cosmic-utils/cosmic-ext-applet-sysinfo/archive/b9b0ae281f52dad040c263df85cbeeb0b6aac0b0.tar.gz",
+      "hash": "sha256-rgNT/A1i+muF/NUSMfq7EPva+aagWzRa4di0SST1+QE="
     },
     "cosmic-manager": {
       "type": "Git",
@@ -65,9 +49,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1630bbf792a95baffbd3169885580cd53a7027d8",
-      "url": "https://github.com/HeitorAugustoLN/cosmic-manager/archive/1630bbf792a95baffbd3169885580cd53a7027d8.tar.gz",
-      "hash": "sha256-98aHwiGZcvb0VJUGE+lCS/zuGdFAlNvm8keIimuLOK0="
+      "revision": "f7e32c4b314f8c3a1a23cfdac65132c0ab87d80c",
+      "url": "https://github.com/HeitorAugustoLN/cosmic-manager/archive/f7e32c4b314f8c3a1a23cfdac65132c0ab87d80c.tar.gz",
+      "hash": "sha256-1dHqiMHuMHvuru0f9ybyW+3XJHb7P8cz4k4GPa1YYyY="
     },
     "gtg": {
       "type": "Git",
@@ -78,9 +62,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "5045363b191321057b5b7cbec343a499fc04613b",
-      "url": "https://github.com/getting-things-gnome/gtg/archive/5045363b191321057b5b7cbec343a499fc04613b.tar.gz",
-      "hash": "sha256-L62QU8D8RFgG3K+gJxZiExowLroAD6nibC+xNGtOuak="
+      "revision": "de4f36c7e1408ceb4bbe2375da167c2dce40cfa0",
+      "url": "https://github.com/getting-things-gnome/gtg/archive/de4f36c7e1408ceb4bbe2375da167c2dce40cfa0.tar.gz",
+      "hash": "sha256-53nMFeFjT7xsEtYlkCuXB8lEFPM2QmSJG7RWTcw1/Wc="
     },
     "irql-vaapi-driver": {
       "type": "GitRelease",
