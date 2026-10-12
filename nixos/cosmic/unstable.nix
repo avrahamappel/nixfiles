@@ -1,10 +1,13 @@
-{ lib, pkgs-unstable, modulesPath, ... }:
+{ lib, pkgs, modulesPath, ... }:
 
 let
   nixpkgs-unstable-flake = (builtins.fromJSON
-    (builtins.readFile ../../flake.lock)).nodes.nixpkgs-unstable.locked;
+    (builtins.readFile ../../flake.lock)).nodes.nixpkgs-cosmic.locked;
   nixpkgs-unstable = fetchTree {
-    inherit (nixpkgs-unstable-flake) type narHash lastModified rev url;
+    inherit (nixpkgs-unstable-flake) type owner repo rev narHash lastModified;
+  };
+  pkgs-unstable = import nixpkgs-unstable {
+    inherit (pkgs.stdenv.hostPlatform) system;
   };
 
 in

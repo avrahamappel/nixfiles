@@ -34,6 +34,21 @@
         "type": "indirect"
       }
     },
+    "nixpkgs-cosmic": {
+      "locked": {
+        "lastModified": 1785116965,
+        "narHash": "sha256-JLicNd3Dy02Vbt5No/17x73RmxtNztFwiUnx77zm6Uk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "021e8b76a1f3d3957de5de7762fcb10e00aac27a",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "rev": "021e8b76a1f3d3957de5de7762fcb10e00aac27a",
+        "type": "indirect"
+      }
+    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1790822859,
@@ -73,6 +88,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-cosmic": "nixpkgs-cosmic",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "qrscan": "qrscan",
         "rycee-nur": "rycee-nur"
