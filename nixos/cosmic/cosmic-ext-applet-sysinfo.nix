@@ -35,7 +35,7 @@ in
         version = 1;
         entries = {
           include_swap_in_ram = false;
-          template = "CPU {cpu_usage} {cpu_temp} | GPU {gpu_usage} | RAM {ram_usage} | Disk {disk_usage}";
+          template = "CPU {cpu_usage} {cpu_temp} | RAM {ram_usage} | Disk {disk_usage}";
           use_mono_font = true;
         };
       };
