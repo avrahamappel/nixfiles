@@ -58,6 +58,7 @@ in
       home.packages = with pkgs; [
         cosmic-battery-applet # Show battery percentage (apparently this already exists in latest COSMIC, but nixpkgs is slow to update and I don't want to override all the packages myself)
         cosmic-ext-applet-weather # Simple weather widget
+        cosmic-viewer # Image viewer; not included by default
         gnome-bluetooth # Send files to device via Bluetooth (COSMIC does not have this yet)
       ];
 
