@@ -13,7 +13,7 @@ let
 in
 
 {
-  # Swap in the unstable version of the comsic module
+  # Swap in the unstable version of the cosmic module
   disabledModules = [ "${modulesPath}/services/desktop-managers/cosmic.nix" ];
   imports = [ "${nixpkgs-unstable}/nixos/modules/services/desktop-managers/cosmic.nix" ];
 
