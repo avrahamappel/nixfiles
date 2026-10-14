@@ -43,6 +43,7 @@ in
             "cosmic-monitor"
             "cosmic-notifications"
             "cosmic-osd"
+            "cosmic-osk"
             "cosmic-panel"
             "cosmic-player"
             "cosmic-protocols"
