@@ -9,7 +9,7 @@
     };
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # Temporarily pinning nixpkgs for COSMIC
-    nixpkgs-cosmic.url = "nixpkgs/20f6bb8b30e79e6c419bd69c4c3c714b06d00dab";
+    nixpkgs-cosmic.url = "nixpkgs/d190c41d0043ef0f602ce46a3f7c50f91844325d";
     rycee-nur = {
       flake = false;
       url = "git+https://gitlab.com/rycee/nur-expressions.git";
