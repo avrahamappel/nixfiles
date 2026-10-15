@@ -4,7 +4,7 @@
 }:
 
 let
-  source = (import ../../npins).cosmic-battery-applet;
+  source = (import ../../../npins).cosmic-battery-applet;
 
   cargoToml = lib.fromTOML (builtins.readFile "${source}/Cargo.toml");
 in
