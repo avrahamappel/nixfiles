@@ -1,15 +1,12 @@
-{ lib, pkgs, modulesPath, ... }:
+{ lib, pkgs-unstable, modulesPath, ... }:
 
 let
+  # Parse nixpkgs-unstable manually from flake.lock so we can use it in imports
   nixpkgs-unstable-flake = (builtins.fromJSON
-    (builtins.readFile ../../flake.lock)).nodes.nixpkgs-cosmic.locked;
+    (builtins.readFile ../../flake.lock)).nodes.nixpkgs-unstable.locked;
   nixpkgs-unstable = fetchTree {
-    inherit (nixpkgs-unstable-flake) type owner repo rev narHash lastModified;
+    inherit (nixpkgs-unstable-flake) type url rev narHash lastModified;
   };
-  pkgs-unstable = import nixpkgs-unstable {
-    inherit (pkgs.stdenv.hostPlatform) system;
-  };
-
 in
 
 {
