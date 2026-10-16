@@ -5,8 +5,6 @@ let
     cosmic-manager
     ;
 
-  cosmic-battery-applet = pkgs.callPackage ../pkgs/cosmic-battery-applet.nix { };
-
 in
 
 with cosmicLib.cosmic;
@@ -14,12 +12,12 @@ with cosmicLib.cosmic;
 {
   imports = [
     "${cosmic-manager}/modules"
+    ./applet-battery.nix
     ./ext-applet-sysinfo.nix
   ];
 
   # COSMIC plugins and extra packages
   home.packages = with pkgs; [
-    cosmic-battery-applet # Show battery percentage (apparently this already exists in latest COSMIC, but nixpkgs is slow to update and I don't want to override all the packages myself)
     cosmic-ext-applet-weather # Simple weather widget
     gnome-bluetooth # Send files to device via Bluetooth (COSMIC does not have this yet)
   ];
@@ -70,7 +68,6 @@ with cosmicLib.cosmic;
           "com.system76.CosmicAppletBluetooth"
           "com.system76.CosmicAppletNetwork"
           "com.system76.CosmicAppletBattery"
-          "cosmic-battery-applet" # TODO: remove when COSMIC shows percent
           "com.system76.CosmicAppletNotifications"
           "com.system76.CosmicAppletPower"
         ]
