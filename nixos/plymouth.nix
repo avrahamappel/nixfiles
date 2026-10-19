@@ -24,7 +24,7 @@ let
           } else {
               text = "I want to watch a video NOT Daniel";
           }
-          message.image = Image.Text(text, 1, 1, 1);
+          message.image = Image.Text(text, 0, 0.8, 1);
           message.sprite = Sprite(message.image);
           message.sprite.SetPosition(screen.half.w - message.image.GetWidth() / 2, Window.GetHeight() - message.image.GetHeight() - 50);
       }
