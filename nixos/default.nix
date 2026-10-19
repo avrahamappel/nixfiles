@@ -6,6 +6,7 @@
     ./cosmic
     ./docker.nix
     ./gnome.nix
+    ./plymouth.nix
     ./printers.nix
     ./quickemu.nix
     ./droidcam.nix
