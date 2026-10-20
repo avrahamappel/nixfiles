@@ -21,8 +21,10 @@ let
               text = "These toshuns are going to sleep...";
           } else if (Plymouth.GetMode() == "resume") {
               text = "These toshuns are waking up...";
+          } else if (Plymouth.GetMode() == "reboot") {
+              text = "These toshuns are restarting...";
           } else {
-              text = "I want to watch a video NOT Daniel";
+              text = "Toshun status: " + Plymouth.GetMode();
           }
           message.image = Image.Text(text, 0, 0.8, 1);
           message.sprite = Sprite(message.image);
