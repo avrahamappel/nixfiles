@@ -1,8 +1,7 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
 let
   npins = import ../../npins;
-  treesitter-autoinstall-nvim = npins.treesitter-autoinstall-nvim { inherit pkgs; };
   vim-afterimage = npins.vim-afterimage { inherit pkgs; };
 
   nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
@@ -191,22 +190,6 @@ in
 
       # LSP / TreeSitter / Completion plugins
       nvim-treesitter
-      {
-        # Automatically install treesitter languages
-        plugin = pkgs.vimUtils.buildVimPlugin {
-          src = treesitter-autoinstall-nvim;
-          pname = treesitter-autoinstall-nvim.repository.repo;
-          version = builtins.substring 0 7 treesitter-autoinstall-nvim.revision;
-          dependencies = [ nvim-treesitter ];
-          meta.homepage = "https://github.com/mks-h/treesitter-autoinstall.nvim";
-        };
-        type = "lua";
-        config = # lua
-          ''
-            require("treesitter-autoinstall").setup()
-          '';
-      }
-
       cmp-nvim-lsp
       cmp-treesitter
       cmp-vsnip
@@ -349,8 +332,17 @@ in
     # Used by vim-afterimage
     antiword
     pdftk
-
-    # Treesitter complains if we don't install the CLI
-    tree-sitter
   ];
+
+
+  # Symlink treesitter grammars to the correct place
+  # See https://discourse.nixos.org/t/nvim-treesitter-grammars-not-linked-from-nix-store
+  xdg.dataFile =
+    let
+      treesitterGrammarsPath = "${config.xdg.dataFile."nvim/site/pack/hm".source}/start/nvim-treesitter-grammars";
+    in
+    {
+      "nvim/site/parser".source = "${treesitterGrammarsPath}/parser";
+      "nvim/site/queries".source = "${treesitterGrammarsPath}/queries";
+    };
 }
