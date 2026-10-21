@@ -7,10 +7,11 @@ let
 
   circuitThemeWithToshuns = circuitTheme.overrideAttrs {
     patchPhase = ''
-      cat << 'EOF' >> circuit/circuit.script
-      # Add more toshuns
+      # Using JS as delimiter for better highlighting
+      cat << 'JS' >> circuit/circuit.script
+      // Add more toshuns
       fun refresh_callback2() {
-          # Call original callback
+          // Call original callback
           refresh_callback();
 
           if (Plymouth.GetMode() == "boot") {
@@ -30,9 +31,9 @@ let
           message.sprite = Sprite(message.image);
           message.sprite.SetPosition(screen.half.w - message.image.GetWidth() / 2, Window.GetHeight() - message.image.GetHeight() - 50);
       }
-      # Override refresh callback
+      // Override refresh callback
       Plymouth.SetRefreshFunction(refresh_callback2);
-      EOF
+      JS
     '';
   };
 in
