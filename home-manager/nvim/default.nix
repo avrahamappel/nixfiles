@@ -1,10 +1,11 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, ... }:
 
 let
   npins = import ../../npins;
   vim-afterimage = npins.vim-afterimage { inherit pkgs; };
 
   nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+  nvimTreesitterLanguages = map (g: g.language) pkgs.vimPlugins.nvim-treesitter.allGrammars;
 in
 
 {
@@ -189,7 +190,18 @@ in
       }
 
       # LSP / TreeSitter / Completion plugins
-      nvim-treesitter
+      {
+        plugin = nvim-treesitter;
+        type = "lua";
+        config = /* lua */ ''
+          -- Automatically start TS highlighting when filetype is set
+          -- to one of the supported languages
+          vim.api.nvim_create_autocmd('FileType', {
+            pattern = { '${lib.concatStringsSep "', '" nvimTreesitterLanguages}' },
+            callback = function() vim.treesitter.start() end,
+          })
+        '';
+      }
       cmp-nvim-lsp
       cmp-treesitter
       cmp-vsnip
@@ -333,16 +345,4 @@ in
     antiword
     pdftk
   ];
-
-
-  # Symlink treesitter grammars to the correct place
-  # See https://discourse.nixos.org/t/nvim-treesitter-grammars-not-linked-from-nix-store
-  xdg.dataFile =
-    let
-      treesitterGrammarsPath = "${config.xdg.dataFile."nvim/site/pack/hm".source}/start/nvim-treesitter-grammars";
-    in
-    {
-      "nvim/site/parser".source = "${treesitterGrammarsPath}/parser";
-      "nvim/site/queries".source = "${treesitterGrammarsPath}/queries";
-    };
 }
