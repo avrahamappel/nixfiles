@@ -139,6 +139,7 @@ let
       "extensions.formautofill.creditCards.enabled" = false;
       "extensions.update.autoUpdateDefault" = false;
       "media.webspeech.recognition.enable" = true; # Enable Web Speech API
+      "sidebar.verticalTabs" = true;
       "signon.rememberSignons" = false;
       "xpinstall.signatures.required" = false; # Allow unsigned addons
     };
