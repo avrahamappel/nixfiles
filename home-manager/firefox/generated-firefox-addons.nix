@@ -51,10 +51,10 @@
     };
     "internet_archive_downloader" = buildMozillaXpiAddon {
       pname = "internet_archive_downloader";
-      version = "1.2.2";
+      version = "1.2.4";
       addonId = "internet_archive_downloader@timelegend.net";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4749757/internet_archive_downloader-1.2.2.xpi";
-      sha256 = "e45dd74e08d729678c0efb7aca5bdb4dcbce22e1a4fc8c2d4f611437448ed927";
+      url = "https://addons.mozilla.org/firefox/downloads/file/5160950/internet_archive_downloader-1.2.4.xpi";
+      sha256 = "de3ed81f03bdc9179812c188d6bfcb8a0bc59e0ffbb33e3e2b9ab935525fda21";
       meta = with lib;
       {
         homepage = "https://github.com/elementdavv/internet_archive_downloader";
@@ -74,10 +74,10 @@
     };
     "order-history-exporter-amazon" = buildMozillaXpiAddon {
       pname = "order-history-exporter-amazon";
-      version = "1.3.0";
+      version = "1.4.0";
       addonId = "order-history-exporter@amazon.example";
-      url = "https://addons.mozilla.org/firefox/downloads/file/4937329/order_history_exporter_amazon-1.3.0.xpi";
-      sha256 = "a2e0c09a01a5fdfe185a06ef779ed4e0fd8f2787e47f0666cac5147fe87f5b88";
+      url = "https://addons.mozilla.org/firefox/downloads/file/5154371/order_history_exporter_amazon-1.4.0.xpi";
+      sha256 = "5e07976d517e4855433a4527a11242758f3cfecc738d0ce4df2a99088585e71a";
       meta = with lib;
       {
         homepage = "https://github.com/xenolphthalein/order-history-exporter-for-amazon";
@@ -100,6 +100,7 @@
           "*://*.amazon.com.br/*"
           "*://*.amazon.com.mx/*"
           "*://*.amazon.com.be/*"
+          "*://*.amazon.ae/*"
           "*://*.amazon.com/*gp/your-account/order-history*"
           "*://*.amazon.com/*gp/css/order-history*"
           "*://*.amazon.com/*your-orders*"
@@ -142,6 +143,9 @@
           "*://*.amazon.com.be/*gp/your-account/order-history*"
           "*://*.amazon.com.be/*gp/css/order-history*"
           "*://*.amazon.com.be/*your-orders*"
+          "*://*.amazon.ae/*gp/your-account/order-history*"
+          "*://*.amazon.ae/*gp/css/order-history*"
+          "*://*.amazon.ae/*your-orders*"
         ];
         platforms = platforms.all;
       };
