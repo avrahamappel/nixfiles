@@ -151,5 +151,8 @@ in
     enable = true;
     package = pkgs-unstable.firefox-devedition;
     profiles.dev-edition-default = profile;
+
+    # Stop bothering me about the config path
+    configPath = ".mozilla/firefox";
   };
 }
