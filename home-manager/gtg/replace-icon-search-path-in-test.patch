@@ -1,0 +1,22 @@
+diff --git a/tests/gtk/test_sidebar_icons_bundled.py b/tests/gtk/test_sidebar_icons_bundled.py
+index e00eb776..a0c704b6 100644
+--- a/tests/gtk/test_sidebar_icons_bundled.py
++++ b/tests/gtk/test_sidebar_icons_bundled.py
+@@ -9,7 +9,7 @@ from gi.repository import Gtk
+ from GTG.core.dirs import local_rootdir
+ 
+ SIDEBAR = os.path.join(local_rootdir, 'GTG', 'gtk', 'browser', 'sidebar.py')
+-BUNDLED = os.path.join(local_rootdir, 'data', 'icons')
++BUNDLED = os.path.join(local_rootdir, '..', '..', '..', 'share', 'icons')
+ 
+ 
+ class SidebarIconsTest(TestCase):
+@@ -28,7 +28,7 @@ class SidebarIconsTest(TestCase):
+ 
+         theme = Gtk.IconTheme.new()
+         theme.set_theme_name('Adwaita')
+-        theme.set_search_path(['/usr/share/icons', BUNDLED])
++        theme.set_search_path(['@adwaitaIconPath@', BUNDLED])
+ 
+         missing = sorted(n for n in names if not theme.has_icon(n))
+         self.assertEqual(missing, [])

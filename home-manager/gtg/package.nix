@@ -1,4 +1,5 @@
 { lib
+, adwaita-icon-theme
 , gtg
 , gtk3
 , gtk4
@@ -41,6 +42,9 @@ gtg.overridePythonAttrs
 
     patches = [
       ./fix-recurring-menu-ui-path.patch
+      (replaceVars ./replace-icon-search-path-in-test.patch {
+        adwaitaIconPath = "${adwaita-icon-theme}/share/icons";
+      })
       (replaceVars ./set-git-short-rev.patch { inherit shortRev; })
     ];
 
