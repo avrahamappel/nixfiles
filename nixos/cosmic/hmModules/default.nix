@@ -20,6 +20,7 @@ with cosmicLib.cosmic;
   home.packages = with pkgs; [
     cosmic-ext-applet-weather # Simple weather widget
     gnome-bluetooth # Send files to device via Bluetooth (COSMIC does not have this yet)
+    simple-scan # GNOME document scanner
   ];
 
   # COSMIC config
