@@ -47,8 +47,10 @@
       dust # Intuitive disk usage
       file # Don't know why this isn't available by default
       gron # When I have no patience for JQ
-      htmlq # jq for html
+      htmlq # jq for html/xml
+      sc-im # spreadsheet cli
       toastify # Send ad-hoc notifications
+      yq # jq for yaml/toml
 
       # Media
       ffmpeg
