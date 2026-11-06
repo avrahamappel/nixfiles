@@ -47,6 +47,7 @@ in
           map <leader>b :Telescope buffers sort_mru=true<CR>
           map <leader>z :Telescope oldfiles<CR>
           map <leader>f :Telescope live_grep<CR>
+          map <leader>c :Telescope grep_string<CR>
         '';
       }
       {
