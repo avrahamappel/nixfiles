@@ -42,6 +42,19 @@ in
       orca # BH I don't need a screen reader
     ];
 
+    # Remove libgnomekbd from gnome-settings-daemon, as it breaks
+    # keyboard input in Firefox in COSMIC
+    nixpkgs.overlays = [
+      (final: prev: {
+        gnome-settings-daemon = prev.gnome-settings-daemon.overrideAttrs
+          (prevAttrs: {
+            buildInputs = (lib.remove prev.libgnomekbd prevAttrs.buildInputs)
+              # Need to specify some deps manually now
+              ++ (with prev; [ cups fontconfig libx11 libxfixes ]);
+          });
+      })
+    ];
+
     home-manager.users.avraham = {
       imports = [ ./hmModules ];
     };
