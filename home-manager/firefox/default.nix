@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, rycee-nur, ... }:
+{ pkgs, pkgs-unstable, rycee-nur, config, ... }:
 
 let
   local-addons = pkgs.callPackage ./generated-firefox-addons.nix {
@@ -152,7 +152,7 @@ in
     package = pkgs-unstable.firefox-devedition;
     profiles.dev-edition-default = profile;
 
-    # Stop bothering me about the config path
-    configPath = ".mozilla/firefox";
+    # Use new config path
+    configPath = "${config.xdg.configHome}/mozilla/firefox-devedition";
   };
 }
