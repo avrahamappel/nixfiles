@@ -82,6 +82,14 @@ vim.lsp.config('nixd', {
 vim.lsp.config('rust_analyzer', {
     settings = {
         ['rust-analyzer'] = {
+            assist = {
+                preferSelf = true,
+            },
+            cargo = {
+                buildScripts = {
+                    enable = false,
+                },
+            },
             check = {
                 command = 'clippy',
                 extraArgs = { '--', '-Wclippy::pedantic' },
