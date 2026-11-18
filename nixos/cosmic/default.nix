@@ -27,6 +27,9 @@ in
     services.desktopManager.cosmic.enable = true;
     services.system76-scheduler.enable = true;
 
+    # COSMIC is a little overeager to connect to bluetooth
+    hardware.bluetooth.powerOnBoot = false;
+
     # Set GStreamer variable so cosmic-player works
     environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
       lib.makeSearchPath "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
