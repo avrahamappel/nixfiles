@@ -11,7 +11,9 @@ in
   ];
 
   options.cosmic = with lib.types; {
-    enable = lib.mkEnableOption "Enable COSMIC desktop environment";
+    enable = lib.mkEnableOption "COSMIC desktop environment" // {
+      default = true;
+    };
 
     manualLocation = {
       enable = lib.mkEnableOption "Enable setting manual location (e.g. for weather)";

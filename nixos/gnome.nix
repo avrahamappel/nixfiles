@@ -15,9 +15,7 @@ in
 
 {
   options.gnome = {
-    enable = lib.mkEnableOption "Enable GNOME desktop environment" // {
-      default = true;
-    };
+    enable = lib.mkEnableOption "GNOME desktop environment";
   };
 
   config = lib.mkIf cfg.enable {
