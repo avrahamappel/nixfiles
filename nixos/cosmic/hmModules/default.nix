@@ -9,6 +9,8 @@ in
 {
   imports = [
     "${cosmic-manager}/modules"
+    ./background.nix
+    ./compositor.nix
     ./dock.nix
     ./panel.nix
     ./shortcuts.nix

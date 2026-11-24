@@ -8,13 +8,17 @@ in
   wayland.desktopManager.cosmic.panels = [
     {
       name = "Dock";
-      autohide = mkRON "optional" {
+      anchor = mkRON "enum" "Bottom";
+      autohide = mkRON "enum" "OnOverlap";
+      autohide_behavior = {
         wait_time = 0;
         transition_time = 0;
         handle_size = 4;
         unhide_delay = 0;
       };
+      expand_to_edges = false;
       margin = 4;
+      opacity = 1.0;
       plugins_center = mkRON "optional" [
         "com.system76.CosmicAppList"
         "com.system76.CosmicAppletMinimize"

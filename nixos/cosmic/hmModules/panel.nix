@@ -9,7 +9,10 @@ in
   wayland.desktopManager.cosmic.panels = [
     {
       name = "Panel";
+      border_radius = 0;
       margin = 0;
+      opacity = 1.0;
+      size = mkRON "enum" "XS";
       plugins_center = mkRON "optional" [
         "com.system76.CosmicAppletTime"
         "io.github.cosmic_utils.weather-applet"
